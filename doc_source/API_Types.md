@@ -1,0 +1,29 @@
+# Data Types<a name="API_Types"></a>
+
+The following data types are supported:
+
++  [BatchDetectDominantLanguageItemResult](API_BatchDetectDominantLanguageItemResult.md) 
+
++  [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) 
+
++  [BatchDetectKeyPhrasesItemResult](API_BatchDetectKeyPhrasesItemResult.md) 
+
++  [BatchDetectSentimentItemResult](API_BatchDetectSentimentItemResult.md) 
+
++  [BatchItemError](API_BatchItemError.md) 
+
++  [DominantLanguage](API_DominantLanguage.md) 
+
++  [Entity](API_Entity.md) 
+
++  [InputDataConfig](API_InputDataConfig.md) 
+
++  [KeyPhrase](API_KeyPhrase.md) 
+
++  [OutputDataConfig](API_OutputDataConfig.md) 
+
++  [SentimentScore](API_SentimentScore.md) 
+
++  [TopicsDetectionJobFilter](API_TopicsDetectionJobFilter.md) 
+
++  [TopicsDetectionJobProperties](API_TopicsDetectionJobProperties.md) 
