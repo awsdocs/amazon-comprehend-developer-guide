@@ -2,7 +2,7 @@
 
 You can use Amazon Comprehend to examine the content of a collection of documents to determine common themes\. For example, you can give Amazon Comprehend a collection of news articles, and it will determine the subjects, such as sports, politics, or entertainment\. The text in the documents doesn't need to be annotated\. 
 
-Amazon Comprehend uses an LDA\-based learning model to determine the topics in a set of documents\. It examines each document to determine the context and meaning of a word\. The set of words that frequently belong to the same context across the entire document set make up a topic\.
+Amazon Comprehend uses an Latent Dirichlit Allocation\-based learning model to determine the topics in a set of documents\. It examines each document to determine the context and meaning of a word\. The set of words that frequently belong to the same context across the entire document set make up a topic\.
 
 A word is associated to a topic in a document based on how prevalent that topic is in a document and how much affinity the topic has to the word\. The same word can be associated with different topics in different documents based on the topic distribution in a particular document\. 
 
