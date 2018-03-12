@@ -16,7 +16,7 @@ The input to the batch APIs is a JSON structure containing the documents to proc
 }
 ```
 
-The response from a batch operation contains two lists, the `ResultList` and the `ErrorList`\. The `ResultList` contains one record for each document that was successfully processed\. The result for each document in the batch is identical to the result you would get if you ran a single document operation on the document\. The results for each document are identified by their index in the input file\. The response from the `BatchDetectEntities` operation is:
+The response from a batch operation contains two lists, the `ResultList` and the `ErrorList`\. The `ResultList` contains one record for each document that was successfully processed\. The result for each document in the batch is identical to the result you would get if you ran a single document operation on the document\. The results for each document are assigned an index based on the order of the documents in the input file\. The response from the `BatchDetectEntities` operation is:
 
 ```
 {

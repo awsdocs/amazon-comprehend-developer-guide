@@ -4,12 +4,12 @@ The result of calling the [BatchDetectDominantLanguage](API_BatchDetectDominantL
 
 ## Contents<a name="API_BatchDetectDominantLanguageItemResult_Contents"></a>
 
- **Index**   
+ **Index**   <a name="comprehend-Type-BatchDetectDominantLanguageItemResult-Index"></a>
 The zero\-based index of the document in the input list\.  
 Type: Integer  
 Required: No
 
- **Languages**   
+ **Languages**   <a name="comprehend-Type-BatchDetectDominantLanguageItemResult-Languages"></a>
 One or more [DominantLanguage](API_DominantLanguage.md) objects describing the dominant languages in the document\.  
 Type: Array of [DominantLanguage](API_DominantLanguage.md) objects  
 Required: No

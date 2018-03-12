@@ -4,12 +4,12 @@ The result of calling the [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) 
 
 ## Contents<a name="API_BatchDetectKeyPhrasesItemResult_Contents"></a>
 
- **Index**   
+ **Index**   <a name="comprehend-Type-BatchDetectKeyPhrasesItemResult-Index"></a>
 The zero\-based index of the document in the input list\.  
 Type: Integer  
 Required: No
 
- **KeyPhrases**   
+ **KeyPhrases**   <a name="comprehend-Type-BatchDetectKeyPhrasesItemResult-KeyPhrases"></a>
 One or more [KeyPhrase](API_KeyPhrase.md) objects, one for each key phrase detected in the document\.  
 Type: Array of [KeyPhrase](API_KeyPhrase.md) objects  
 Required: No

@@ -6,24 +6,24 @@ Inspects text and returns an inference of the prevailing sentiment \(`POSITIVE`,
 
 ```
 {
-   "LanguageCode": "string",
-   "Text": "string"
+   "[LanguageCode](#comprehend-DetectSentiment-request-LanguageCode)": "string",
+   "[Text](#comprehend-DetectSentiment-request-Text)": "string"
 }
 ```
 
 ## Request Parameters<a name="API_DetectSentiment_RequestParameters"></a>
 
-For information about the parameters that are common to all actions, see Common Parameters\.
+For information about the parameters that are common to all actions, see [Common Parameters](CommonParameters.md)\.
 
 The request accepts the following data in JSON format\.
 
- ** LanguageCode **   
-The RFC 5646 language code for the input text\. If you specify the code for a language that Amazon Comprehend does not support, it returns and `UnsupportedLanguageException`\. For more information about RFC 5646, see [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.  
+ ** [LanguageCode](#API_DetectSentiment_RequestSyntax) **   <a name="comprehend-DetectSentiment-request-LanguageCode"></a>
+The language of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\. All documents must be in the same language\.  
 Type: String  
 Valid Values:` en | es`   
 Required: Yes
 
- ** Text **   
+ ** [Text](#API_DetectSentiment_RequestSyntax) **   <a name="comprehend-DetectSentiment-request-Text"></a>
 A UTF\-8 text string\. Each string must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
@@ -33,12 +33,12 @@ Required: Yes
 
 ```
 {
-   "Sentiment": "string",
-   "SentimentScore": { 
-      "Mixed": number,
-      "Negative": number,
-      "Neutral": number,
-      "Positive": number
+   "[Sentiment](#comprehend-DetectSentiment-response-Sentiment)": "string",
+   "[SentimentScore](#comprehend-DetectSentiment-response-SentimentScore)": { 
+      "[Mixed](API_SentimentScore.md#comprehend-Type-SentimentScore-Mixed)": number,
+      "[Negative](API_SentimentScore.md#comprehend-Type-SentimentScore-Negative)": number,
+      "[Neutral](API_SentimentScore.md#comprehend-Type-SentimentScore-Neutral)": number,
+      "[Positive](API_SentimentScore.md#comprehend-Type-SentimentScore-Positive)": number
    }
 }
 ```
@@ -49,12 +49,12 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** Sentiment **   
+ ** [Sentiment](#API_DetectSentiment_ResponseSyntax) **   <a name="comprehend-DetectSentiment-response-Sentiment"></a>
 The inferred sentiment that Amazon Comprehend has the highest level of confidence in\.  
 Type: String  
 Valid Values:` POSITIVE | NEGATIVE | NEUTRAL | MIXED` 
 
- ** SentimentScore **   
+ ** [SentimentScore](#API_DetectSentiment_ResponseSyntax) **   <a name="comprehend-DetectSentiment-response-SentimentScore"></a>
 An object that lists the sentiments, and their corresponding confidence levels\.  
 Type: [SentimentScore](API_SentimentScore.md) object
 

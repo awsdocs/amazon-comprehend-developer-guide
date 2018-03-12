@@ -6,17 +6,17 @@ Gets the properties associated with a topic detection job\. Use this operation t
 
 ```
 {
-   "JobId": "string"
+   "[JobId](#comprehend-DescribeTopicsDetectionJob-request-JobId)": "string"
 }
 ```
 
 ## Request Parameters<a name="API_DescribeTopicsDetectionJob_RequestParameters"></a>
 
-For information about the parameters that are common to all actions, see Common Parameters\.
+For information about the parameters that are common to all actions, see [Common Parameters](CommonParameters.md)\.
 
 The request accepts the following data in JSON format\.
 
- ** JobId **   
+ ** [JobId](#API_DescribeTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-DescribeTopicsDetectionJob-request-JobId"></a>
 The identifier assigned by the user to the detection job\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
@@ -26,21 +26,21 @@ Required: Yes
 
 ```
 {
-   "TopicsDetectionJobProperties": { 
-      "EndTime": number,
-      "InputDataConfig": { 
-         "InputFormat": "string",
-         "S3Uri": "string"
+   "[TopicsDetectionJobProperties](#comprehend-DescribeTopicsDetectionJob-response-TopicsDetectionJobProperties)": { 
+      "[EndTime](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-EndTime)": number,
+      "[InputDataConfig](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-InputDataConfig)": { 
+         "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",
+         "[S3Uri](API_InputDataConfig.md#comprehend-Type-InputDataConfig-S3Uri)": "string"
       },
-      "JobId": "string",
-      "JobName": "string",
-      "JobStatus": "string",
-      "Message": "string",
-      "NumberOfTopics": number,
-      "OutputDataConfig": { 
-         "S3Uri": "string"
+      "[JobId](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-JobId)": "string",
+      "[JobName](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-JobName)": "string",
+      "[JobStatus](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-JobStatus)": "string",
+      "[Message](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-Message)": "string",
+      "[NumberOfTopics](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-NumberOfTopics)": number,
+      "[OutputDataConfig](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-OutputDataConfig)": { 
+         "[S3Uri](API_OutputDataConfig.md#comprehend-Type-OutputDataConfig-S3Uri)": "string"
       },
-      "SubmitTime": number
+      "[SubmitTime](API_TopicsDetectionJobProperties.md#comprehend-Type-TopicsDetectionJobProperties-SubmitTime)": number
    }
 }
 ```
@@ -51,7 +51,7 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** TopicsDetectionJobProperties **   
+ ** [TopicsDetectionJobProperties](#API_DescribeTopicsDetectionJob_ResponseSyntax) **   <a name="comprehend-DescribeTopicsDetectionJob-response-TopicsDetectionJobProperties"></a>
 The list of properties for the requested job\.  
 Type: [TopicsDetectionJobProperties](API_TopicsDetectionJobProperties.md) object
 

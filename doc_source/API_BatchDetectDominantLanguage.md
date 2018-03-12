@@ -6,17 +6,17 @@ Determines the dominant language of the input text for a batch of documents\. Fo
 
 ```
 {
-   "TextList": [ "string" ]
+   "[TextList](#comprehend-BatchDetectDominantLanguage-request-TextList)": [ "string" ]
 }
 ```
 
 ## Request Parameters<a name="API_BatchDetectDominantLanguage_RequestParameters"></a>
 
-For information about the parameters that are common to all actions, see Common Parameters\.
+For information about the parameters that are common to all actions, see [Common Parameters](CommonParameters.md)\.
 
 The request accepts the following data in JSON format\.
 
- ** TextList **   
+ ** [TextList](#API_BatchDetectDominantLanguage_RequestSyntax) **   <a name="comprehend-BatchDetectDominantLanguage-request-TextList"></a>
 A list containing the text of the input documents\. The list can contain a maximum of 25 documents\. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF\-8 encoded characters\.  
 Type: Array of strings  
 Length Constraints: Minimum length of 1\.  
@@ -26,20 +26,20 @@ Required: Yes
 
 ```
 {
-   "ErrorList": [ 
+   "[ErrorList](#comprehend-BatchDetectDominantLanguage-response-ErrorList)": [ 
       { 
-         "ErrorCode": "string",
-         "ErrorMessage": "string",
-         "Index": number
+         "[ErrorCode](API_BatchItemError.md#comprehend-Type-BatchItemError-ErrorCode)": "string",
+         "[ErrorMessage](API_BatchItemError.md#comprehend-Type-BatchItemError-ErrorMessage)": "string",
+         "[Index](API_BatchItemError.md#comprehend-Type-BatchItemError-Index)": number
       }
    ],
-   "ResultList": [ 
+   "[ResultList](#comprehend-BatchDetectDominantLanguage-response-ResultList)": [ 
       { 
-         "Index": number,
-         "Languages": [ 
+         "[Index](API_BatchDetectDominantLanguageItemResult.md#comprehend-Type-BatchDetectDominantLanguageItemResult-Index)": number,
+         "[Languages](API_BatchDetectDominantLanguageItemResult.md#comprehend-Type-BatchDetectDominantLanguageItemResult-Languages)": [ 
             { 
-               "LanguageCode": "string",
-               "Score": number
+               "[LanguageCode](API_DominantLanguage.md#comprehend-Type-DominantLanguage-LanguageCode)": "string",
+               "[Score](API_DominantLanguage.md#comprehend-Type-DominantLanguage-Score)": number
             }
          ]
       }
@@ -53,11 +53,11 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** ErrorList **   
+ ** [ErrorList](#API_BatchDetectDominantLanguage_ResponseSyntax) **   <a name="comprehend-BatchDetectDominantLanguage-response-ErrorList"></a>
 A list containing one [BatchItemError](API_BatchItemError.md) object for each document that contained an error\. The results are sorted in ascending order by the `Index` field and match the order of the documents in the input list\. If there are no errors in the batch, the `ErrorList` is empty\.  
 Type: Array of [BatchItemError](API_BatchItemError.md) objects
 
- ** ResultList **   
+ ** [ResultList](#API_BatchDetectDominantLanguage_ResponseSyntax) **   <a name="comprehend-BatchDetectDominantLanguage-response-ResultList"></a>
 A list of [BatchDetectDominantLanguageItemResult](API_BatchDetectDominantLanguageItemResult.md) objects containing the results of the operation\. The results are sorted in ascending order by the `Index` field and match the order of the documents in the input list\. If all of the documents contain an error, the `ResultList` is empty\.  
 Type: Array of [BatchDetectDominantLanguageItemResult](API_BatchDetectDominantLanguageItemResult.md) objects
 

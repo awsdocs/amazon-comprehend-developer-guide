@@ -4,22 +4,22 @@ Describes a key noun phrase\.
 
 ## Contents<a name="API_KeyPhrase_Contents"></a>
 
- **BeginOffset**   
+ **BeginOffset**   <a name="comprehend-Type-KeyPhrase-BeginOffset"></a>
 A character offset in the input text that shows where the key phrase begins \(the first character is at position 0\)\. The offset returns the position of each UTF\-8 code point in the string\. A *code point* is the abstract character from a particular graphical representation\. For example, a multi\-byte UTF\-8 character maps to a single code point\.  
 Type: Integer  
 Required: No
 
- **EndOffset**   
+ **EndOffset**   <a name="comprehend-Type-KeyPhrase-EndOffset"></a>
 A character offset in the input text where the key phrase ends\. The offset returns the position of each UTF\-8 code point in the string\. A `code point` is the abstract character from a particular graphical representation\. For example, a multi\-byte UTF\-8 character maps to a single code point\.  
 Type: Integer  
 Required: No
 
- **Score**   
+ **Score**   <a name="comprehend-Type-KeyPhrase-Score"></a>
 The level of confidence that Amazon Comprehend has in the accuracy of the detection\.  
 Type: Float  
 Required: No
 
- **Text**   
+ **Text**   <a name="comprehend-Type-KeyPhrase-Text"></a>
 The text of a key noun phrase\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  

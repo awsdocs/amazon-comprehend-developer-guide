@@ -4,18 +4,18 @@ The result of calling the [BatchDetectSentiment](API_BatchDetectSentiment.md) op
 
 ## Contents<a name="API_BatchDetectSentimentItemResult_Contents"></a>
 
- **Index**   
+ **Index**   <a name="comprehend-Type-BatchDetectSentimentItemResult-Index"></a>
 The zero\-based index of the document in the input list\.  
 Type: Integer  
 Required: No
 
- **Sentiment**   
+ **Sentiment**   <a name="comprehend-Type-BatchDetectSentimentItemResult-Sentiment"></a>
 The sentiment detected in the document\.  
 Type: String  
 Valid Values:` POSITIVE | NEGATIVE | NEUTRAL | MIXED`   
 Required: No
 
- **SentimentScore**   
+ **SentimentScore**   <a name="comprehend-Type-BatchDetectSentimentItemResult-SentimentScore"></a>
 The level of confidence that Amazon Comprehend has in the accuracy of its sentiment detection\.  
 Type: [SentimentScore](API_SentimentScore.md) object  
 Required: No

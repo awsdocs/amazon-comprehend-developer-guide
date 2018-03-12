@@ -4,13 +4,13 @@ Returns the code for the dominant language in the input text and the level of co
 
 ## Contents<a name="API_DominantLanguage_Contents"></a>
 
- **LanguageCode**   
+ **LanguageCode**   <a name="comprehend-Type-DominantLanguage-LanguageCode"></a>
 The RFC 5646 language code for the dominant language\. For more information about RFC 5646, see [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
 Required: No
 
- **Score**   
+ **Score**   <a name="comprehend-Type-DominantLanguage-Score"></a>
 The level of confidence that Amazon Comprehend has in the accuracy of the detection\.  
 Type: Float  
 Required: No

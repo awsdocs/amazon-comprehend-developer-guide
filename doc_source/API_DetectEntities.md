@@ -6,24 +6,24 @@ Inspects text for named entities, and returns information about them\. For more 
 
 ```
 {
-   "LanguageCode": "string",
-   "Text": "string"
+   "[LanguageCode](#comprehend-DetectEntities-request-LanguageCode)": "string",
+   "[Text](#comprehend-DetectEntities-request-Text)": "string"
 }
 ```
 
 ## Request Parameters<a name="API_DetectEntities_RequestParameters"></a>
 
-For information about the parameters that are common to all actions, see Common Parameters\.
+For information about the parameters that are common to all actions, see [Common Parameters](CommonParameters.md)\.
 
 The request accepts the following data in JSON format\.
 
- ** LanguageCode **   
-The RFC 5646 language code of the input text\. If you specify a language code that the service does not support, it returns `UnsupportedLanguageException` exception\. For more information about RFC 5646, see [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.   
+ ** [LanguageCode](#API_DetectEntities_RequestSyntax) **   <a name="comprehend-DetectEntities-request-LanguageCode"></a>
+The language of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\. All documents must be in the same language\.  
 Type: String  
 Valid Values:` en | es`   
 Required: Yes
 
- ** Text **   
+ ** [Text](#API_DetectEntities_RequestSyntax) **   <a name="comprehend-DetectEntities-request-Text"></a>
 A UTF\-8 text string\. Each string must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
@@ -33,13 +33,13 @@ Required: Yes
 
 ```
 {
-   "Entities": [ 
+   "[Entities](#comprehend-DetectEntities-response-Entities)": [ 
       { 
-         "BeginOffset": number,
-         "EndOffset": number,
-         "Score": number,
-         "Text": "string",
-         "Type": "string"
+         "[BeginOffset](API_Entity.md#comprehend-Type-Entity-BeginOffset)": number,
+         "[EndOffset](API_Entity.md#comprehend-Type-Entity-EndOffset)": number,
+         "[Score](API_Entity.md#comprehend-Type-Entity-Score)": number,
+         "[Text](API_Entity.md#comprehend-Type-Entity-Text)": "string",
+         "[Type](API_Entity.md#comprehend-Type-Entity-Type)": "string"
       }
    ]
 }
@@ -51,7 +51,7 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** Entities **   
+ ** [Entities](#API_DetectEntities_ResponseSyntax) **   <a name="comprehend-DetectEntities-response-Entities"></a>
 A collection of entities identified in the input text\. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection\. For a list of entity types, see [Detecting Entities](how-entities.md)\.   
 Type: Array of [Entity](API_Entity.md) objects
 

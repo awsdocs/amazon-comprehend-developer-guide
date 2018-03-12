@@ -54,12 +54,57 @@ If the request to start the topic detection job was successful, you will receive
 }
 ```
 
+Use the [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) operation to see a list of the topic detection jobs that you have submitted\. The list includes information about the input and output locations that you used as well as the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
+
+```
+aws comprehend list-topics-detection-jobs \
+    -- region
+```
+
+You will get JSON similar to the following in response:
+
+```
+{
+    "TopicsDetectionJobPropertiesList": [
+        {
+            "InputDataConfig": {
+                "S3Uri": "s3://input bucket/input path", 
+                "InputFormat": "ONE_DOC_PER_LINE"
+            }, 
+            "NumberOfTopics": topics to return, 
+            "JobId": "job ID", 
+            "JobStatus": "COMPLETED", 
+            "JobName": "job name", 
+            "SubmitTime": timestamp, 
+            "OutputDataConfig": {
+                "S3Uri": "s3://output bucket/output path"
+            }, 
+            "EndTime": timestamp
+        },
+        {
+            "InputDataConfig": {
+                "S3Uri": "s3://input bucket/input path", 
+                "InputFormat": "ONE_DOC_PER_LINE"
+            }, 
+            "NumberOfTopics": topics to return, 
+            "JobId": "job ID", 
+            "JobStatus": "RUNNING", 
+            "JobName": "job name", 
+            "SubmitTime": timestamp, 
+            "OutputDataConfig": {
+                "S3Uri": "s3://output bucket/output path"
+            }
+        }        
+    ]
+}
+```
+
 You can use the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation to get the status of an existing job\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
 ```
 aws comprehend describe-topics-detection-job 
-                --region region 
-                --job-id job ID
+                --region region \
+                --job-id job ID 
 I
 ```
 
@@ -68,20 +113,19 @@ You will get the following JSON in response:
 ```
 {
     "TopicsDetectionJobProperties": {
-        "EndTime": timestamp,
         "InputDataConfig": {
-            "InputFormat": "ONE_DOC_PER_FILE",
-            "S3Uri": "s3://input bucket/input path"
-        },
-        "JobId": "job ID",
-        "JobName": "job name",
-        "JobStatus": "RUNNING",
-        "Message": "status description",
-        "NumberOfTopics": topics to return,
+            "S3Uri": "s3://input bucket/input path", 
+            "InputFormat": "ONE_DOC_PER_LINE"
+        }, 
+        "NumberOfTopics": topics to return, 
+        "JobId": "job ID", 
+        "JobStatus": "COMPLETED", 
+        "JobName": "job name", 
+        "SubmitTime": timestamp, 
         "OutputDataConfig": {
-            "S3Uri": "s3://output bucket/output path"
-        },
-        "SubmitTime": timestamp
+            "S3Uri": "s3://output bucket/ouput path"
+        }, 
+        "EndTime": timestamp
     }
 }
 ```

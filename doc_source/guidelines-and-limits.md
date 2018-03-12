@@ -1,43 +1,60 @@
 # Guidelines and Limits<a name="guidelines-and-limits"></a>
 
-## Guidelines<a name="guidelines"></a>
+Keep in mind the following information when using Amazon Comprehend\.
 
-Amazon Comprehend is available in the following regions:
+## Supported Regions<a name="limits-regions"></a>
+
+For a list of AWS Regions where Amazon Comprehend is availabe, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#comprehend_region) in the *Amazon Web Services General Reference*\.
+
+## Throttling<a name="limits-throttling"></a>
+
+For information about throttling for Amazon Comprehend and to request a limit increase, see [ Amazon Comprehend Limits ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. 
+
+You may be able to avoid throttling by using the batch operations instead of the single transaction operations\. For more information, see [Batch Operations](#limits-batch)\.
+
+## Overall Limits<a name="limits-all"></a>
+
+All operations except topic modeling operations have the following limits:
 
 
-****  
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/comprehend/latest/dg/guidelines-and-limits.html)
+| Description | Limit | 
+| --- | --- | 
+| Character encoding | UTF\-8 | 
+| Document size \(UTF\-8 characters\) | 5,000 bytes | 
 
-## Limits<a name="limits"></a>
+## Batch Operations<a name="limits-batch"></a>
 
-Amazon Comprehend has the following limits:
+The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDetectEntities](API_BatchDetectEntities.md), [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md), and [BatchDetectSentiment](API_BatchDetectSentiment.md) operations have the following limits:
 
-+ Documents submitted for topic detection using the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation must be UTF\-8 encoded text files\.
 
-+ The maximum document size is 5,000 bytes of UTF\-8 encoded characters\.
+| Description | Limit | 
+| --- | --- | 
+| Documents per request | 25 | 
 
-+ The maximum number of documents for the [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDetectEntities](API_BatchDetectEntities.md), [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md), and [BatchDetectSentiment](API_BatchDetectSentiment.md) operations is 25 documents per request\.
+If you plan to send more than 20 requests per second, you should consider using the batch operations\. Batch operations enable you to send more documents in each request, but have a lower throttling limit\. For more information about throttling limits see [ Amazon Comprehend Limits ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. For more information about using the batch APIs, see [Batch Processing Documents](how-batch.md)\.
 
-+ The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) and [DetectDominantLanguage](API_DetectDominantLanguage.md) operations have the following limitations:
+## Language Detection<a name="limits-language-detection"></a>
 
-  + They don't support phonetic language detection\. For example, they will not detect "arigato" as Japanese, nor "nihao" as Chinese\.
+The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) and [DetectDominantLanguage](API_DetectDominantLanguage.md) operations have the following limitations:
 
-  + They may have trouble distinguishing close language pairs, such as Indonesian and Malay; or Bosnian, Croatian, and Serbian\.
++ They don't support phonetic language detection\. For example, they will not detect "arigato" as Japanese nor "nihao" as Chinese\.
 
-  + For best results, the input text should be at least 20 characters long\.
++ They may have trouble distinguishing close language pairs, such as Indonesian and Malay; or Bosnian, Croation, and Serbian\.
 
-+ Topic detection jobs created with the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation have the following limits:
++ For best results the input text should be at least 20 characters long\.
 
-  + For best results, you should include at least 1,000 input documents\.
+## Topic Modeling<a name="limits-topic-modeling"></a>
 
-  + The maximum number of topics to return can't exceed 100\.
+Topic detection jobs created with the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation have the following limits:
 
-  + The total size of all files in the request can't exceed 1 Gb\.
 
-  + The total size of a single file in the request can't exceed 2 Mb\.
+| Description | Limit | 
+| --- | --- | 
+| Character encoding | UTF\-8 | 
+| Maximum number of topics to return | 100 | 
+| Total size of all files in request | 1 Gb | 
+| Maximum file size for one file | 2 Mb | 
+| Maximum number of files, one document per file | 50,000 | 
+| Maximum number of lines, one document per line | 1,000,000 | 
 
-  + When you are using one document per file, you can send a maximum of 50,000 files\.
-
-  + When you are using one document per line, you can send a maximum of 1,000,000 lines\.
-
-  To request a service limit increase, see [https://aws\.amazon\.com/support\.](https://aws.amazon.com/support)\.
+For best results, you should include at least 1,000 input documents\.

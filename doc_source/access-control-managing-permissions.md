@@ -5,13 +5,13 @@ This topic provides examples of identity\-based policies that demonstrate how an
 **Important**  
 Before you proceed, we recommend that you review [Overview of Managing Access Permissions to Amazon Comprehend Resources](access-control-overview.md)\. 
 
-The following is the permissions policy required to use the Amazon Comprehend `DetectEntities` action:
+The following is the permissions policy required to use the Amazon Comprehend document analysis actions:
 
 ```
 {
    "Version": "2012-10-17",
    "Statement": [{
-      "Sid": "AllowDetect -Actions",
+      "Sid": "AllowDetectActions",
       "Effect": "Allow",
       "Action": [
                 "comprehend:DetectEntities",
@@ -19,10 +19,9 @@ The following is the permissions policy required to use the Amazon Comprehend `D
                 "comprehend:DetectDominantLanguage",
                 "comprehend:DetectSentiment"
              ],   
-            "Resource": "*"
-            ]
-        }
-    ]
+      "Resource": "*"
+      }
+   ]
 }
 ```
 
@@ -68,7 +67,7 @@ When you create a topic modeling job using the console, you have the option to h
 
 ```
 {
-  "Version": "2012-10-17"
+  "Version": "2012-10-17",
   "Statement": [
       {
          "Action": [
@@ -102,7 +101,7 @@ You need to apply the following additional policy to any user that will use Amaz
 
 ```
 {
-  "Version": "2012-10-17"
+  "Version": "2012-10-17",
   "Statement": [
       {
          "Action": [
@@ -123,7 +122,7 @@ You can also create your own custom IAM policies to allow permissions for Amazon
 
 ## Role\-Based Permissions Required for Topic Detection<a name="auth-role-permissions"></a>
 
-To use the Amazon Comprehend topic detection operations, you must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection\. You do this by creating a data access role in your account to trust the Amazon Comprehend service principal\. For more information about creating a role, see [Creating a Role to Delegate Permissions to an AWS Service](https://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *AWS Identity and Access Management User Guide*\. 
+To use the Amazon Comprehend topic detection operations, you must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection\. You do this by creating a data access role in your account to trust the Amazon Comprehend service principal\. For more information about creating a role, see [Creating a Role to Delegate Permissions to an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *AWS Identity and Access Management User Guide*\. 
 
 The following is the role's trust policy:
 

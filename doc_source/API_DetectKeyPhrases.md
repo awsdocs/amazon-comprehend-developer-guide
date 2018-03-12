@@ -6,24 +6,24 @@ Detects the key noun phrases found in the text\.
 
 ```
 {
-   "LanguageCode": "string",
-   "Text": "string"
+   "[LanguageCode](#comprehend-DetectKeyPhrases-request-LanguageCode)": "string",
+   "[Text](#comprehend-DetectKeyPhrases-request-Text)": "string"
 }
 ```
 
 ## Request Parameters<a name="API_DetectKeyPhrases_RequestParameters"></a>
 
-For information about the parameters that are common to all actions, see Common Parameters\.
+For information about the parameters that are common to all actions, see [Common Parameters](CommonParameters.md)\.
 
 The request accepts the following data in JSON format\.
 
- ** LanguageCode **   
-The RFC 5646 language code for the input text\. If you specify the code for a language that Amazon Comprehend does not support, it returns and `UnsupportedLanguageException`\. For more information about RFC 5646, see [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.  
+ ** [LanguageCode](#API_DetectKeyPhrases_RequestSyntax) **   <a name="comprehend-DetectKeyPhrases-request-LanguageCode"></a>
+The language of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\. All documents must be in the same language\.  
 Type: String  
 Valid Values:` en | es`   
 Required: Yes
 
- ** Text **   
+ ** [Text](#API_DetectKeyPhrases_RequestSyntax) **   <a name="comprehend-DetectKeyPhrases-request-Text"></a>
 A UTF\-8 text string\. Each string must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
@@ -33,12 +33,12 @@ Required: Yes
 
 ```
 {
-   "KeyPhrases": [ 
+   "[KeyPhrases](#comprehend-DetectKeyPhrases-response-KeyPhrases)": [ 
       { 
-         "BeginOffset": number,
-         "EndOffset": number,
-         "Score": number,
-         "Text": "string"
+         "[BeginOffset](API_KeyPhrase.md#comprehend-Type-KeyPhrase-BeginOffset)": number,
+         "[EndOffset](API_KeyPhrase.md#comprehend-Type-KeyPhrase-EndOffset)": number,
+         "[Score](API_KeyPhrase.md#comprehend-Type-KeyPhrase-Score)": number,
+         "[Text](API_KeyPhrase.md#comprehend-Type-KeyPhrase-Text)": "string"
       }
    ]
 }
@@ -50,7 +50,7 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** KeyPhrases **   
+ ** [KeyPhrases](#API_DetectKeyPhrases_ResponseSyntax) **   <a name="comprehend-DetectKeyPhrases-response-KeyPhrases"></a>
 A collection of key phrases that Amazon Comprehend identified in the input text\. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection\.   
 Type: Array of [KeyPhrase](API_KeyPhrase.md) objects
 

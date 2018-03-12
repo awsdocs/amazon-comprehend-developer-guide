@@ -4,19 +4,19 @@ Describes an error that occurred while processing a document in a batch\. The op
 
 ## Contents<a name="API_BatchItemError_Contents"></a>
 
- **ErrorCode**   
+ **ErrorCode**   <a name="comprehend-Type-BatchItemError-ErrorCode"></a>
 The numeric error code of the error\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
 Required: No
 
- **ErrorMessage**   
+ **ErrorMessage**   <a name="comprehend-Type-BatchItemError-ErrorMessage"></a>
 A text description of the error\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
 Required: No
 
- **Index**   
+ **Index**   <a name="comprehend-Type-BatchItemError-Index"></a>
 The zero\-based index of the document in the input list\.  
 Type: Integer  
 Required: No

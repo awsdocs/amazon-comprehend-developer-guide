@@ -4,25 +4,25 @@ Provides information for filtering topic detection jobs\. For more information, 
 
 ## Contents<a name="API_TopicsDetectionJobFilter_Contents"></a>
 
- **JobName**   
+ **JobName**   <a name="comprehend-Type-TopicsDetectionJobFilter-JobName"></a>
   
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 256\.  
 Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: No
 
- **JobStatus**   
+ **JobStatus**   <a name="comprehend-Type-TopicsDetectionJobFilter-JobStatus"></a>
 Filters the list of topic detection jobs based on job status\. Returns only jobs with the specified status\.  
 Type: String  
 Valid Values:` SUBMITTED | IN_PROGRESS | COMPLETED | FAILED`   
 Required: No
 
- **SubmitTimeAfter**   
+ **SubmitTimeAfter**   <a name="comprehend-Type-TopicsDetectionJobFilter-SubmitTimeAfter"></a>
 Filters the list of jobs based on the time that the job was submitted for processing\. Only returns jobs submitted after the specified time\. Jobs are returned in ascending order, oldest to newest\.  
 Type: Timestamp  
 Required: No
 
- **SubmitTimeBefore**   
+ **SubmitTimeBefore**   <a name="comprehend-Type-TopicsDetectionJobFilter-SubmitTimeBefore"></a>
 Filters the list of jobs based on the time that the job was submitted for processing\. Only returns jobs submitted before the specified time\. Jobs are returned in descending order, newest to oldest\.  
 Type: Timestamp  
 Required: No

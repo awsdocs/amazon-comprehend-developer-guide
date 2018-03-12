@@ -6,58 +6,58 @@ Starts an asynchronous topic detection job\. Use the `DescribeTopicDetectionJob`
 
 ```
 {
-   "ClientRequestToken": "string",
-   "DataAccessRoleArn": "string",
-   "InputDataConfig": { 
-      "InputFormat": "string",
-      "S3Uri": "string"
+   "[ClientRequestToken](#comprehend-StartTopicsDetectionJob-request-ClientRequestToken)": "string",
+   "[DataAccessRoleArn](#comprehend-StartTopicsDetectionJob-request-DataAccessRoleArn)": "string",
+   "[InputDataConfig](#comprehend-StartTopicsDetectionJob-request-InputDataConfig)": { 
+      "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",
+      "[S3Uri](API_InputDataConfig.md#comprehend-Type-InputDataConfig-S3Uri)": "string"
    },
-   "JobName": "string",
-   "NumberOfTopics": number,
-   "OutputDataConfig": { 
-      "S3Uri": "string"
+   "[JobName](#comprehend-StartTopicsDetectionJob-request-JobName)": "string",
+   "[NumberOfTopics](#comprehend-StartTopicsDetectionJob-request-NumberOfTopics)": number,
+   "[OutputDataConfig](#comprehend-StartTopicsDetectionJob-request-OutputDataConfig)": { 
+      "[S3Uri](API_OutputDataConfig.md#comprehend-Type-OutputDataConfig-S3Uri)": "string"
    }
 }
 ```
 
 ## Request Parameters<a name="API_StartTopicsDetectionJob_RequestParameters"></a>
 
-For information about the parameters that are common to all actions, see Common Parameters\.
+For information about the parameters that are common to all actions, see [Common Parameters](CommonParameters.md)\.
 
 The request accepts the following data in JSON format\.
 
- ** ClientRequestToken **   
+ ** [ClientRequestToken](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-ClientRequestToken"></a>
 A unique identifier for the request\. If you do not set the client request token, Amazon Comprehend generates one\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 64\.  
 Pattern: `^[a-zA-Z0-9-]+$`   
 Required: No
 
- ** DataAccessRoleArn **   
+ ** [DataAccessRoleArn](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-DataAccessRoleArn"></a>
 The Amazon Resource Name \(ARN\) of the AWS Identity and Access Management \(IAM\) role that grants Amazon Comprehend read access to your input data\.   
 Type: String  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: Yes
 
- ** InputDataConfig **   
+ ** [InputDataConfig](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-InputDataConfig"></a>
 Specifies the format and location of the input data for the job\.  
 Type: [InputDataConfig](API_InputDataConfig.md) object  
 Required: Yes
 
- ** JobName **   
+ ** [JobName](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-JobName"></a>
 The identifier of the job\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 256\.  
 Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: No
 
- ** NumberOfTopics **   
+ ** [NumberOfTopics](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-NumberOfTopics"></a>
 The number of topics to detect\.  
 Type: Integer  
 Valid Range: Minimum value of 1\. Maximum value of 100\.  
 Required: No
 
- ** OutputDataConfig **   
+ ** [OutputDataConfig](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-OutputDataConfig"></a>
 Specifies where to send the output files\.  
 Type: [OutputDataConfig](API_OutputDataConfig.md) object  
 Required: Yes
@@ -66,8 +66,8 @@ Required: Yes
 
 ```
 {
-   "JobId": "string",
-   "JobStatus": "string"
+   "[JobId](#comprehend-StartTopicsDetectionJob-response-JobId)": "string",
+   "[JobStatus](#comprehend-StartTopicsDetectionJob-response-JobStatus)": "string"
 }
 ```
 
@@ -77,12 +77,12 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** JobId **   
+ ** [JobId](#API_StartTopicsDetectionJob_ResponseSyntax) **   <a name="comprehend-StartTopicsDetectionJob-response-JobId"></a>
 The identifier generated for the job\. To get the status of the job, use this identifier with the `DescribeTopicDetectionJob` operation\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.
 
- ** JobStatus **   
+ ** [JobStatus](#API_StartTopicsDetectionJob_ResponseSyntax) **   <a name="comprehend-StartTopicsDetectionJob-response-JobStatus"></a>
 The status of the job:   
 
 + SUBMITTED \- The job has been received and is queued for processing\.

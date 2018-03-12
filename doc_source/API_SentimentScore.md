@@ -4,22 +4,22 @@ Describes the level of confidence that Amazon Comprehend has in the accuracy of 
 
 ## Contents<a name="API_SentimentScore_Contents"></a>
 
- **Mixed**   
+ **Mixed**   <a name="comprehend-Type-SentimentScore-Mixed"></a>
 The level of confidence that Amazon Comprehend has in the accuracy of its detection of the `MIXED` sentiment\.  
 Type: Float  
 Required: No
 
- **Negative**   
+ **Negative**   <a name="comprehend-Type-SentimentScore-Negative"></a>
 The level of confidence that Amazon Comprehend has in the accuracy of its detection of the `NEGATIVE` sentiment\.  
 Type: Float  
 Required: No
 
- **Neutral**   
+ **Neutral**   <a name="comprehend-Type-SentimentScore-Neutral"></a>
 The level of confidence that Amazon Comprehend has in the accuracy of its detection of the `NEUTRAL` sentiment\.  
 Type: Float  
 Required: No
 
- **Positive**   
+ **Positive**   <a name="comprehend-Type-SentimentScore-Positive"></a>
 The level of confidence that Amazon Comprehend has in the accuracy of its detection of the `POSITIVE` sentiment\.  
 Type: Float  
 Required: No

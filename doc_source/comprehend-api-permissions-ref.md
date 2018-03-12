@@ -21,7 +21,7 @@ If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, 
 | [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) | comprehend:DescribeTopicsDetectionJob | \* | 
 | [DetectDominantLanguage](API_DetectDominantLanguage.md) | comprehend:DetectDominantLanguage | \* | 
 | [DetectEntities](API_DetectEntities.md) | comprehend:DetectEntities | \* | 
-| [[ERROR] BAD/MISSING LINK TEXT](API_DetectKeyPhrases.md) | comprehend:DetectKeyPhrases | \* | 
+| [DetectKeyPhrases](API_DetectKeyPhrases.md) | comprehend:DetectKeyPhrases | \* | 
 | [DetectSentiment](API_DetectSentiment.md) | comprehend:DetectSentiment | \* | 
 | [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) | comprehend:ListTopicsDectectionJobs | \* | 
 | [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) | comprehend:StartTopicsDetectionJob | \* | 

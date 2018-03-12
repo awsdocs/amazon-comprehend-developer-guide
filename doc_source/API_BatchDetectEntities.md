@@ -6,24 +6,24 @@ Inspects the text of a batch of documents for named entities and returns informa
 
 ```
 {
-   "LanguageCode": "string",
-   "TextList": [ "string" ]
+   "[LanguageCode](#comprehend-BatchDetectEntities-request-LanguageCode)": "string",
+   "[TextList](#comprehend-BatchDetectEntities-request-TextList)": [ "string" ]
 }
 ```
 
 ## Request Parameters<a name="API_BatchDetectEntities_RequestParameters"></a>
 
-For information about the parameters that are common to all actions, see Common Parameters\.
+For information about the parameters that are common to all actions, see [Common Parameters](CommonParameters.md)\.
 
 The request accepts the following data in JSON format\.
 
- ** LanguageCode **   
-The language of the input documents\. All documents must be in the same language\.  
+ ** [LanguageCode](#API_BatchDetectEntities_RequestSyntax) **   <a name="comprehend-BatchDetectEntities-request-LanguageCode"></a>
+The language of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\. All documents must be in the same language\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
 Required: Yes
 
- ** TextList **   
+ ** [TextList](#API_BatchDetectEntities_RequestSyntax) **   <a name="comprehend-BatchDetectEntities-request-TextList"></a>
 A list containing the text of the input documents\. The list can contain a maximum of 25 documents\. Each document must contain fewer than 5,000 bytes of UTF\-8 encoded characters\.  
 Type: Array of strings  
 Length Constraints: Minimum length of 1\.  
@@ -33,25 +33,25 @@ Required: Yes
 
 ```
 {
-   "ErrorList": [ 
+   "[ErrorList](#comprehend-BatchDetectEntities-response-ErrorList)": [ 
       { 
-         "ErrorCode": "string",
-         "ErrorMessage": "string",
-         "Index": number
+         "[ErrorCode](API_BatchItemError.md#comprehend-Type-BatchItemError-ErrorCode)": "string",
+         "[ErrorMessage](API_BatchItemError.md#comprehend-Type-BatchItemError-ErrorMessage)": "string",
+         "[Index](API_BatchItemError.md#comprehend-Type-BatchItemError-Index)": number
       }
    ],
-   "ResultList": [ 
+   "[ResultList](#comprehend-BatchDetectEntities-response-ResultList)": [ 
       { 
-         "Entities": [ 
+         "[Entities](API_BatchDetectEntitiesItemResult.md#comprehend-Type-BatchDetectEntitiesItemResult-Entities)": [ 
             { 
-               "BeginOffset": number,
-               "EndOffset": number,
-               "Score": number,
-               "Text": "string",
-               "Type": "string"
+               "[BeginOffset](API_Entity.md#comprehend-Type-Entity-BeginOffset)": number,
+               "[EndOffset](API_Entity.md#comprehend-Type-Entity-EndOffset)": number,
+               "[Score](API_Entity.md#comprehend-Type-Entity-Score)": number,
+               "[Text](API_Entity.md#comprehend-Type-Entity-Text)": "string",
+               "[Type](API_Entity.md#comprehend-Type-Entity-Type)": "string"
             }
          ],
-         "Index": number
+         "[Index](API_BatchDetectEntitiesItemResult.md#comprehend-Type-BatchDetectEntitiesItemResult-Index)": number
       }
    ]
 }
@@ -63,11 +63,11 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** ErrorList **   
+ ** [ErrorList](#API_BatchDetectEntities_ResponseSyntax) **   <a name="comprehend-BatchDetectEntities-response-ErrorList"></a>
 A list containing one [BatchItemError](API_BatchItemError.md) object for each document that contained an error\. The results are sorted in ascending order by the `Index` field and match the order of the documents in the input list\. If there are no errors in the batch, the `ErrorList` is empty\.  
 Type: Array of [BatchItemError](API_BatchItemError.md) objects
 
- ** ResultList **   
+ ** [ResultList](#API_BatchDetectEntities_ResponseSyntax) **   <a name="comprehend-BatchDetectEntities-response-ResultList"></a>
 A list of [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) objects containing the results of the operation\. The results are sorted in ascending order by the `Index` field and match the order of the documents in the input list\. If all of the documents contain an error, the `ResultList` is empty\.  
 Type: Array of [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) objects
 

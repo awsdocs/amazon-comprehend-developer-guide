@@ -6,17 +6,17 @@ Determines the dominant language of the input text\. For a list of languages tha
 
 ```
 {
-   "Text": "string"
+   "[Text](#comprehend-DetectDominantLanguage-request-Text)": "string"
 }
 ```
 
 ## Request Parameters<a name="API_DetectDominantLanguage_RequestParameters"></a>
 
-For information about the parameters that are common to all actions, see Common Parameters\.
+For information about the parameters that are common to all actions, see [Common Parameters](CommonParameters.md)\.
 
 The request accepts the following data in JSON format\.
 
- ** Text **   
+ ** [Text](#API_DetectDominantLanguage_RequestSyntax) **   <a name="comprehend-DetectDominantLanguage-request-Text"></a>
 A UTF\-8 text string\. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
@@ -26,10 +26,10 @@ Required: Yes
 
 ```
 {
-   "Languages": [ 
+   "[Languages](#comprehend-DetectDominantLanguage-response-Languages)": [ 
       { 
-         "LanguageCode": "string",
-         "Score": number
+         "[LanguageCode](API_DominantLanguage.md#comprehend-Type-DominantLanguage-LanguageCode)": "string",
+         "[Score](API_DominantLanguage.md#comprehend-Type-DominantLanguage-Score)": number
       }
    ]
 }
@@ -41,7 +41,7 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** Languages **   
+ ** [Languages](#API_DetectDominantLanguage_ResponseSyntax) **   <a name="comprehend-DetectDominantLanguage-response-Languages"></a>
 The languages that Amazon Comprehend detected in the input text\. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference\. For more information about RFC 5646, see [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.  
 Type: Array of [DominantLanguage](API_DominantLanguage.md) objects
 
