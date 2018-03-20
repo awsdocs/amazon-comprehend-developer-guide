@@ -40,8 +40,8 @@ aws comprehend detect-sentiment \
 The following example Java program detects the sentiment of input text\. You must specify the language of the input text\. 
 
 ```
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.services.comprehend.AmazonComprehend;
 import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.DetectSentimentRequest;
@@ -54,14 +54,16 @@ public class App
 
         String text = "It is raining today in Seattle";
 
-        BasicAWSCredentials awsCreds = new BasicAWSCredentials("access key ID", "secret access key");
-
-        AmazonComprehend comprehendClient = 
+        // Create credentials using a provider chain. For more information, see
+        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
+ 
+        AmazonComprehend comprehendClient =
             AmazonComprehendClientBuilder.standard()
-                                         .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
+                                         .withCredentials(awsCreds)
                                          .withRegion("region")
                                          .build();
-
+                                         
         // Call detectSentiment API
         System.out.println("Calling DetectSentiment");
         DetectSentimentRequest detectSentimentRequest = new DetectSentimentRequest().withText(text)

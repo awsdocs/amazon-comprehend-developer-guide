@@ -37,8 +37,8 @@ Amazon Comprehend responds with the following:
 The following example uses the `DetectDominantLanguage` operation with Java\.
 
 ```
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.services.comprehend.AmazonComprehend;
 import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.DetectDominantLanguageRequest;
@@ -50,12 +50,14 @@ public class App
     {
 
         String text = "It is raining today in Seattle";
-
-        BasicAWSCredentials awsCreds = new BasicAWSCredentials("access key ID", "secret access key");
-
-        AmazonComprehend comprehendClient = 
+        
+        // Create credentials using a provider chain. For more information, see
+        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
+ 
+        AmazonComprehend comprehendClient =
             AmazonComprehendClientBuilder.standard()
-                                         .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
+                                         .withCredentials(awsCreds)
                                          .withRegion("region")
                                          .build();
                                          
@@ -65,7 +67,7 @@ public class App
         DetectDominantLanguageResult detectDominantLanguageResult = comprehendClient.detectDominantLanguage(detectDominantLanguageRequest);
         detectDominantLanguageResult.getLanguages().forEach(System.out::println);
         System.out.println("Calling DetectDominantLanguage\n");
-        System.out.println( "Done" );
+        System.out.println("Done");
     }
 }
 ```

@@ -25,4 +25,4 @@ You can use the following batch operations:
 + [BatchDetectSentiment](API_BatchDetectSentiment.md)
 
 **Topic Modeling**  
-The `StartTopicsDetectionJob` operation starts an asynchronous operation that processes a set of documents stored in an Amazon S3 bucket to determine the topics in the document set\. Amazon Comprehend trains its topic model on the set of documents that you supply, and then assigns documents and topics based on the insights that it discovered\.
+The `StartTopicsDetectionJob` operation starts an asynchronous operation that processes a set of documents stored in an Amazon S3 bucket to determine the topics in the document set\. Amazon Comprehend trains its topic model on the corpus of documents that you supply, and then assigns documents and topics based on the insights that it discovered\.

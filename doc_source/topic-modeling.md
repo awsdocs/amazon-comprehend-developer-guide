@@ -14,7 +14,7 @@ For the most accurate results you should provide Amazon Comprehend with the larg
 
 Topic modeling is an asynchronous process\. You submit your list of documents to Amazon Comprehend from an Amazon S3 bucket using the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation\. The response is sent to an Amazon S3 bucket\. You can configure both the input and output buckets\. Get a list of the topic modeling jobs that you have submitted using the [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) operation and view information about a job using the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation\.
 
-Documents must be un UTF\-8 formatted text files\. You can submit your documents two ways\. The following table shows the options\.
+Documents must be in UTF\-8 formatted text files\. You can submit your documents two ways\. The following table shows the options\.
 
 
 | Format | Description | 
@@ -31,30 +31,34 @@ The first output file, `topic-terms.csv`, is a list of topics in the collection\
 
 | Topic | Term | Weight | 
 | --- | --- | --- | 
-| 000 | team | 26347\.04884 | 
-| 000 | game | 18297\.04884 | 
-| 000 | player | 15169\.04884 | 
-| 000 | season | 14524\.04884 | 
-| 000 | play | 12563\.04884 | 
-| 000 | yard | 12298\.04884 | 
-| 000 | coach | 10677\.04884 | 
-| 000 | games | 10579\.04884 | 
-| 000 | football | 10159\.04884 | 
-| 000 | quarterback | 8628\.048837 | 
-| 001 | cup | 12431\.04884 | 
-| 001 | food | 9474\.048837 | 
-| 001 | minutes | 8277\.048837 | 
-| 001 | add | 7572\.048837 | 
-| 001 | tablespoon | 6589\.048837 | 
-| 001 | oil | 6202\.048837 | 
-| 001 | pepper | 5362\.048837 | 
-| 001 | teaspoon | 5341\.048837 | 
-| 001 | wine | 5116\.048837 | 
-| 001 | sugar | 5023\.048837 | 
+| 000 | team | 0\.118533 | 
+| 000 | game | 0\.106072 | 
+| 000 | player | 0\.031625 | 
+| 000 | season | 0\.023633 | 
+| 000 | play | 0\.021118 | 
+| 000 | yard | 0\.024454 | 
+| 000 | coach | 0\.016012 | 
+| 000 | games | 0\.016191 | 
+| 000 | football | 0\.015049 | 
+| 000 | quarterback | 0\.014239 | 
+| 001 | cup | 0\.205236 | 
+| 001 | food | 0\.040686 | 
+| 001 | minutes | 0\.036062 | 
+| 001 | add | 0\.029697 | 
+| 001 | tablespoon | 0\.028789 | 
+| 001 | oil | 0\.021254 | 
+| 001 | pepper | 0\.022205 | 
+| 001 | teaspoon | 0\.020040 | 
+| 001 | wine | 0\.016588 | 
+| 001 | sugar | 0\.015101 | 
+
+The weights represent a probability distribution over the words in a given topic\. Since Amazon Comprehend returns only the top 10 words for each topic the weights won't sum to 1\.0\. In the rare cases where there are less than 10 words in a topic, the weights will sum to 1\.0\.
+
+The words are sorted by their discriminative power by looking at their occurrence across all topics\. Typically this is the same as their weight, but in some cases, such as the words "play" and "yard" in the table, this results in an order that is not the same as the weight\.
 
 You can specify the number of topics to return\. For example, if you ask Amazon Comprehend to return 25 topics, it returns the 25 most prominent topics in the collection\. Amazon Comprehend can detect up to 100 topics in a collection\. Choose the number of topics based on your knowledge of the domain\. It may take some experimentation to arrive at the correct number\. 
 
-The second file, `doc-topics.csv`, lists the documents associated with a topic and the proportion of the document that is concerned with the topic\. If you specified `ONE_DOC_PER_FILE` the document is identified by the file name\. If you specified `ONE_DOC_PER_LINE` the document is identifed by the file name and the line number within the file\. For example, Amazon Comprehend might return the following for a collection of documents submitted with one document per file:
+The second file, `doc-topics.csv`, lists the documents associated with a topic and the proportion of the document that is concerned with the topic\. If you specified `ONE_DOC_PER_FILE` the document is identified by the file name\. If you specified `ONE_DOC_PER_LINE` the document is identified by the file name and the 0\-indexed line number within the file\. For example, Amazon Comprehend might return the following for a collection of documents submitted with one document per file:
 
 
 | Document | Topic | Proportion | 

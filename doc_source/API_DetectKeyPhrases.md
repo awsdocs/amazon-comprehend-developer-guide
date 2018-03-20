@@ -80,7 +80,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob lives in Seattle\. He is a software engineer at Amazon\.", the API returns the following:
 
-#### <a name="w3ab1c23b5c29c15b3b5"></a>
+#### <a name="w3ab1c22b5c29c15b3b5"></a>
 
 ```
           {

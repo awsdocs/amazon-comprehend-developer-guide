@@ -81,7 +81,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob ordered two sandwiches and three ice cream cones today from a store in Seattle\.", the operation returns the following:
 
-#### <a name="w3ab1c23b5c26c15b3b5"></a>
+#### <a name="w3ab1c22b5c26c15b3b5"></a>
 
 ```
     {

@@ -31,7 +31,7 @@ The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDet
 | --- | --- | 
 | Documents per request | 25 | 
 
-If you plan to send more than 20 requests per second, you should consider using the batch operations\. Batch operations enable you to send more documents in each request, but have a lower throttling limit\. For more information about throttling limits see [ Amazon Comprehend Limits ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. For more information about using the batch APIs, see [Batch Processing Documents](how-batch.md)\.
+If you plan to send more than 20 requests per second, you should consider using the batch operations\. Batch operations enable you to send more documents in each request which may result in higher throughput\. For example, when you use the `DetectDominantLanguage` operation, you can send up to 20 documents per second\. However, if you use the `BatchRequestDominantLanguage` operation, you can send up to 250 documents per second, but processing speed may be lower\. For more information about throttling limits see [ Amazon Comprehend Limits ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. For more information about using the batch APIs, see [Batch Processing Documents](how-batch.md)\.
 
 ## Language Detection<a name="limits-language-detection"></a>
 

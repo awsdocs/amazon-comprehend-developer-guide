@@ -49,8 +49,8 @@ Amazon Comprehend responds with the following:
 The following example uses the `DetectEntities` operation with Java\. You must specify the language of the input text\.
 
 ```
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.services.comprehend.AmazonComprehend;
 import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.DetectEntitiesRequest;
@@ -63,14 +63,16 @@ public class App
 
         String text = "It is raining today in Seattle";
 
-        BasicAWSCredentials awsCreds = new BasicAWSCredentials("access key ID", "secret access key");
-
-        AmazonComprehend comprehendClient = 
+        // Create credentials using a provider chain. For more information, see
+        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
+ 
+        AmazonComprehend comprehendClient =
             AmazonComprehendClientBuilder.standard()
-                                         .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
+                                         .withCredentials(awsCreds)
                                          .withRegion("region")
                                          .build();
-
+                                         
         // Call detectEntities API
         System.out.println("Calling DetectEntities");
         DetectEntitiesRequest detectEntitiesRequest = new DetectEntitiesRequest().withText(text)

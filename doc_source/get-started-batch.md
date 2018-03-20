@@ -85,7 +85,7 @@ HTTP Status Code: 400    See Also   For more information about using this API in
 
 ```
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;                
 import com.amazonaws.services.comprehend.AmazonComprehend;
 import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.BatchDetectEntitiesItemResult;
@@ -98,15 +98,18 @@ public class App
     public static void main( String[] args )
     {
  
-        AmazonComprehend client = AmazonComprehendClientBuilder.standard()
-                                                               .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
-                                                               .withRegion("region")
-                                                               .build();
+        // Create credentials using a provider chain. For more information, see
+        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
  
- 
- 
- 
+        AmazonComprehend comprehendClient =
+            AmazonComprehendClientBuilder.standard()
+                                         .withCredentials(awsCreds)
+                                         .withRegion("region")
+                                         .build();
+                                         
         String[] textList = {"I love Seattle", "Today is Sunday", "Tomorrow is Monday", "I love Seattle"};
+        
         // Call detectEntities API
         System.out.println("Calling BatchDetectEntities");
         BatchDetectEntitiesRequest batchDetectEntitiesRequest = new BatchDetectEntitiesRequest().withTextList(textList)
@@ -170,7 +173,7 @@ The examples are formatted for Unix, Linux, and macOS\. For Windows, replace the
 The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) operation determines the dominant language of each document in a batch\. For a list of the languages that Amazon Comprehend can detect, see [Detecting the Primary Language ](how-languages.md)\. The following AWS CLI command calls the `BatchDetectDominantLanguage` operation\.
 
 ```
-aws insight batch-detect-dominant-language \
+aws comprehend batch-detect-dominant-language \
     --endpoint endpoint \
     --region region \
     --cli-input-json file://path to input file/process.json
@@ -215,7 +218,7 @@ The following is the response from the `BatchDetectDominantLanguage` operation:
 Use the [BatchDetectEntities](API_BatchDetectEntities.md) operation to find the entities present in a batch of documents\. For more information about entities, see [Detecting Entities](how-entities.md)\. The following AWS CLI command calls the `BatchDetectEntities` operation\.
 
 ```
-aws insight batch-detect-entities \
+aws comprehend batch-detect-entities \
     --endpoint endpoint \
     --region region \
     --cli-input-json file://path to input file/process.json
@@ -226,7 +229,7 @@ aws insight batch-detect-entities \
 The [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) operation returns the key noun phrases in a batch of documents\. The following AWS CLI command calls the `BatchDetectKeyNounPhrases` operation\.
 
 ```
-aws insight batch-detect-key-phrases
+aws comprehend batch-detect-key-phrases
     --endpoint endpoint
     --region region
     --cli-input-json file://path to input file/process.json
@@ -237,7 +240,7 @@ aws insight batch-detect-key-phrases
 Detect the overall sentiment of a batch of documents using the [BatchDetectSentiment](API_BatchDetectSentiment.md) operation\. The following AWS CLI command calls the `BatchDetectSentiment` operation\.
 
 ```
-aws insight batch-detect-sentiment \
+aws comprehend batch-detect-sentiment \
     --endpoint endpoint \
     --region region \
     --cli-input-json file://path to input file/process.json

@@ -135,7 +135,8 @@ You will get the following JSON in response:
 The following Java program detects the topics in a document collection\. It uses the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation to start detecting topics\. Next, it uses the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation to check the status of the topic detection\. Finally, it calls [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) to show a list of all jobs submitted for the account\.
 
 ```
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;                
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.comprehend.AmazonComprehend;
 import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
@@ -152,13 +153,16 @@ public class App
 {
     public static void main( String[] args )
     {
+        // Create credentials using a provider chain. For more information, see
+        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+         AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
  
-        AmazonComprehend comprehendClient = 
+        AmazonComprehend comprehendClient =
             AmazonComprehendClientBuilder.standard()
-                                         .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
-                                         .withRegion("us-west-2")
+                                         .withCredentials(awsCreds)
+                                         .withRegion("region")
                                          .build();
- 
+                                         
         final String inputS3Uri = "s3://input bucket/input path";
         final InputFormat inputDocFormat = InputFormat.ONE_DOC_PER_FILE;
         final String outputS3Uri = "s3://output bucket/output path";
