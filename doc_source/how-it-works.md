@@ -2,7 +2,7 @@
 
 Amazon Comprehend uses a pre\-trained model to examine a document or set of documents to gather insights about the document set\. Amazon Comprehend can examine documents in either English or Spanish\. The model is continuously trained on a large body of text so that there is no need for you to provide training data\. Amazon Comprehend provides the following operations:
 
-+ [DetectDominantLanguage](API_DetectDominantLanguage.md) – to detect the dominant language in a document\. Amazon Comprehend can detect 101 different languages\.
++ [DetectDominantLanguage](API_DetectDominantLanguage.md) – to detect the dominant language in a document\. Amazon Comprehend can detect 100 different languages\.
 
 + [DetectEntities](API_DetectEntities.md) – to detect the entities, such as persons or places, in the document\.
 
