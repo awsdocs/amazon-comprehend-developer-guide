@@ -1,6 +1,6 @@
 # Topic Modeling<a name="topic-modeling"></a>
 
-You can use Amazon Comprehend to examine the content of a collection of documents to determine common themes\. For example, you can give Amazon Comprehend a collection of news articles, and it will determine the subjects, such as sports, politics, or entertainment\. The text in the documents doesn't need to be annotated\. 
+You can use Amazon Comprehend to examine the content of a collection of documents to determine common themes\. Amazon Comprehend can examine documents in English or Spanish\. For example, you can give Amazon Comprehend a collection of news articles, and it will determine the subjects, such as sports, politics, or entertainment\. The text in the documents doesn't need to be annotated\. 
 
 Amazon Comprehend uses a [Latent Dirichlet Allocation](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)\-based learning model to determine the topics in a set of documents\. It examines each document to determine the context and meaning of a word\. The set of words that frequently belong to the same context across the entire document set make up a topic\.
 
@@ -10,9 +10,12 @@ For example, the word "glucose" in an article that talks predominantly about spo
 
 Each word associated with a topic is given a weight that indicates how much the word helps define the topic\. The weight is an indication of how many times the word occurs in the topic compared to other words in the topic, across the entire document set\.
 
-For the most accurate results you should provide Amazon Comprehend with the largest possible corpus to work with\. For best results, you should use at least 1,000 documents in each topic modeling job\.
+For the most accurate results you should provide Amazon Comprehend with the largest possible corpus to work with\. For best results:
++ You should use at least 1,000 documents in each topic modeling job\.
++ Each document should be at least 3 sentences long\.
++ If a document consists of mostly numeric data, you should remove it from the corpus\.
 
-Topic modeling is an asynchronous process\. You submit your list of documents to Amazon Comprehend from an Amazon S3 bucket using the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation\. The response is sent to an Amazon S3 bucket\. You can configure both the input and output buckets\. Get a list of the topic modeling jobs that you have submitted using the [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) operation and view information about a job using the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation\.
+Topic modeling is an asynchronous process\. You submit your list of documents to Amazon Comprehend from an Amazon S3 bucket using the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation\. The response is sent to an Amazon S3 bucket\. You can configure both the input and output buckets\. Get a list of the topic modeling jobs that you have submitted using the [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) operation and view information about a job using the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation\. Content delivered to Amazon S3 buckets might contain customer content\. For more information about removing sensitive data, see [How Do I Empty an S3 Bucket?](http://docs.aws.amazon.com/AmazonS3/latest/user-guide/empty-bucket.html) or [How Do I Delete an S3 Bucket?](http://docs.aws.amazon.com/AmazonS3/latest/user-guide/delete-bucket.html)\.
 
 Documents must be in UTF\-8 formatted text files\. You can submit your documents two ways\. The following table shows the options\.
 
@@ -20,7 +23,7 @@ Documents must be in UTF\-8 formatted text files\. You can submit your documents
 | Format | Description | 
 | --- | --- | 
 | One document per file | Each file contains one input document\. This is best for collections of large documents\. | 
-| One document per line | The input is a single file\. Each line in the file is considered a document\. This is best for short documents, such as social media postings\. | 
+| One document per line | The input is a single file\. Each line in the file is considered a document\. This is best for short documents, such as social media postings\. Each line must end with a line feed \(LF, \\n\), a carriage return \(CR, \\r\), or both \(CRLF, \\r\\n\)\. The Unicode line separator \(u\+2028\) can't be used to end a line\. | 
 
 For more information, see the [InputDataConfig](API_InputDataConfig.md) data type\.
 
@@ -70,7 +73,3 @@ The second file, `doc-topics.csv`, lists the documents associated with a topic a
 | sample\-docN | 000 | 3\.57E\-04 | 
 
 Amazon Comprehend utilizes information from the *Lemmatization Lists Dataset by MBM*, which is made available [here](http://www.lexiconista.com/datasets/lemmatization/) under the [Open Database License \(ODbL\) v1\.0](https://opendatacommons.org/licenses/odbl/1-0/)\.
-
-## Role\-based Data Access<a name="detect-topics-role-auth"></a>
-
-To use the Amazon Comprehend topic modeling operations, you must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection\. For more information, see [Role\-Based Permissions Required for Topic Detection](access-control-managing-permissions.md#auth-role-permissions)\.

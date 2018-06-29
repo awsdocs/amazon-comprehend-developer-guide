@@ -1,6 +1,6 @@
-# Detecting Entities<a name="how-entities"></a>
+# Entities<a name="how-entities"></a>
 
-Use the [DetectEntities](API_DetectEntities.md) and [BatchDetectEntities](API_BatchDetectEntities.md) operations to detect entities in a document\. A *entity* is a textual reference to the unique name of a real\-world object such as people, places, and commercial items, and to precise references to measures such as dates and quantities\.
+Use the [DetectEntities](API_DetectEntities.md), [BatchDetectEntities](API_BatchDetectEntities.md), and [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operations to detect entities in a document\. An *entity* is a textual reference to the unique name of a real\-world object such as people, places, and commercial items, and to precise references to measures such as dates and quantities\.
 
 For example, in the text "John moved to 1313 Mockingbird Lane in 2012," "John" might be recognized as a `PERSON`, "1313 Mockingbird Lane" might be recognized as a `LOCATION`, and "2012" might be recognized as a `DATE`\.
 
@@ -20,3 +20,34 @@ The following table lists the entity types\.
 |  PERSON  | Individuals, groups of people, nicknames, fictional characters | 
 |  QUANTITY  | A quantified amount, such as currency, percentages, numbers, bytes, etc\. | 
 |  TITLE  | An official name given to any creation or creative work, such as movies, books, songs, etc\. | 
+
+You can use any of the following operations to detect entities in a document or set of documents\.
++ [DetectEntities](API_DetectEntities.md)
++ [BatchDetectEntities](API_BatchDetectEntities.md)
++ [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md)
+
+The operations return a list of [Entity](API_Entity.md) objects, one for each entity in the document\. The `BatchDetectEntities` operation returns a list of `Entity` objects, one list for each document in the batch\. The `StartEntitiesDetectionJob` operation starts an asynchronous job that produces a file containing a list of `Entity` objects for each document in the job\.
+
+The following example is the response from the `DetectEntities` operation\.
+
+```
+{
+    "Entities": [
+        {
+            "Text": "today",
+            "Score": 0.97,
+            "Type": "DATE",
+            "BeginOffset": 14,
+            "EndOffset": 19
+        },
+        {
+            "Text": "Seattle",
+            "Score": 0.95,
+            "Type": "LOCATION",
+            "BeginOffset": 23,
+            "EndOffset": 30
+        }
+    ],
+    "LanguageCode": "en"
+}
+```

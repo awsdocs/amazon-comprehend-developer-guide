@@ -2,10 +2,11 @@
 
 To determine the overall emotional tone of text, use the [DetectSentiment](API_DetectSentiment.md) operation\. To detect the sentiment in up to 25 documents in a batch, use the [BatchDetectSentiment](API_BatchDetectSentiment.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
 
-
+**Topics**
 + [Detecting Sentiment Using the AWS Command Line Interface](#get-started-api-sentiment-cli)
 + [Detecting Sentiment Using the AWS SDK for Java](#get-started-api-sentiment-java)
 + [Detecting Sentiment Using the AWS SDK for Python \(Boto\)](#get-started-api-sentiment-python)
++ [Detecting Sentiment Using the AWS SDK for \.NET](#get-started-api-sentiment-c-sharp)
 
 ## Detecting Sentiment Using the AWS Command Line Interface<a name="get-started-api-sentiment-cli"></a>
 
@@ -91,4 +92,38 @@ text = "It is raining today in Seattle"
 print('Calling DetectSentiment')
 print(json.dumps(comprehend.detect_sentiment(Text=text, LanguageCode='en'), sort_keys=True, indent=4))
 print('End of DetectSentiment\n')
+```
+
+## Detecting Sentiment Using the AWS SDK for \.NET<a name="get-started-api-sentiment-c-sharp"></a>
+
+The \.NET example in this section uses the [AWS SDK for \.NET](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
+
+```
+using System;
+using Amazon.Comprehend;
+using Amazon.Comprehend.Model;
+
+namespace Comprehend
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String text = "It is raining today in Seattle";
+
+            AmazonComprehendClient comprehendClient = new AmazonComprehendClient(Amazon.RegionEndpoint.USWest2);
+
+            // Call DetectKeyPhrases API
+            Console.WriteLine("Calling DetectSentiment");
+            DetectSentimentRequest detectSentimentRequest = new DetectSentimentRequest()
+            {
+                Text = text,
+                LanguageCode = "en"
+            };
+            DetectSentimentResponse detectSentimentResponse = comprehendClient.DetectSentiment(detectSentimentRequest);
+            Console.WriteLine(detectSentimentResponse.Sentiment);
+            Console.WriteLine("Done");
+        }
+    }
+}
 ```

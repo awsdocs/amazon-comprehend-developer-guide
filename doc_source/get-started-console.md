@@ -2,7 +2,7 @@
 
 The easiest way to get started using Amazon Comprehend is to use the console to analyze a short text file\. If you haven't reviewed the concepts and terminology in [How It Works](how-it-works.md), we recommend that you do that before proceeding\.
 
-
+**Topics**
 + [Analyzing Documents Using the Console](get-started-console-analysis.md)
 + [Creating a Topic Modeling Job Using the Console](getting-started-console-topics.md)
 

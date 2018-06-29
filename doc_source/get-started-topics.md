@@ -1,20 +1,19 @@
 # Topic Modeling<a name="get-started-topics"></a>
 
- To determine the topics in a document set, use the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) to start an asynchronous job\. 
+ To determine the topics in a document set, use the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) to start an asynchronous job\. You can monitor topics in documents written in English or Spanish\.
 
-
+**Topics**
 + [Before You Start](#topics-before)
 + [Topic Modeling Using the AWS Command Line Interface](#topics-cli)
 + [Topic Modeling Using the AWS SDK for Java](#topic-java)
 + [Topic Modeling Using the AWS SDK for Python \(Boto\)](#topic-python)
++ [Topic Modeling Using the AWS SDK for \.NET](#topic-csharp)
 
 ## Before You Start<a name="topics-before"></a>
 
 Before you start, make sure that you have:
-
 + **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input and output\. The buckets must be in the same region as the API that you are calling\.
-
-+ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-Based Permissions Required for Topic Detection](access-control-managing-permissions.md#auth-role-permissions)\.
++ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-Based Permissions Required for Asynchronous Operations](access-control-managing-permissions.md#auth-role-permissions)\.
 
 ## Topic Modeling Using the AWS Command Line Interface<a name="topics-cli"></a>
 
@@ -234,4 +233,75 @@ print('describe_topics_detection_job_result: ' + json.dumps(describe_topics_dete
 list_topics_detection_jobs_result = comprehend.list_topics_detection_jobs()
  
 print('list_topics_detection_jobs_result: ' + json.dumps(list_topics_detection_jobs_result, default=json_util.default))
+```
+
+## Topic Modeling Using the AWS SDK for \.NET<a name="topic-csharp"></a>
+
+The following C\# program detects the topics in a document collection\. It uses the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation to start detecting topics\. Next, it uses the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation to check the status of the topic detection\. Finally, it calls [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) to show a list of all jobs submitted for the account\.
+
+The \.NET example in this section uses the [AWS SDK for \.NET](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
+
+```
+using System;
+using Amazon.Comprehend;
+using Amazon.Comprehend.Model;
+
+namespace Comprehend
+{
+    class Program
+    {
+        // Helper method for printing properties
+        static private void PrintJobProperties(TopicsDetectionJobProperties props)
+        {
+            Console.WriteLine("JobId: {0}, JobName: {1}, JobStatus: {2}, NumberOfTopics: {3}\nInputS3Uri: {4}, InputFormat: {5}, OutputS3Uri: {6}",
+                props.JobId, props.JobName, props.JobStatus, props.NumberOfTopics,
+                props.InputDataConfig.S3Uri, props.InputDataConfig.InputFormat, props.OutputDataConfig.S3Uri);
+        }
+
+        static void Main(string[] args)
+        {
+            String text = "It is raining today in Seattle";
+
+            AmazonComprehendClient comprehendClient = new AmazonComprehendClient(Amazon.RegionEndpoint.USWest2);
+
+            String inputS3Uri = "s3://input bucket/input path";
+            InputFormat inputDocFormat = InputFormat.ONE_DOC_PER_FILE;
+            String outputS3Uri = "s3://output bucket/output path";
+            String dataAccessRoleArn = "arn:aws:iam::account ID:role/data access role";
+            int numberOfTopics = 10;
+
+            StartTopicsDetectionJobRequest startTopicsDetectionJobRequest = new StartTopicsDetectionJobRequest()
+            {
+                InputDataConfig = new InputDataConfig()
+                {
+                    S3Uri = inputS3Uri,
+                    InputFormat = inputDocFormat
+                },
+                OutputDataConfig = new OutputDataConfig()
+                {
+                    S3Uri = outputS3Uri
+                },
+                DataAccessRoleArn = dataAccessRoleArn,
+                NumberOfTopics = numberOfTopics
+            };
+
+            StartTopicsDetectionJobResponse startTopicsDetectionJobResponse = comprehendClient.StartTopicsDetectionJob(startTopicsDetectionJobRequest);
+
+            String jobId = startTopicsDetectionJobResponse.JobId;
+            Console.WriteLine("JobId: " + jobId);
+
+            DescribeTopicsDetectionJobRequest describeTopicsDetectionJobRequest = new DescribeTopicsDetectionJobRequest()
+            {
+                JobId = jobId
+            };
+
+            DescribeTopicsDetectionJobResponse describeTopicsDetectionJobResponse = comprehendClient.DescribeTopicsDetectionJob(describeTopicsDetectionJobRequest);
+            PrintJobProperties(describeTopicsDetectionJobResponse.TopicsDetectionJobProperties);
+
+            ListTopicsDetectionJobsResponse listTopicsDetectionJobsResponse = comprehendClient.ListTopicsDetectionJobs(new ListTopicsDetectionJobsRequest());
+            foreach (TopicsDetectionJobProperties props in listTopicsDetectionJobsResponse.TopicsDetectionJobPropertiesList)
+                PrintJobProperties(props);
+        }
+    }
+}
 ```

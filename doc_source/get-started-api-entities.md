@@ -2,10 +2,11 @@
 
 To determine the named entities in a document, use the Amazon Comprehend [DetectEntities](API_DetectEntities.md) operation\. To detect entities in up to 25 documents in a batch, use the [BatchDetectEntities](API_BatchDetectEntities.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
 
-
+**Topics**
 + [Detecting Named Entities Using the AWS Command Line Interface](#get-started-api-entities-cli)
 + [Detecting Named Entities Using the AWS SDK for Java](#get-started-api-entities-java)
 + [Detecting Named Entities Using the AWS SDK for Python \(Boto\)](#get-started-api-entities-python)
++ [Detecting Entities Using the AWS SDK for \.NET](#get-started-api-entities-c-sharp)
 
 ## Detecting Named Entities Using the AWS Command Line Interface<a name="get-started-api-entities-cli"></a>
 
@@ -98,4 +99,40 @@ text = "It is raining today in Seattle"
 print('Calling DetectEntities')
 print(json.dumps(comprehend.detect_entities(Text=text, LanguageCode='en'), sort_keys=True, indent=4))
 print('End of DetectEntities\n')
+```
+
+## Detecting Entities Using the AWS SDK for \.NET<a name="get-started-api-entities-c-sharp"></a>
+
+The \.NET example in this section uses the [AWS SDK for \.NET](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
+
+```
+using System;
+using Amazon.Comprehend;
+using Amazon.Comprehend.Model;
+
+namespace Comprehend
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String text = "It is raining today in Seattle";
+
+            AmazonComprehendClient comprehendClient = new AmazonComprehendClient(Amazon.RegionEndpoint.USWest2);
+
+            // Call DetectEntities API
+            Console.WriteLine("Calling DetectEntities\n");
+            DetectEntitiesRequest detectEntitiesRequest =  new DetectEntitiesRequest()
+            {
+                Text = text,
+                LanguageCode = "en"
+            };
+            DetectEntitiesResponse detectEntitiesResponse = comprehendClient.DetectEntities(detectEntitiesRequest);
+            foreach (Entity e in detectEntitiesResponse.Entities)
+                Console.WriteLine("Text: {1}, Type: {1}, Score: {2}, BeginOffset: {3}, EndOffset: {4}", 
+                    e.Text, e.Type, e.Score, e.BeginOffset, e.EndOffset);
+            Console.WriteLine("Done");
+        }
+    }
+}
 ```

@@ -8,21 +8,16 @@ The console displays sample text and the analysis of that text:
 
 ![\[The Amazon Comprehend input box.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-image-10.png)
 
-You can replace the sample text with your own text and then choose **Analyze** to get an analysis of your text\.
+You can replace the sample text with your own text in English or Spanish and then choose **Analyze** to get an analysis of your text\.
 
 The text is color\-coded to indicate the entity type of significant words:
-
 + Orange tags identify locations\.
-
 + Brown tags identify dates\.
-
 + Magenta tags identify persons\.
-
 + Blue tags identify organizations\.
-
 + Black tags identify other entities that don't fit into any of the other entity categories\.
 
-For more information, see [Detecting Entities](how-entities.md)
+For more information, see [Entities](how-entities.md)
 
 On the right side of the console, the **Analysis** pane shows more information about the text\.
 
@@ -38,7 +33,7 @@ The **Key phrases** section of the **Analysis** pane lists key noun phrases that
 
 For an alternative view of the results, choose **List** or **JSON** \. The JSON structure is the same as the one returned by the [DetectKeyPhrases](API_DetectKeyPhrases.md) operation\.
 
-The **Language** section shows the dominant language for the sample text and the Confidence score\. The Confidence score represents the level of confidence that Amazon Comprehend has that it's detected the dominant language correctly\. Amazon Comprehend can recognize 100 languages\. For more information, see [Detecting the Primary Language ](how-languages.md)\.
+The **Language** section shows the dominant language for the sample text and the Confidence score\. The Confidence score represents the level of confidence that Amazon Comprehend has that it's detected the dominant language correctly\. Amazon Comprehend can recognize 100 languages\. For more information, see [Dominant Language](how-languages.md)\.
 
 ![\[The Language section of the Amazon Comprehend Analysis pane.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-image-40.png)
 

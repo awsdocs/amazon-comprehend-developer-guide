@@ -6,7 +6,7 @@ To run the AWS CLI and Python examples, you need to install the AWS CLI\. For mo
 
 To run the Java examples, you need to install the AWS SDK for Java\. For instructions for installing the SDK for Java, see [ Set up the AWS SDK for Java](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-install.html)\.
 
-
+**Topics**
 + [Detecting the Dominant Language](get-started-api-dominant-language.md)
 + [Detecting Named Entities](get-started-api-entities.md)
 + [Detecting Key Phrases](get-started-api-key-phrases.md)

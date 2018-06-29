@@ -1,10 +1,16 @@
-# Batch Processing Documents<a name="how-batch"></a>
+# Multiple Document Synchronous Processing<a name="how-batch"></a>
 
-When you have multiple documents that you want to process, you can use batch operations to send more than one document to Amazon Comprehend at a time\. You can send up to 25 documents in each batch\. Amazon Comprehend sends back a list of responses, one for each document in the batch\. 
+When you have multiple documents that you want to process, you can use the `Batch*` operations to send more than one document to Amazon Comprehend at a time\. You can send up to 25 documents in each request\. Amazon Comprehend sends back a list of responses, one for each document in the request\. 
 
-Using the batch operations is identical to calling the single document APIs for each of the documents in the request\. Calling the batch APIs can result in better performance for your applications\.
+You can use the following operations to process multiple documents in a single request\. Requests made with these operations are synchronous\. Your application calls the operation and then waits for the response from the service\. 
++ [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md)
++ [BatchDetectEntities](API_BatchDetectEntities.md)
++ [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md)
++ [BatchDetectSentiment](API_BatchDetectSentiment.md)
 
-The input to the batch APIs is a JSON structure containing the documents to process\. For all operations except `BatchDetectDominantLanguage`, you must set the input language\. You can set only one input language for each batch\. For example, the following is the input to the `BatchDetectEntities` operation\. It contains two documents and is in English\.
+Using the `Batch*` operations is identical to calling the single document APIs for each of the documents in the request\. Using these APIs can result in better performance for your applications\.
+
+The input to each of the APIs is a JSON structure containing the documents to process\. For all operations except `BatchDetectDominantLanguage`, you must set the input language\. You can set only one input language for each request\. For example, the following is the input to the `BatchDetectEntities` operation\. It contains two documents and is in English\.
 
 ```
 {
@@ -16,7 +22,7 @@ The input to the batch APIs is a JSON structure containing the documents to proc
 }
 ```
 
-The response from a batch operation contains two lists, the `ResultList` and the `ErrorList`\. The `ResultList` contains one record for each document that was successfully processed\. The result for each document in the batch is identical to the result you would get if you ran a single document operation on the document\. The results for each document are assigned an index based on the order of the documents in the input file\. The response from the `BatchDetectEntities` operation is:
+The response from a `Batch*` operation contains two lists, the `ResultList` and the `ErrorList`\. The `ResultList` contains one record for each document that was successfully processed\. The result for each document in the request is identical to the result you would get if you ran a single document operation on the document\. The results for each document are assigned an index based on the order of the documents in the input file\. The response from the `BatchDetectEntities` operation is:
 
 ```
 {
@@ -64,7 +70,7 @@ The response from a batch operation contains two lists, the `ResultList` and the
 }
 ```
 
-When an error occurs in the batch request the response contains an `ErrorList` that identifies the documents that contained an error\. The document is identified by its index in the input list\. For example, the following input to the `BatchDetectLanguage` operation contains a document that cannot be processed:
+When an error occurs in the request the response contains an `ErrorList` that identifies the documents that contained an error\. The document is identified by its index in the input list\. For example, the following input to the `BatchDetectLanguage` operation contains a document that cannot be processed:
 
 ```
 {

@@ -11,24 +11,17 @@ You can use the Amazon Comprehend console to create and manage asynchronous topi
 1. Choose the data source to use\. You can use either sample data or you can analyze your own data stored in an Amazon S3 bucket\. If you use the sample dataset, the topic modeling job analyzes text from this collection of articles: [https://s3\.amazonaws\.com/public\-sample\-attributions/Attributions\.txt](https://s3.amazonaws.com/public-sample-attributions/Attributions.txt)
 
 1. If you chose to use your own data, provide the following information in the **Choose input data** section:
-
    + **S3 data location** – An Amazon S3 data bucket that contains the documents to analyze\. You can choose the folder icon to browse to the location of your data\. The bucket must be in the same region as the API that you are calling\.
-
    + **Input format** – Choose whether in input data is contained in one document per file, or if there is one document per line in a file\.
-
    + **Number of topics** – The number of topics to return\.
-
    + **Job name** – A name that identifies the particular job\.
 
 1. In the **Choose output location** section, provide the following:
-
    + **S3 data location** – an Amazon S3 data bucket where the results of the analysis will be written\. The bucket must be in the same region as the API that your are calling\.
 
 1. In the **Choose an IAM role** section, either select an existing IAM role or create a new one\.
-
    + **Choose an existing IAM role** – Choose this option if you already have an IAM role with permissions to access the input and output Amazon S3 buckets\.
-
-   + **Create a new IAM role** – Choose this option when you want to create a new IAM role with the proper permissions for Amazon Comprehend to access the input and output buckets\. For more information about the permissions given to the IAM role, see [Role\-Based Permissions Required for Topic Detection](access-control-managing-permissions.md#auth-role-permissions)\.
+   + **Create a new IAM role** – Choose this option when you want to create a new IAM role with the proper permissions for Amazon Comprehend to access the input and output buckets\. For more information about the permissions given to the IAM role, see [Role\-Based Permissions Required for Asynchronous Operations](access-control-managing-permissions.md#auth-role-permissions)\.
 
 1. When you have finished filling out the form, choose **Create job** to create and start the topic detection job\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-60.png)

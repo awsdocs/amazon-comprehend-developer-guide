@@ -1,25 +1,30 @@
 # Actions<a name="API_Operations"></a>
 
 The following actions are supported:
-
 +  [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) 
-
 +  [BatchDetectEntities](API_BatchDetectEntities.md) 
-
 +  [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) 
-
 +  [BatchDetectSentiment](API_BatchDetectSentiment.md) 
-
++  [DescribeDominantLanguageDetectionJob](API_DescribeDominantLanguageDetectionJob.md) 
++  [DescribeEntitiesDetectionJob](API_DescribeEntitiesDetectionJob.md) 
++  [DescribeKeyPhrasesDetectionJob](API_DescribeKeyPhrasesDetectionJob.md) 
++  [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md) 
 +  [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) 
-
 +  [DetectDominantLanguage](API_DetectDominantLanguage.md) 
-
 +  [DetectEntities](API_DetectEntities.md) 
-
 +  [DetectKeyPhrases](API_DetectKeyPhrases.md) 
-
 +  [DetectSentiment](API_DetectSentiment.md) 
-
++  [ListDominantLanguageDetectionJobs](API_ListDominantLanguageDetectionJobs.md) 
++  [ListEntitiesDetectionJobs](API_ListEntitiesDetectionJobs.md) 
++  [ListKeyPhrasesDetectionJobs](API_ListKeyPhrasesDetectionJobs.md) 
++  [ListSentimentDetectionJobs](API_ListSentimentDetectionJobs.md) 
 +  [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) 
-
++  [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) 
++  [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) 
++  [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md) 
++  [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) 
 +  [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) 
++  [StopDominantLanguageDetectionJob](API_StopDominantLanguageDetectionJob.md) 
++  [StopEntitiesDetectionJob](API_StopEntitiesDetectionJob.md) 
++  [StopKeyPhrasesDetectionJob](API_StopKeyPhrasesDetectionJob.md) 
++  [StopSentimentDetectionJob](API_StopSentimentDetectionJob.md) 

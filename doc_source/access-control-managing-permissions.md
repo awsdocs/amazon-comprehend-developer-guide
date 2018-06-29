@@ -1,4 +1,4 @@
-# Using Identity\-Based Polices \(IAM Policies\) for Amazon Comprehend<a name="access-control-managing-permissions"></a>
+# Using Identity\-Based Policies \(IAM Policies\) for Amazon Comprehend<a name="access-control-managing-permissions"></a>
 
 This topic provides examples of identity\-based policies that demonstrate how an account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\) and thereby grant permissions to perform Amazon Comprehend actions\. 
 
@@ -58,12 +58,10 @@ To use the Amazon Comprehend console, you need to grant permissions for the acti
 ```
 
 The Amazon Comprehend console needs these additional permissions for the following reasons:
-
 + `iam` permissions to list the available IAM roles for your account\.
-
 + `s3` permissions to access the Amazon S3 buckets and objects that contain the data for topic modeling\.
 
-When you create a topic modeling job using the console, you have the option to have the console create an IAM role for your job\. To create an IAM role, users must be granted the following additional permissions to create IAM roles and policies, and to attach policies to roles:
+When you create an asynchronous batch job or a topic modeling job using the console, you have the option to have the console create an IAM role for your job\. To create an IAM role, users must be granted the following additional permissions to create IAM roles and policies, and to attach policies to roles:
 
 ```
 {
@@ -84,18 +82,15 @@ When you create a topic modeling job using the console, you have the option to h
 ```
 
 The Amazon Comprehend console needs these additional permissions for the following reasons:
-
-+ `iam` permissions to create roles and policies and to attach roles and polices\. The `iam:PassRole` action enables the console to pass the role to Amazon Comprehend\.
++ `iam` permissions to create roles and policies and to attach roles and policies\. The `iam:PassRole` action enables the console to pass the role to Amazon Comprehend\.
 
 ## AWS Managed \(Predefined\) Policies for Amazon Comprehend<a name="access-policy-aws-managed-policies"></a>
 
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. These AWS managed policies grant necessary permissions for common use cases so that you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\. 
 
 The following AWS managed policies, which you can attach to users in your account, are specific to Amazon Comprehend:
-
 + **ComprehendFullAccess** – Grants full access to Amazon Comprehend resources including running topic modeling jobs\. Includes permission to list and get IAM roles\.
-
-+ **ComprehendReadOnly** – Grants permission to run all Amazon Comprehend actions except `StartTopicsDetectionJob`\.
++ **ComprehendReadOnly** – Grants permission to run all Amazon Comprehend actions except `StartDominantLanguageDetectionJob`, `StartEntitiesDetectionJob`, `StartKeyPhrasesDetectionJob`, `StartSentimentDetectionJob`, and `StartTopicsDetectionJob`\.
 
 You need to apply the following additional policy to any user that will use Amazon Comprehend:
 
@@ -120,9 +115,9 @@ These policies work when you are using AWS SDKs or the AWS CLI\.
 
 You can also create your own custom IAM policies to allow permissions for Amazon Comprehend actions and resources\. You can attach these custom policies to the IAM users or groups that require those permissions\. 
 
-## Role\-Based Permissions Required for Topic Detection<a name="auth-role-permissions"></a>
+## Role\-Based Permissions Required for Asynchronous Operations<a name="auth-role-permissions"></a>
 
-To use the Amazon Comprehend topic detection operations, you must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection\. You do this by creating a data access role in your account to trust the Amazon Comprehend service principal\. For more information about creating a role, see [Creating a Role to Delegate Permissions to an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *AWS Identity and Access Management User Guide*\. 
+To use the Amazon Comprehend asynchronous operations, you must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection\. You do this by creating a data access role in your account to trust the Amazon Comprehend service principal\. For more information about creating a role, see [Creating a Role to Delegate Permissions to an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *AWS Identity and Access Management User Guide*\. 
 
 The following is the role's trust policy:
 

@@ -29,7 +29,7 @@ Type: [TopicsDetectionJobFilter](API_TopicsDetectionJobFilter.md) object
 Required: No
 
  ** [MaxResults](#API_ListTopicsDetectionJobs_RequestSyntax) **   <a name="comprehend-ListTopicsDetectionJobs-request-MaxResults"></a>
-The maximum number of results to return in each page\.  
+The maximum number of results to return in each page\. The default is 100\.  
 Type: Integer  
 Valid Range: Minimum value of 1\. Maximum value of 500\.  
 Required: No
@@ -104,21 +104,12 @@ HTTP Status Code: 400
 ## See Also<a name="API_ListTopicsDetectionJobs_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/ListTopicsDetectionJobs) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/ListTopicsDetectionJobs) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/ListTopicsDetectionJobs) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/ListTopicsDetectionJobs) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/comprehend-2017-11-27/ListTopicsDetectionJobs) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/ListTopicsDetectionJobs) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/ListTopicsDetectionJobs) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/ListTopicsDetectionJobs) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/ListTopicsDetectionJobs) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/comprehend-2017-11-27/ListTopicsDetectionJobs) 

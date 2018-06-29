@@ -34,7 +34,7 @@ Pattern: `^[a-zA-Z0-9-]+$`
 Required: No
 
  ** [DataAccessRoleArn](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-DataAccessRoleArn"></a>
-The Amazon Resource Name \(ARN\) of the AWS Identity and Access Management \(IAM\) role that grants Amazon Comprehend read access to your input data\.   
+The Amazon Resource Name \(ARN\) of the AWS Identity and Access Management \(IAM\) role that grants Amazon Comprehend read access to your input data\. For more information, see [https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions](https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions)\.  
 Type: String  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: Yes
@@ -58,7 +58,7 @@ Valid Range: Minimum value of 1\. Maximum value of 100\.
 Required: No
 
  ** [OutputDataConfig](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-OutputDataConfig"></a>
-Specifies where to send the output files\.  
+Specifies where to send the output files\. The output is a compressed archive with two files, `topic-terms.csv` that lists the terms associated with each topic, and `doc-topics.csv` that lists the documents associated with each topic  
 Type: [OutputDataConfig](API_OutputDataConfig.md) object  
 Required: Yes
 
@@ -84,16 +84,12 @@ Length Constraints: Minimum length of 1\. Maximum length of 32\.
 
  ** [JobStatus](#API_StartTopicsDetectionJob_ResponseSyntax) **   <a name="comprehend-StartTopicsDetectionJob-response-JobStatus"></a>
 The status of the job:   
-
 + SUBMITTED \- The job has been received and is queued for processing\.
-
 + IN\_PROGRESS \- Amazon Comprehend is processing the job\.
-
 + COMPLETED \- The job was successfully completed and the output is available\.
-
 + FAILED \- The job did not complete\. To get details, use the `DescribeTopicDetectionJob` operation\.
 Type: String  
-Valid Values:` SUBMITTED | IN_PROGRESS | COMPLETED | FAILED` 
+Valid Values:` SUBMITTED | IN_PROGRESS | COMPLETED | FAILED | STOP_REQUESTED | STOPPED` 
 
 ## Errors<a name="API_StartTopicsDetectionJob_Errors"></a>
 
@@ -114,21 +110,12 @@ HTTP Status Code: 400
 ## See Also<a name="API_StartTopicsDetectionJob_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-
-+  [AWS Command Line Interface](http://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/StartTopicsDetectionJob) 
-
-+  [AWS SDK for \.NET](http://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/StartTopicsDetectionJob) 
-
-+  [AWS SDK for C\+\+](http://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/StartTopicsDetectionJob) 
-
-+  [AWS SDK for Go](http://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/StartTopicsDetectionJob) 
-
-+  [AWS SDK for Java](http://docs.aws.amazon.com/goto/SdkForJava/comprehend-2017-11-27/StartTopicsDetectionJob) 
-
-+  [AWS SDK for JavaScript](http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/StartTopicsDetectionJob) 
-
-+  [AWS SDK for PHP V3](http://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/StartTopicsDetectionJob) 
-
-+  [AWS SDK for Python](http://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/StartTopicsDetectionJob) 
-
-+  [AWS SDK for Ruby V2](http://docs.aws.amazon.com/goto/SdkForRubyV2/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS SDK for Java](https://docs.aws.amazon.com/goto/SdkForJava/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/StartTopicsDetectionJob) 
++  [AWS SDK for Ruby V2](https://docs.aws.amazon.com/goto/SdkForRubyV2/comprehend-2017-11-27/StartTopicsDetectionJob) 
