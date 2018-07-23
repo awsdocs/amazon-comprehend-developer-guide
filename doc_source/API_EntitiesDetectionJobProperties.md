@@ -4,6 +4,12 @@ Provides information about an entities detection job\.
 
 ## Contents<a name="API_EntitiesDetectionJobProperties_Contents"></a>
 
+ **DataAccessRoleArn**   <a name="comprehend-Type-EntitiesDetectionJobProperties-DataAccessRoleArn"></a>
+The Amazon Resource Name \(ARN\) that gives Amazon Comprehend read access to your input data\.  
+Type: String  
+Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
+Required: No
+
  **EndTime**   <a name="comprehend-Type-EntitiesDetectionJobProperties-EndTime"></a>
 The time that the entities detection job completed  
 Type: Timestamp  

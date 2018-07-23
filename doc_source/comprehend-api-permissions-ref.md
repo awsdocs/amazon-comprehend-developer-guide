@@ -18,6 +18,7 @@ If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, 
 | [BatchDetectEntities](API_BatchDetectEntities.md) | comprehend:BatchDetectEntities | \* | 
 | [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) | comprehend:BatchDetectKeyPhrases | \* | 
 | [BatchDetectSentiment](API_BatchDetectSentiment.md) | comprehend:BatchDetectSentiment | \* | 
+| [BatchDetectSyntax](API_BatchDetectSyntax.md) | comprehend:BatchDetectSyntax | \* | 
 | DescribeDominantLanguageDetectionJob | comprehend:DescribeGominantLanguageDetectionJob | \* | 
 | DescribeEntitiesDetectionJob | comprehend:DescribeEntitiesDetectionJob | \* | 
 | DescribeKeyPhrasesDetectionJob | comprehend:DescribeKeyPhrasesDetectionJob | \* | 
@@ -27,6 +28,7 @@ If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, 
 | [DetectEntities](API_DetectEntities.md) | comprehend:DetectEntities | \* | 
 | [DetectKeyPhrases](API_DetectKeyPhrases.md) | comprehend:DetectKeyPhrases | \* | 
 | [DetectSentiment](API_DetectSentiment.md) | comprehend:DetectSentiment | \* | 
+| [](API_DetectSyntax.md) | comprehend:DetectSyntax | \* | 
 | ListDominantLanguageDetectionJobs | comprehend:ListDominantLanguageDetectionJobs | \* | 
 | ListEntitiesDetectionJobs | comprehend:ListEntitiesDetectionJobs | \* | 
 | ListKeyPhrasesDetectionJobs | comprehend:ListKeyPhrasesDetectionJobs | \* | 

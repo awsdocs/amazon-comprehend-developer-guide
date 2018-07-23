@@ -27,6 +27,7 @@ Required: Yes
 ```
 {
    "[EntitiesDetectionJobProperties](#comprehend-DescribeEntitiesDetectionJob-response-EntitiesDetectionJobProperties)": { 
+      "[DataAccessRoleArn](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-DataAccessRoleArn)": "string",
       "[EndTime](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-EndTime)": number,
       "[InputDataConfig](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-InputDataConfig)": { 
          "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",

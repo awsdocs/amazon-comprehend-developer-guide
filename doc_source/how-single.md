@@ -7,3 +7,4 @@ You can use the following single\-document operations:
 + [DetectEntities](API_DetectEntities.md)
 + [DetectKeyPhrases](API_DetectKeyPhrases.md)
 + [DetectSentiment](API_DetectSentiment.md)
++ [DetectSyntax](API_DetectSyntax.md)

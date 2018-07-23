@@ -11,5 +11,6 @@ To run the Java examples, you need to install the AWS SDK for Java\. For instruc
 + [Detecting Named Entities](get-started-api-entities.md)
 + [Detecting Key Phrases](get-started-api-key-phrases.md)
 + [Detecting Sentiment](get-started-api-sentiment.md)
++ [Detecting Syntax](get-started-api-syntax.md)
 + [Topic Modeling](get-started-topics.md)
 + [Using the Batch APIs](get-started-batch.md)

@@ -46,6 +46,7 @@ Required: No
 {
    "[KeyPhrasesDetectionJobPropertiesList](#comprehend-ListKeyPhrasesDetectionJobs-response-KeyPhrasesDetectionJobPropertiesList)": [ 
       { 
+         "[DataAccessRoleArn](API_KeyPhrasesDetectionJobProperties.md#comprehend-Type-KeyPhrasesDetectionJobProperties-DataAccessRoleArn)": "string",
          "[EndTime](API_KeyPhrasesDetectionJobProperties.md#comprehend-Type-KeyPhrasesDetectionJobProperties-EndTime)": number,
          "[InputDataConfig](API_KeyPhrasesDetectionJobProperties.md#comprehend-Type-KeyPhrasesDetectionJobProperties-InputDataConfig)": { 
             "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",

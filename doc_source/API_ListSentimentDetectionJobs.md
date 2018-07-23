@@ -47,6 +47,7 @@ Required: No
    "[NextToken](#comprehend-ListSentimentDetectionJobs-response-NextToken)": "string",
    "[SentimentDetectionJobPropertiesList](#comprehend-ListSentimentDetectionJobs-response-SentimentDetectionJobPropertiesList)": [ 
       { 
+         "[DataAccessRoleArn](API_SentimentDetectionJobProperties.md#comprehend-Type-SentimentDetectionJobProperties-DataAccessRoleArn)": "string",
          "[EndTime](API_SentimentDetectionJobProperties.md#comprehend-Type-SentimentDetectionJobProperties-EndTime)": number,
          "[InputDataConfig](API_SentimentDetectionJobProperties.md#comprehend-Type-SentimentDetectionJobProperties-InputDataConfig)": { 
             "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",

@@ -46,6 +46,7 @@ Required: No
 {
    "[DominantLanguageDetectionJobPropertiesList](#comprehend-ListDominantLanguageDetectionJobs-response-DominantLanguageDetectionJobPropertiesList)": [ 
       { 
+         "[DataAccessRoleArn](API_DominantLanguageDetectionJobProperties.md#comprehend-Type-DominantLanguageDetectionJobProperties-DataAccessRoleArn)": "string",
          "[EndTime](API_DominantLanguageDetectionJobProperties.md#comprehend-Type-DominantLanguageDetectionJobProperties-EndTime)": number,
          "[InputDataConfig](API_DominantLanguageDetectionJobProperties.md#comprehend-Type-DominantLanguageDetectionJobProperties-InputDataConfig)": { 
             "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",

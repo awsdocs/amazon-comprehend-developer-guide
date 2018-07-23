@@ -59,7 +59,7 @@ For more information, see [Asynchronous Batch Processing](how-async.md)\.
 
 The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [DetectDominantLanguage](API_DetectDominantLanguage.md) operations and asynchronous jobs started with the [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) operation have the following limitations:
 + They don't support phonetic language detection\. For example, they will not detect "arigato" as Japanese nor "nihao" as Chinese\.
-+ They may have trouble distinguishing close language pairs, such as Indonesian and Malay; or Bosnian, Croation, and Serbian\.
++ They may have trouble distinguishing close language pairs, such as Indonesian and Malay; or Bosnian, Croatian, and Serbian\.
 + For best results the input text should be at least 20 characters long\.
 
 ## Topic Modeling<a name="limits-topic-modeling"></a>

@@ -4,6 +4,12 @@ Provides information about a dominant language detection job\.
 
 ## Contents<a name="API_DominantLanguageDetectionJobProperties_Contents"></a>
 
+ **DataAccessRoleArn**   <a name="comprehend-Type-DominantLanguageDetectionJobProperties-DataAccessRoleArn"></a>
+The Amazon Resource Name \(ARN\) that gives Amazon Comprehend read access to your input data\.  
+Type: String  
+Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
+Required: No
+
  **EndTime**   <a name="comprehend-Type-DominantLanguageDetectionJobProperties-EndTime"></a>
 The time that the dominant language detection job completed\.  
 Type: Timestamp  

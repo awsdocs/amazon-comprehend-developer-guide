@@ -84,7 +84,7 @@ HTTP Status Code: 400
 
 If the input text is "Today is my birthday, I am so happy\.", the operation returns the following response:
 
-#### <a name="w3ab1c21b5c44c15b3b5"></a>
+#### <a name="w3ab1c21b5c47c15b3b5"></a>
 
 ```
 {

@@ -7,8 +7,9 @@ You work with one document at a time to detect entities, key phrases, languages,
 + **Key phrases** – Amazon Comprehend extracts key phrases that appear in a document\. For example, a document about a basketball game might return the names of the teams, the name of the venue, and the final score\. For more information, see [Key Phrases](how-key-phrases.md)\.
 + **Language** – Amazon Comprehend identifies the dominant language in a document\. Amazon Comprehend can identify 100 languages\. For more information, see [Dominant Language](how-languages.md)\.
 + **Sentiment** – Amazon Comprehend determines the emotional sentiment of a document\. Sentiment can be positive, neutral, negative, or mixed\. For more information, see [Sentiments](how-sentiment.md)\. 
++ **Syntax** – Amazon Comprehend parses each word in your document and determines the part of speech for the word\. For example, in the sentence "It is raining today is Seattle," "it" is identifies as a pronoun, "raining" is identified as a verb, and "Seattle" is identified as a proper noun\. For more information, see [Syntax](how-syntax.md)\. 
 
-## Topic Modelling<a name="how-topics"></a>
+## Topic Modeling<a name="how-topics"></a>
 
 You can also use Amazon Comprehend to examine a corpus of documents to find the common themes contained within the corpus\. Amazon Comprehend examines the documents in the corpus and then returns the most prominent topics and the documents that are associated with each topic\.
 

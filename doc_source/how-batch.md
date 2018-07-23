@@ -7,6 +7,7 @@ You can use the following operations to process multiple documents in a single r
 + [BatchDetectEntities](API_BatchDetectEntities.md)
 + [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md)
 + [BatchDetectSentiment](API_BatchDetectSentiment.md)
++ [BatchDetectSyntax](API_BatchDetectSyntax.md)
 
 Using the `Batch*` operations is identical to calling the single document APIs for each of the documents in the request\. Using these APIs can result in better performance for your applications\.
 

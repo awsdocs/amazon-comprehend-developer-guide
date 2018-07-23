@@ -6,13 +6,13 @@ You can use the Amazon Comprehend console to create and manage asynchronous topi
 
 1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/home?region=us-east-1#api-explorer:)
 
-1. From the left menu, choose **Topic Modeling** and then choose **Create**\.
+1. From the left menu, choose **Organization** and then choose **Create**\.
 
 1. Choose the data source to use\. You can use either sample data or you can analyze your own data stored in an Amazon S3 bucket\. If you use the sample dataset, the topic modeling job analyzes text from this collection of articles: [https://s3\.amazonaws\.com/public\-sample\-attributions/Attributions\.txt](https://s3.amazonaws.com/public-sample-attributions/Attributions.txt)
 
 1. If you chose to use your own data, provide the following information in the **Choose input data** section:
    + **S3 data location** – An Amazon S3 data bucket that contains the documents to analyze\. You can choose the folder icon to browse to the location of your data\. The bucket must be in the same region as the API that you are calling\.
-   + **Input format** – Choose whether in input data is contained in one document per file, or if there is one document per line in a file\.
+   + **Input format** – Choose whether input data is contained in one document per file, or if there is one document per line in a file\.
    + **Number of topics** – The number of topics to return\.
    + **Job name** – A name that identifies the particular job\.
 

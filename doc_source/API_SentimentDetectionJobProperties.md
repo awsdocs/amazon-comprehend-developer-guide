@@ -4,6 +4,12 @@ Provides information about a sentiment detection job\.
 
 ## Contents<a name="API_SentimentDetectionJobProperties_Contents"></a>
 
+ **DataAccessRoleArn**   <a name="comprehend-Type-SentimentDetectionJobProperties-DataAccessRoleArn"></a>
+The Amazon Resource Name \(ARN\) that gives Amazon Comprehend read access to your input data\.  
+Type: String  
+Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
+Required: No
+
  **EndTime**   <a name="comprehend-Type-SentimentDetectionJobProperties-EndTime"></a>
 The time that the sentiment detection job ended\.  
 Type: Timestamp  
