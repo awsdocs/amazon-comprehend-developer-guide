@@ -20,6 +20,7 @@ The request accepts the following data in JSON format\.
 The identifier that Amazon Comprehend generated for the job\. The [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation returns this identifier in its response\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: Yes
 
 ## Response Syntax<a name="API_DescribeEntitiesDetectionJob_ResponseSyntax"></a>
@@ -29,6 +30,7 @@ Required: Yes
    "[EntitiesDetectionJobProperties](#comprehend-DescribeEntitiesDetectionJob-response-EntitiesDetectionJobProperties)": { 
       "[DataAccessRoleArn](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-DataAccessRoleArn)": "string",
       "[EndTime](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-EndTime)": number,
+      "[EntityRecognizerArn](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-EntityRecognizerArn)": "string",
       "[InputDataConfig](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-InputDataConfig)": { 
          "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",
          "[S3Uri](API_InputDataConfig.md#comprehend-Type-InputDataConfig-S3Uri)": "string"

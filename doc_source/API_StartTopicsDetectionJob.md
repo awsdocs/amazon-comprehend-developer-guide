@@ -36,6 +36,7 @@ Required: No
  ** [DataAccessRoleArn](#API_StartTopicsDetectionJob_RequestSyntax) **   <a name="comprehend-StartTopicsDetectionJob-request-DataAccessRoleArn"></a>
 The Amazon Resource Name \(ARN\) of the AWS Identity and Access Management \(IAM\) role that grants Amazon Comprehend read access to your input data\. For more information, see [https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions](https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions)\.  
 Type: String  
+Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: Yes
 
@@ -80,7 +81,8 @@ The following data is returned in JSON format by the service\.
  ** [JobId](#API_StartTopicsDetectionJob_ResponseSyntax) **   <a name="comprehend-StartTopicsDetectionJob-response-JobId"></a>
 The identifier generated for the job\. To get the status of the job, use this identifier with the `DescribeTopicDetectionJob` operation\.  
 Type: String  
-Length Constraints: Minimum length of 1\. Maximum length of 32\.
+Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$` 
 
  ** [JobStatus](#API_StartTopicsDetectionJob_ResponseSyntax) **   <a name="comprehend-StartTopicsDetectionJob-response-JobStatus"></a>
 The status of the job:   

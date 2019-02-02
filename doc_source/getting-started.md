@@ -1,6 +1,6 @@
 # Getting Started with Amazon Comprehend<a name="getting-started"></a>
 
-To get started using Amazon Comprehend, set up an AWS account and create an AWS Identity and Access Management \(IAM\) user\. To use the AWS Command Line Interface \(AWS CLI\), download and configure it\. 
+To get started using Amazon Comprehend, set up an AWS account and create an AWS Identity and Access Management \(IAM\) user\. To use the Amazon Comprehend \(AWS CLI\), download and configure it\. 
 
 **Topics**
 + [Step 1: Set Up an AWS Account and Create an Administrator User](setting-up.md)

@@ -20,6 +20,7 @@ The request accepts the following data in JSON format\.
 The identifier assigned by the user to the detection job\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: Yes
 
 ## Response Syntax<a name="API_DescribeTopicsDetectionJob_ResponseSyntax"></a>

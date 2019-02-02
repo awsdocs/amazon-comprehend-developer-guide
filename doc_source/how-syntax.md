@@ -1,4 +1,4 @@
-# Syntax<a name="how-syntax"></a>
+# Analyze Syntax<a name="how-syntax"></a>
 
 Use the [DetectSyntax](API_DetectSyntax.md) and [BatchDetectSyntax](API_BatchDetectSyntax.md) operations to analyze your documents to parse the words from the document and return the part of speech, or syntactic function, for each word in the document\. You can identify the nouns, verbs, adjectives and so on in your document\. Use this information to gain a richer understanding of the content of your documents, and to understand the relationship of the words in the document\.
 

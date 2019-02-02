@@ -7,6 +7,7 @@ Provides information about a dominant language detection job\.
  **DataAccessRoleArn**   <a name="comprehend-Type-DominantLanguageDetectionJobProperties-DataAccessRoleArn"></a>
 The Amazon Resource Name \(ARN\) that gives Amazon Comprehend read access to your input data\.  
 Type: String  
+Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: No
 
@@ -24,6 +25,7 @@ Required: No
 The identifier assigned to the dominant language detection job\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: No
 
  **JobName**   <a name="comprehend-Type-DominantLanguageDetectionJobProperties-JobName"></a>

@@ -31,10 +31,10 @@ You must grant Amazon Comprehend access to the Amazon S3 bucket that contains yo
 ## Starting an Analysis Job<a name="how-start-job"></a>
 
 To submit an analysis job, use either the Amazon Comprehend console or the appropriate `Start*` operation:
-+ [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md)—Start a job to detect the dominant language in each document in the collection\. For more information about the dominant language in a document, see [Dominant Language](how-languages.md)\.
-+ [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md)—Start a job to detect entities in each document in the collection\. For more information about entities, see [Entities](how-entities.md)\.
-+ [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md)—Start a job to detect key phrases in each document in the collection\. For more information about key phrases, see [Key Phrases](how-key-phrases.md)\.
-+ [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md)—Start a job to detect the emotional sentiment in each document in the collection\. For more information about sentiments, see [Sentiments](how-sentiment.md)\.
++ [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md)—Start a job to detect the dominant language in each document in the collection\. For more information about the dominant language in a document, see [Detect the Dominant Language](how-languages.md)\.
++ [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md)—Start a job to detect entities in each document in the collection\. For more information about entities, see [Detect Entities](how-entities.md)\.
++ [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md)—Start a job to detect key phrases in each document in the collection\. For more information about key phrases, see [Locate Key Phrases](how-key-phrases.md)\.
++ [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md)—Start a job to detect the emotional sentiment in each document in the collection\. For more information about sentiments, see [Determine the Sentiment](how-sentiment.md)\.
 + [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md)—Start a job to detect the topics in a document collection\. For more information about topic modeling, see [Topic Modeling](topic-modeling.md)\.
 
 ## Monitoring Analysis Jobs<a name="how-monitor-progress"></a>

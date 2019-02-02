@@ -1,6 +1,6 @@
-# Dominant Language<a name="how-languages"></a>
+# Detect the Dominant Language<a name="how-languages"></a>
 
-You can use Amazon Comprehend to examine text to determine the primary language\. Amazon Comprehend identifies the language using identifiers from RFC 5646 — if there is a 2\-letter ISO 639\-1 identifier, with a regional subtag if necessary, it uses that\. Otherwise, it uses the ISO 639\-2 3\-letter code\. For more information about RFC 5646, see [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.
+You can use Amazon Comprehend to examine text to determine the dominant language\. Amazon Comprehend identifies the language using identifiers from RFC 5646 — if there is a 2\-letter ISO 639\-1 identifier, with a regional subtag if necessary, it uses that\. Otherwise, it uses the ISO 639\-2 3\-letter code\. For more information about RFC 5646, see [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.
 
 The response includes a score that indicates the confidence level that Amazon Comprehend has that a particular language is the dominant language in the document\. Each score is independent of the other scores — it does not indicate that a language makes up a particular percentage of a document\.
 

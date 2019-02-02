@@ -1,6 +1,6 @@
 # DetectSyntax<a name="API_DetectSyntax"></a>
 
-Inspects text for syntax and the part of speech of words in the document\. For more information, [Syntax](how-syntax.md)\.
+Inspects text for syntax and the part of speech of words in the document\. For more information, [Analyze Syntax](how-syntax.md)\.
 
 ## Request Syntax<a name="API_DetectSyntax_RequestSyntax"></a>
 
@@ -20,7 +20,7 @@ The request accepts the following data in JSON format\.
  ** [LanguageCode](#API_DetectSyntax_RequestSyntax) **   <a name="comprehend-DetectSyntax-request-LanguageCode"></a>
 The language code of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\.  
 Type: String  
-Valid Values:` en`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: Yes
 
  ** [Text](#API_DetectSyntax_RequestSyntax) **   <a name="comprehend-DetectSyntax-request-Text"></a>
@@ -55,7 +55,7 @@ If the action is successful, the service sends back an HTTP 200 response\.
 The following data is returned in JSON format by the service\.
 
  ** [SyntaxTokens](#API_DetectSyntax_ResponseSyntax) **   <a name="comprehend-DetectSyntax-response-SyntaxTokens"></a>
-A collection of syntax tokens describing the text\. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct\. For a list of token types, see [Syntax](how-syntax.md)\.  
+A collection of syntax tokens describing the text\. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct\. For a list of token types, see [Analyze Syntax](how-syntax.md)\.  
 Type: Array of [SyntaxToken](API_SyntaxToken.md) objects
 
 ## Errors<a name="API_DetectSyntax_Errors"></a>
@@ -75,7 +75,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  **UnsupportedLanguageException**   
-Amazon Comprehend can't process the language of the input text\. For all APIs except `DetectDominantLanguage`, Amazon Comprehend accepts only English or Spanish text\. For the `DetectDominantLanguage` API, Amazon Comprehend detects 100 languages\. For a list of languages, see [Dominant Language](how-languages.md)   
+Amazon Comprehend can't process the language of the input text\. For all custom entity recognition APIs \(such as `CreateEntityRecognizer`\), only English is accepted\. For most other APIs, Amazon Comprehend accepts only English or Spanish text\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_DetectSyntax_SeeAlso"></a>

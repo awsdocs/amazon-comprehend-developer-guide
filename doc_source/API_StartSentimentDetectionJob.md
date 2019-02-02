@@ -36,6 +36,7 @@ Required: No
  ** [DataAccessRoleArn](#API_StartSentimentDetectionJob_RequestSyntax) **   <a name="comprehend-StartSentimentDetectionJob-request-DataAccessRoleArn"></a>
 The Amazon Resource Name \(ARN\) of the AWS Identity and Access Management \(IAM\) role that grants Amazon Comprehend read access to your input data\. For more information, see [https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions](https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions)\.  
 Type: String  
+Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: Yes
 
@@ -54,7 +55,7 @@ Required: No
  ** [LanguageCode](#API_StartSentimentDetectionJob_RequestSyntax) **   <a name="comprehend-StartSentimentDetectionJob-request-LanguageCode"></a>
 The language of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\. All documents must be in the same language\.  
 Type: String  
-Valid Values:` en | es`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: Yes
 
  ** [OutputDataConfig](#API_StartSentimentDetectionJob_RequestSyntax) **   <a name="comprehend-StartSentimentDetectionJob-request-OutputDataConfig"></a>
@@ -80,7 +81,8 @@ The following data is returned in JSON format by the service\.
  ** [JobId](#API_StartSentimentDetectionJob_ResponseSyntax) **   <a name="comprehend-StartSentimentDetectionJob-response-JobId"></a>
 The identifier generated for the job\. To get the status of a job, use this identifier with the [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md) operation\.  
 Type: String  
-Length Constraints: Minimum length of 1\. Maximum length of 32\.
+Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$` 
 
  ** [JobStatus](#API_StartSentimentDetectionJob_ResponseSyntax) **   <a name="comprehend-StartSentimentDetectionJob-response-JobStatus"></a>
 The status of the job\.   

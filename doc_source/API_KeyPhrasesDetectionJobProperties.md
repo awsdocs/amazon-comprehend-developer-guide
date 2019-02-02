@@ -7,6 +7,7 @@ Provides information about a key phrases detection job\.
  **DataAccessRoleArn**   <a name="comprehend-Type-KeyPhrasesDetectionJobProperties-DataAccessRoleArn"></a>
 The Amazon Resource Name \(ARN\) that gives Amazon Comprehend read access to your input data\.  
 Type: String  
+Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: No
 
@@ -24,6 +25,7 @@ Required: No
 The identifier assigned to the key phrases detection job\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: No
 
  **JobName**   <a name="comprehend-Type-KeyPhrasesDetectionJobProperties-JobName"></a>
@@ -42,7 +44,7 @@ Required: No
  **LanguageCode**   <a name="comprehend-Type-KeyPhrasesDetectionJobProperties-LanguageCode"></a>
 The language code of the input documents\.  
 Type: String  
-Valid Values:` en | es`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: No
 
  **Message**   <a name="comprehend-Type-KeyPhrasesDetectionJobProperties-Message"></a>

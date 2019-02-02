@@ -48,6 +48,7 @@ Required: No
       { 
          "[DataAccessRoleArn](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-DataAccessRoleArn)": "string",
          "[EndTime](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-EndTime)": number,
+         "[EntityRecognizerArn](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-EntityRecognizerArn)": "string",
          "[InputDataConfig](API_EntitiesDetectionJobProperties.md#comprehend-Type-EntitiesDetectionJobProperties-InputDataConfig)": { 
             "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",
             "[S3Uri](API_InputDataConfig.md#comprehend-Type-InputDataConfig-S3Uri)": "string"
@@ -91,7 +92,7 @@ An internal server error occurred\. Retry your request\.
 HTTP Status Code: 500
 
  **InvalidFilterException**   
-The filter specified for the `ListTopicDetectionJobs` operation is invalid\. Specify a different filter\.  
+The filter specified for the `ListDocumentClassificationJobs` operation is invalid\. Specify a different filter\.  
 HTTP Status Code: 400
 
  **InvalidRequestException**   

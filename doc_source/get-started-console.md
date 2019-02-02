@@ -4,6 +4,7 @@ The easiest way to get started using Amazon Comprehend is to use the console to 
 
 **Topics**
 + [Analyzing Documents Using the Console](get-started-console-analysis.md)
++ [Creating and Using Document Classifiers](getting-started-document-classification.md)
 + [Creating a Topic Modeling Job Using the Console](getting-started-console-topics.md)
 
 **Next Step**  

@@ -91,7 +91,7 @@ An internal server error occurred\. Retry your request\.
 HTTP Status Code: 500
 
  **InvalidFilterException**   
-The filter specified for the `ListTopicDetectionJobs` operation is invalid\. Specify a different filter\.  
+The filter specified for the `ListDocumentClassificationJobs` operation is invalid\. Specify a different filter\.  
 HTTP Status Code: 400
 
  **InvalidRequestException**   

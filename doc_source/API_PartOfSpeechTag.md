@@ -1,6 +1,6 @@
 # PartOfSpeechTag<a name="API_PartOfSpeechTag"></a>
 
-Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified\. For more information about the parts of speech that Amazon Comprehend can identify, see [Syntax](how-syntax.md)\.
+Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified\. For more information about the parts of speech that Amazon Comprehend can identify, see [Analyze Syntax](how-syntax.md)\.
 
 ## Contents<a name="API_PartOfSpeechTag_Contents"></a>
 
@@ -12,7 +12,7 @@ Required: No
  **Tag**   <a name="comprehend-Type-PartOfSpeechTag-Tag"></a>
 Identifies the part of speech that the token represents\.  
 Type: String  
-Valid Values:` ADJ | ADP | ADV | AUX | CONJ | DET | INTJ | NOUN | NUM | O | PART | PRON | PROPN | PUNCT | SCONJ | SYM | VERB`   
+Valid Values:` ADJ | ADP | ADV | AUX | CONJ | CCONJ | DET | INTJ | NOUN | NUM | O | PART | PRON | PROPN | PUNCT | SCONJ | SYM | VERB`   
 Required: No
 
 ## See Also<a name="API_PartOfSpeechTag_SeeAlso"></a>

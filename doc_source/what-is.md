@@ -2,18 +2,26 @@
 
 Amazon Comprehend uses natural language processing \(NLP\) to extract insights about the content of documents\. Amazon Comprehend processes any text file in UTF\-8 format\. It develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document\. Use Amazon Comprehend to create new products based on understanding the structure of documents\. For example, using Amazon Comprehend you can search social networking feeds for mentions of products or scan an entire document repository for key phrases\.
 
-You work with one document at a time to detect entities, key phrases, languages, and sentiments\. Each document is processed separately\. Some of the insights that Amazon Comprehend develops about a document include:
-+ **Entities** – Amazon Comprehend returns a list of entities, such as people, places, and locations, identified in a document\. For more information, see [Entities](how-entities.md)\.
-+ **Key phrases** – Amazon Comprehend extracts key phrases that appear in a document\. For example, a document about a basketball game might return the names of the teams, the name of the venue, and the final score\. For more information, see [Key Phrases](how-key-phrases.md)\.
-+ **Language** – Amazon Comprehend identifies the dominant language in a document\. Amazon Comprehend can identify 100 languages\. For more information, see [Dominant Language](how-languages.md)\.
-+ **Sentiment** – Amazon Comprehend determines the emotional sentiment of a document\. Sentiment can be positive, neutral, negative, or mixed\. For more information, see [Sentiments](how-sentiment.md)\. 
-+ **Syntax** – Amazon Comprehend parses each word in your document and determines the part of speech for the word\. For example, in the sentence "It is raining today is Seattle," "it" is identifies as a pronoun, "raining" is identified as a verb, and "Seattle" is identified as a proper noun\. For more information, see [Syntax](how-syntax.md)\. 
+You work with one or more documents at a time to evaluate their content and gain insights about them\. Some of the insights that Amazon Comprehend develops about a document include:
++ **Entities** – Amazon Comprehend returns a list of entities, such as people, places, and locations, identified in a document\. For more information, see [Detect Entities](how-entities.md)\.
++ **Key phrases** – Amazon Comprehend extracts key phrases that appear in a document\. For example, a document about a basketball game might return the names of the teams, the name of the venue, and the final score\. For more information, see [Locate Key Phrases](how-key-phrases.md)\.
++ **Language** – Amazon Comprehend identifies the dominant language in a document\. Amazon Comprehend can identify 100 languages\. For more information, see [Detect the Dominant Language](how-languages.md)\.
++ **Sentiment** – Amazon Comprehend determines the emotional sentiment of a document\. Sentiment can be positive, neutral, negative, or mixed\. For more information, see [Determine the Sentiment](how-sentiment.md)\. 
++ **Syntax** – Amazon Comprehend parses each word in your document and determines the part of speech for the word\. For example, in the sentence "It is raining today is Seattle," "it" is identified as a pronoun, "raining" is identified as a verb, and "Seattle" is identified as a proper noun\. For more information, see [Analyze Syntax](how-syntax.md)\. 
 
-## Topic Modeling<a name="how-topics"></a>
+## Comprehend Custom<a name="how-doc-class"></a>
 
-You can also use Amazon Comprehend to examine a corpus of documents to find the common themes contained within the corpus\. Amazon Comprehend examines the documents in the corpus and then returns the most prominent topics and the documents that are associated with each topic\.
+Customize Comprehend for your specific requirements without the skillset required to build machine learning\-based NLP solutions\. Using automatic machine learning, or AutoML, Comprehend Custom builds customized NLP models on your behalf, using data you already have\. Training and calling custom comprehend models are both async \(batch\) operations\.
 
- Topic modeling is a asynchronous process, you submit a set of documents for processing and then later get the results when processing is complete\. Amazon Comprehend does topic modeling on large document sets, for best results you should include at least 1,000 documents when you submit a topic modeling job\. For more information, see [Topic Modeling](topic-modeling.md)\.
+Custom Classification: Create custom document classifiers to organize you documents into your own categories\. For each classification label, provide a set of documents that best represent that label and submit the training data as a CSV file\. You can have multiple document classifiers, each trained on a different set of input documents\. Once a classifier is trained it can be used on any number of unlabeled document sets\. Customers can use the console for a code\-free experience or install the latest AWS SDK\. For more information, see [Custom Classification](how-document-classification.md)\.
+
+Custom Entities: Create custom entity types that analyze text for your specific terms and noun\-based phrases\. Customers can train a custom entity type to extract terms like policy number, or phrases that imply a customer escalation\. To train the feature, customers need to provide a list of the entities \(terms and phrases\) and a set of documents that contain them, stored in S3\. Once the model is trained, customers can submit analysis jobs against their model to extract their custom entities\. For more information, see [Custom Entity Recognition](custom-entity-recognition.md)\. 
+
+## Document Clustering \(Topic Modeling\)<a name="how-topics"></a>
+
+You can also use Amazon Comprehend to examine a corpus of documents to organize them based on similar keywords within them\. Document clustering \(topic modeling\) is useful to organize a large corpus of documents into topics or clusters that are similar based on the frequency of words within them\.
+
+Topic modeling is a asynchronous process, you submit a set of documents for processing and then later get the results when processing is complete\. Amazon Comprehend does topic modeling on large document sets, for best results you should include at least 1,000 documents when you submit a topic modeling job\. For more information, see [Topic Modeling](topic-modeling.md)\.
 
 ## Examples<a name="how-examples"></a>
 

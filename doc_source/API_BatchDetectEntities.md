@@ -1,6 +1,6 @@
 # BatchDetectEntities<a name="API_BatchDetectEntities"></a>
 
-Inspects the text of a batch of documents for named entities and returns information about them\. For more information about named entities, see [Entities](how-entities.md) 
+Inspects the text of a batch of documents for named entities and returns information about them\. For more information about named entities, see [Detect Entities](how-entities.md) 
 
 ## Request Syntax<a name="API_BatchDetectEntities_RequestSyntax"></a>
 
@@ -20,7 +20,7 @@ The request accepts the following data in JSON format\.
  ** [LanguageCode](#API_BatchDetectEntities_RequestSyntax) **   <a name="comprehend-BatchDetectEntities-request-LanguageCode"></a>
 The language of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\. All documents must be in the same language\.  
 Type: String  
-Valid Values:` en | es`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: Yes
 
  ** [TextList](#API_BatchDetectEntities_RequestSyntax) **   <a name="comprehend-BatchDetectEntities-request-TextList"></a>
@@ -92,7 +92,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  **UnsupportedLanguageException**   
-Amazon Comprehend can't process the language of the input text\. For all APIs except `DetectDominantLanguage`, Amazon Comprehend accepts only English or Spanish text\. For the `DetectDominantLanguage` API, Amazon Comprehend detects 100 languages\. For a list of languages, see [Dominant Language](how-languages.md)   
+Amazon Comprehend can't process the language of the input text\. For all custom entity recognition APIs \(such as `CreateEntityRecognizer`\), only English is accepted\. For most other APIs, Amazon Comprehend accepts only English or Spanish text\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_BatchDetectEntities_SeeAlso"></a>

@@ -7,12 +7,20 @@ Provides information about an entities detection job\.
  **DataAccessRoleArn**   <a name="comprehend-Type-EntitiesDetectionJobProperties-DataAccessRoleArn"></a>
 The Amazon Resource Name \(ARN\) that gives Amazon Comprehend read access to your input data\.  
 Type: String  
+Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: No
 
  **EndTime**   <a name="comprehend-Type-EntitiesDetectionJobProperties-EndTime"></a>
 The time that the entities detection job completed  
 Type: Timestamp  
+Required: No
+
+ **EntityRecognizerArn**   <a name="comprehend-Type-EntitiesDetectionJobProperties-EntityRecognizerArn"></a>
+The Amazon Resource Name \(ARN\) that identifies the entity recognizer\.  
+Type: String  
+Length Constraints: Maximum length of 256\.  
+Pattern: `arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*`   
 Required: No
 
  **InputDataConfig**   <a name="comprehend-Type-EntitiesDetectionJobProperties-InputDataConfig"></a>
@@ -24,6 +32,7 @@ Required: No
 The identifier assigned to the entities detection job\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: No
 
  **JobName**   <a name="comprehend-Type-EntitiesDetectionJobProperties-JobName"></a>
@@ -42,7 +51,7 @@ Required: No
  **LanguageCode**   <a name="comprehend-Type-EntitiesDetectionJobProperties-LanguageCode"></a>
 The language code of the input documents\.  
 Type: String  
-Valid Values:` en | es`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: No
 
  **Message**   <a name="comprehend-Type-EntitiesDetectionJobProperties-Message"></a>

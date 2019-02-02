@@ -20,6 +20,7 @@ The request accepts the following data in JSON format\.
 The identifier that Amazon Comprehend generated for the job\. The [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) operation returns this identifier in its response\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: Yes
 
 ## Response Syntax<a name="API_DescribeDominantLanguageDetectionJob_ResponseSyntax"></a>

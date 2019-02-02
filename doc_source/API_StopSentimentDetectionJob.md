@@ -26,6 +26,7 @@ The request accepts the following data in JSON format\.
 The identifier of the sentiment detection job to stop\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: Yes
 
 ## Response Syntax<a name="API_StopSentimentDetectionJob_ResponseSyntax"></a>
@@ -46,7 +47,8 @@ The following data is returned in JSON format by the service\.
  ** [JobId](#API_StopSentimentDetectionJob_ResponseSyntax) **   <a name="comprehend-StopSentimentDetectionJob-response-JobId"></a>
 The identifier of the sentiment detection job to stop\.  
 Type: String  
-Length Constraints: Minimum length of 1\. Maximum length of 32\.
+Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$` 
 
  ** [JobStatus](#API_StopSentimentDetectionJob_ResponseSyntax) **   <a name="comprehend-StopSentimentDetectionJob-response-JobStatus"></a>
 Either `STOP_REQUESTED` if the job is currently running, or `STOPPED` if the job was previously stopped with the `StopSentimentDetectionJob` operation\.  

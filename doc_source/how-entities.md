@@ -1,4 +1,4 @@
-# Entities<a name="how-entities"></a>
+# Detect Entities<a name="how-entities"></a>
 
 Use the [DetectEntities](API_DetectEntities.md), [BatchDetectEntities](API_BatchDetectEntities.md), and [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operations to detect entities in a document\. An *entity* is a textual reference to the unique name of a real\-world object such as people, places, and commercial items, and to precise references to measures such as dates and quantities\.
 

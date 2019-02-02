@@ -2,12 +2,15 @@
 
 Starts an asynchronous entity detection job for a collection of documents\. Use the [DescribeEntitiesDetectionJob](API_DescribeEntitiesDetectionJob.md) operation to track the status of a job\.
 
+This API can be used for either standard entity detection or custom entity recognition\. In order to be used for custom entity recognition, the optional `EntityRecognizerArn` must be used in order to provide access to the recognizer being used to detect the custom entity\.
+
 ## Request Syntax<a name="API_StartEntitiesDetectionJob_RequestSyntax"></a>
 
 ```
 {
    "[ClientRequestToken](#comprehend-StartEntitiesDetectionJob-request-ClientRequestToken)": "string",
    "[DataAccessRoleArn](#comprehend-StartEntitiesDetectionJob-request-DataAccessRoleArn)": "string",
+   "[EntityRecognizerArn](#comprehend-StartEntitiesDetectionJob-request-EntityRecognizerArn)": "string",
    "[InputDataConfig](#comprehend-StartEntitiesDetectionJob-request-InputDataConfig)": { 
       "[InputFormat](API_InputDataConfig.md#comprehend-Type-InputDataConfig-InputFormat)": "string",
       "[S3Uri](API_InputDataConfig.md#comprehend-Type-InputDataConfig-S3Uri)": "string"
@@ -36,8 +39,16 @@ Required: No
  ** [DataAccessRoleArn](#API_StartEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartEntitiesDetectionJob-request-DataAccessRoleArn"></a>
 The Amazon Resource Name \(ARN\) of the AWS Identity and Access Management \(IAM\) role that grants Amazon Comprehend read access to your input data\. For more information, see [https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions](https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions)\.  
 Type: String  
+Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: Yes
+
+ ** [EntityRecognizerArn](#API_StartEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartEntitiesDetectionJob-request-EntityRecognizerArn"></a>
+The Amazon Resource Name \(ARN\) that identifies the specific entity recognizer to be used by the `StartEntitiesDetectionJob`\. This ARN is optional and is only used for a custom entity recognition job\.  
+Type: String  
+Length Constraints: Maximum length of 256\.  
+Pattern: `arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*`   
+Required: No
 
  ** [InputDataConfig](#API_StartEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartEntitiesDetectionJob-request-InputDataConfig"></a>
 Specifies the format and location of the input data for the job\.  
@@ -52,9 +63,9 @@ Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`
 Required: No
 
  ** [LanguageCode](#API_StartEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartEntitiesDetectionJob-request-LanguageCode"></a>
-The language of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\. All documents must be in the same language\.  
+The language of the input documents\. All documents must be in the same language\. You can specify any of the languages supported by Amazon Comprehend: English \("en"\), Spanish \("es"\), French \("fr"\), German \("de"\), Italian \("it"\), or Portuguese \("pt"\)\. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead\.  
 Type: String  
-Valid Values:` en | es`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: Yes
 
  ** [OutputDataConfig](#API_StartEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartEntitiesDetectionJob-request-OutputDataConfig"></a>
@@ -80,7 +91,8 @@ The following data is returned in JSON format by the service\.
  ** [JobId](#API_StartEntitiesDetectionJob_ResponseSyntax) **   <a name="comprehend-StartEntitiesDetectionJob-response-JobId"></a>
 The identifier generated for the job\. To get the status of job, use this identifier with the [DescribeEntitiesDetectionJob](API_DescribeEntitiesDetectionJob.md) operation\.  
 Type: String  
-Length Constraints: Minimum length of 1\. Maximum length of 32\.
+Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$` 
 
  ** [JobStatus](#API_StartEntitiesDetectionJob_ResponseSyntax) **   <a name="comprehend-StartEntitiesDetectionJob-response-JobStatus"></a>
 The status of the job\.   
@@ -88,6 +100,8 @@ The status of the job\.
 + IN\_PROGRESS \- Amazon Comprehend is processing the job\.
 + COMPLETED \- The job was successfully completed and the output is available\.
 + FAILED \- The job did not complete\. To get details, use the [DescribeEntitiesDetectionJob](API_DescribeEntitiesDetectionJob.md) operation\.
++ STOP\_REQUESTED \- Amazon Comprehend has received a stop request for the job and is processing the request\.
++ STOPPED \- The job was successfully stopped without completing\.
 Type: String  
 Valid Values:` SUBMITTED | IN_PROGRESS | COMPLETED | FAILED | STOP_REQUESTED | STOPPED` 
 
@@ -101,6 +115,14 @@ HTTP Status Code: 500
 
  **InvalidRequestException**   
 The request is invalid\.  
+HTTP Status Code: 400
+
+ **ResourceNotFoundException**   
+The specified resource ARN was not found\. Check the ARN and try your request again\.  
+HTTP Status Code: 400
+
+ **ResourceUnavailableException**   
+The specified resource is not available\. Check to see if the resource is in the `TRAINED` state and try your request again\.  
 HTTP Status Code: 400
 
  **TooManyRequestsException**   

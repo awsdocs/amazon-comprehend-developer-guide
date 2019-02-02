@@ -15,7 +15,7 @@ Type: Integer
 Required: No
 
  **PartOfSpeech**   <a name="comprehend-Type-SyntaxToken-PartOfSpeech"></a>
-Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified\. For more information, see [Syntax](how-syntax.md)\.  
+Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified\. For more information, see [Analyze Syntax](how-syntax.md)\.  
 Type: [PartOfSpeechTag](API_PartOfSpeechTag.md) object  
 Required: No
 

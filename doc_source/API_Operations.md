@@ -1,13 +1,20 @@
 # Actions<a name="API_Operations"></a>
 
-The following actions are supported:
+The following actions are supported by Amazon Comprehend:
 +  [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) 
 +  [BatchDetectEntities](API_BatchDetectEntities.md) 
 +  [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) 
 +  [BatchDetectSentiment](API_BatchDetectSentiment.md) 
 +  [BatchDetectSyntax](API_BatchDetectSyntax.md) 
++  [CreateDocumentClassifier](API_CreateDocumentClassifier.md) 
++  [CreateEntityRecognizer](API_CreateEntityRecognizer.md) 
++  [DeleteDocumentClassifier](API_DeleteDocumentClassifier.md) 
++  [DeleteEntityRecognizer](API_DeleteEntityRecognizer.md) 
++  [DescribeDocumentClassificationJob](API_DescribeDocumentClassificationJob.md) 
++  [DescribeDocumentClassifier](API_DescribeDocumentClassifier.md) 
 +  [DescribeDominantLanguageDetectionJob](API_DescribeDominantLanguageDetectionJob.md) 
 +  [DescribeEntitiesDetectionJob](API_DescribeEntitiesDetectionJob.md) 
++  [DescribeEntityRecognizer](API_DescribeEntityRecognizer.md) 
 +  [DescribeKeyPhrasesDetectionJob](API_DescribeKeyPhrasesDetectionJob.md) 
 +  [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md) 
 +  [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) 
@@ -16,11 +23,15 @@ The following actions are supported:
 +  [DetectKeyPhrases](API_DetectKeyPhrases.md) 
 +  [DetectSentiment](API_DetectSentiment.md) 
 +  [DetectSyntax](API_DetectSyntax.md) 
++  [ListDocumentClassificationJobs](API_ListDocumentClassificationJobs.md) 
++  [ListDocumentClassifiers](API_ListDocumentClassifiers.md) 
 +  [ListDominantLanguageDetectionJobs](API_ListDominantLanguageDetectionJobs.md) 
 +  [ListEntitiesDetectionJobs](API_ListEntitiesDetectionJobs.md) 
++  [ListEntityRecognizers](API_ListEntityRecognizers.md) 
 +  [ListKeyPhrasesDetectionJobs](API_ListKeyPhrasesDetectionJobs.md) 
 +  [ListSentimentDetectionJobs](API_ListSentimentDetectionJobs.md) 
 +  [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) 
++  [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) 
 +  [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) 
 +  [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) 
 +  [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md) 
@@ -30,3 +41,9 @@ The following actions are supported:
 +  [StopEntitiesDetectionJob](API_StopEntitiesDetectionJob.md) 
 +  [StopKeyPhrasesDetectionJob](API_StopKeyPhrasesDetectionJob.md) 
 +  [StopSentimentDetectionJob](API_StopSentimentDetectionJob.md) 
++  [StopTrainingDocumentClassifier](API_StopTrainingDocumentClassifier.md) 
++  [StopTrainingEntityRecognizer](API_StopTrainingEntityRecognizer.md) 
+
+The following actions are supported by AWS Comprehend Medical:
++  [DetectEntities](API_hera_DetectEntities.md) 
++  [DetectPHI](API_hera_DetectPHI.md) 

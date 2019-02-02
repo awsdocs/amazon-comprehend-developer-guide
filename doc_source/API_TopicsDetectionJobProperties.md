@@ -18,6 +18,7 @@ Required: No
 The identifier assigned to the topic detection job\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
+Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
 Required: No
 
  **JobName**   <a name="comprehend-Type-TopicsDetectionJobProperties-JobName"></a>

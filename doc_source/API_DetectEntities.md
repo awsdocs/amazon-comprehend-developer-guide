@@ -1,6 +1,6 @@
 # DetectEntities<a name="API_DetectEntities"></a>
 
-Inspects text for named entities, and returns information about them\. For more information, about named entities, see [Entities](how-entities.md)\. 
+Inspects text for named entities, and returns information about them\. For more information, about named entities, see [Detect Entities](how-entities.md)\. 
 
 ## Request Syntax<a name="API_DetectEntities_RequestSyntax"></a>
 
@@ -20,7 +20,7 @@ The request accepts the following data in JSON format\.
  ** [LanguageCode](#API_DetectEntities_RequestSyntax) **   <a name="comprehend-DetectEntities-request-LanguageCode"></a>
 The language of the input documents\. You can specify English \("en"\) or Spanish \("es"\)\. All documents must be in the same language\.  
 Type: String  
-Valid Values:` en | es`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: Yes
 
  ** [Text](#API_DetectEntities_RequestSyntax) **   <a name="comprehend-DetectEntities-request-Text"></a>
@@ -52,7 +52,7 @@ If the action is successful, the service sends back an HTTP 200 response\.
 The following data is returned in JSON format by the service\.
 
  ** [Entities](#API_DetectEntities_ResponseSyntax) **   <a name="comprehend-DetectEntities-response-Entities"></a>
-A collection of entities identified in the input text\. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection\. For a list of entity types, see [Entities](how-entities.md)\.   
+A collection of entities identified in the input text\. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection\. For a list of entity types, see [Detect Entities](how-entities.md)\.   
 Type: Array of [Entity](API_Entity.md) objects
 
 ## Errors<a name="API_DetectEntities_Errors"></a>
@@ -72,7 +72,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  **UnsupportedLanguageException**   
-Amazon Comprehend can't process the language of the input text\. For all APIs except `DetectDominantLanguage`, Amazon Comprehend accepts only English or Spanish text\. For the `DetectDominantLanguage` API, Amazon Comprehend detects 100 languages\. For a list of languages, see [Dominant Language](how-languages.md)   
+Amazon Comprehend can't process the language of the input text\. For all custom entity recognition APIs \(such as `CreateEntityRecognizer`\), only English is accepted\. For most other APIs, Amazon Comprehend accepts only English or Spanish text\.   
 HTTP Status Code: 400
 
 ## Example<a name="API_DetectEntities_Examples"></a>
@@ -81,7 +81,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob ordered two sandwiches and three ice cream cones today from a store in Seattle\.", the operation returns the following:
 
-#### <a name="w3ab1c21b5c41c15b3b5"></a>
+#### <a name="w4aac11b5b7c62c15b3b5"></a>
 
 ```
     {
