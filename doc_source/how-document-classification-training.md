@@ -45,10 +45,10 @@ We recommend that you train the model with up to 1,000 training documents for ea
 | CAT | document text 4 | 
 | FISH | document text 5 | 
 
-Amazon Comprehend Amazon Comprehend will use between 10 and 20 percent of the documents that you submit for training to test the custom classifier\. This testing material is randomly selected after we ensure that there are no labels in the test set which we have never seen before\. For example, if the data contained 1000 instances of the CAT label, 1000 instances of the DOG, and a single instance of the FISH label, then the test set would approximately be 100 CAT, 100 DOG\. The FISH label would not be included in the test set, as there is only a single example available\. please note that it's highly unlikely you will see a doc labelled as FISH during prediction/inference in a setting like this\. 
+Amazon Comprehend will use between 10 and 20 percent of the documents that you submit for training to test the custom classifier\. This testing material is randomly selected after we ensure that there are no labels in the test set which we have never seen before\. For example, if the data contained 1000 instances of the CAT label, 1000 instances of the DOG, and a single instance of the FISH label, then the test set would approximately be 100 CAT, 100 DOG\. The FISH label would not be included in the test set, as there is only a single example available\. please note that it's highly unlikely you will see a doc labelled as FISH during prediction/inference in a setting like this\. 
 
 The result of the testing is returned in the `Metrics` fields returned by the [DescribeDocumentClassifier](API_DescribeDocumentClassifier.md) operation\.
 
 Once you've finished training your model, the training metrics can provide you with information that you can use to decide if the model is trained sufficiently for your needs\. 
 
-Once the training job completes, the service provides an endpoint to a trained model that is now used to organize unlabeled documents\. 
+Once the training job completes, the service provides an endpoint to a trained model that is now used to organize unlabeled documents\.
