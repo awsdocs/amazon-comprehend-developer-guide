@@ -15,7 +15,7 @@ We support the following metrics:
 
 **Accuracy**
 
-Accuracy is reported at the corpus level\. This indicates that it indicates the percentage of labels from the test data that are predicted exactly right by the model\. This is also called *micro*\-averaging\. 
+Accuracy is reported at the corpus level\. This indicates the percentage of labels from the test data that are predicted exactly right by the model\. This is also called *micro*\-averaging\. 
 
 For example
 
