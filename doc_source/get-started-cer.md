@@ -40,7 +40,7 @@ aws comprehend describe-entity-recognizer \
      --region region
 ```
 
-Starting a custom entities recogniztion job using the `StartEntitiesDetectionJob` operation\.
+Starting a custom entities recognition job using the `StartEntitiesDetectionJob` operation\.
 
 ```
 aws comprehend start-entities-detection-job \
