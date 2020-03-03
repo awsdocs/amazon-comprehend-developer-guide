@@ -61,7 +61,4 @@ When you grant permissions, you use the IAM policy language to specify the condi
 
 AWS provides a set of predefined condition keys for all AWS services that support IAM for access control\. For example, you can use the `aws:userid` condition key to require a specific AWS ID when requesting an action\. For more information and a complete list of AWS\-wide keys, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\. 
 
-**Note**  
-Condition keys are case sensitive\.
-
 Comprehend Medical does not provide any additional condition keys\.
