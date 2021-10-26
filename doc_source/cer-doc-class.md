@@ -7,7 +7,7 @@ Metrics are included any time metadata from a trained custom classifier is retur
 **Note**  
 Please refer to [Metrics: Precision, Recall, and FScore](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_fscore_support.html) for an understanding of the underlying Precision, Recall, and F1 score metrics\. These metrics are defined at a class level\. We have used **macro** averaging for combining these metrics together to come up with the test set P,R,F1, as discussed below\.
 
-Amazon Comprehend creates a [Confusion Matrix](conf-matrix.md) as part of the custom classifier model training\. This is placed in the output file specified in the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation and can be used to assess how well the model works\.
+Amazon Comprehend creates a [Confusion Matrix](conf-matrix.md) as part of the custom classifier model training\. This is placed in the output file specified in the [ CreateDocumentClassifier ](API_CreateDocumentClassifier.md) operation and can be used to assess how well the model works\.
 
 We also support the following metrics: 
 + **Accuracy**
@@ -18,6 +18,8 @@ We also support the following metrics:
 + **Micro Precision**
 + **Micro Recall**
 + **Micro F1 Score**
+
+
 
 These can be seen on the **Classifier Details** page in the console\.
 
@@ -67,7 +69,9 @@ Macro Precision = (0.75 + 0.80 + 0.90 + 0.50 + 0.40)/5 = 0.67
 
 ## Recall \(Macro Recall\)<a name="class-macrorecall-metric"></a>
 
-Indicates how many of the correct categories in the text that the model can predict\. It is a percentage of correct categories in the text that can found\. This metric comes from averaging the recall of all available labels\. Also known as macro recall\. A measure of how complete the classifier results are for the test data\. High recall means that the classifier returned most of the relevant results\. 
+This indicates the percentage of correct categories in your text that the model can predict\. This metric comes from averaging the recall scores of all available labels\. Recall is a measure of how complete the classifier results are for the test data\. 
+
+High recall means that the classifier returned most of the relevant results\. 
 
 The `Recall` metric is also known as *Macro Recall*\.
 

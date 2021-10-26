@@ -4,21 +4,25 @@ Amazon Comprehend provides you with metrics to help you estimate how well an ent
 
 Metrics are returned any time metadata from a trained entity recognizer is returned\. 
 
-Amazon Comprehend supports training a model on up to 12 entities at a time\. When metrics are returned from a trained entity recognizer, scores are computed against both the recognizer as a whole \(global metrics\) and for each individual entity \(entity metrics\)\.
+Amazon Comprehend supports training a model on up to 25 entities at a time\. When metrics are returned from a trained entity recognizer, scores are computed against both the recognizer as a whole \(global metrics\) and for each individual entity \(entity metrics\)\.
 
 Three metrics are available, both as global and entity metrics: 
 + **Precision**
 
-  This indicates how many times the model makes a correct entity identification compared to the number of attempted identifications\. This shows how many times the model's entity identification is truly a good identification\. It is a percentage of the total number of identifications\. 
+  This indicates the fraction of entities produced by the system that are correctly identified and correctly labled\. This shows how many times the model's entity identification is truly a good identification\. It is a percentage of the total number of identifications\. 
 
   In other words, precision is based on *true positives \(tp\)* and *false positives \(fp\)* and it is calculated as *precision = tp / \(tp \+ fp\)*\.
 
   For example, if a model predicts that two examples of an entity are present in a document, where there's actually only one, the result is one true positive and one false positive\. In this case, *precision = 1 / \(1 \+ 1\)*\. The precision is 50%, as one entity is correct out of the two identified by the model\. 
+
+  
 +  **Recall**
 
-  This indicates how many times the model makes a correct entity identification compared to the number of instances of that the entity is actually present \(as defined by the total number of correct identifications *true positives \(tp\)* and missed identifcations *false negatives \(fn\)*\. 
+  This indicates the fraction of entities present in the documents that are correctly identified and labeled by the system\. Mathematically, this is defined in terms of the total number of correct identifications *true positives \(tp\)* and missed identifcations *false negatives \(fn\)*\. 
 
    It is calculated as *recall = tp / \(tp \+ fn\)*\. For example if a model correctly identifies one entity, but misses two other instances where that entity is present, the result is one true positive and two false negatives\. In this case, *recall = 1 / \(1 \+ 2\)*\. The recall is 33\.33%, as one entity is correct out of a possible three examples\.
+
+  
 + **F1 Score** 
 
   This is a combination of the Precision and Recall metrics, which measures the overall accuracy of the model for custom entity recognition\. The F1 score is the harmonic mean of the Precision and Recall metrics: *F1 = 2 \* Precision \* Recall / \(Precision \+ Recall\) *\.
@@ -26,6 +30,8 @@ Three metrics are available, both as global and entity metrics:
 Intuitively, the harmonic mean penalizes the extremes more than the simple average or other means \(example: `precision` = 0, `recall` = 1 could be achieved trivially by predicting all possible spans\. Here, the simple average would be 0\.5, but `F1` would penalize it as 0\)\. 
 
   In the examples above, `precision` = 50% and `recall` = 33\.33%, therefore `F1` = 2 \* 0\.5 \* 0\.3333 / \(0\.5 \+ 0\.3333\)\. The F1 Score is \.3975, or 39\.75%\.
+
+  
 
 **Global and Individual Entity Metrics**
 
@@ -103,12 +109,14 @@ Global:
     Global Recall))
 ```
 
+
+
 ## Improving Custom Entity Recognizer Performance<a name="cer-performance"></a>
 
 These metrics provide an insight into how accurately the trained model will perform when you use it to identify entities\. Here are a few options you can use to improve your metrics if they are lower than your expectations:
 
-1. Depending on whether you use [Annotations](cer-annotation.md) or [Entity Lists](cer-entity-list.md), make sure to follow the guidelines in the respective documentation to improve data quality\. If you observe better metrics after improving your data and re\-training the model, you can keep iterating and improving data quality to achieve better model performance\.
+1. Depending on whether you use [Annotations ](cer-annotation.md) or [Entity Lists \(Plain Text Only\)](cer-entity-list.md), make sure to follow the guidelines in the respective documentation to improve data quality\. If you observe better metrics after improving your data and re\-training the model, you can keep iterating and improving data quality to achieve better model performance\.
 
-1. If you are using an Entity List, consider using Annotations instead\. The increased context of the annotations can often improve your metrics\.
+1. If you are using an Entity List, consider using Annotations instead\. Manual annotations can often improve your results\.
 
 1. If you are sure there is not a data quality issue, and yet the metrics remain unreasonably low, please submit a support request\.

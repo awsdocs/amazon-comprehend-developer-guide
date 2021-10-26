@@ -9,7 +9,7 @@ To send batches of up to 25 documents, you can use the Amazon Comprehend batch o
 
 ## Batch Processing With the SDK for Java<a name="batch-java"></a>
 
-The following sample program shows how to use the [BatchDetectEntities](API_BatchDetectEntities.md) operation with the SDK for Java\. The response from the server contains a [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
+The following sample program shows how to use the [ BatchDetectEntities ](API_BatchDetectEntities.md) operation with the SDK for Java\. The response from the server contains a [ BatchDetectEntitiesItemResult ](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
 
 ```
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -73,7 +73,7 @@ public class App
 
 ## Batch Processing With the AWS SDK for \.NET<a name="batch-csharp"></a>
 
-The following sample program shows how to use the [BatchDetectEntities](API_BatchDetectEntities.md) operation with the AWS SDK for \.NET\. The response from the server contains a [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
+The following sample program shows how to use the [ BatchDetectEntities ](API_BatchDetectEntities.md) operation with the AWS SDK for \.NET\. The response from the server contains a [ BatchDetectEntitiesItemResult ](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
 
 The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
 
@@ -155,7 +155,7 @@ namespace Comprehend
 
 These examples show how to use the batch API operations using the AWS Command Line Interface\. All of the operations except `BatchDetectDominantLanguage` use the following JSON file called `process.json` as input\. For that operation the `LanguageCode` entity is not included\.
 
-The third document in the JSON file \(`"$$$$$$$$"`\) will cause an error during batch processing\. It is included so that the operations will include a [BatchItemError](API_BatchItemError.md) in the response\.
+The third document in the JSON file \(`"$$$$$$$$"`\) will cause an error during batch processing\. It is included so that the operations will include a [ BatchItemError ](API_BatchItemError.md) in the response\.
 
 ```
 {
@@ -178,7 +178,7 @@ The examples are formatted for Unix, Linux, and macOS\. For Windows, replace the
 
 ### Detect the Dominant Language Using a Batch \(AWS CLI\)<a name="batch-dominant-language"></a>
 
-The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) operation determines the dominant language of each document in a batch\. For a list of the languages that Amazon Comprehend can detect, see [Detect the Dominant Language](how-languages.md)\. The following AWS CLI command calls the `BatchDetectDominantLanguage` operation\.
+The [ BatchDetectDominantLanguage ](API_BatchDetectDominantLanguage.md) operation determines the dominant language of each document in a batch\. For a list of the languages that Amazon Comprehend can detect, see [Detect the Dominant Language](how-languages.md)\. The following AWS CLI command calls the `BatchDetectDominantLanguage` operation\.
 
 ```
 aws comprehend batch-detect-dominant-language \
@@ -223,7 +223,7 @@ The following is the response from the `BatchDetectDominantLanguage` operation:
 
 ### Detect Entities Using a Batch \(AWS CLI\)<a name="batch-entities"></a>
 
-Use the [BatchDetectEntities](API_BatchDetectEntities.md) operation to find the entities present in a batch of documents\. For more information about entities, see [Detect Entities](how-entities.md)\. The following AWS CLI command calls the `BatchDetectEntities` operation\.
+Use the [ BatchDetectEntities ](API_BatchDetectEntities.md) operation to find the entities present in a batch of documents\. For more information about entities, see [Detect Entities](how-entities.md)\. The following AWS CLI command calls the `BatchDetectEntities` operation\.
 
 ```
 aws comprehend batch-detect-entities \
@@ -234,7 +234,7 @@ aws comprehend batch-detect-entities \
 
 ### Detect Key Phrases Using a Batch \(AWS CLI\)<a name="batch-key-phrase"></a>
 
-The [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) operation returns the key noun phrases in a batch of documents\. The following AWS CLI command calls the `BatchDetectKeyNounPhrases` operation\.
+The [ BatchDetectKeyPhrases ](API_BatchDetectKeyPhrases.md) operation returns the key noun phrases in a batch of documents\. The following AWS CLI command calls the `BatchDetectKeyNounPhrases` operation\.
 
 ```
 aws comprehend batch-detect-key-phrases
@@ -245,7 +245,7 @@ aws comprehend batch-detect-key-phrases
 
 ### Detect Sentiment Using a Batch \(AWS CLI\)<a name="batch-sentiment"></a>
 
-Detect the overall sentiment of a batch of documents using the [BatchDetectSentiment](API_BatchDetectSentiment.md) operation\. The following AWS CLI command calls the `BatchDetectSentiment` operation\.
+Detect the overall sentiment of a batch of documents using the [ BatchDetectSentiment ](API_BatchDetectSentiment.md) operation\. The following AWS CLI command calls the `BatchDetectSentiment` operation\.
 
 ```
 aws comprehend batch-detect-sentiment \

@@ -14,8 +14,8 @@ For jobs, you can only configure subnets with a default tenancy VPC in which you
 To specify subnets and security groups in your VPC, use the `VpcConfig` request parameter of the applicable API, or provide this information when you create a job in the Amazon Comprehend console\. Amazon Comprehend uses this information to create ENIs and attach them to our job containers\. The ENIs provide our job containers with a network connection within your VPC that is not connected to the internet\. 
 
 The following APIs contain the `VpcConfig` request parameter: 
-+ `Create*` APIs: `[CreateDocumentClassifier](API_CreateDocumentClassifier.md)`, `[CreateEntityRecognizer](API_CreateEntityRecognizer.md)`
-+ `Start*` APIs: `[StartDocumentClassificationJob](API_StartDocumentClassificationJob.md)`, `[StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md)`, `[StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md)`, `[StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md)`, `[StartSentimentDetectionJob](API_StartSentimentDetectionJob.md)`, `[StartTopicsDetectionJob](API_StartTopicsDetectionJob.md)`
++ `Create*` APIs: ` CreateDocumentClassifier `, ` CreateEntityRecognizer `
++ `Start*` APIs: ` StartDocumentClassificationJob `, ` StartDominantLanguageDetectionJob `, ` StartEntitiesDetectionJob `, ` StartKeyPhrasesDetectionJob `, ` StartSentimentDetectionJob `, ` StartTopicsDetectionJob `
 
 The following is an example of the VpcConfig parameter that you include in your API call: 
 
@@ -73,6 +73,42 @@ The following policy allows access to S3 buckets\. Edit this policy to allow acc
 ```
 
 Use default DNS settings for your endpoint route table, so that standard Amazon S3 URLs \(for example, `http://s3-aws-region.amazonaws.com/MyBucket`\) resolve\. If you don't use default DNS settings, ensure that the URLs that you use to specify the locations of the data in your jobs resolve by configuring the endpoint route tables\. For information about VPC endpoint route tables, see [Routing for Gateway Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-gateway.html#vpc-endpoints-routing) in the *Amazon VPC User Guide*\. 
+
+The default endpoint policy allows users to install packages from the Amazon Linux and Amazon Linux 2 repositories on our jobs container\. If you don't want users to install packages from that repository, create a custom endpoint policy that explicitly denies access to the Amazon Linux and Amazon Linux 2 repositories\. Comprehend itself doesn't need any such packages, so there won't be any functionality impact\. The following is an example of a policy that denies access to these repositories: 
+
+```
+{ 
+    "Statement": [ 
+      { 
+        "Sid": "AmazonLinuxAMIRepositoryAccess",
+        "Principal": "*",
+        "Action": [ 
+            "s3:GetObject" 
+        ],
+        "Effect": "Deny",
+        "Resource": [
+            "arn:aws:s3:::packages.*.amazonaws.com/*",
+            "arn:aws:s3:::repo.*.amazonaws.com/*"
+        ] 
+      } 
+    ] 
+} 
+
+{ 
+    "Statement": [ 
+        { "Sid": "AmazonLinux2AMIRepositoryAccess",
+          "Principal": "*",
+          "Action": [ 
+              "s3:GetObject" 
+              ],
+          "Effect": "Deny",
+          "Resource": [
+              "arn:aws:s3:::amazonlinux.*.amazonaws.com/*" 
+              ] 
+         } 
+    ] 
+}
+```
 
 **Permissions for the `DataAccessRole`**
 

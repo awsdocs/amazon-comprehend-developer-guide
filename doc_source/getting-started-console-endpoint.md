@@ -9,6 +9,8 @@ The level of throughput assigned to an endpoint is measured in *Inference units*
 
 Once you have completed your real\-time analysis, you should delete the endpoint because the charge for it will continue as long as it's active\. You can easily create another endpoint whenever you need it\.
 
+
+
 **To create an endpoint**
 
 1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/home?region=us-east-1#api-explorer:)

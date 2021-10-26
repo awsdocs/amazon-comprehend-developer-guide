@@ -1,6 +1,6 @@
 # Detecting Key Phrases<a name="get-started-api-key-phrases"></a>
 
-To determine the key noun phrases used in text, use the Amazon Comprehend [DetectKeyPhrases](API_DetectKeyPhrases.md) operation\. To detect the key noun phrases in up to 25 documents in a batch, use the [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
+To determine the key noun phrases used in text, use the Amazon Comprehend [ DetectKeyPhrases ](API_DetectKeyPhrases.md) operation\. To detect the key noun phrases in up to 25 documents in a batch, use the [ BatchDetectKeyPhrases ](API_BatchDetectKeyPhrases.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
 
 **Topics**
 + [Detecting Key Phrases Using the AWS Command Line Interface](#get-started-api-key-phrases-cli)

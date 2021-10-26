@@ -12,33 +12,17 @@ You can have multiple custom classifiers in your account, each trained using dif
 
 ## Multi\-Class and Multi\-Label Modes<a name="multiclass-multilabel2"></a>
 
-You can classify your documents using two modes: multi\-class or multi\-label\. You can only use one mode at a time and it must be set when training your classifier\. Some of the basic concepts and necessary formats are different for each\. In the Amazon Comprehend console, you choose which mode to use when creating your training job: 
-
-![\[Custom classifier mode\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/classifier-mode.png)
+You can classify your documents using two modes: multi\-class or multi\-label\. You can only use one mode at a time and it must be set when training your classifier\. Some of the basic concepts and necessary formats are different for each\. In the Amazon Comprehend console, you choose which mode to use when creating your training job\. 
 
 **Multi\-Class mode**
 
-Out of a group of at least two possible classes, multi\-class mode specifies a single class for each document\. The individual classes are mutually exclusive\. For example, a movie can be classed as a documentary or as science fiction, but not both at the same time\. The format must be one class and document per line\. For example:
-
-```
-CLASS,Text of document 1
-CLASS,Text of document 2
-CLASS,Text of document 3
-```
+Out of a group of at least two possible classes, multi\-class mode specifies a single class for each document\. The individual classes are mutually exclusive\. For example, a movie can be classed as a documentary or as science fiction, but not both at the same time\.
 
 After training the custom classifier, you can then analyze documents in either asynchronous or synchronous operations\. You can analyze a large number of documents at once using the asynchronous operation, with the resulting analysis returned in a separate file\. Using the synchronous operation, you can only analyze a single document, but you can get results in real time\. These options are not available when using multi\-label mode\. For more information, see [Asynchronous Classification](#multiclass-async-sync)\.
 
 **Multi\-Label mode**
 
 Out of a group of at least two possible classes, multi\-label mode identifies one or more classes for each document\. Unlike multi\-class mode, these classes are not mutually exclusive and each document can have more than one class assigned to it\. For example, a movie can simply be an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time\.
-
-As with multi\-class mode, when formatting the training documents, the data must be in a two column \.csv file\. Each line of the \.csv file contains one or more classes and the text of a document that demonstrates those labels\. More than one class can be indicated by using a delimiter \(such as a \| \) between each class:
-
-```
-CLASS,Text of document 1
-CLASS,Text of document 2
-CLASS|CLASS|CLASS,Text of document 3
-```
 
 ## Asynchronous Classification<a name="multiclass-async-sync"></a>
 

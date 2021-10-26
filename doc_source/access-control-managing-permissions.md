@@ -45,7 +45,7 @@ To fully use Amazon Key Management Service \(KMS\) for data and job encryption i
         {
             "Action": [
                 "kms:CreateGrant",
-                "kms:Decrypt”,
+                "kms:Decrypt",
                 "kms:GenerateDatakey"
             ],
             "Effect": "Allow",
@@ -96,18 +96,27 @@ When you create an asynchronous batch job or a topic modeling job using the cons
 ```
 {
   "Version": "2012-10-17",
-  "Statement": [
-      {
-         "Action": [
-            "iam:CreateRole",
-            "iam:CreatePolicy",
-            "iam:AttachRolePolicy",
-            "iam:PassRole"
-         ],
-         "Effect": "Allow",
-         "Resource": "*"
-      }
-   ]
+  "Statement":
+  [
+    {
+      "Action":
+      [
+        "iam:CreateRole",
+        "iam:CreatePolicy",
+        "iam:AttachRolePolicy"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action":
+      [
+        "iam:PassRole"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:iam::*:role/*Comprehend*"
+    }
+  ]
 }
 ```
 
@@ -127,15 +136,17 @@ You need to apply the following additional policy to any user that will use Amaz
 ```
 {
   "Version": "2012-10-17",
-  "Statement": [
-      {
-         "Action": [
-            "iam:PassRole"
-         ],
-         "Effect": "Allow",
-         "Resource": "*"
-      }
-   ]
+  "Statement":
+  [
+    {
+      "Action":
+      [
+        "iam:PassRole"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:iam::*:role/*Comprehend*"
+    }
+  ]
 }
 ```
 
@@ -166,44 +177,9 @@ The following is the role's trust policy:
 }
 ```
 
-After you have created the role, you must create an access policy for that role\. The should grant the Amazon S3 `GetObject` and `ListBucket` permissions to the Amazon S3 bucket that contains your input data, and the Amazon S3 `PutObject` permission to your Amazon S3 output data bucket\. 
+After you have created the role, you must create an access policy for that role\. This should grant the Amazon S3 `GetObject` and `ListBucket` permissions to the Amazon S3 bucket that contains your input data, and the Amazon S3 `PutObject` permission to your Amazon S3 output data bucket\. 
 
 The following example access policy contains those permissions\.
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::input bucket/*"
-            ],
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::input bucket"
-            ],
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
-                "s3:PutObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::output bucket/*"
-            ],
-            "Effect": "Allow"
-        }
-    ]
-}
-```
 
 ## Customer Managed Policy Examples<a name="access-policy-customer-managed-examples"></a>
 
@@ -214,6 +190,7 @@ All examples use the us\-east\-2 region and contain fictitious account IDs\.
 
 **Examples**  
 
+
 ### Example 1: Allow All Amazon Comprehend Actions<a name="custom-policy-1"></a>
 
 After you sign up for AWS, you create an administrator user to manage your account, including creating users and managing their permissions\. 
@@ -222,28 +199,38 @@ You might choose to create a user who has permissions for all Amazon Comprehend 
 
 ```
 {
-   "Version": "2012-10-17",
-   "Statement": [{
+  "Version": "2012-10-17",
+  "Statement":
+  [
+    {
       "Sid": "AllowAllComprehendActions",
       "Effect": "Allow",
-      "Action": [
-                "comprehend:*",
-                "iam:ListRoles",
-                "iam:GetRole",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:GetBucketLocation",         
-                "iam:CreateRole",
-                "iam:CreatePolicy",
-                "iam:AttachRolePolicy",
-                "iam:PassRole",
-                "kms:CreateGrant",
-                "kms:Decrypt”,
-                "kms:GenerateDatakey"
-         ],
+      "Action":
+      [
+        "comprehend:*",
+        "iam:ListRoles",
+        "iam:GetRole",
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket",
+        "s3:GetBucketLocation",
+        "iam:CreateRole",
+        "iam:CreatePolicy",
+        "iam:AttachRolePolicy",
+        "kms:CreateGrant",
+        "kms:Decrypt",
+        "kms:GenerateDatakey"
+      ],
       "Resource": "*"
-      }
-   ]
+    },
+    {
+      "Action":
+      [
+        "iam:PassRole"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:iam::*:role/*Comprehend*"
+    }
+  ]
 }
 ```
 

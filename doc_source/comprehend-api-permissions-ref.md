@@ -7,38 +7,38 @@ To express conditions, you can use AWS\-wide condition keys in your Amazon Compr
 **Note**  
 To specify an action, use the `comprehend:` prefix followed by the API operation name, for example, `comprehend:DetectEntities`\.
 
-If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, you can open the table in a new window\. To close the window, choose the close button \(**X**\) in the lower\-right corner\.
+Use the scroll bars to see the rest of the table\.
 
 
 **Amazon Comprehend API and Required Permissions for Actions**  
 
 | Amazon Comprehend API Operations | Required Permissions \(API Actions\) | Resources | 
 | --- | --- | --- | 
-| [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) | comprehend:BatchDetectDominantLanguage | \* | 
-| [BatchDetectEntities](API_BatchDetectEntities.md) | comprehend:BatchDetectEntities | \* | 
-| [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) | comprehend:BatchDetectKeyPhrases | \* | 
-| [BatchDetectSentiment](API_BatchDetectSentiment.md) | comprehend:BatchDetectSentiment | \* | 
-| [BatchDetectSyntax](API_BatchDetectSyntax.md) | comprehend:BatchDetectSyntax | \* | 
+| [ BatchDetectDominantLanguage ](API_BatchDetectDominantLanguage.md) | comprehend:BatchDetectDominantLanguage | \* | 
+| [ BatchDetectEntities ](API_BatchDetectEntities.md) | comprehend:BatchDetectEntities | \* | 
+| [ BatchDetectKeyPhrases ](API_BatchDetectKeyPhrases.md) | comprehend:BatchDetectKeyPhrases | \* | 
+| [ BatchDetectSentiment ](API_BatchDetectSentiment.md) | comprehend:BatchDetectSentiment | \* | 
+| [ BatchDetectSyntax ](API_BatchDetectSyntax.md) | comprehend:BatchDetectSyntax | \* | 
 | DescribeDominantLanguageDetectionJob | comprehend:DescribeDominantLanguageDetectionJob | \* | 
 | DescribeEntitiesDetectionJob | comprehend:DescribeEntitiesDetectionJob | \* | 
 | DescribeKeyPhrasesDetectionJob | comprehend:DescribeKeyPhrasesDetectionJob | \* | 
 | DescribeSentimentDetectionJob | comprehend:DescribeSentimentDetectionJob | \* | 
-| [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) | comprehend:DescribeTopicsDetectionJob | \* | 
-| [DetectDominantLanguage](API_DetectDominantLanguage.md) | comprehend:DetectDominantLanguage | \* | 
-| [DetectEntities](API_DetectEntities.md) | comprehend:DetectEntities | \* | 
-| [DetectKeyPhrases](API_DetectKeyPhrases.md) | comprehend:DetectKeyPhrases | \* | 
-| [DetectSentiment](API_DetectSentiment.md) | comprehend:DetectSentiment | \* | 
-| [DetectSyntax](API_DetectSyntax.md) | comprehend:DetectSyntax | \* | 
+| [ DescribeTopicsDetectionJob ](API_DescribeTopicsDetectionJob.md) | comprehend:DescribeTopicsDetectionJob | \* | 
+| [ DetectDominantLanguage ](API_DetectDominantLanguage.md) | comprehend:DetectDominantLanguage | \* | 
+| [ DetectEntities ](API_DetectEntities.md) | comprehend:DetectEntities | \* | 
+| [ DetectKeyPhrases ](API_DetectKeyPhrases.md) | comprehend:DetectKeyPhrases | \* | 
+| [ DetectSentiment ](API_DetectSentiment.md) | comprehend:DetectSentiment | \* | 
+| [ DetectSyntax ](API_DetectSyntax.md) | comprehend:DetectSyntax | \* | 
 | ListDominantLanguageDetectionJobs | comprehend:ListDominantLanguageDetectionJobs | \* | 
 | ListEntitiesDetectionJobs | comprehend:ListEntitiesDetectionJobs | \* | 
 | ListKeyPhrasesDetectionJobs | comprehend:ListKeyPhrasesDetectionJobs | \* | 
 | ListSentimentDetectionJobs | comprehend:ListSentimentDetectionJobs | \* | 
-| [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) | comprehend:ListTopicsDetectionJobs | \* | 
+| [ ListTopicsDetectionJobs ](API_ListTopicsDetectionJobs.md) | comprehend:ListTopicsDetectionJobs | \* | 
 | StartDominantLanguageDetectionJob | comprehend:StartDominantLanguageDetectionJob | \* | 
 | StartEntitiesDetectionJob | comprehend:StartEntitiesDetectionJob | \* | 
 | StartKeyPhrasesDetectionJob | comprehend:StartKeyPhrasesDetectionJob | \* | 
 | StartSentimentDetectionJob | comprehend:StartSentimentDetectionJob | \* | 
-| [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) | comprehend:StartTopicsDetectionJob | \* | 
+| [ StartTopicsDetectionJob ](API_StartTopicsDetectionJob.md) | comprehend:StartTopicsDetectionJob | \* | 
 | StopDominantLanguageDetectionJob | comprehend:StopDominantLanguageDetectionJob | \* | 
 | StopEntitiesDetectionJob | comprehend:StopEntitiesDetectionJob | \* | 
 | StopKeyPhrasesDetectionJob | comprehend:StopKeyPhrasesDetectionJob | \* | 

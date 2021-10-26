@@ -1,4 +1,4 @@
-# Running Real\-time Analysis with an Endpoint<a name="cc-real-time-analysis"></a>
+# Running Real\-Time Custom Classification<a name="cc-real-time-analysis"></a>
 
 Once you've created an endpoint, you can run real\-time analysis using your custom model\. There are two different ways to run real\-time analysis from the console, shown below, as well as the CLI method\. 
 
@@ -32,6 +32,10 @@ Once you've created an endpoint, you can run real\-time analysis using your cust
 
 1. Choose **Analyze**\. The text analysis based on your custom model is displayed, along with a confidence assessment of the analysis\. 
 
+
+
+
+
 **To run real\-time analysis using a custom model \(AWS CLI\)**
 
 The following example demonstrates using the *ClassifyDocument* operation with the AWS CLI\. 
@@ -47,7 +51,7 @@ aws comprehend classify-document \
     and several liners were near enough to catch and respond to the call.'
 ```
 
- responds with the following:
+Amazon Comprehend responds with the following:
 
 ```
 {

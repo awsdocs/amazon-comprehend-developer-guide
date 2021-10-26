@@ -15,7 +15,7 @@ For the most accurate results you should provide Amazon Comprehend with the larg
 + Each document should be at least 3 sentences long\.
 + If a document consists of mostly numeric data, you should remove it from the corpus\.
 
-Topic modeling is an asynchronous process\. You submit your list of documents to Amazon Comprehend from an Amazon S3 bucket using the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation\. The response is sent to an Amazon S3 bucket\. You can configure both the input and output buckets\. Get a list of the topic modeling jobs that you have submitted using the [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) operation and view information about a job using the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation\. Content delivered to Amazon S3 buckets might contain customer content\. For more information about removing sensitive data, see [How Do I Empty an S3 Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/empty-bucket.html) or [How Do I Delete an S3 Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/delete-bucket.html)\.
+Topic modeling is an asynchronous process\. You submit your list of documents to Amazon Comprehend from an Amazon S3 bucket using the [ StartTopicsDetectionJob ](API_StartTopicsDetectionJob.md) operation\. The response is sent to an Amazon S3 bucket\. You can configure both the input and output buckets\. Get a list of the topic modeling jobs that you have submitted using the [ ListTopicsDetectionJobs ](API_ListTopicsDetectionJobs.md) operation and view information about a job using the [ DescribeTopicsDetectionJob ](API_DescribeTopicsDetectionJob.md) operation\. Content delivered to Amazon S3 buckets might contain customer content\. For more information about removing sensitive data, see [How Do I Empty an S3 Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/empty-bucket.html) or [How Do I Delete an S3 Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/delete-bucket.html)\.
 
 Documents must be in UTF\-8 formatted text files\. You can submit your documents two ways\. The following table shows the options\.
 
@@ -25,9 +25,9 @@ Documents must be in UTF\-8 formatted text files\. You can submit your documents
 | One document per file | Each file contains one input document\. This is best for collections of large documents\. | 
 | One document per line | The input is a single file\. Each line in the file is considered a document\. This is best for short documents, such as social media postings\. Each line must end with a line feed \(LF, \\n\), a carriage return \(CR, \\r\), or both \(CRLF, \\r\\n\)\. The Unicode line separator \(u\+2028\) can't be used to end a line\. | 
 
-For more information, see the [InputDataConfig](API_InputDataConfig.md) data type\.
+For more information, see the [ InputDataConfig ](API_InputDataConfig.md) data type\.
 
-After Amazon Comprehend processes your document collection, it returns a compressed archive containing two files, `topic-terms.csv` and `doc-topics.csv`\. For more information about the output file, see [OutputDataConfig](API_OutputDataConfig.md)\. 
+After Amazon Comprehend processes your document collection, it returns a compressed archive containing two files, `topic-terms.csv` and `doc-topics.csv`\. For more information about the output file, see [ OutputDataConfig ](API_OutputDataConfig.md)\. 
 
 The first output file, `topic-terms.csv`, is a list of topics in the collection\. For each topic, the list includes, by default, the top terms by topic according to their weight\. For example, if you give Amazon Comprehend a collection of newspaper articles, it might return the following to describe the first two topics in the collection:
 
@@ -72,4 +72,4 @@ The second file, `doc-topics.csv`, lists the documents associated with a topic a
 | \.\.\. |   |   | 
 | sample\-docN | 000 | 3\.57E\-04 | 
 
-Amazon Comprehend utilizes information from the *Lemmatization Lists Dataset by MBM*, which is made available [here](http://www.lexiconista.com/datasets/lemmatization/) under the [Open Database License \(ODbL\) v1\.0](https://opendatacommons.org/licenses/odbl/1-0/)\.
+Amazon Comprehend utilizes information from the *Lemmatization Lists Dataset by MBM*, which is made available [here](https://github.com/michmech/lemmatization-lists) under the [Open Database License \(ODbL\) v1\.0](https://opendatacommons.org/licenses/odbl/1-0/)\.

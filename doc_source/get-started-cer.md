@@ -1,11 +1,11 @@
 # Detecting Custom Entities<a name="get-started-cer"></a>
 
-To create the custom entities in a document, use the Amazon Comprehend [CreateEntityRecognizer](API_CreateEntityRecognizer.md) to create an entity recognizer\. To identify those custom entities, use the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation\. 
+To create the custom entities in a document, use the Amazon Comprehend [ CreateEntityRecognizer ](API_CreateEntityRecognizer.md) to create an entity recognizer\. To identify those custom entities, use the [ StartEntitiesDetectionJob ](API_StartEntitiesDetectionJob.md) operation\. 
 
 **Topics**
 + [Creating and Detecting Custom Entities Using the AWS Command Line Interface](#get-started-api-cer-cli)
 + [Detecting Custom Entities Using the AWS SDK for Java](#get-started-api-cer-java)
-+ [Detecting Custom Entities Using the AWS Using the AWS SDK for Python \(Boto3\)](#cer-python)
++ [Detecting Custom Entities Using the AWS SDK for Python \(Boto3\)](#cer-python)
 
 ## Creating and Detecting Custom Entities Using the AWS Command Line Interface<a name="get-started-api-cer-cli"></a>
 
@@ -40,7 +40,7 @@ aws comprehend describe-entity-recognizer \
      --region region
 ```
 
-Starting a custom entities recogniztion job using the `StartEntitiesDetectionJob` operation\.
+Starting a custom entities recognition job using the `StartEntitiesDetectionJob` operation\.
 
 ```
 aws comprehend start-entities-detection-job \
@@ -131,7 +131,7 @@ public class CustomEntityRecognizerDemo {
 }
 ```
 
-## Detecting Custom Entities Using the AWS Using the AWS SDK for Python \(Boto3\)<a name="cer-python"></a>
+## Detecting Custom Entities Using the AWS SDK for Python \(Boto3\)<a name="cer-python"></a>
 
 Instantiate Boto3 SDK: 
 

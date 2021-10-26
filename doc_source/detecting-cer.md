@@ -1,10 +1,13 @@
-# Detecting Custom Entities<a name="detecting-cer"></a>
+# Detecting Custom Entities with an Asynchronous Batch Job with Amazon Comprehend<a name="detecting-cer"></a>
 
-Once you have a trained model, use the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation to detect custom entities in your documents\. 
+Once you have a trained model, use the [ StartEntitiesDetectionJob ](API_StartEntitiesDetectionJob.md) operation to detect custom entities in your documents\. 
 
-Using this operation, you provide the same information as you would when detecting preset entities\. However, in addition to the input and output locations \(S3 buckets\), you also provide the EntityRecognizerArn, which is the Amazon Resource Name \(ARN\) of the trained model\. This ARN is supplied by the response to the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) operation\. 
+**Before you begin**  
+Before you can detect custom entities, you must have a custom entity recognition model\. For more information about these models, see [Training Custom Entity Recognizers](training-recognizers.md)\. For the steps to train a model, see [Creating a Custom Entity Recognizer Using the Console \- CSV Format](getting-started-custom-entity-recognizer.md#getting-started-console-CER)\.
 
-You can examine one document or many, and each model can be trained on up to 12 custom entities at a time\. You can search for up to 12 entities per **StartEntitiesDetectionJob** operation\.\. 
+Using this operation, you provide the same information as you would when detecting preset entities\. However, in addition to the input and output locations \(S3 buckets\), you also provide the EntityRecognizerArn, which is the Amazon Resource Name \(ARN\) of the trained model\. This ARN is supplied by the response to the [ CreateEntityRecognizer ](API_CreateEntityRecognizer.md) operation\. 
+
+You can examine one document or many, and each model can be trained on up to 25 custom entities at a time\. You can search for up to 25 entities per **StartEntitiesDetectionJob** operation\.\. 
 
 To detect custom entities in a document set, you use the following request syntax:
 
@@ -24,6 +27,6 @@ aws comprehend start-entities-detection-job \
 Amazon Comprehend will respond with the `JobID` and `JobStatus` and will return the output from the job in the S3 bucket that you specified in your request\. This output will be similar to the following:
 
 ```
-{"File": "50_docs", "Line": 0, "Entities": [{"BeginOffset": 0, "EndOffset": 22, "Score": 0.9763959646224976, "Text": "John Johnson", "Type": "JUDGE"}"]}
-{"File": "50_docs", "Line": 1, "Entities": [{"BeginOffset": 11, "EndOffset": 15, "Score": 0.9615424871444702, "Text": "Thomas Kincaid", "Type": "JUDGE"}}]}
+{"File": "50_docs", "Line": 0, "Entities": [{"BeginOffset": 0, "EndOffset": 22, "Score": 0.9763959646224976, "Text": "John Johnson", "Type": "JUDGE"}]}
+{"File": "50_docs", "Line": 1, "Entities": [{"BeginOffset": 11, "EndOffset": 15, "Score": 0.9615424871444702, "Text": "Thomas Kincaid", "Type": "JUDGE"}]}
 ```

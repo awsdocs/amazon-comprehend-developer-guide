@@ -7,3 +7,4 @@ Amazon Comprehend uses a proprietary, state\-of\-the\-art sequence tagging deep 
 **Topics**
 + [Custom Classification](how-document-classification.md)
 + [Custom Entity Recognition](custom-entity-recognition.md)
++ [Managing Endpoints with Amazon Comprehend](manage-endpoints.md)

@@ -1,9 +1,9 @@
-# Autoscaling with Endpoints<a name="comprehend-autoscaling"></a>
+# Auto Scaling with Endpoints<a name="comprehend-autoscaling"></a>
 
-Besides manually adjusting the number of inference units with which you provision your endpoints, you can also use use autoscaling to automatically set your endpoint provisioning to fit your capacity needs\. 
+Instead of manually adjusting the number of inference units provisioned for your document classification endpoints and entity recognizer endpoints, you can use auto scaling to automatically set endpoint provisioning to fit your capacity needs\. 
 
-Autoscaling is only available using the AWS CLI\.
+There are two ways to use auto scaling to adjust the number of inference units provisioned for your endpoint:
++ [Target Tracking](targettracking.md): Set auto scaling to adjust endpoint provisioning to fit capacity needs based on usage\. 
++ [Scheduled Scaling](ScheduledScaling.md): Set auto scaling to adjust endpoint provisioning to fit capacity needs on a specified schedule\.
 
-There are two ways of setting autoscaling:
-+ [Target Tracking](targettracking.md): setting autoscaling so that it will adjust endpoint capacity \(thenumber of inference units\) based on utilization of the endpoint\. 
-+ [Scheduled Scaling](ScheduledScaling.md): setting autoscaling so that it will adjust endpoint capacity based on a specified schedule\.
+You can set auto scaling only with the AWS Command Line Interface \(AWS CLI\)\. For more information about auto scaling, see [What is Application Auto Scaling?](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html)

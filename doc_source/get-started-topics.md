@@ -1,6 +1,6 @@
 # Topic Modeling<a name="get-started-topics"></a>
 
- To determine the topics in a document set, use the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) to start an asynchronous job\. You can monitor topics in documents written in English or Spanish\.
+ To determine the topics in a document set, use the [ StartTopicsDetectionJob ](API_StartTopicsDetectionJob.md) to start an asynchronous job\. You can monitor topics in documents written in English or Spanish\.
 
 **Topics**
 + [Before You Start](#topics-before)
@@ -53,11 +53,10 @@ If the request to start the topic detection job was successful, you will receive
 }
 ```
 
-Use the [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) operation to see a list of the topic detection jobs that you have submitted\. The list includes information about the input and output locations that you used as well as the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
+Use the [ ListTopicsDetectionJobs ](API_ListTopicsDetectionJobs.md) operation to see a list of the topic detection jobs that you have submitted\. The list includes information about the input and output locations that you used as well as the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
 ```
-aws comprehend list-topics-detection-jobs \
-    -- region
+aws comprehend list-topics-detection-jobs \-- region
 ```
 
 You will get JSON similar to the following in response:
@@ -98,13 +97,10 @@ You will get JSON similar to the following in response:
 }
 ```
 
-You can use the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation to get the status of an existing job\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
+You can use the [ DescribeTopicsDetectionJob ](API_DescribeTopicsDetectionJob.md) operation to get the status of an existing job\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
 ```
-aws comprehend describe-topics-detection-job 
-                --region region \
-                --job-id job ID 
-I
+aws comprehend describe-topics-detection-job --job-id job ID 
 ```
 
 You will get the following JSON in response:
@@ -131,7 +127,7 @@ You will get the following JSON in response:
 
 ## Topic Modeling Using the AWS SDK for Java<a name="topic-java"></a>
 
-The following Java program detects the topics in a document collection\. It uses the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation to start detecting topics\. Next, it uses the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation to check the status of the topic detection\. Finally, it calls [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) to show a list of all jobs submitted for the account\.
+The following Java program detects the topics in a document collection\. It uses the [ StartTopicsDetectionJob ](API_StartTopicsDetectionJob.md) operation to start detecting topics\. Next, it uses the [ DescribeTopicsDetectionJob ](API_DescribeTopicsDetectionJob.md) operation to check the status of the topic detection\. Finally, it calls [ ListTopicsDetectionJobs ](API_ListTopicsDetectionJobs.md) to show a list of all jobs submitted for the account\.
 
 ```
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -197,7 +193,7 @@ public class App
 
 ## Topic Modeling Using the AWS SDK for Python \(Boto\)<a name="topic-python"></a>
 
-The following Python program detects the topics in a document collection\. It uses the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation to start detecting topics\. Next, it uses the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation to check the status of the topic detection\. Finally, it calls [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) to show a list of all jobs submitted for the account\.
+The following Python program detects the topics in a document collection\. It uses the [ StartTopicsDetectionJob ](API_StartTopicsDetectionJob.md) operation to start detecting topics\. Next, it uses the [ DescribeTopicsDetectionJob ](API_DescribeTopicsDetectionJob.md) operation to check the status of the topic detection\. Finally, it calls [ ListTopicsDetectionJobs ](API_ListTopicsDetectionJobs.md) to show a list of all jobs submitted for the account\.
 
 ```
 import boto3
@@ -237,7 +233,7 @@ print('list_topics_detection_jobs_result: ' + json.dumps(list_topics_detection_j
 
 ## Topic Modeling Using the AWS SDK for \.NET<a name="topic-csharp"></a>
 
-The following C\# program detects the topics in a document collection\. It uses the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation to start detecting topics\. Next, it uses the [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md) operation to check the status of the topic detection\. Finally, it calls [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) to show a list of all jobs submitted for the account\.
+The following C\# program detects the topics in a document collection\. It uses the [ StartTopicsDetectionJob ](API_StartTopicsDetectionJob.md) operation to start detecting topics\. Next, it uses the [ DescribeTopicsDetectionJob ](API_DescribeTopicsDetectionJob.md) operation to check the status of the topic detection\. Finally, it calls [ ListTopicsDetectionJobs ](API_ListTopicsDetectionJobs.md) to show a list of all jobs submitted for the account\.
 
 The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
 

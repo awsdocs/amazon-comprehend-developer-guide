@@ -9,49 +9,119 @@ If a long document, like a book, is written in multiple languages, you can break
 Amazon Comprehend can detect the following languages\.
 
 
-| Code | Language | Code | Language | Code | Language | 
-| --- | --- | --- | --- | --- | --- | 
-| af | Afrikaans | hy | Armenian | ps | Pushto | 
-| am | Amharic | ilo | Iloko | qu | Quechua | 
-| ar | Arabic | id | Indonesian | ro | Romanian | 
-| as | Assamese | is | Icelandic | ru | Russian | 
-| az | Azerbaijani | it | Italian | sa | Sanskrit | 
-| ba | Bashkir | jv | Javanese | si | Sinhala | 
-| be | Belarusian | ja | Japanese | sk | Slovak | 
-| bn | Bengali | kn | Kannada | sl | Slovenian | 
-| bs | Bosnian | ka | Georgian | sd | Sindhi | 
-| bg | Bulgarian | kk | Kazakh | so | Somali | 
-| ca | Catalan | km | Central Khmer | es | Spanish | 
-| ceb | Cebuano | ky | Kirghiz | sq | Albanian | 
-| cs | Czech | ko | Korean | sr | Serbian | 
-| cv | Chuvash | ku | Kurdish | su | Sundanese | 
-| cy | Welsh | la | Latin | sw | Swahili | 
-| da | Danish | lv | Latvian | sv | Swedish | 
-| de | German | lt | Lithuanian | ta | Tamil | 
-| el | Greek | lb | Luxembourgish | tt | Tatar | 
-| en | English | ml | Malayalam | te | Telugu | 
-| eo | Esperanto | mr | Marathi | tg | Tajik | 
-| et | Estonian | mk | Macedonian | tl | Tagalog | 
-| eu | Basque | mg | Malagasy | th | Thai | 
-| fa | Persian | mn | Mongolian | tk | Turkmen | 
-| fi | Finnish | ms | Malay | tr | Turkish | 
-| fr | French | my | Burmese | ug | Uighur | 
-| gd | Scottish Gaelic | ne | Nepali | uk | Ukrainian | 
-| ga | Irish | new | Newari | ur | Urdu | 
-| gl | Galician | nl | Dutch | uz | Uzbek | 
-| gu | Gujarati | no | Norwegian | vi | Vietnamese | 
-| ht | Haitian | or | Oriya | yi | Yiddish | 
-| he | Hebrew | pa | Punjabi | yo | Yoruba | 
-| hi | Hindi | pl | Polish | zh | Chinese \(Simplified\) | 
-| hr | Croatian | pt | Portuguese | zh\-TW | Chinese \(Traditional\) | 
-| hu | Hungarian |   |   |   |   | 
+| Code | Language | 
+| --- | --- | 
+| af | Afrikaans | 
+| am | Amharic | 
+| ar | Arabic | 
+| as | Assamese | 
+| az | Azerbaijani | 
+| ba | Bashkir | 
+| be | Belarusian | 
+| bn | Bengali | 
+| bs | Bosnian | 
+| bg | Bulgarian | 
+| ca | Catalan | 
+| ceb | Cebuano | 
+| cs | Czech | 
+| cv | Chuvash | 
+| cy | Welsh | 
+| da | Danish | 
+| de | German | 
+| el | Greek | 
+| en | English | 
+| eo | Esperanto | 
+| et | Estonian | 
+| eu | Basque | 
+| fa | Persian | 
+| fi | Finnish | 
+| fr | French | 
+| gd | Scottish Gaelic | 
+| ga | Irish | 
+| gl | Galician | 
+| gu | Gujarati | 
+| ht | Haitian | 
+| he | Hebrew | 
+| ha | Hausa | 
+| hi | Hindi | 
+| hr | Croatian | 
+| hu | Hungarian | 
+| hy | Armenian | 
+| ilo | Iloko | 
+| id | Indonesian | 
+| is | Icelandic | 
+| it | Italian | 
+| jv | Javanese | 
+| ja | Japanese | 
+| kn | Kannada | 
+| ka | Georgian | 
+| kk | Kazakh | 
+| km | Central Khmer | 
+| ky | Kirghiz | 
+| ko | Korean | 
+| ku | Kurdish | 
+| lo | Lao | 
+| la | Latin | 
+| lv | Latvian | 
+| lt | Lithuanian | 
+| lb | Luxembourgish | 
+| ml | Malayalam | 
+| mt | Maltese | 
+| mr | Marathi | 
+| mk | Macedonian | 
+| mg | Malagasy | 
+| mn | Mongolian | 
+| ms | Malay | 
+| my | Burmese | 
+| ne | Nepali | 
+| new | Newari | 
+| nl | Dutch | 
+| no | Norwegian | 
+| or | Oriya | 
+| om  | Oromo | 
+| pa | Punjabi | 
+| pl | Polish | 
+| pt | Portuguese | 
+| ps | Pushto | 
+| qu | Quechua | 
+| ro | Romanian | 
+| ru | Russian | 
+| sa | Sanskrit | 
+| si | Sinhala | 
+| sk | Slovak | 
+| sl | Slovenian | 
+| sd | Sindhi | 
+| so | Somali | 
+| es | Spanish | 
+| sq | Albanian | 
+| sr | Serbian | 
+| su | Sundanese | 
+| sw | Swahili | 
+| sv | Swedish | 
+| ta | Tamil | 
+| tt | Tatar | 
+| te | Telugu | 
+| tg | Tajik | 
+| tl | Tagalog | 
+| th | Thai | 
+| tk | Turkmen | 
+| tr | Turkish | 
+| ug | Uighur | 
+| uk | Ukrainian | 
+| ur | Urdu | 
+| uz | Uzbek | 
+| vi | Vietnamese | 
+| yi | Yiddish | 
+| yo | Yoruba | 
+| zh | Chinese \(Simplified\) | 
+| zh\-TW | Chinese \(Traditional\) | 
 
 You can use any of the following operations to detect the dominant language in a document or set of documents\.
-+ [DetectDominantLanguage](API_DetectDominantLanguage.md)
-+ [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md)
-+ [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md)
++ [ DetectDominantLanguage ](API_DetectDominantLanguage.md)
++ [ BatchDetectDominantLanguage ](API_BatchDetectDominantLanguage.md)
++ [ StartDominantLanguageDetectionJob ](API_StartDominantLanguageDetectionJob.md)
 
-The `DetectDominantLanguage` operation returns a [DominantLanguage](API_DominantLanguage.md) object\. The `BatchDetectDominantLanguage` operation returns a list of `DominantLanguage` objects, one for each document in the batch\. The `StartDominantLanguageDetectionJob` operation starts an asynchronous job that produces a file containing a list of `DominantLanguage` objects, one for each document in the job\.
+The `DetectDominantLanguage` operation returns a [ DominantLanguage ](API_DominantLanguage.md) object\. The `BatchDetectDominantLanguage` operation returns a list of `DominantLanguage` objects, one for each document in the batch\. The `StartDominantLanguageDetectionJob` operation starts an asynchronous job that produces a file containing a list of `DominantLanguage` objects, one for each document in the job\.
 
 The following example is the response from the `DetectDominantLanguage` operation\.
 

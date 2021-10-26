@@ -30,6 +30,8 @@ Services in AWS, such as Amazon Comprehend, require that you provide credentials
 
 We strongly recommend that you access AWS using AWS Identity and Access Management \(IAM\), not the credentials for your AWS account\. To use IAM to access AWS, create an IAM user, add the user to an IAM group with administrative permissions, and then grant administrative permissions to the IAM user\. You can then access AWS using a special URL and the IAM user's credentials\.
 
+
+
 The Getting Started exercises in this guide assume that you have a user with administrator privileges, `adminuser`\. 
 
 **To create an administrator user and sign in to the console**
@@ -40,7 +42,7 @@ The Getting Started exercises in this guide assume that you have a user with adm
 
 For more information about IAM, see the following:
 + [AWS Identity and Access Management \(IAM\)](https://aws.amazon.com/iam/)
-+ [Getting Started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html)
++ [Getting started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html)
 + [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 ## Next Step<a name="setting-up-next-step-2"></a>

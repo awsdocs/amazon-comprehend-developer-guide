@@ -2,6 +2,8 @@
 
 You don't need the AWS CLI to perform the steps in the Getting Started exercises\. However, some of the other exercises in this guide do require it\. If you prefer, you can skip this step and go to [Step 3: Getting Started Using the Amazon Comprehend Console](get-started-console.md), and set up the AWS CLI later\. 
 
+
+
 **To set up the AWS CLI**
 
 1. Download and configure the AWS CLI\. For instructions, see the following topics in the *AWS Command Line Interface User Guide*: 

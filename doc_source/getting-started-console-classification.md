@@ -22,11 +22,11 @@ Once you have created a custom document classifier, you can use it to categorize
 **Note**  
 For more information on creating and using KMS keys and the associated encryption, see [Key Management Service \(KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
 
-1. Under **Input data**, enter the location of the Amazon S3 bucket that contains your input documents or navigate to it by choosing **Select folder**\. This bucket must be in the same region as the API that you are calling\. The IAM role you're using for access permissions for the classification job must have reading permuissions for the S3 bucket\.
+1. Under **Input data**, enter the location of the Amazon S3 bucket that contains your input documents or navigate to it by choosing **Select folder**\. This bucket must be in the same region as the API that you are calling\. The IAM role you're using for access permissions for the classification job must have reading permissions for the S3 bucket\.
 
 1. \(Optional\) Choose the format of the documents to be classified under **Input format**\. These can be one document per file, or one document per line in a single file\.
 
-1. Under **Output data**, enter the location of the Amazon S3 bucket where Amazon Comprehend should write the job's output data or navigate to it by choosing **Select folder**\. This bucket must be in the same region as the API that you are calling\. The IAM role you're using for access permissions for the classification job must have write permuissions for the S3 bucket\.
+1. Under **Output data**, enter the location of the Amazon S3 bucket where Amazon Comprehend should write the job's output data or navigate to it by choosing **Select folder**\. This bucket must be in the same region as the API that you are calling\. The IAM role you're using for access permissions for the classification job must have write permissions for the S3 bucket\.
 
 1. \(Optional\) If you choose to encrypt the output result from your job, choose **Encryption** and then choose whether to use a KMS key associated with the current account, or one from another account\.
    + If you are using a key associated with the current account, choose the key alias or ID for **KMS key ID**\.
