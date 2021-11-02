@@ -138,7 +138,7 @@ Instantiate Boto3 SDK:
 ```
 import boto3
 import uuid
-comprehend = boto3.client("comprehend", region_name="recognizer name")
+comprehend = boto3.client("comprehend", region_name="region")
 ```
 
 Create entity recognizer: 
