@@ -54,7 +54,7 @@ Required: No
  ** LanguageCode **   <a name="comprehend-Type-PiiEntitiesDetectionJobProperties-LanguageCode"></a>
 The language code of the input documents  
 Type: String  
-Valid Values:` en`   
+Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: No
 
  ** Message **   <a name="comprehend-Type-PiiEntitiesDetectionJobProperties-Message"></a>

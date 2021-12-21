@@ -84,6 +84,7 @@ Required: Yes
          "NumberOfTestDocuments": number,
          "NumberOfTrainedDocuments": number
       },
+      "SourceModelArn": "string",
       "Status": "string",
       "SubmitTime": number,
       "TrainingEndTime": number,

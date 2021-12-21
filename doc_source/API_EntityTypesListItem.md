@@ -9,7 +9,7 @@ An entity type within a labeled training dataset that Amazon Comprehend uses to 
 Entity types must not contain the following invalid characters: \\n \(line break\), \\\\n \(escaped line break, \\r \(carriage return\), \\\\r \(escaped carriage return\), \\t \(tab\), \\\\t \(escaped tab\), space, and , \(comma\)\.  
 Type: String  
 Length Constraints: Maximum length of 64\.  
-Pattern: `^(?:(?!\\n+|\\t+|\\r+|[\r\t\n,]).)+$`   
+Pattern: `^(?![^\n\r\t,]*\\n|\\r|\\t)[^\n\r\t,]+$`   
 Required: Yes
 
 ## See Also<a name="API_EntityTypesListItem_SeeAlso"></a>

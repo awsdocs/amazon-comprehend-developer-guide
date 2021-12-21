@@ -20,7 +20,7 @@ The request accepts the following data in JSON format\.
  ** [ LanguageCode ](#API_DetectPiiEntities_RequestSyntax) **   <a name="comprehend-DetectPiiEntities-request-LanguageCode"></a>
 The language of the input documents\.  
 Type: String  
-Valid Values:` en`   
+Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: Yes
 
  ** [ Text ](#API_DetectPiiEntities_RequestSyntax) **   <a name="comprehend-DetectPiiEntities-request-Text"></a>

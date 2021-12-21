@@ -28,6 +28,7 @@ Creates a new document classifier that you can use to categorize documents\. To 
    "LanguageCode": "string",
    "Mode": "string",
    "ModelKmsKeyId": "string",
+   "ModelPolicy": "string",
    "OutputDataConfig": { 
       "KmsKeyId": "string",
       "S3Uri": "string"
@@ -82,7 +83,7 @@ Required: Yes
  ** [ LanguageCode ](#API_CreateDocumentClassifier_RequestSyntax) **   <a name="comprehend-CreateDocumentClassifier-request-LanguageCode"></a>
 The language of the input documents\. You can specify any of the following languages supported by Amazon Comprehend: German \("de"\), English \("en"\), Spanish \("es"\), French \("fr"\), Italian \("it"\), or Portuguese \("pt"\)\. All documents must be in the same language\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt`   
+Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: Yes
 
  ** [ Mode ](#API_CreateDocumentClassifier_RequestSyntax) **   <a name="comprehend-CreateDocumentClassifier-request-Mode"></a>
@@ -98,6 +99,17 @@ ID for the AWS Key Management Service \(KMS\) key that Amazon Comprehend uses to
 Type: String  
 Length Constraints: Maximum length of 2048\.  
 Pattern: `.*`   
+Required: No
+
+ ** [ ModelPolicy ](#API_CreateDocumentClassifier_RequestSyntax) **   <a name="comprehend-CreateDocumentClassifier-request-ModelPolicy"></a>
+The resource\-based policy to attach to your custom document classifier model\. You can use this policy to allow another AWS account to import your custom model\.  
+Provide your policy as a JSON body that you enter as a UTF\-8 encoded string without line breaks\. To provide valid JSON, enclose the attribute names and values in double quotes\. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:  
+ `"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"`   
+To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:  
+ `'{"attribute": "value", "attribute": ["value"]}'`   
+Type: String  
+Length Constraints: Minimum length of 1\. Maximum length of 20000\.  
+Pattern: `[\u0009\u000A\u000D\u0020-\u00FF]+`   
 Required: No
 
  ** [ OutputDataConfig ](#API_CreateDocumentClassifier_RequestSyntax) **   <a name="comprehend-CreateDocumentClassifier-request-OutputDataConfig"></a>

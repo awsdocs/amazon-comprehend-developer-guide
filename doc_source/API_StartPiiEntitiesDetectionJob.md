@@ -73,7 +73,7 @@ Required: No
  ** [ LanguageCode ](#API_StartPiiEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartPiiEntitiesDetectionJob-request-LanguageCode"></a>
 The language of the input documents\.  
 Type: String  
-Valid Values:` en`   
+Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: Yes
 
  ** [ Mode ](#API_StartPiiEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartPiiEntitiesDetectionJob-request-Mode"></a>

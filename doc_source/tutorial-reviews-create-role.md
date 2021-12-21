@@ -19,7 +19,11 @@ Before you begin, do the following:
 
 ## Create an IAM Role<a name="tutorial-reviews-create-role-trust-policy"></a>
 
-To access your Amazon Simple Storage Service \(Amazon S3\) bucket, Amazon Comprehend needs to assume an AWS Identity and Access Management \(IAM\) role\. The IAM role declares Amazon Comprehend as a trusted entity\. After Amazon Comprehend assumes the role and becomes a trusted entity, you can grant bucket access permissions to Amazon Comprehend\. In this step, you create a role that labels Amazon Comprehend as a trusted entity\. You can create a role with the IAM console or the AWS CLI\. This topic explains how to create a role using the AWS CLI\. To use the console, skip to [Step 3: Running Analysis Jobs on Documents in Amazon S3](tutorial-reviews-analysis.md)\.
+To access your Amazon Simple Storage Service \(Amazon S3\) bucket, Amazon Comprehend needs to assume an AWS Identity and Access Management \(IAM\) role\. The IAM role declares Amazon Comprehend as a trusted entity\. After Amazon Comprehend assumes the role and becomes a trusted entity, you can grant bucket access permissions to Amazon Comprehend\. In this step, you create a role that labels Amazon Comprehend as a trusted entity\. You can create a role with the AWS CLI or the Amazon Comprehend console\. To use the console, skip to [Step 3: Running Analysis Jobs on Documents in Amazon S3](tutorial-reviews-analysis.md)\.
+
+The Amazon Comprehend console lets you select roles where the role name contains 'Comprehend' and the trust policy includes comprehend\.amazonaws\.com\. Configure your CLI\-created roles to meet these criteria if you want the console to display them\.
+
+
 
 **To create an IAM role for Amazon Comprehend \(AWS CLI\)**
 
@@ -40,16 +44,16 @@ To access your Amazon Simple Storage Service \(Amazon S3\) bucket, Amazon Compre
    }
    ```
 
-1. To create the IAM role, run the following AWS CLI command\. The command creates an IAM role called `comprehend-access-role` and attaches the trust policy to the role\. Replace `path/` with your local computer's path to the JSON document\.
+1. To create the IAM role, run the following AWS CLI command\. The command creates an IAM role called `AmazonComprehendServiceRole-access-role` and attaches the trust policy to the role\. Replace `path/` with your local computer's path to the JSON document\.
 
    ```
-   aws iam create-role --role-name comprehend-access-role
+   aws iam create-role --role-name AmazonComprehendServiceRole-access-role
    --assume-role-policy-document file://path/comprehend-trust-policy.json
    ```
 **Tip**  
 If you get an Error parsing parameter message, the path to your JSON trust policy file is probably incorrect\. Provide the relative path to the file based on your home directory\.
 
-1. Copy the Amazon Resource Name \(ARN\) and save it in a text editor\. The ARN has a format similar to `arn:aws:iam::123456789012:role/comprehend-access-role`\. You need this ARN to run Amazon Comprehend analysis jobs\.
+1. Copy the Amazon Resource Name \(ARN\) and save it in a text editor\. The ARN has a format similar to `arn:aws:iam::123456789012:role/AmazonComprehendServiceRole-access-role`\. You need this ARN to run Amazon Comprehend analysis jobs\.
 
 ## Attach an IAM Policy to the IAM Role<a name="tutorial-reviews-create-role-policy"></a>
 
@@ -108,7 +112,7 @@ To access your Amazon S3 bucket, Amazon Comprehend needs permissions to list, re
 
   ```
   aws iam attach-role-policy --policy-arn policy-arn
-  --role-name comprehend-access-role
+  --role-name AmazonComprehendServiceRole-access-role
   ```
 
-You now have an IAM role called `comprehend-access-role` that has a trust policy for Amazon Comprehend and an access policy that grants Amazon Comprehend access to your S3 bucket\. You should also have the ARN for the IAM role copied to a text editor\.
+You now have an IAM role called `AmazonComprehendServiceRole-access-role` that has a trust policy for Amazon Comprehend and an access policy that grants Amazon Comprehend access to your S3 bucket\. You also have the ARN for the IAM role copied to a text editor\.

@@ -2,7 +2,7 @@
 
 With Amazon Comprehend you can train your models and use your models to gain insight on text files, PDFs, and Word documents\. Before you can annotate your training PDFs in SageMaker Ground Truth, there are a few prerequisites and tools required\. The lifecycle of this process consists of three main parts \- installing the prerequisites and *preparing* your environments, *building* out the tool, and then once everything is set up, *annotating*\. During this process you'll be required to go to a few places —you'll be pulling our resources from [GitHub](github.com/aws-samples/amazon-comprehend-semi-structured-documents-annotation-tools), you'll be working locally on your machine, you'll run commands in the AWS CLI, and you'll end up in the AWS Console and in SageMaker Ground Truth\. This process might take 20 \- 25 minutes\. If you have any questions or need assistence, please reach out to [AWS support](https://aws.amazon.com/contact-us/)\. 
 
-## Prerequisites<a name="w57aac23c11c15c49b5"></a>
+## Prerequisites<a name="w57aac23c11c21c49b5"></a>
 + Install python3\.8\.x \(e\.g\. You can use [pyenv](https://github.com/pyenv/pyenv) for python version management\) 
 + Install [jq ](https://stedolan.github.io/jq/download/)
 + Have AWS credentials configured \- you can do this from the [Configuration and credential file setting](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) page 
@@ -12,11 +12,11 @@ Make sure to record the corresponding workteam name you created in your new priv
 
 If you are installing this tool in the us\-east\-1 Region you can skip installing the AWS CLI and AWS SAM CLI, because it’s already installed with your Python environment\. You just need to create a virtual environment to use Python 3\.8 in AWS Cloud9\.
 
-## Get Resources from GitHub<a name="w57aac23c11c15c49b9"></a>
+## Get Resources from GitHub<a name="w57aac23c11c21c49b9"></a>
 
 In this step, you navigate to Git Hub to get the resources required for you to build out the annotation tooling locally\. Download the annotation artifacts from **[github\.com/aws\-samples/amazon\-comprehend\-semi\-structured\-documents\-annotation\-tools](http://github.com/aws-samples/amazon-comprehend-semi-structured-documents-annotation-tools)**
 
-## Run and Configure From the AWS CLI<a name="w57aac23c11c15c49c11"></a>
+## Run and Configure From the AWS CLI<a name="w57aac23c11c21c49c11"></a>
 
 Once you've downloaded the \.zip file, unzip the annotation code\. Then, head to the AWS CLI and navigate into the **ComprehendSSIEAnnotationTool** folder\. 
 
@@ -43,7 +43,7 @@ The following instructions are for Linux/Ubuntu/Mac\. For Windows, please instal
 1. Enter the values\. Your deployment successfully initiates\. This step linked your AWS account and resources to your AWS S3 bucket and your IAM roles\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/deploy_guided_anno_2.png)
 
-## Upload PDF to Amazon S3 Bucket<a name="w57aac23c11c15c49c13"></a>
+## Upload PDF to Amazon S3 Bucket<a name="w57aac23c11c21c49c13"></a>
 
 In step 3, you deployed a CloudFormation stack which contains an S3 bucket which is named **make\-deploy\-guided**\. This bucket is used to store all the data that is needed for your labeling job, and it is also referred to by the Lambda IAM Execution Role policy to ensure the Lambda functions have necessary permission to access the data\. The S3 bucket name can be found in **CloudFormation Stack Outputs **with a Key of **SemiStructuredDocumentsS3Bucket**\. You need to upload your source PDF documents into this Bucket\. 
 
@@ -63,7 +63,7 @@ Here is a sample AWS CLI command you can use to directly upload source documents
 
   `aws s3 cp --recursive < local-path-to-source-docs> s3: // comprehend-semi-structured-documents- ${ AWS_REGION} -${ AWS_ACCOUNT_ID} / < source-folder-name> /`
 
-## CLI \- Create Your Annotation Job<a name="w57aac23c11c15c49c15"></a>
+## CLI \- Create Your Annotation Job<a name="w57aac23c11c21c49c15"></a>
 
 At this point, you should have a private SageMaker Ground Truth workforce and you've built out and uploaded your source files to the S3 bucket\. Now it's time to finish up in the CLI\. After you've run **make deploy\-guided**, you are presented with some settings you need to update in your job creation script
 
@@ -88,7 +88,7 @@ Write down the default CloudFormation name, you will need it in the next steps\.
 
 The comprehend\-ssie\-annotation\-tool\-cli\.py under bin/ directory is a simple wrapper command that can be used streamline the creation of a SageMaker GroundTruth Job\. Under the hood, this CLI will read the source documents from the S3 path that you specify, and create a corresponding input manifest file with a single page of one source document per line, and the input manifest file is then used as input to your labeling job\.
 
-## Annotating with SageMaker Ground Truth<a name="w57aac23c11c15c49c17"></a>
+## Annotating with SageMaker Ground Truth<a name="w57aac23c11c21c49c17"></a>
 
 You are ready to start annotating your documents\.
 

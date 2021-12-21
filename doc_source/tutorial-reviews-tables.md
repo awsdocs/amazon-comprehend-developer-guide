@@ -1,6 +1,10 @@
 # Step 4: Preparing the Amazon Comprehend Output for Data Visualization<a name="tutorial-reviews-tables"></a>
 
-To prepare the results of the sentiment and entities analysis jobs for creating data visualizations, you use AWS Glue and Amazon Athena\. In this step, you extract the Amazon Comprehend results files\. Then, you create an AWS Glue *crawler* that explores your data and automatically catalogs it in tables in the AWS Glue Data Catalog\. Finally, you access and transform these tables using Amazon Athena, a serverless and interactive query service\. When you have finished this step, your Amazon Comprehend results are cleaned and ready for visualization\.
+To prepare the results of the sentiment and entities analysis jobs for creating data visualizations, you use AWS Glue and Amazon Athena\. In this step, you extract the Amazon Comprehend results files\. Then, you create an AWS Glue *crawler* that explores your data and automatically catalogs it in tables in the AWS Glue Data Catalog\. After that, you access and transform these tables using Amazon Athena, a serverless and interactive query service\. When you have finished this step, your Amazon Comprehend results are clean and ready for visualization\.
+
+For a PII entity detection job, the output file is plain text, not a compressed archive\. The output file name is the same as the input file, with `.out` appended at the end\. You don't need the step of extracting the output file\. Skip to  Load the Data into an AWS Glue Data Catalog\.
+
+
 
 **Topics**
 + [Prerequisites](#tutorial-reviews-tables-prereqs)
@@ -16,7 +20,9 @@ Before you begin, complete [Step 3: Running Analysis Jobs on Documents in Amazon
 
 ## Download the Output<a name="tutorial-reviews-tables-download"></a>
 
-The Amazon Comprehend uses Gzip compression to compress output files and save them as a tar archive\. The simplest way to extract the output files is to download the `output.tar.gz` archives locally\. In this step, you download the sentiment and entities output archives\.
+The Amazon Comprehend uses Gzip compression to compress output files and save them as a tar archive\. The simplest way to extract the output files is to download the `output.tar.gz` archives locally\. 
+
+In this step, you download the sentiment and entities output archives\.
 
 ### Download the Output Files \(Console\)<a name="tutorial-reviews-tables-download-console"></a>
 
@@ -196,7 +202,7 @@ Create an AWS Glue crawler that scans your `sentiment-results` and `entities-res
 
    1. For **Crawl data in**, choose **Specified path in my account**\.
 
-   1. For **Include path**, enter the full S3 path of the sentiment output folder: `s3://DOC-EXAMPLE-BUCKET/sentiment-results/`\.
+   1. For **Include path**, enter the full S3 path of the sentiment output folder: `s3://DOC-EXAMPLE-BUCKET/sentiment-results`\.
 
    1. Choose **Next**\.
 
@@ -338,11 +344,11 @@ Now you have a database populated with the Amazon Comprehend results\. However, 
 
 1. Open the Athena console at [https://console\.aws\.amazon\.com/athena/](https://console.aws.amazon.com/athena/home)\.
 
-1. In the navigation bar, choose **Settings**\.
+1. In the query editor, choose **Settings**, then choose **Manage**\.
 
-1. For **Query result location**, enter `s3://DOC-EXAMPLE-BUCKET/query-results/`\. This creates a new folder called `query-results` in your bucket that stores the output of the Amazon Athena queries you run\. Choose **Save**\.
+1. For **Location of query results**, enter `s3://DOC-EXAMPLE-BUCKET/query-results/`\. This creates a new folder called `query-results` in your bucket that stores the output of the Amazon Athena queries you run\. Choose **Save**\.
 
-1. In the navigation bar, choose **Query editor**\.
+1. In the query editor, choose **Editor**\.
 
 1. For **Database**, choose the AWS Glue database `comprehend-results` that you created\.
 
@@ -350,7 +356,7 @@ Now you have a database populated with the Amazon Comprehend results\. However, 
 **Tip**  
 If the tables don’t have any data, try checking the folders in your S3 bucket\. Make sure that there is one folder for entities results and one folder for sentiment results\. Then, try running a new AWS Glue crawler\.
 
-1. To unnest the `sentiment_results` table, enter the following query in the **Query editor** and choose **Run query**\.
+1. To unnest the `sentiment_results` table, enter the following query in the **Query editor** and choose **Run**\.
 
    ```
    CREATE TABLE sentiment_results_final AS
@@ -362,7 +368,7 @@ If the tables don’t have any data, try checking the folders in your S3 bucket\
    FROM sentiment_results
    ```
 
-1. To begin unnesting the entities table, enter the following query in the **Query editor** and choose **Run query**\.
+1. To begin unnesting the entities table, enter the following query in the **Query editor** and choose **Run**\.
 
    ```
    CREATE TABLE entities_results_1 AS

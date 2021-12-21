@@ -20,6 +20,7 @@ Required: No
  ** S3Uri **   <a name="comprehend-Type-OutputDataConfig-S3Uri"></a>
 When you use the `OutputDataConfig` object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data\. The URI must be in the same region as the API endpoint that you are calling\. The location is used as the prefix for the actual location of the output file\.  
 When the topic detection job is finished, the service creates an output file in a directory specific to the job\. The `S3Uri` field contains the location of the output file, called `output.tar.gz`\. It is a compressed archive that contains the ouput of the operation\.  
+ For a PII entity detection job, the output file is plain text, not a compressed archive\. The output file name is the same as the input file, with `.out` appended at the end\.   
 Type: String  
 Length Constraints: Maximum length of 1024\.  
 Pattern: `s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?`   

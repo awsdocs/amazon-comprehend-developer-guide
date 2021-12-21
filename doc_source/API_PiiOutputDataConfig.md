@@ -13,6 +13,7 @@ Required: No
 
  ** S3Uri **   <a name="comprehend-Type-PiiOutputDataConfig-S3Uri"></a>
 When you use the `PiiOutputDataConfig` object with asynchronous operations, you specify the Amazon S3 location where you want to write the output data\.   
+ For a PII entity detection job, the output file is plain text, not a compressed archive\. The output file name is the same as the input file, with `.out` appended at the end\.   
 Type: String  
 Length Constraints: Maximum length of 1024\.  
 Pattern: `s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?`   

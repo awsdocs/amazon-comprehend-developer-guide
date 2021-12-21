@@ -41,46 +41,63 @@ To complete this tutorial, you need the following:
 
   ```
   {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Sid": "VisualEditor0",
-              "Effect": "Allow",
-              "Action": [
-                  "comprehend:*",
-                  "s3:*",
-                  "quicksight:*",
-                  "iam:ListPolicies",
-                  "iam:CreatePolicy",
-                  "iam:GetRole",
-                  "iam:PassRole",
-                  "iam:ListRoles",
-                  "iam:CreateRole",           
-                  "iam:AttachRolePolicy",
-                  "iam:ListAccountAliases",
-                  "iam:DetachRolePolicy",
-                  "iam:ListAttachedRolePolicies",
-                  "iam:GetPolicy",
-                  "iam:CreatePolicyVersion",
-                  "iam:DeletePolicyVersion",
-                  "iam:GetPolicyVersion",
-                  "iam:ListPolicyVersions",
-                  "iam:DeleteRole",
-                  "iam:ListEntitiesForPolicy",
-                  "ds:DescribeDirectories",
-                  "ds:CreateAlias",
-                  "ds:AuthorizeApplication",
-                  "ds:CheckAlias",
-                  "ds:DeleteDirectory",
-                  "ds:CreateIdentityPoolDirectory",
-                  "ds:DescribeTrusts",
-                  "ds:UnauthorizeApplication"
-              ],
-              "Resource": "*"               
-          }
-      ]
+    "Version": "2012-10-17",
+    "Statement":
+    [
+      {
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action":
+        [
+          "comprehend:*",
+          "ds:AuthorizeApplication",
+          "ds:CheckAlias",
+          "ds:CreateAlias",
+          "ds:CreateIdentityPoolDirectory",
+          "ds:DeleteDirectory",
+          "ds:DescribeDirectories",
+          "ds:DescribeTrusts",
+          "ds:UnauthorizeApplication",
+          "iam:AttachRolePolicy",
+          "iam:CreatePolicy",
+          "iam:CreatePolicyVersion",
+          "iam:CreateRole",
+          "iam:DeletePolicyVersion",
+          "iam:DeleteRole",
+          "iam:DetachRolePolicy",
+          "iam:GetPolicy",
+          "iam:GetPolicyVersion",
+          "iam:GetRole",
+          "iam:ListAccountAliases",
+          "iam:ListAttachedRolePolicies",
+          "iam:ListEntitiesForPolicy",
+          "iam:ListPolicies",
+          "iam:ListPolicyVersions",
+          "iam:ListRoles",
+          "quicksight:*",
+          "s3:*",
+          "tag:GetResources"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Action":
+        [
+          "iam:PassRole"
+        ],
+        "Effect": "Allow",
+        "Resource":
+        [
+          "arn:aws:iam::*:role/*Comprehend*"
+        ]
+      }
+    ]
   }
   ```
 
   Use the previous policy to create an IAM policy and attach it to your group or user\. For information about creating an IAM policy, see [Creating IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) in the *IAM User Guide*\. For information about attaching an IAM policy, see [Adding and removing IAM identity permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html) in the *IAM User Guide*\.
-+ Managed policies attached to your IAM group or user\. In addition to the previous policy, you must also attach the AWS managed policies `AWSGlueConsoleFullAccess` and `AWSQuicksightAthenaAccess` to your group or user\. These managed policies give you permission to use AWS Glue, Amazon Athena, and Amazon QuickSight\. For information about attaching an IAM policy, see [Adding and removing IAM identity permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html) in the *IAM User Guide*\.
++ Managed policies attached to your IAM group or user\. In addition to the previous policy, you must also attach the following AWS managed policies to your group or user:
+  + `AWSGlueConsoleFullAccess`
+  + `AWSQuicksightAthenaAccess`
+
+  These managed policies give you permission to use AWS Glue, Amazon Athena, and Amazon QuickSight\. For information about attaching an IAM policy, see [Adding and removing IAM identity permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html) in the *IAM User Guide*\.

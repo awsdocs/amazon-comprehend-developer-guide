@@ -36,7 +36,7 @@ Required: No
  ** LanguageCode **   <a name="comprehend-Type-DocumentClassifierProperties-LanguageCode"></a>
 The language code for the language of the documents that the classifier was trained on\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt`   
+Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: No
 
  ** Message **   <a name="comprehend-Type-DocumentClassifierProperties-Message"></a>
@@ -62,6 +62,13 @@ Required: No
  ** OutputDataConfig **   <a name="comprehend-Type-DocumentClassifierProperties-OutputDataConfig"></a>
  Provides output results configuration parameters for custom classifier jobs\.  
 Type: [ DocumentClassifierOutputDataConfig ](API_DocumentClassifierOutputDataConfig.md) object  
+Required: No
+
+ ** SourceModelArn **   <a name="comprehend-Type-DocumentClassifierProperties-SourceModelArn"></a>
+The Amazon Resource Name \(ARN\) of the source model\. This model was imported from a different AWS account to create the document classifier model in your AWS account\.  
+Type: String  
+Length Constraints: Maximum length of 256\.  
+Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?`   
 Required: No
 
  ** Status **   <a name="comprehend-Type-DocumentClassifierProperties-Status"></a>

@@ -31,7 +31,7 @@ Required: No
  ** LanguageCode **   <a name="comprehend-Type-EntityRecognizerProperties-LanguageCode"></a>
  The language of the input documents\. All documents must be in the same language\. Only English \("en"\) is currently supported\.  
 Type: String  
-Valid Values:` en | es | fr | it | de | pt`   
+Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: No
 
  ** Message **   <a name="comprehend-Type-EntityRecognizerProperties-Message"></a>
@@ -51,6 +51,13 @@ Required: No
  ** RecognizerMetadata **   <a name="comprehend-Type-EntityRecognizerProperties-RecognizerMetadata"></a>
  Provides information about an entity recognizer\.  
 Type: [ EntityRecognizerMetadata ](API_EntityRecognizerMetadata.md) object  
+Required: No
+
+ ** SourceModelArn **   <a name="comprehend-Type-EntityRecognizerProperties-SourceModelArn"></a>
+The Amazon Resource Name \(ARN\) of the source model\. This model was imported from a different AWS account to create the entity recognizer model in your AWS account\.  
+Type: String  
+Length Constraints: Maximum length of 256\.  
+Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?`   
 Required: No
 
  ** Status **   <a name="comprehend-Type-EntityRecognizerProperties-Status"></a>

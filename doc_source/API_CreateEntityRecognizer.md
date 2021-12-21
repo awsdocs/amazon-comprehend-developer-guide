@@ -40,6 +40,7 @@ Creates an entity recognizer using submitted files\. After your `CreateEntityRec
    },
    "LanguageCode": "string",
    "ModelKmsKeyId": "string",
+   "ModelPolicy": "string",
    "RecognizerName": "string",
    "Tags": [ 
       { 
@@ -84,7 +85,7 @@ Required: Yes
  ** [ LanguageCode ](#API_CreateEntityRecognizer_RequestSyntax) **   <a name="comprehend-CreateEntityRecognizer-request-LanguageCode"></a>
  You can specify any of the following languages supported by Amazon Comprehend: English \("en"\), Spanish \("es"\), French \("fr"\), Italian \("it"\), German \("de"\), or Portuguese \("pt"\)\. All documents must be in the same language\.  
 Type: String  
-Valid Values:` en | es | fr | it | de | pt`   
+Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: Yes
 
  ** [ ModelKmsKeyId ](#API_CreateEntityRecognizer_RequestSyntax) **   <a name="comprehend-CreateEntityRecognizer-request-ModelKmsKeyId"></a>
@@ -94,6 +95,17 @@ ID for the AWS Key Management Service \(KMS\) key that Amazon Comprehend uses to
 Type: String  
 Length Constraints: Maximum length of 2048\.  
 Pattern: `.*`   
+Required: No
+
+ ** [ ModelPolicy ](#API_CreateEntityRecognizer_RequestSyntax) **   <a name="comprehend-CreateEntityRecognizer-request-ModelPolicy"></a>
+The JSON resource\-based policy to attach to your custom entity recognizer model\. You can use this policy to allow another AWS account to import your custom model\.  
+Provide your JSON as a UTF\-8 encoded string without line breaks\. To provide valid JSON for your policy, enclose the attribute names and values in double quotes\. If the JSON body is also enclosed in double quotes, then you must escape the double quotes that are inside the policy:  
+ `"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"`   
+To avoid escaping quotes, you can use single quotes to enclose the policy and double quotes to enclose the JSON names and values:  
+ `'{"attribute": "value", "attribute": ["value"]}'`   
+Type: String  
+Length Constraints: Minimum length of 1\. Maximum length of 20000\.  
+Pattern: `[\u0009\u000A\u000D\u0020-\u00FF]+`   
 Required: No
 
  ** [ RecognizerName ](#API_CreateEntityRecognizer_RequestSyntax) **   <a name="comprehend-CreateEntityRecognizer-request-RecognizerName"></a>
