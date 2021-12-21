@@ -129,7 +129,7 @@ namespace Comprehend
             };
             DetectEntitiesResponse detectEntitiesResponse = comprehendClient.DetectEntities(detectEntitiesRequest);
             foreach (Entity e in detectEntitiesResponse.Entities)
-                Console.WriteLine("Text: {1}, Type: {1}, Score: {2}, BeginOffset: {3}, EndOffset: {4}", 
+                Console.WriteLine("Text: {0}, Type: {1}, Score: {2}, BeginOffset: {3}, EndOffset: {4}", 
                     e.Text, e.Type, e.Score, e.BeginOffset, e.EndOffset);
             Console.WriteLine("Done");
         }
