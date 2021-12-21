@@ -53,13 +53,6 @@ Required: No
 Type: [ EntityRecognizerMetadata ](API_EntityRecognizerMetadata.md) object  
 Required: No
 
- ** SourceModelArn **   <a name="comprehend-Type-EntityRecognizerProperties-SourceModelArn"></a>
-The Amazon Resource Name \(ARN\) of the source model\. This model was imported from a different AWS account to create the entity recognizer model in your AWS account\.  
-Type: String  
-Length Constraints: Maximum length of 256\.  
-Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?`   
-Required: No
-
  ** Status **   <a name="comprehend-Type-EntityRecognizerProperties-Status"></a>
 Provides the status of the entity recognizer\.  
 Type: String  

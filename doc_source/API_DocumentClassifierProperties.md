@@ -64,13 +64,6 @@ Required: No
 Type: [ DocumentClassifierOutputDataConfig ](API_DocumentClassifierOutputDataConfig.md) object  
 Required: No
 
- ** SourceModelArn **   <a name="comprehend-Type-DocumentClassifierProperties-SourceModelArn"></a>
-The Amazon Resource Name \(ARN\) of the source model\. This model was imported from a different AWS account to create the document classifier model in your AWS account\.  
-Type: String  
-Length Constraints: Maximum length of 256\.  
-Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?`   
-Required: No
-
  ** Status **   <a name="comprehend-Type-DocumentClassifierProperties-Status"></a>
 The status of the document classifier\. If the status is `TRAINED` the classifier is ready to use\. If the status is `FAILED` you can see additional information about why the classifier wasn't trained in the `Message` field\.  
 Type: String  

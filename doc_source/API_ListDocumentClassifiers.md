@@ -88,7 +88,6 @@ Required: No
             "KmsKeyId": "string",
             "S3Uri": "string"
          },
-         "SourceModelArn": "string",
          "Status": "string",
          "SubmitTime": number,
          "TrainingEndTime": number,
