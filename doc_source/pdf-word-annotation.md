@@ -19,23 +19,25 @@ In this step, you navigate to Git Hub to get the resources required for you to b
 ## Run and Configure From the AWS CLI<a name="w57aac23c11c21c49c11"></a>
 
 Once you've downloaded the \.zip file, unzip the annotation code\. Then, head to the AWS CLI and navigate into the **ComprehendSSIEAnnotationTool** folder\. 
-
+Within this folder there is a `Makefile` which will be used to run some rules that install dependencies, setup a Python virtualenv, and deploy the needed resources.
 **Note**  
 The following instructions are for Linux/Ubuntu/Mac\. For Windows, please install [Cygwin](https://cygwin.com/install.html) and follow the same instructions\.
 
-1. From the folder, run:
+1. From the folder, run the following command to install [pipenv](https://pypi.org/project/pipenv/), [aws-sam-toolkit](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html), dependencies, and setup a virtualenv:
 
    `make bootsrap`
 
-1. Run the command:
+1. Run the following command to run basic stylecheck, cfn-lint, etc, and build the CloudFormation template:
 
    `make build`
 
-1. Next, run the following command to build out the CloudFormation template\. The template will be ready for your CloudFormation deployment\. This CloudFormation stack will manage the [AWS Lambdas](https://aws.amazon.com/lambda/) you created, [AWS IAM](https://aws.amazon.com/iam/) roles, and your [AWS S3](https://aws.amazon.com/s3/) bucket:
+1. Run the following command to package the CloudFormation template to be ready for CloudFormation deployment, and follow iteractive guidance for deployment. This CloudFormation stack will manage the [AWS Lambdas](https://aws.amazon.com/lambda/) you create, [AWS IAM](https://aws.amazon.com/iam/) roles, and your [AWS S3](https://aws.amazon.com/s3/) bucket:
 
    `make deploy-guided`
 
    When you run the command, you are prompted to name the stack\. If you leave it blank, the default name is listed as **sam\-app**\.
+   **Important**  
+   In case you modify the CloudFormation stack name, write it down as you will need it in the next steps\. 
 
 1. You are presented with a set of configuration options\. You can accept all of them as default, except make sure you select your correct AWS Region\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/deploy_guided_anno.png)
@@ -45,48 +47,65 @@ The following instructions are for Linux/Ubuntu/Mac\. For Windows, please instal
 
 ## Upload PDF to Amazon S3 Bucket<a name="w57aac23c11c21c49c13"></a>
 
-In step 3, you deployed a CloudFormation stack which contains an S3 bucket which is named **make\-deploy\-guided**\. This bucket is used to store all the data that is needed for your labeling job, and it is also referred to by the Lambda IAM Execution Role policy to ensure the Lambda functions have necessary permission to access the data\. The S3 bucket name can be found in **CloudFormation Stack Outputs **with a Key of **SemiStructuredDocumentsS3Bucket**\. You need to upload your source PDF documents into this Bucket\. 
+In the previous section, a CloudFormation stack has been deployed, which contains an S3 bucket. This bucket is used to store all data that is needed for the labeling job, and it is also referred to by the Lambda IAM Execution Role policy to ensure Lambda functions have necessary permission to access the data. The S3 bucket name can be easily found in the **CloudFormation Stack Outputs** with a Key of **SemiStructuredDocumentsS3Bucket** or you can use the following command to retrieve the bucket name:
+```
+S3_BUCKET=`aws cloudformation describe-stacks \
+   --stack-name 'sam-app' \
+   --query "Stacks[0].Outputs[?OutputKey=='SemiStructuredDocumentsS3Bucket'].OutputValue" \
+   --output text`
+```
 
-1. In your S3 bucket, **make\-deploy\-guided**, create a new folder\.
+You need to upload your source PDF documents into this Bucket\. 
 
-1. Name your folder **/src**\.
+1. In your S3 bucket, create a new source folder, for instance one named **/src**\.
 
 1. Add your source files to the folder\. These are PDF files which you will annotate to train your recognizer\.
 
 Here is a sample AWS CLI command you can use to directly upload source documents from your local directory to the S3 bucket: 
-+ local\-path\-to\-source\-docs: the file path to local source documents
-+ source\-folder\-name: name of a folder within the CloudFormation stack's managed S3 bucket
+- local\-path\-to\-source\-docs: the file path to local source documents
+- source\-folder\-name: name of a folder within the CloudFormation stack's managed S3 bucket, for instance src
 
-  `AWS_REGION= ` aws configure get region` ;`
-
-  `AWS_ACCOUNT_ID= ` aws sts get-caller-identity | jq -r '.Account' `;`
-
-  `aws s3 cp --recursive < local-path-to-source-docs> s3: // comprehend-semi-structured-documents- ${ AWS_REGION} -${ AWS_ACCOUNT_ID} / < source-folder-name> /`
-
+```
+aws s3 cp --recursive \
+   <local-path-to-source-docs> \
+   s3://${S3_BUCKET}/<source-folder-name>/
+```
 ## CLI \- Create Your Annotation Job<a name="w57aac23c11c21c49c15"></a>
 
-At this point, you should have a private SageMaker Ground Truth workforce and you've built out and uploaded your source files to the S3 bucket\. Now it's time to finish up in the CLI\. After you've run **make deploy\-guided**, you are presented with some settings you need to update in your job creation script
+At this point, you should have a private SageMaker Ground Truth workforce and you've built out and uploaded your source files to the S3 bucket\. Now it's time to finish up in the CLI\. After you've run **make deploy\-guided**, you must create a labeling job. 
 
+The `comprehend-ssie-annotation-tool-cli.py` script under bin/ directory is a simple wrapper command that can be used streamline the creation of a SageMaker GroundTruth Job. Under the hood, this CLI script will read the source documents from the S3 path that you specify as an argument, create a corresponding input manifest file with a single page of one source document per line, and create the input manifest file is then used as input to the labeling job. The arguments that must pass to the CLI are:
 
++ **input\-s3\-path**: S3 Uri to the source documents you uploaded to your S3 bucket.
 
-1. **input\-s3\-path**: S3 Uri to the source documents you uploaded to your S3 bucket 
++ **cfn\-name**: The CloudFormation stack name you chose in the previous step (default sam-app).
 
-1. **cfn\-name**: The CloudFormation stack name
-**Important**  
-Write down the default CloudFormation name, you will need it in the next steps\. 
++  **work\-team\-name**: The workforce name you created when you build out the private workforce in SageMaker Ground Truth.
 
-1.  **work\-team\-name**: The workforce name you created when you build out the private workforce in SageMaker Ground Truth
++ **job\-name\-prefix**: The prefix for the SageMaker Ground Truth labeling job \(LIMIT: 29 characters\)\. Extra text will be appended to job name prefix, ex\. \-labeling\-job\-task\-20210902T232116 
 
-1. **job\-name\-prefix**: The prefix for the SageMaker Ground Truth labeling job \(LIMIT: 29 characters\)\. Extra text will be appended to job name prefix, ex\. \-labeling\-job\-task\-20210902T232116 
++ **entity\-types**: The entities you would like to use during the labeling job \(separated by commas\)\. This should be an exhaustive list of all the entities, across all document types in the training dataset\. Only these will become the visible types in GroundTruth UI for Annotators to label each page of the document.
 
-1. **entity\-types**: The entities you would like to use during the labeling job \(separated by commas\)\. This should be an exhaustive list of all the entities, across all document types in the training dataset\.
+For more information about additional arguments that you can specify in the CLI, use the `-h` option. e.g. 
+```
+python bin/comprehend-ssie-annotation-tool-cli.py -h 
+```
 
-1. Copy and run the script with these updated details\.
-
-     
+The following is an example of using the CLI script to start a labeling job: 
+```
+AWS_REGION=`aws configure get region`;
+python bin/comprehend-ssie-annotation-tool-cli.py \
+    --input-s3-path s3://${S3_BUCKET}/<source-folder-name>/ \
+    --cfn-name <stack-name> \
+    --work-team-name <private-work-team-name> \
+    --region ${AWS_REGION} \
+    --job-name-prefix "${USER}-job" \
+    --entity-types "EntityTypeA, EnityTypeB, EntityTypeC"
+```
+<!---
+Replacing image by text so the code can be easily copied
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/annotation_settings.png)
-
-The comprehend\-ssie\-annotation\-tool\-cli\.py under bin/ directory is a simple wrapper command that can be used streamline the creation of a SageMaker GroundTruth Job\. Under the hood, this CLI will read the source documents from the S3 path that you specify, and create a corresponding input manifest file with a single page of one source document per line, and the input manifest file is then used as input to your labeling job\.
+-->
 
 ## Annotating with SageMaker Ground Truth<a name="w57aac23c11c21c49c17"></a>
 
