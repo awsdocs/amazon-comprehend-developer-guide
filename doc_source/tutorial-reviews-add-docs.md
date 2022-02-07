@@ -41,7 +41,7 @@ In the Amazon S3 console, you create a bucket with a name that is unique in all 
 
 1. For **Region**, choose the AWS Region where you want to create the bucket\. The Region you choose must support Amazon Comprehend\. To reduce latency, choose the AWS Region closest to your geographic location that is supported by Amazon Comprehend\. For a list of Regions that support Amazon Comprehend, see the [Region Table](http://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) in the *Global Infrastructure Guide*\.
 
-1. Leave the default settings for **Bucket settings for Block Public Access**, **Bucket Versioning**, and **Tags**\.
+1. Leave the default settings for **Object Ownership**, **Bucket settings for Block Public Access**, **Bucket Versioning**, and **Tags**\.
 
 1. For **Default encryption**, choose **Disable**\. 
 **Tip**  

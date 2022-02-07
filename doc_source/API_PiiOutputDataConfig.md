@@ -8,7 +8,7 @@ Provides configuration parameters for the output of PII entity detection jobs\.
 ID for the AWS Key Management Service \(KMS\) key that Amazon Comprehend uses to encrypt the output results from an analysis job\.  
 Type: String  
 Length Constraints: Maximum length of 2048\.  
-Pattern: `.*`   
+Pattern: `^\p{ASCII}+$`   
 Required: No
 
  ** S3Uri **   <a name="comprehend-Type-PiiOutputDataConfig-S3Uri"></a>
@@ -22,7 +22,7 @@ Required: Yes
 ## See Also<a name="API_PiiOutputDataConfig_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/PiiOutputDataConfig) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/PiiOutputDataConfig) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/PiiOutputDataConfig) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/PiiOutputDataConfig) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/PiiOutputDataConfig) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/PiiOutputDataConfig) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/PiiOutputDataConfig) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/PiiOutputDataConfig) 

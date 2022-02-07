@@ -43,7 +43,7 @@ When using the Amazon Comprehend console, you create one job at a time\. You nee
 
    1. For **Language**, choose **English**\.
 
-   1. For **Volume encryption**, choose **Use AWS owned key**\.
+   1. Leave the **Job encryption** setting as disabled\.
 
 1. In the **Input data** section, do the following:
 

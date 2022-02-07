@@ -25,15 +25,15 @@ This policy grants full access to Amazon Comprehend resources including running 
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Effect": "Allow",
             "Action": [
                 "comprehend:*",
+                "iam:GetRole",
+                "iam:ListRoles",
+                "s3:GetBucketLocation",
                 "s3:ListAllMyBuckets",
                 "s3:ListBucket",
-                "s3:GetBucketLocation",
-                "iam:ListRoles",
-                "iam:GetRole"
             ],
-            "Effect": "Allow",
             "Resource": "*"
         }
     ]
@@ -55,42 +55,43 @@ This policy grants read\-only permissions to run all Amazon Comprehend actions *
     "Statement": [
         {
             "Action": [
-                "comprehend:DetectDominantLanguage",
                 "comprehend:BatchDetectDominantLanguage",
-                "comprehend:DetectEntities",
                 "comprehend:BatchDetectEntities",
-                "comprehend:DetectKeyPhrases",
                 "comprehend:BatchDetectKeyPhrases",
-                "comprehend:DetectPiiEntities",
-                "comprehend:DetectSentiment",
                 "comprehend:BatchDetectSentiment",
-                "comprehend:DetectSyntax",
                 "comprehend:BatchDetectSyntax",
                 "comprehend:ClassifyDocument",
                 "comprehend:ContainsPiiEntities",
-                "comprehend:DescribeTopicsDetectionJob",
-                "comprehend:ListTopicsDetectionJobs",
-                "comprehend:DescribeDominantLanguageDetectionJob",
-                "comprehend:ListDominantLanguageDetectionJobs",
-                "comprehend:DescribeEntitiesDetectionJob",
-                "comprehend:ListEntitiesDetectionJobs",
-                "comprehend:DescribeKeyPhrasesDetectionJob",
-                "comprehend:ListKeyPhrasesDetectionJobs",
-                "comprehend:DescribePiiEntitiesDetectionJob",
-                "comprehend:ListPiiEntitiesDetectionJobs",
-                "comprehend:DescribeSentimentDetectionJob",
-                "comprehend:ListSentimentDetectionJobs",
+                "comprehend:DescribeDocumentClassificationJob",
                 "comprehend:DescribeDocumentClassifier",
+                "comprehend:DescribeDominantLanguageDetectionJob",
+                "comprehend:DescribeEndpoint",
+                "comprehend:DescribeEntitiesDetectionJob",
+                "comprehend:DescribeEntityRecognizer",
+                "comprehend:DescribeKeyPhrasesDetectionJob",
+                "comprehend:DescribePiiEntitiesDetectionJob",
+                "comprehend:DescribeResourcePolicy",
+                "comprehend:DescribeSentimentDetectionJob",
+                "comprehend:DescribeTopicsDetectionJob",
+                "comprehend:DetectDominantLanguage",
+                "comprehend:DetectEntities",
+                "comprehend:DetectKeyPhrases",
+                "comprehend:DetectPiiEntities",
+                "comprehend:DetectSentiment",
+                "comprehend:DetectSyntax",
+                "comprehend:ListDocumentClassificationJobs",
                 "comprehend:ListDocumentClassifiers",
                 "comprehend:ListDocumentClassifierSummaries",
-                "comprehend:DescribeDocumentClassificationJob",
-                "comprehend:ListDocumentClassificationJobs",
-                "comprehend:DescribeEntityRecognizer",
+                "comprehend:ListDominantLanguageDetectionJobs",
+                "comprehend:ListEndpoints",
+                "comprehend:ListEntitiesDetectionJobs",
                 "comprehend:ListEntityRecognizers",
                 "comprehend:ListEntityRecognizerSummaries",
+                "comprehend:ListKeyPhrasesDetectionJobs",
+                "comprehend:ListPiiEntitiesDetectionJobs",
+                "comprehend:ListSentimentDetectionJobs",
                 "comprehend:ListTagsForResource",
-                "comprehend:DescribeEndpoint",
-                "comprehend:ListEndpoints"
+                "comprehend:ListTopicsDetectionJobs"
             ],
             "Effect": "Allow",
             "Resource": "*"
@@ -110,6 +111,7 @@ View details about updates to AWS managed policies for Amazon Comprehend since t
 
 | Change | Description | Date | 
 | --- | --- | --- | 
-|  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  |  Amazon Comprehend added new permissions to allow the `ListDocumentClassifierSummaries` and `ListEntityRecognizerSummaries`action to the ComprehendReadOnly policy  | September 21, 2021 | 
-|  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  | Amazon Comprehend added new permissions to allow the ContainsPIIEntities action to the ComprehendReadOnly policy | March 26, 2021 | 
+|  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  |  Amazon Comprehend now allows the `comprehend:DescribeResourcePolicy` action in the ComprehendReadOnly policy  | Feb 2, 2022 | 
+|  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  |  Amazon Comprehend now allows the `ListDocumentClassifierSummaries` and `ListEntityRecognizerSummaries` actions in the ComprehendReadOnly policy  | September 21, 2021 | 
+|  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  | Amazon Comprehend now allows the ContainsPIIEntities action in the ComprehendReadOnly policy | March 26, 2021 | 
 |  Amazon Comprehend started tracking changes  |  Amazon Comprehend started tracking changes for its AWS managed policies\.  | March 1, 2021 | 

@@ -16,8 +16,8 @@ For information about the parameters that are common to all actions, see [Common
 
 The request accepts the following data in JSON format\.
 
- ** [ JobId ](#API_DescribeDocumentClassificationJob_RequestSyntax) **   <a name="comprehend-DescribeDocumentClassificationJob-request-JobId"></a>
-The identifier that Amazon Comprehend generated for the job\. The [ StartDocumentClassificationJob ](API_StartDocumentClassificationJob.md) operation returns this identifier in its response\.  
+ ** [JobId](#API_DescribeDocumentClassificationJob_RequestSyntax) **   <a name="comprehend-DescribeDocumentClassificationJob-request-JobId"></a>
+The identifier that Amazon Comprehend generated for the job\. The [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) operation returns this identifier in its response\.  
 Type: String  
 Length Constraints: Minimum length of 1\. Maximum length of 32\.  
 Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`   
@@ -65,9 +65,9 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** [ DocumentClassificationJobProperties ](#API_DescribeDocumentClassificationJob_ResponseSyntax) **   <a name="comprehend-DescribeDocumentClassificationJob-response-DocumentClassificationJobProperties"></a>
+ ** [DocumentClassificationJobProperties](#API_DescribeDocumentClassificationJob_ResponseSyntax) **   <a name="comprehend-DescribeDocumentClassificationJob-response-DocumentClassificationJobProperties"></a>
 An object that describes the properties associated with the document classification job\.  
-Type: [ DocumentClassificationJobProperties ](API_DocumentClassificationJobProperties.md) object
+Type: [DocumentClassificationJobProperties](API_DocumentClassificationJobProperties.md) object
 
 ## Errors<a name="API_DescribeDocumentClassificationJob_Errors"></a>
 
@@ -92,12 +92,12 @@ HTTP Status Code: 400
 ## See Also<a name="API_DescribeDocumentClassificationJob_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
-+  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
-+  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
-+  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
-+  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DescribeDocumentClassificationJob) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DescribeDocumentClassificationJob) 

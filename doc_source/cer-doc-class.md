@@ -7,27 +7,34 @@ Metrics are included any time metadata from a trained custom classifier is retur
 **Note**  
 Please refer to [Metrics: Precision, Recall, and FScore](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_fscore_support.html) for an understanding of the underlying Precision, Recall, and F1 score metrics\. These metrics are defined at a class level\. We have used **macro** averaging for combining these metrics together to come up with the test set P,R,F1, as discussed below\.
 
-Amazon Comprehend creates a [Confusion Matrix](conf-matrix.md) as part of the custom classifier model training\. This is placed in the output file specified in the [ CreateDocumentClassifier ](API_CreateDocumentClassifier.md) operation and can be used to assess how well the model works\.
+Amazon Comprehend creates a [Confusion Matrix](conf-matrix.md) as part of the custom classifier model training\. This is placed in the output file specified in the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation and can be used to assess how well the model works\.
 
-We also support the following metrics: 
-+ **Accuracy**
-+ **Precision \(Macro Precision\)**
-+ **Recall \(Macro Recall\)**
-+ **F1 Score \(Macro F1 Score\)**
-+ **Hamming Loss**
-+ **Micro Precision**
-+ **Micro Recall**
-+ **Micro F1 Score**
+**Topics**
++ [Metrics](#cer-doc-class-metrics)
++ [Improving Your Custom Classifier's Performance](#improving-metrics-doc)
++ [Confusion Matrix](conf-matrix.md)
 
+## Metrics<a name="cer-doc-class-metrics"></a>
 
+Amazon Comprehend supports the following metrics: 
+
+**Topics**
++ [Accuracy](#class-accuracy-metric)
++ [Precision \(Macro Precision\)](#class-macroprecision-metric)
++ [Recall \(Macro Recall\)](#class-macrorecall-metric)
++ [F1 Score \(Macro F1 Score\)](#class-macrof1score-metric)
++ [Hamming Loss](#class-hammingloss-metric)
++ [Micro Precision](#class-microprecision-metric)
++ [Micro Recall](#class-microrecall-metric)
++ [Micro F1 Score](#class-microf1score-metric)
 
 These can be seen on the **Classifier Details** page in the console\.
 
 ![\[Custom Classifier Metrics\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/classifierperformance.png)
 
-## Accuracy<a name="class-accuracy-metric"></a>
+### Accuracy<a name="class-accuracy-metric"></a>
 
-Accuracy indicates the percentage of labels from the test data that are predicted exactly right by the model\. In other words, this is the fraction of the labels that were correct recognized\. It is computed by dividing the number of labels in the test documents that were correctly recognized by the total number of labels in the test documents\.
+Accuracy indicates the percentage of labels from the test data that are predicted exactly right by the model\. In other words, this is the fraction of the labels that were correctly recognized\. It is computed by dividing the number of labels in the test documents that were correctly recognized by the total number of labels in the test documents\.
 
 For example
 
@@ -44,7 +51,7 @@ For example
 
 The accuracy consists of the number of "rights" divided by the number of overall test samples = 5/7 = 0\.714, or 71\.4%
 
-## Precision \(Macro Precision\)<a name="class-macroprecision-metric"></a>
+### Precision \(Macro Precision\)<a name="class-macroprecision-metric"></a>
 
 Precision is a measure of the usefulness of the classifier results in the test data\. It's defined as the number of documents correctly classified, divided by the total number of classifications for the class\. High precision means that the classifier returned substantially more relevant results than irrelevant ones\. 
 
@@ -67,7 +74,7 @@ The Precision \(Macro Precision\) metric for the model is therefore:
 Macro Precision = (0.75 + 0.80 + 0.90 + 0.50 + 0.40)/5 = 0.67
 ```
 
-## Recall \(Macro Recall\)<a name="class-macrorecall-metric"></a>
+### Recall \(Macro Recall\)<a name="class-macrorecall-metric"></a>
 
 This indicates the percentage of correct categories in your text that the model can predict\. This metric comes from averaging the recall scores of all available labels\. Recall is a measure of how complete the classifier results are for the test data\. 
 
@@ -92,7 +99,7 @@ The Recall \(Macro Recall\) metric for the model is therefore:
 Macro Recall = (0.70 + 0.70 + 0.98 + 0.80 + 0.10)/5 = 0.656
 ```
 
-## F1 Score \(Macro F1 Score\)<a name="class-macrof1score-metric"></a>
+### F1 Score \(Macro F1 Score\)<a name="class-macrof1score-metric"></a>
 
  A combination of the Precision and Recall metrics\. The F1 score is the harmonic mean of the Precision and Recall metrics\. This score is based on the Precision and Recall created by the averaging method and is also known as the Macro F1 score\. A measure of how accurate the classifier results are for the test data\. It is derived from the `Precision` and `Recall` values\. The `F1Score` is the harmonic average of the two scores\. The highest score is 1, and the worst score is 0\. 
 
@@ -115,19 +122,19 @@ The F1 Score \(Macro F1 Score\) for the model is therefore as follows:
 Macro F1 Score = (0.724 + 0.824 + 0.94 + 0.62 + 0.16)/5 = 0.6536
 ```
 
-## Hamming Loss<a name="class-hammingloss-metric"></a>
+### Hamming Loss<a name="class-hammingloss-metric"></a>
 
 The fraction of labels that are incorrectly predicted\. Also seen as the fraction of wrong labels compared to the total number of labels\. Scores closer to zero are better\.
 
-## Micro Precision<a name="class-microprecision-metric"></a>
+### Micro Precision<a name="class-microprecision-metric"></a>
 
 As Precision above, except that instead of averaging the precision scores of all available labels, this is based on the overall score of all precision scores added together\.
 
-## Micro Recall<a name="class-microrecall-metric"></a>
+### Micro Recall<a name="class-microrecall-metric"></a>
 
 As Recall above, except that instead of averaging the recall scores of all labels, this is based on the overall score of all recall scores added together\.
 
-## Micro F1 Score<a name="class-microf1score-metric"></a>
+### Micro F1 Score<a name="class-microf1score-metric"></a>
 
 As F1 Score above, but instead a combination of the Micro Precision and Micro Recall metrics\.
 

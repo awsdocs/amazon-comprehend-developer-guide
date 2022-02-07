@@ -1,6 +1,6 @@
 # Detecting the Dominant Language<a name="get-started-api-dominant-language"></a>
 
-To determine the dominant language used in text, use the Amazon Comprehend [ DetectDominantLanguage ](API_DetectDominantLanguage.md) operation\. To detect the dominant language in up to 25 documents in a batch, use the [ BatchDetectDominantLanguage ](API_BatchDetectDominantLanguage.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
+To determine the dominant language used in text, use the Amazon Comprehend [DetectDominantLanguage](API_DetectDominantLanguage.md) operation\. To detect the dominant language in up to 25 documents in a batch, use the [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
 
 **Topics**
 + [Detecting the Dominant Language Using the AWS Command Line Interface](#get-started-api-dominant-language-cli)

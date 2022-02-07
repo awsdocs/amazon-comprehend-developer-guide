@@ -18,7 +18,7 @@ Required: No
 
  ** InputDataConfig **   <a name="comprehend-Type-PiiEntitiesDetectionJobProperties-InputDataConfig"></a>
 The input properties for a PII entities detection job\.  
-Type: [ InputDataConfig ](API_InputDataConfig.md) object  
+Type: [InputDataConfig](API_InputDataConfig.md) object  
 Required: No
 
  ** JobArn **   <a name="comprehend-Type-PiiEntitiesDetectionJobProperties-JobArn"></a>
@@ -70,13 +70,13 @@ Required: No
 
  ** OutputDataConfig **   <a name="comprehend-Type-PiiEntitiesDetectionJobProperties-OutputDataConfig"></a>
 The output data configuration that you supplied when you created the PII entities detection job\.  
-Type: [ PiiOutputDataConfig ](API_PiiOutputDataConfig.md) object  
+Type: [PiiOutputDataConfig](API_PiiOutputDataConfig.md) object  
 Required: No
 
  ** RedactionConfig **   <a name="comprehend-Type-PiiEntitiesDetectionJobProperties-RedactionConfig"></a>
 Provides configuration parameters for PII entity redaction\.  
 This parameter is required if you set the `Mode` parameter to `ONLY_REDACTION`\. In that case, you must provide a `RedactionConfig` definition that includes the `PiiEntityTypes` parameter\.  
-Type: [ RedactionConfig ](API_RedactionConfig.md) object  
+Type: [RedactionConfig](API_RedactionConfig.md) object  
 Required: No
 
  ** SubmitTime **   <a name="comprehend-Type-PiiEntitiesDetectionJobProperties-SubmitTime"></a>
@@ -87,7 +87,7 @@ Required: No
 ## See Also<a name="API_PiiEntitiesDetectionJobProperties_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/PiiEntitiesDetectionJobProperties) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/PiiEntitiesDetectionJobProperties) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/PiiEntitiesDetectionJobProperties) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/PiiEntitiesDetectionJobProperties) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/PiiEntitiesDetectionJobProperties) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/PiiEntitiesDetectionJobProperties) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/PiiEntitiesDetectionJobProperties) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/PiiEntitiesDetectionJobProperties) 

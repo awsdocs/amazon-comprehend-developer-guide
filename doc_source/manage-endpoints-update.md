@@ -2,7 +2,7 @@
 
 Frequently, the level of throughput you need changes after creating an endpoint, or your first estimation of your needs changes\. When this happens, it may be necessary to update your endpoint to adjust the throughput up or down\. Throughput is governed by the number of inference units with which you've provisioned your endpoint\. Each inference unit represents a throughput of 100 characters per second for up to 2 documents per second\. You might also want to update the version of the model associated with the endpoint\. When you edit an endpoint, you can choose a different version of the model for the endpoint\.
 
-It can also be helpful to add tags to your endpoint to help keep them organized\. This can also be done while updating your endpoint\. For more information on endpoints, see [Tagging Custom Classifiers](class-tagging.md)
+It can also be helpful to add tags to your endpoint to help keep them organized\. This can also be done while updating your endpoint\. For more information on endpoints, see [Tagging your resources](tagging.md)
 
 **To update an endpoint \(console\)**
 

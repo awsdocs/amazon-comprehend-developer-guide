@@ -4,7 +4,7 @@
 
 With Amazon Comprehend, you can analyze your text documents to detect speciﬁc types of events and related details\. You can apply natural language processing with asynchronous jobs for event detection across large collections of documents\. 
 
-You can use the [ StartEventsDetectionJob ](API_StartEventsDetectionJob.md) operation to detect events\.
+You can use the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation to detect events\.
 
 ### Detect Events Results<a name="how-events-results"></a>
 
@@ -55,7 +55,7 @@ For each detected event, the output provides details in the following format:
 
 #### Entities<a name="how-events-entities"></a>
 
-Amazon Comprehend returns a list of entities from the input text that are related to the detected event\. An *entity* can be a real\-world object, such as a person, place, or location; an entity can also be a concept, such as a measurement, date, or quantity\. Each occurrence of an entity is identified by a *mention*, which is a textual reference to the entity in the input text\. For each unique entity, all mentions are grouped into a list\. This list provides details for each location in the input text where the entity occurs\. Only entities associated with a supported event type will be detected\. You can use the [ DetectEntities ](API_DetectEntities.md) and [ StartEntitiesDetectionJob ](API_StartEntitiesDetectionJob.md) operation to detect additional entities\.
+Amazon Comprehend returns a list of entities from the input text that are related to the detected event\. An *entity* can be a real\-world object, such as a person, place, or location; an entity can also be a concept, such as a measurement, date, or quantity\. Each occurrence of an entity is identified by a *mention*, which is a textual reference to the entity in the input text\. For each unique entity, all mentions are grouped into a list\. This list provides details for each location in the input text where the entity occurs\. Only entities associated with a supported event type will be detected\. You can use the [DetectEntities](API_DetectEntities.md) and [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation to detect additional entities\.
 
 Each entity associated with a supported event type returns with the following related details:
 + **Mentions**: Details for each occurrence of the same entity in the input text\.

@@ -117,11 +117,11 @@ Amazon Comprehend can detect the following languages\.
 | zh\-TW | Chinese \(Traditional\) | 
 
 You can use any of the following operations to detect the dominant language in a document or set of documents\.
-+ [ DetectDominantLanguage ](API_DetectDominantLanguage.md)
-+ [ BatchDetectDominantLanguage ](API_BatchDetectDominantLanguage.md)
-+ [ StartDominantLanguageDetectionJob ](API_StartDominantLanguageDetectionJob.md)
++ [DetectDominantLanguage](API_DetectDominantLanguage.md)
++ [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md)
++ [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md)
 
-The `DetectDominantLanguage` operation returns a [ DominantLanguage ](API_DominantLanguage.md) object\. The `BatchDetectDominantLanguage` operation returns a list of `DominantLanguage` objects, one for each document in the batch\. The `StartDominantLanguageDetectionJob` operation starts an asynchronous job that produces a file containing a list of `DominantLanguage` objects, one for each document in the job\.
+The `DetectDominantLanguage` operation returns a [DominantLanguage](API_DominantLanguage.md) object\. The `BatchDetectDominantLanguage` operation returns a list of `DominantLanguage` objects, one for each document in the batch\. The `StartDominantLanguageDetectionJob` operation starts an asynchronous job that produces a file containing a list of `DominantLanguage` objects, one for each document in the job\.
 
 The following example is the response from the `DetectDominantLanguage` operation\.
 

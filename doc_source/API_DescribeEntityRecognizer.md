@@ -16,7 +16,7 @@ For information about the parameters that are common to all actions, see [Common
 
 The request accepts the following data in JSON format\.
 
- ** [ EntityRecognizerArn ](#API_DescribeEntityRecognizer_RequestSyntax) **   <a name="comprehend-DescribeEntityRecognizer-request-EntityRecognizerArn"></a>
+ ** [EntityRecognizerArn](#API_DescribeEntityRecognizer_RequestSyntax) **   <a name="comprehend-DescribeEntityRecognizer-request-EntityRecognizerArn"></a>
 The Amazon Resource Name \(ARN\) that identifies the entity recognizer\.  
 Type: String  
 Length Constraints: Maximum length of 256\.  
@@ -84,6 +84,7 @@ Required: Yes
          "NumberOfTestDocuments": number,
          "NumberOfTrainedDocuments": number
       },
+      "SourceModelArn": "string",
       "Status": "string",
       "SubmitTime": number,
       "TrainingEndTime": number,
@@ -104,9 +105,9 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** [ EntityRecognizerProperties ](#API_DescribeEntityRecognizer_ResponseSyntax) **   <a name="comprehend-DescribeEntityRecognizer-response-EntityRecognizerProperties"></a>
+ ** [EntityRecognizerProperties](#API_DescribeEntityRecognizer_ResponseSyntax) **   <a name="comprehend-DescribeEntityRecognizer-response-EntityRecognizerProperties"></a>
 Describes information associated with an entity recognizer\.  
-Type: [ EntityRecognizerProperties ](API_EntityRecognizerProperties.md) object
+Type: [EntityRecognizerProperties](API_EntityRecognizerProperties.md) object
 
 ## Errors<a name="API_DescribeEntityRecognizer_Errors"></a>
 
@@ -131,12 +132,12 @@ HTTP Status Code: 400
 ## See Also<a name="API_DescribeEntityRecognizer_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DescribeEntityRecognizer) 
-+  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DescribeEntityRecognizer) 
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DescribeEntityRecognizer) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DescribeEntityRecognizer) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DescribeEntityRecognizer) 
-+  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DescribeEntityRecognizer) 
-+  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DescribeEntityRecognizer) 
-+  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DescribeEntityRecognizer) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DescribeEntityRecognizer) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DescribeEntityRecognizer) 

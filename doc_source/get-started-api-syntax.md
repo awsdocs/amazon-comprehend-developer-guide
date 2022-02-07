@@ -1,6 +1,6 @@
 # Detecting Syntax<a name="get-started-api-syntax"></a>
 
-To parse text to extract the individual words and determine the parts of speech for each word, use the [ DetectSyntax ](API_DetectSyntax.md) operation\. To parse the syntax of up to 25 documents in a batch, use the [ BatchDetectSyntax ](API_BatchDetectSyntax.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
+To parse text to extract the individual words and determine the parts of speech for each word, use the [DetectSyntax](API_DetectSyntax.md) operation\. To parse the syntax of up to 25 documents in a batch, use the [BatchDetectSyntax](API_BatchDetectSyntax.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
 
 **Topics**
 + [Detecting Syntax Using the AWS Command Line Interface\.](#get-started-api-syntax-cli)

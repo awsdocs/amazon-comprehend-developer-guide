@@ -18,7 +18,7 @@ Required: No
 
  ** InputDataConfig **   <a name="comprehend-Type-EventsDetectionJobProperties-InputDataConfig"></a>
 The input data configuration that you supplied when you created the events detection job\.  
-Type: [ InputDataConfig ](API_InputDataConfig.md) object  
+Type: [InputDataConfig](API_InputDataConfig.md) object  
 Required: No
 
  ** JobArn **   <a name="comprehend-Type-EventsDetectionJobProperties-JobArn"></a>
@@ -64,7 +64,7 @@ Required: No
 
  ** OutputDataConfig **   <a name="comprehend-Type-EventsDetectionJobProperties-OutputDataConfig"></a>
 The output data configuration that you supplied when you created the events detection job\.  
-Type: [ OutputDataConfig ](API_OutputDataConfig.md) object  
+Type: [OutputDataConfig](API_OutputDataConfig.md) object  
 Required: No
 
  ** SubmitTime **   <a name="comprehend-Type-EventsDetectionJobProperties-SubmitTime"></a>
@@ -83,7 +83,7 @@ Required: No
 ## See Also<a name="API_EventsDetectionJobProperties_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/EventsDetectionJobProperties) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/EventsDetectionJobProperties) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/EventsDetectionJobProperties) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/EventsDetectionJobProperties) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/EventsDetectionJobProperties) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/EventsDetectionJobProperties) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/EventsDetectionJobProperties) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/EventsDetectionJobProperties) 

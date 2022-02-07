@@ -1,6 +1,6 @@
 # Detecting Sentiment<a name="get-started-api-sentiment"></a>
 
-To determine the overall emotional tone of text, use the [ DetectSentiment ](API_DetectSentiment.md) operation\. To detect the sentiment in up to 25 documents in a batch, use the [ BatchDetectSentiment ](API_BatchDetectSentiment.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
+To determine the overall emotional tone of text, use the [DetectSentiment](API_DetectSentiment.md) operation\. To detect the sentiment in up to 25 documents in a batch, use the [BatchDetectSentiment](API_BatchDetectSentiment.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
 
 **Topics**
 + [Detecting Sentiment Using the AWS Command Line Interface](#get-started-api-sentiment-cli)

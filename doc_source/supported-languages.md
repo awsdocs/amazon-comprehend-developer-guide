@@ -43,6 +43,6 @@ Amazon Comprehend identifies the language using identifiers from RFC 5646 — if
 |  [Label Documents with Personally Identifiable Information \(PII\)](how-pii-labels.md)  | English | 
 |  [Determine Sentiment](how-sentiment.md)  |  All supported languages\.  | 
 |  [Analyze Syntax](how-syntax.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.   | 
-|  [Topic Modeling](topic-modeling.md)  |  Not dependent on the language used\.  | 
+|  [Topic Modeling](topic-modeling.md)  |  Not dependent on the language used\. Does not support character\-based languages such as Chinese, Japanese, and Korean\.  | 
 |  [Custom Classification](how-document-classification.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.  | 
 |  [Custom Entity Recognition](custom-entity-recognition.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.  | 

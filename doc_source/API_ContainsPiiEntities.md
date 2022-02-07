@@ -17,13 +17,13 @@ For information about the parameters that are common to all actions, see [Common
 
 The request accepts the following data in JSON format\.
 
- ** [ LanguageCode ](#API_ContainsPiiEntities_RequestSyntax) **   <a name="comprehend-ContainsPiiEntities-request-LanguageCode"></a>
+ ** [LanguageCode](#API_ContainsPiiEntities_RequestSyntax) **   <a name="comprehend-ContainsPiiEntities-request-LanguageCode"></a>
 The language of the input documents\.  
 Type: String  
 Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: Yes
 
- ** [ Text ](#API_ContainsPiiEntities_RequestSyntax) **   <a name="comprehend-ContainsPiiEntities-request-Text"></a>
+ ** [Text](#API_ContainsPiiEntities_RequestSyntax) **   <a name="comprehend-ContainsPiiEntities-request-Text"></a>
 Creates a new document classification request to analyze a single document in real\-time, returning personally identifiable information \(PII\) entity labels\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
@@ -48,9 +48,9 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** [ Labels ](#API_ContainsPiiEntities_ResponseSyntax) **   <a name="comprehend-ContainsPiiEntities-response-Labels"></a>
+ ** [Labels](#API_ContainsPiiEntities_ResponseSyntax) **   <a name="comprehend-ContainsPiiEntities-response-Labels"></a>
 The labels used in the document being analyzed\. Individual labels represent personally identifiable information \(PII\) entity types\.  
-Type: Array of [ EntityLabel ](API_EntityLabel.md) objects
+Type: Array of [EntityLabel](API_EntityLabel.md) objects
 
 ## Errors<a name="API_ContainsPiiEntities_Errors"></a>
 
@@ -75,12 +75,12 @@ HTTP Status Code: 400
 ## See Also<a name="API_ContainsPiiEntities_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/ContainsPiiEntities) 
-+  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/ContainsPiiEntities) 
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/ContainsPiiEntities) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/ContainsPiiEntities) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/ContainsPiiEntities) 
-+  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/ContainsPiiEntities) 
-+  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/ContainsPiiEntities) 
-+  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/ContainsPiiEntities) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/ContainsPiiEntities) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/ContainsPiiEntities) 

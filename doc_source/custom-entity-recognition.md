@@ -10,17 +10,16 @@ Creating a custom entity recognition model is a more effective approach, compare
 
 To use Amazon Comprehend's custom entity recognition service, you have two options: 
 
-1. [Annotations ](cer-annotation.md)— provide a data set containing annotated entities for model training\. For an analysis job of Word docs or PDFs, you need to train a custom entity recognizer from annotated PDFs\. We don't support Word document annotation\.
+1. [Annotations](cer-annotation.md)— provide a data set containing annotated entities for model training\. For an analysis job of Word docs or PDFs, you need to train a custom entity recognizer from annotated PDFs\. We don't support Word document annotation\.
 
-1. [Entity Lists \(Plain Text Only\)](cer-entity-list.md)— provide a list of entities and their type label \(such as `PRODUCT_CODES` and a set of unannotated documents containing those entities for model training\.
+1. [Entity lists \(plain text only\)](cer-entity-list.md)— provide a list of entities and their type label \(such as `PRODUCT_CODES` and a set of unannotated documents containing those entities for model training\.
 
 The service automatically tests for the best algorithm and parameters while training the model to use, looking for the most accurate combination of these components\. 
 
 You can train a model on up to 25 custom entities at once\. Once your model is trained, you can search for those custom entities in each entities detection job\. For more details, see the [Guidelines and Quotas page](https://docs.aws.amazon.com/comprehend/latest/dg/guidelines-and-limits.html)\.
 
 **Topics**
-+ [Training Custom Entity Recognizers](training-recognizers.md)
++ [Training custom entity recognizers](training-recognizers.md)
 + [Detecting Custom Entities with an Asynchronous Batch Job with Amazon Comprehend](detecting-cer.md)
 + [Detecting Custom Entities in Real Time with Amazon Comprehend](detecting-cer-real-time.md)
-+ [Tagging Custom Entity Recognizers](CER-tagging.md)
 + [Custom Entity Recognizer Metrics](cer-metrics.md)

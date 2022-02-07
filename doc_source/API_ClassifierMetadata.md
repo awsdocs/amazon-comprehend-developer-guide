@@ -6,7 +6,7 @@ Provides information about a document classifier\.
 
  ** EvaluationMetrics **   <a name="comprehend-Type-ClassifierMetadata-EvaluationMetrics"></a>
  Describes the result metrics for the test data associated with an documentation classifier\.  
-Type: [ ClassifierEvaluationMetrics ](API_ClassifierEvaluationMetrics.md) object  
+Type: [ClassifierEvaluationMetrics](API_ClassifierEvaluationMetrics.md) object  
 Required: No
 
  ** NumberOfLabels **   <a name="comprehend-Type-ClassifierMetadata-NumberOfLabels"></a>
@@ -27,7 +27,7 @@ Required: No
 ## See Also<a name="API_ClassifierMetadata_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/ClassifierMetadata) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/ClassifierMetadata) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/ClassifierMetadata) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/ClassifierMetadata) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/ClassifierMetadata) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/ClassifierMetadata) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/ClassifierMetadata) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/ClassifierMetadata) 

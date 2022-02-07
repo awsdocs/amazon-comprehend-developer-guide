@@ -12,7 +12,7 @@ For example, the output includes labels that represent PII entity types along wi
 
 ## Label Documents with PII Entity Types<a name="how-pii-label-doc"></a>
 
-To label documents with PII, submit a [ ContainsPiiEntities ](API_ContainsPiiEntities.md) request, and include the input text in your request body\. Your input text can include up to 50,000 bytes of UTF\-8 encoded characters\. Amazon Comprehend returns a list of labels of identified PII entity types as shown by the following example response:
+To label documents with PII, submit a [ContainsPiiEntities](API_ContainsPiiEntities.md) request, and include the input text in your request body\. Your input text can include up to 50,000 bytes of UTF\-8 encoded characters\. Amazon Comprehend returns a list of labels of identified PII entity types as shown by the following example response:
 
 ```
 {

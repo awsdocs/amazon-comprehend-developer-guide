@@ -6,12 +6,12 @@ Detailed information about an entity recognizer\.
 
  ** EntityTypes **   <a name="comprehend-Type-EntityRecognizerMetadata-EntityTypes"></a>
 Entity types from the metadata of an entity recognizer\.  
-Type: Array of [ EntityRecognizerMetadataEntityTypesListItem ](API_EntityRecognizerMetadataEntityTypesListItem.md) objects  
+Type: Array of [EntityRecognizerMetadataEntityTypesListItem](API_EntityRecognizerMetadataEntityTypesListItem.md) objects  
 Required: No
 
  ** EvaluationMetrics **   <a name="comprehend-Type-EntityRecognizerMetadata-EvaluationMetrics"></a>
 Detailed information about the accuracy of an entity recognizer\.  
-Type: [ EntityRecognizerEvaluationMetrics ](API_EntityRecognizerEvaluationMetrics.md) object  
+Type: [EntityRecognizerEvaluationMetrics](API_EntityRecognizerEvaluationMetrics.md) object  
 Required: No
 
  ** NumberOfTestDocuments **   <a name="comprehend-Type-EntityRecognizerMetadata-NumberOfTestDocuments"></a>
@@ -27,7 +27,7 @@ Required: No
 ## See Also<a name="API_EntityRecognizerMetadata_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/EntityRecognizerMetadata) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/EntityRecognizerMetadata) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/EntityRecognizerMetadata) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/EntityRecognizerMetadata) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/EntityRecognizerMetadata) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/EntityRecognizerMetadata) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/EntityRecognizerMetadata) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/EntityRecognizerMetadata) 

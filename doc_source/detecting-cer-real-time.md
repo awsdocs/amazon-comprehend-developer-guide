@@ -5,7 +5,7 @@ With Amazon Comprehend, you can quickly detect custom entities in individual tex
 After you train a custom entity recognition model, you enable real\-time analysis by creating an endpoint\. After you create the endpoint, your custom model is available for real\-time analysis, and you can detect entities by using the Amazon Comprehend console, the Amazon Comprehend API, the AWS CLI, or the AWS SDKs\.
 
 **Before you begin**  
-Before you can detect custom entities, you must train a custom entity recognition model\. For more information about these models, see [Training Custom Entity Recognizers](training-recognizers.md)\. For the steps to train a model, see [Creating a Custom Entity Recognizer Using the Console \- CSV Format](getting-started-custom-entity-recognizer.md#getting-started-console-CER)\.
+Before you can detect custom entities, you must train a custom entity recognition model\. For more information about these models, see [Training custom entity recognizers](training-recognizers.md)\. For the steps to train a model, see [Creating a Custom Entity Recognizer Using the Console \- CSV Format](getting-started-custom-entity-recognizer.md#getting-started-console-CER)\.
 
 ## Creating an Endpoint for Custom Entity Detection<a name="detecting-cer-real-time-create-endpoint"></a>
 

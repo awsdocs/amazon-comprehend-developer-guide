@@ -1,4 +1,4 @@
-# Entity Lists \(Plain Text Only\)<a name="cer-entity-list"></a>
+# Entity lists \(plain text only\)<a name="cer-entity-list"></a>
 
 An entity list for custom entity recognition needs a comma\-separated value \(CSV\) file, with the following columns:
 + **Text**— The text of an entry example exactly as seen in the accompanying document corpus\.
@@ -47,9 +47,7 @@ with open("./entitylist/entitylist.csv", "w", encoding="utf-8") as csv_file:
     csv_writer.writerow(["Jane Smith", "MANAGER"])
 ```
 
-## Getting the Best Results<a name="entitylist-bestresults"></a>
-
-**Getting the Best Results**
+## Best practices<a name="entitylist-bestresults"></a>
 
 There are a number of things to consider to get the best result when using an entity list, including:
 + The order of the entities in your list has no effects on model training\.

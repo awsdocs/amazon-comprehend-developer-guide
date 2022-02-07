@@ -19,27 +19,27 @@ For information about the parameters that are common to all actions, see [Common
 
 The request accepts the following data in JSON format\.
 
- ** [ DesiredDataAccessRoleArn ](#API_UpdateEndpoint_RequestSyntax) **   <a name="comprehend-UpdateEndpoint-request-DesiredDataAccessRoleArn"></a>
+ ** [DesiredDataAccessRoleArn](#API_UpdateEndpoint_RequestSyntax) **   <a name="comprehend-UpdateEndpoint-request-DesiredDataAccessRoleArn"></a>
 Data access role ARN to use in case the new model is encrypted with a customer CMK\.  
 Type: String  
 Length Constraints: Minimum length of 20\. Maximum length of 2048\.  
 Pattern: `arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+`   
 Required: No
 
- ** [ DesiredInferenceUnits ](#API_UpdateEndpoint_RequestSyntax) **   <a name="comprehend-UpdateEndpoint-request-DesiredInferenceUnits"></a>
+ ** [DesiredInferenceUnits](#API_UpdateEndpoint_RequestSyntax) **   <a name="comprehend-UpdateEndpoint-request-DesiredInferenceUnits"></a>
  The desired number of inference units to be used by the model using this endpoint\. Each inference unit represents of a throughput of 100 characters per second\.  
 Type: Integer  
 Valid Range: Minimum value of 1\.  
 Required: No
 
- ** [ DesiredModelArn ](#API_UpdateEndpoint_RequestSyntax) **   <a name="comprehend-UpdateEndpoint-request-DesiredModelArn"></a>
+ ** [DesiredModelArn](#API_UpdateEndpoint_RequestSyntax) **   <a name="comprehend-UpdateEndpoint-request-DesiredModelArn"></a>
 The ARN of the new model to use when updating an existing endpoint\.  
 Type: String  
 Length Constraints: Maximum length of 256\.  
 Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:(document-classifier|entity-recognizer)/[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?`   
 Required: No
 
- ** [ EndpointArn ](#API_UpdateEndpoint_RequestSyntax) **   <a name="comprehend-UpdateEndpoint-request-EndpointArn"></a>
+ ** [EndpointArn](#API_UpdateEndpoint_RequestSyntax) **   <a name="comprehend-UpdateEndpoint-request-EndpointArn"></a>
 The Amazon Resource Number \(ARN\) of the endpoint being updated\.  
 Type: String  
 Length Constraints: Maximum length of 256\.  
@@ -85,12 +85,12 @@ HTTP Status Code: 400
 ## See Also<a name="API_UpdateEndpoint_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/UpdateEndpoint) 
-+  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/UpdateEndpoint) 
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/UpdateEndpoint) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/UpdateEndpoint) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/UpdateEndpoint) 
-+  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/UpdateEndpoint) 
-+  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/UpdateEndpoint) 
-+  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/UpdateEndpoint) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/UpdateEndpoint) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/UpdateEndpoint) 

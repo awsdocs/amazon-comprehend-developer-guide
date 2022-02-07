@@ -16,8 +16,8 @@ For information about the parameters that are common to all actions, see [Common
 
 The request accepts the following data in JSON format\.
 
- ** [ DocumentClassifierArn ](#API_DescribeDocumentClassifier_RequestSyntax) **   <a name="comprehend-DescribeDocumentClassifier-request-DocumentClassifierArn"></a>
-The Amazon Resource Name \(ARN\) that identifies the document classifier\. The [ CreateDocumentClassifier ](API_CreateDocumentClassifier.md) operation returns this identifier in its response\.  
+ ** [DocumentClassifierArn](#API_DescribeDocumentClassifier_RequestSyntax) **   <a name="comprehend-DescribeDocumentClassifier-request-DocumentClassifierArn"></a>
+The Amazon Resource Name \(ARN\) that identifies the document classifier\. The [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation returns this identifier in its response\.  
 Type: String  
 Length Constraints: Maximum length of 256\.  
 Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?`   
@@ -70,6 +70,7 @@ Required: Yes
          "KmsKeyId": "string",
          "S3Uri": "string"
       },
+      "SourceModelArn": "string",
       "Status": "string",
       "SubmitTime": number,
       "TrainingEndTime": number,
@@ -90,9 +91,9 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** [ DocumentClassifierProperties ](#API_DescribeDocumentClassifier_ResponseSyntax) **   <a name="comprehend-DescribeDocumentClassifier-response-DocumentClassifierProperties"></a>
+ ** [DocumentClassifierProperties](#API_DescribeDocumentClassifier_ResponseSyntax) **   <a name="comprehend-DescribeDocumentClassifier-response-DocumentClassifierProperties"></a>
 An object that contains the properties associated with a document classifier\.  
-Type: [ DocumentClassifierProperties ](API_DocumentClassifierProperties.md) object
+Type: [DocumentClassifierProperties](API_DocumentClassifierProperties.md) object
 
 ## Errors<a name="API_DescribeDocumentClassifier_Errors"></a>
 
@@ -117,12 +118,12 @@ HTTP Status Code: 400
 ## See Also<a name="API_DescribeDocumentClassifier_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DescribeDocumentClassifier) 
-+  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DescribeDocumentClassifier) 
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DescribeDocumentClassifier) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DescribeDocumentClassifier) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DescribeDocumentClassifier) 
-+  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DescribeDocumentClassifier) 
-+  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DescribeDocumentClassifier) 
-+  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DescribeDocumentClassifier) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DescribeDocumentClassifier) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DescribeDocumentClassifier) 

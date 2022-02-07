@@ -2,6 +2,16 @@
 
 Amazon Comprehend uses natural language processing \(NLP\) to extract insights about the content of documents\. Amazon Comprehend processes any text file in UTF\-8 format, and semi\-structured documents, like PDF and Word documents\. It develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document\. Use Amazon Comprehend to create new products based on understanding the structure of documents\. For example, using Amazon Comprehend you can search social networking feeds for mentions of products or scan an entire document repository for key phrases\.
 
+**Topics**
++ [Amazon Comprehend Insights](#what-is-entities)
++ [Comprehend Custom](#how-doc-class)
++ [Document Clustering \(Topic Modeling\)](#how-topics)
++ [Examples](#how-examples)
++ [Benefits](#how-benefits)
++ [Are You a First\-time User of Amazon Comprehend?](#first-time-user)
+
+## Amazon Comprehend Insights<a name="what-is-entities"></a>
+
 You work with one or more documents at a time to evaluate their content and gain insights about them\. Some of the insights that Amazon Comprehend develops about a document include:
 + **Entities** – Amazon Comprehend returns a list of entities, such as people, places, and locations, identified in a document\. For more information, see [Detect Entities](how-entities.md)\.
 + **Key phrases** – Amazon Comprehend extracts key phrases that appear in a document\. For example, a document about a basketball game might return the names of the teams, the name of the venue, and the final score\. For more information, see [Detect Key Phrases](how-key-phrases.md)\.
@@ -14,9 +24,9 @@ You work with one or more documents at a time to evaluate their content and gain
 
 Customize Comprehend for your specific requirements without the skillset required to build machine learning\-based NLP solutions\. Using automatic machine learning, or AutoML, Comprehend Custom builds customized NLP models on your behalf, using data you already have\.
 
-Custom Classification: Create custom document classifiers to organize your documents into your own categories\. For each classification label, provide a set of documents that best represent that label and train your classifier on it\. Once trained, a classifier can be used on any number of unlabeled document sets\. You can use the console for a code\-free experience or install the latest AWS SDK\. For more information, see [Custom Classification](how-document-classification.md)\.
+**Custom Classification** – Create custom document classifiers to organize your documents into your own categories\. For each classification label, provide a set of documents that best represent that label and train your classifier on it\. Once trained, a classifier can be used on any number of unlabeled document sets\. You can use the console for a code\-free experience or install the latest AWS SDK\. For more information, see [Custom Classification](how-document-classification.md)\.
 
-Custom Entities: Create custom entity types that analyze text for your specific terms and noun\-based phrases\. You can train custom entities to extract terms like policy numbers, or phrases that imply a customer escalation\. To train the model, you provide a list of the entities and a set of documents that contain them\. Once the model is trained, you can submit analysis jobs against it to extract their custom entities\. For more information, see [Custom Entity Recognition](custom-entity-recognition.md)\. 
+**Custom Entities** – Create custom entity types that analyze text for your specific terms and noun\-based phrases\. You can train custom entities to extract terms like policy numbers, or phrases that imply a customer escalation\. To train the model, you provide a list of the entities and a set of documents that contain them\. Once the model is trained, you can submit analysis jobs against it to extract their custom entities\. For more information, see [Custom Entity Recognition](custom-entity-recognition.md)\. 
 
 ## Document Clustering \(Topic Modeling\)<a name="how-topics"></a>
 

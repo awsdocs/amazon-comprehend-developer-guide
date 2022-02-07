@@ -1,6 +1,6 @@
 # SentimentDetectionJobFilter<a name="API_SentimentDetectionJobFilter"></a>
 
-Provides information for filtering a list of dominant language detection jobs\. For more information, see the [ ListSentimentDetectionJobs ](API_ListSentimentDetectionJobs.md) operation\.
+Provides information for filtering a list of dominant language detection jobs\. For more information, see the [ListSentimentDetectionJobs](API_ListSentimentDetectionJobs.md) operation\.
 
 ## Contents<a name="API_SentimentDetectionJobFilter_Contents"></a>
 
@@ -30,7 +30,7 @@ Required: No
 ## See Also<a name="API_SentimentDetectionJobFilter_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/SentimentDetectionJobFilter) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/SentimentDetectionJobFilter) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/SentimentDetectionJobFilter) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/SentimentDetectionJobFilter) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/SentimentDetectionJobFilter) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/SentimentDetectionJobFilter) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/SentimentDetectionJobFilter) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/SentimentDetectionJobFilter) 

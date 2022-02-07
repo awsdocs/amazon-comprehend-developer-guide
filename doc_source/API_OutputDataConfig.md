@@ -14,7 +14,7 @@ ID for the AWS Key Management Service \(KMS\) key that Amazon Comprehend uses to
 + ARN of a KMS Key Alias: `"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"` 
 Type: String  
 Length Constraints: Maximum length of 2048\.  
-Pattern: `.*`   
+Pattern: `^\p{ASCII}+$`   
 Required: No
 
  ** S3Uri **   <a name="comprehend-Type-OutputDataConfig-S3Uri"></a>
@@ -29,7 +29,7 @@ Required: Yes
 ## See Also<a name="API_OutputDataConfig_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/OutputDataConfig) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/OutputDataConfig) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/OutputDataConfig) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/OutputDataConfig) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/OutputDataConfig) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/OutputDataConfig) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/OutputDataConfig) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/OutputDataConfig) 

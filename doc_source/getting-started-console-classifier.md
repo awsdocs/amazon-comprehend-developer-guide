@@ -60,7 +60,7 @@ If the input documents are encrypted, the IAM role used must also have `kms:Decr
 **Note**  
 When you use a VPC with your classification job, the `DataAccessRole` used for the Create and Start operations must have permissions to the VPC from which the input documents and the output bucket are accessed\.
 
-1. \(Optional\) To add a tag to the custom classifier, enter a key\-value pair under **Tags**\. Choose **Add tag**\. To remove this pair before creating the classifier, choose **Remove tag**\. For more information, see [Tagging Custom Classifiers](class-tagging.md)\.
+1. \(Optional\) To add a tag to the custom classifier, enter a key\-value pair under **Tags**\. Choose **Add tag**\. To remove this pair before creating the classifier, choose **Remove tag**\. For more information, see [Tagging your resources](tagging.md)\.
 
 1. Choose **Create**\.
 

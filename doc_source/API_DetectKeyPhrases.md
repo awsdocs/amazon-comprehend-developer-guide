@@ -17,13 +17,13 @@ For information about the parameters that are common to all actions, see [Common
 
 The request accepts the following data in JSON format\.
 
- ** [ LanguageCode ](#API_DetectKeyPhrases_RequestSyntax) **   <a name="comprehend-DetectKeyPhrases-request-LanguageCode"></a>
+ ** [LanguageCode](#API_DetectKeyPhrases_RequestSyntax) **   <a name="comprehend-DetectKeyPhrases-request-LanguageCode"></a>
 The language of the input documents\. You can specify any of the primary languages supported by Amazon Comprehend\. All documents must be in the same language\.  
 Type: String  
 Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: Yes
 
- ** [ Text ](#API_DetectKeyPhrases_RequestSyntax) **   <a name="comprehend-DetectKeyPhrases-request-Text"></a>
+ ** [Text](#API_DetectKeyPhrases_RequestSyntax) **   <a name="comprehend-DetectKeyPhrases-request-Text"></a>
 A UTF\-8 text string\. Each string must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
@@ -50,9 +50,9 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** [ KeyPhrases ](#API_DetectKeyPhrases_ResponseSyntax) **   <a name="comprehend-DetectKeyPhrases-response-KeyPhrases"></a>
+ ** [KeyPhrases](#API_DetectKeyPhrases_ResponseSyntax) **   <a name="comprehend-DetectKeyPhrases-response-KeyPhrases"></a>
 A collection of key phrases that Amazon Comprehend identified in the input text\. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection\.   
-Type: Array of [ KeyPhrase ](API_KeyPhrase.md) objects
+Type: Array of [KeyPhrase](API_KeyPhrase.md) objects
 
 ## Errors<a name="API_DetectKeyPhrases_Errors"></a>
 
@@ -80,7 +80,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob lives in Seattle\. He is a software engineer at Amazon\.", the API returns the following:
 
-#### <a name="w57aac41b5c86c15b3b5"></a>
+#### <a name="w71aac49b5c92c15b3b5"></a>
 
 ```
           {
@@ -116,12 +116,12 @@ If the input text is "Bob lives in Seattle\. He is a software engineer at Amazon
 ## See Also<a name="API_DetectKeyPhrases_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DetectKeyPhrases) 
-+  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DetectKeyPhrases) 
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DetectKeyPhrases) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DetectKeyPhrases) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DetectKeyPhrases) 
-+  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DetectKeyPhrases) 
-+  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DetectKeyPhrases) 
-+  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DetectKeyPhrases) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DetectKeyPhrases) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DetectKeyPhrases) 

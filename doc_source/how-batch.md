@@ -3,11 +3,11 @@
 When you have multiple documents that you want to process, you can use the `Batch*` operations to send more than one document to Amazon Comprehend at a time\. You can send up to 25 documents in each request\. Amazon Comprehend sends back a list of responses, one for each document in the request\. 
 
 You can use the following operations to process multiple documents in a single request\. Requests made with these operations are synchronous\. Your application calls the operation and then waits for the response from the service\. 
-+ [ BatchDetectDominantLanguage ](API_BatchDetectDominantLanguage.md)
-+ [ BatchDetectEntities ](API_BatchDetectEntities.md)
-+ [ BatchDetectKeyPhrases ](API_BatchDetectKeyPhrases.md)
-+ [ BatchDetectSentiment ](API_BatchDetectSentiment.md)
-+ [ BatchDetectSyntax ](API_BatchDetectSyntax.md)
++ [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md)
++ [BatchDetectEntities](API_BatchDetectEntities.md)
++ [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md)
++ [BatchDetectSentiment](API_BatchDetectSentiment.md)
++ [BatchDetectSyntax](API_BatchDetectSyntax.md)
 
 Using the `Batch*` operations is identical to calling the single document APIs for each of the documents in the request\. Using these APIs can result in better performance for your applications\.
 

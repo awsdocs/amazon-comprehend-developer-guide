@@ -352,7 +352,7 @@ Now you have a database populated with the Amazon Comprehend results\. However, 
 
 1. For **Database**, choose the AWS Glue database `comprehend-results` that you created\.
 
-1. In the **Tables** section, you should have two tables called `sentiment_results` and `entities_results`\. Preview the tables to make sure that the crawler loaded the data\. In each table’s options, choose **Preview table**\. A short query runs automatically\. Check the **Results** pane to ensure that the tables contain data\.
+1. In the **Tables** section, you should have two tables called `sentiment_results` and `entities_results`\. Preview the tables to make sure that the crawler loaded the data\. In each table’s options \(the three dots next to the table name\), choose **Preview table**\. A short query runs automatically\. Check the **Results** pane to ensure that the tables contain data\.
 **Tip**  
 If the tables don’t have any data, try checking the folders in your S3 bucket\. Make sure that there is one folder for entities results and one folder for sentiment results\. Then, try running a new AWS Glue crawler\.
 

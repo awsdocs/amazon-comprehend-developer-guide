@@ -42,9 +42,9 @@ Grant Amazon Comprehend access to the S3 bucket that contains your document coll
 
 ## The Classification Job<a name="the-class-job"></a>
 
-Use the [ StartDocumentClassificationJob ](API_StartDocumentClassificationJob.md) operation to start classifying unlabeled documents\. You provide the S3 bucket that contains the documents to be classified, the S3 bucket where the output should be placed, and classifier to use\.
+Use the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) operation to start classifying unlabeled documents\. You provide the S3 bucket that contains the documents to be classified, the S3 bucket where the output should be placed, and classifier to use\.
 
-Custom classification is asynchronous\. Once you have started the job, use the [ DescribeDocumentClassificationJob ](API_DescribeDocumentClassificationJob.md) operation to monitor its progress\. When the `Status` field in the response shows `COMPLETED`, you can access the output in the location that you specified\.
+Custom classification is asynchronous\. Once you have started the job, use the [DescribeDocumentClassificationJob](API_DescribeDocumentClassificationJob.md) operation to monitor its progress\. When the `Status` field in the response shows `COMPLETED`, you can access the output in the location that you specified\.
 
 ### Classification Job Output<a name="class-output"></a>
 

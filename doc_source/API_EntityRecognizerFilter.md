@@ -1,6 +1,6 @@
 # EntityRecognizerFilter<a name="API_EntityRecognizerFilter"></a>
 
-Provides information for filtering a list of entity recognizers\. You can only specify one filtering parameter in a request\. For more information, see the [ ListEntityRecognizers ](API_ListEntityRecognizers.md) operation\./>
+Provides information for filtering a list of entity recognizers\. You can only specify one filtering parameter in a request\. For more information, see the [ListEntityRecognizers](API_ListEntityRecognizers.md) operation\./>
 
 ## Contents<a name="API_EntityRecognizerFilter_Contents"></a>
 
@@ -30,7 +30,7 @@ Required: No
 ## See Also<a name="API_EntityRecognizerFilter_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/EntityRecognizerFilter) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/EntityRecognizerFilter) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/EntityRecognizerFilter) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/EntityRecognizerFilter) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/EntityRecognizerFilter) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/EntityRecognizerFilter) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/EntityRecognizerFilter) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/EntityRecognizerFilter) 

@@ -1,6 +1,6 @@
 # Detecting Personally Identifiable Information \(PII\)<a name="get-started-api-pii"></a>
 
-To detect entities that contain personally identifiable information \(PII\) in a document, use the Amazon Comprehend [ DetectPiiEntities ](API_DetectPiiEntities.md) operation\.
+To detect entities that contain personally identifiable information \(PII\) in a document, use the Amazon Comprehend [DetectPiiEntities](API_DetectPiiEntities.md) operation\.
 
 ## Detecting PII Using the AWS Command Line Interface<a name="get-started-api-pii-cli"></a>
 

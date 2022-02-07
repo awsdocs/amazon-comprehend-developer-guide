@@ -18,7 +18,7 @@ All operations except asynchronous operations and topic modeling operations have
 | Character encoding | UTF\-8 | 
 | Document size \(UTF\-8 characters\) | 5,000 bytes | 
 
-Synchronous requests to label documents with PII using the [ ContainsPiiEntities ](API_ContainsPiiEntities.md) operation have the following quotas:
+Synchronous requests to label documents with PII using the [ContainsPiiEntities](API_ContainsPiiEntities.md) operation have the following quotas:
 
 
 | Description | Quota/Guideline | 
@@ -34,7 +34,7 @@ You may be able to avoid throttling by using the batch operations instead of the
 
 ## Multiple Document Operations<a name="limits-batch"></a>
 
-The [ BatchDetectDominantLanguage ](API_BatchDetectDominantLanguage.md), [ BatchDetectEntities ](API_BatchDetectEntities.md), [ BatchDetectKeyPhrases ](API_BatchDetectKeyPhrases.md), and [ BatchDetectSentiment ](API_BatchDetectSentiment.md) operations have the following quotas:
+The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDetectEntities](API_BatchDetectEntities.md), [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md), and [BatchDetectSentiment](API_BatchDetectSentiment.md) operations have the following quotas:
 
 
 | Description | Quota/Guideline | 
@@ -45,7 +45,7 @@ If you plan to send more than 20 requests per second, you should consider using 
 
 ## Asynchronous Operations<a name="limits-asynchronous"></a>
 
-Asynchronous batch jobs are run with the [ StartDominantLanguageDetectionJob ](API_StartDominantLanguageDetectionJob.md), [ StartEntitiesDetectionJob ](API_StartEntitiesDetectionJob.md), [ StartKeyPhrasesDetectionJob ](API_StartKeyPhrasesDetectionJob.md), [ StartPiiEntitiesDetectionJob ](API_StartPiiEntitiesDetectionJob.md), and [ StartSentimentDetectionJob ](API_StartSentimentDetectionJob.md) operations\. These jobs have the following limits:
+Asynchronous batch jobs are run with the [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md), [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md), [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md), [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md), and [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) operations\. These jobs have the following limits:
 
 
 | Description | Quota/Guideline | 
@@ -63,7 +63,7 @@ For more information, see [Asynchronous Batch Processing](how-async.md)\.
 
 ## Document Classification<a name="limits-document-classification"></a>
 
-Document classifier training jobs started with the [ CreateDocumentClassifier ](API_CreateDocumentClassifier.md) operation, asynchronous document classification jobs started with the [ StartDocumentClassificationJob ](API_StartDocumentClassificationJob.md) , and synchronous document classification requests started with the [ ClassifyDocument ](API_ClassifyDocument.md) operation have the following limits: 
+Document classifier training jobs started with the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation, asynchronous document classification jobs started with the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) , and synchronous document classification requests started with the [ClassifyDocument](API_ClassifyDocument.md) operation have the following limits: 
 
 
 **General**  
@@ -98,14 +98,14 @@ Document classifier training jobs started with the [ CreateDocumentClassifier ](
 
 ## Language Detection<a name="limits-language-detection"></a>
 
-The [ BatchDetectDominantLanguage ](API_BatchDetectDominantLanguage.md), [ DetectDominantLanguage ](API_DetectDominantLanguage.md) operations and asynchronous jobs started with the [ StartDominantLanguageDetectionJob ](API_StartDominantLanguageDetectionJob.md) operation have the following limitations:
+The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [DetectDominantLanguage](API_DetectDominantLanguage.md) operations and asynchronous jobs started with the [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) operation have the following limitations:
 + They don't support phonetic language detection\. For example, they will not detect "arigato" as Japanese nor "nihao" as Chinese\.
 + They may have trouble distinguishing close language pairs, such as Indonesian and Malay; or Bosnian, Croatian, and Serbian\.
 + For best results the input text should be at least 20 characters long\.
 
 ## Events<a name="limits-events"></a>
 
-Events detection jobs created with the [ StartEventsDetectionJob ](API_StartEventsDetectionJob.md) operation have the following limits:
+Events detection jobs created with the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation have the following limits:
 
 
 | Description | Quotas | 
@@ -118,7 +118,7 @@ Events detection jobs created with the [ StartEventsDetectionJob ](API_StartEven
 
 ## Topic Modeling<a name="limits-topic-modeling"></a>
 
-Topic detection jobs created with the [ StartTopicsDetectionJob ](API_StartTopicsDetectionJob.md) operation have the following limits:
+Topic detection jobs created with the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation have the following limits:
 
 
 | Description | Quota/Guideline | 
@@ -135,7 +135,7 @@ For best results, you should include at least 1,000 input documents\.
 
 ## Entity Recognition<a name="limits-custom-entity-recognition"></a>
 
-Entity recognizer training jobs started with the [ CreateEntityRecognizer ](API_CreateEntityRecognizer.md) operation, asynchronous entity recognition jobs started with the [ StartEntitiesDetectionJob ](API_StartEntitiesDetectionJob.md) operation, and synchronous entity recognition requests started with the [ DetectEntities ](API_DetectEntities.md) operation have the following limits:
+Entity recognizer training jobs started with the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) operation, asynchronous entity recognition jobs started with the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation, and synchronous entity recognition requests started with the [DetectEntities](API_DetectEntities.md) operation have the following limits:
 
 
 **Plain text entity recognition \- training \(CreateEntityRecognizer\)**  

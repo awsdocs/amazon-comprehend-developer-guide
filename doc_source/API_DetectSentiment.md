@@ -17,13 +17,13 @@ For information about the parameters that are common to all actions, see [Common
 
 The request accepts the following data in JSON format\.
 
- ** [ LanguageCode ](#API_DetectSentiment_RequestSyntax) **   <a name="comprehend-DetectSentiment-request-LanguageCode"></a>
+ ** [LanguageCode](#API_DetectSentiment_RequestSyntax) **   <a name="comprehend-DetectSentiment-request-LanguageCode"></a>
 The language of the input documents\. You can specify any of the primary languages supported by Amazon Comprehend\. All documents must be in the same language\.  
 Type: String  
 Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
 Required: Yes
 
- ** [ Text ](#API_DetectSentiment_RequestSyntax) **   <a name="comprehend-DetectSentiment-request-Text"></a>
+ ** [Text](#API_DetectSentiment_RequestSyntax) **   <a name="comprehend-DetectSentiment-request-Text"></a>
 A UTF\-8 text string\. Each string must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
@@ -49,14 +49,14 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** [ Sentiment ](#API_DetectSentiment_ResponseSyntax) **   <a name="comprehend-DetectSentiment-response-Sentiment"></a>
+ ** [Sentiment](#API_DetectSentiment_ResponseSyntax) **   <a name="comprehend-DetectSentiment-response-Sentiment"></a>
 The inferred sentiment that Amazon Comprehend has the highest level of confidence in\.  
 Type: String  
 Valid Values:` POSITIVE | NEGATIVE | NEUTRAL | MIXED` 
 
- ** [ SentimentScore ](#API_DetectSentiment_ResponseSyntax) **   <a name="comprehend-DetectSentiment-response-SentimentScore"></a>
+ ** [SentimentScore](#API_DetectSentiment_ResponseSyntax) **   <a name="comprehend-DetectSentiment-response-SentimentScore"></a>
 An object that lists the sentiments, and their corresponding confidence levels\.  
-Type: [ SentimentScore ](API_SentimentScore.md) object
+Type: [SentimentScore](API_SentimentScore.md) object
 
 ## Errors<a name="API_DetectSentiment_Errors"></a>
 
@@ -84,7 +84,7 @@ HTTP Status Code: 400
 
 If the input text is "Today is my birthday, I am so happy\.", the operation returns the following response:
 
-#### <a name="w57aac41b5c92c15b3b5"></a>
+#### <a name="w71aac49b5c98c15b3b5"></a>
 
 ```
 {
@@ -102,12 +102,12 @@ If the input text is "Today is my birthday, I am so happy\.", the operation retu
 ## See Also<a name="API_DetectSentiment_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DetectSentiment) 
-+  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DetectSentiment) 
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DetectSentiment) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DetectSentiment) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DetectSentiment) 
-+  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DetectSentiment) 
-+  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DetectSentiment) 
-+  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DetectSentiment) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DetectSentiment) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DetectSentiment) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DetectSentiment) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DetectSentiment) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DetectSentiment) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DetectSentiment) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DetectSentiment) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DetectSentiment) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DetectSentiment) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DetectSentiment) 

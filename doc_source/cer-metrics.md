@@ -115,7 +115,7 @@ Global:
 
 These metrics provide an insight into how accurately the trained model will perform when you use it to identify entities\. Here are a few options you can use to improve your metrics if they are lower than your expectations:
 
-1. Depending on whether you use [Annotations ](cer-annotation.md) or [Entity Lists \(Plain Text Only\)](cer-entity-list.md), make sure to follow the guidelines in the respective documentation to improve data quality\. If you observe better metrics after improving your data and re\-training the model, you can keep iterating and improving data quality to achieve better model performance\.
+1. Depending on whether you use [Annotations](cer-annotation.md) or [Entity lists \(plain text only\)](cer-entity-list.md), make sure to follow the guidelines in the respective documentation to improve data quality\. If you observe better metrics after improving your data and re\-training the model, you can keep iterating and improving data quality to achieve better model performance\.
 
 1. If you are using an Entity List, consider using Annotations instead\. Manual annotations can often improve your results\.
 

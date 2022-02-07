@@ -10,6 +10,14 @@ For example, you can categorize the content of support requests so that you can 
 
 You can have multiple custom classifiers in your account, each trained using different data\. When you submit a classification job, you choose which classifier to use\. Amazon Comprehend returns results based on that classifier, how it was trained, and whether it was trained using multi\-class or multi\-label mode\. The multi\-class mode can be used asynchronously for a large document or set of documents or synchronously \(in real\-time\) for a single document\. The multi\-label mode can only be used asynchronously\.
 
+**Topics**
++ [Multi\-Class and Multi\-Label Modes](#multiclass-multilabel2)
++ [Asynchronous Classification](#multiclass-async-sync)
++ [Training a Custom Classifier](how-document-classification-training.md)
++ [Running an Asynchronous Classification Job](how-class-run.md)
++ [Real\-time Analysis with Custom Classification](custom-sync.md)
++ [Custom Classifier Metrics](cer-doc-class.md)
+
 ## Multi\-Class and Multi\-Label Modes<a name="multiclass-multilabel2"></a>
 
 You can classify your documents using two modes: multi\-class or multi\-label\. You can only use one mode at a time and it must be set when training your classifier\. Some of the basic concepts and necessary formats are different for each\. In the Amazon Comprehend console, you choose which mode to use when creating your training job\. 
@@ -31,12 +39,3 @@ When using multi\-class mode, custom classification can be used for both asynchr
 For asynchronous analysis, you first train a custom classifier \(or custom model\) to recognize the categories that are of interest to you\. To train the classifier, you send Amazon Comprehend a group of classified documents, along with the class to which each belongs\. After Amazon Comprehend builds the classifier, you send documents to be classified\. The custom classifier examines each document and returns the category that best represents the content of the document\. The results are then saved to a file in your S3 bucket\. The cost of asynchronous custom classification is based on the number of characters used\. 
 
 You can have multiple custom classifiers in your account, each trained using different data\. You can then choose the classifier to meet your needs\. 
-
-**Topics**
-+ [Multi\-Class and Multi\-Label Modes](#multiclass-multilabel2)
-+ [Asynchronous Classification](#multiclass-async-sync)
-+ [Training a Custom Classifier](how-document-classification-training.md)
-+ [Running an Asynchronous Classification Job](how-class-run.md)
-+ [Real\-time Analysis with Custom Classification](custom-sync.md)
-+ [Tagging Custom Classifiers](class-tagging.md)
-+ [Custom Classifier Metrics](cer-doc-class.md)

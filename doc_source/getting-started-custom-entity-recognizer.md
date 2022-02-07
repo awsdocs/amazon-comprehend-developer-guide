@@ -38,7 +38,7 @@ For more information on creating and using KMS keys and the associated encryptio
    + **CSV file** — A CSV file that supplements your training documents\. The CSV file contains information about the custom entities that your trained model will detect\. The required format of the file depends on whether you are providing annotations or an entity list\.
    + **Augmented manifest** — A labeled dataset that is produced by Amazon SageMaker Ground Truth\. This file is in JSON lines format\. Each line is a complete JSON object that contains a training document and its labels\. Each label annotates a named entity in the training document\. You can provide up to 5 augmented manifest files\.
 
-   For more information about available formats, and for examples, see [Training Custom Entity Recognizers](training-recognizers.md)\.
+   For more information about available formats, and for examples, see [Training custom entity recognizers](training-recognizers.md)\.
 
 1. Under **Training type**, choose the training type to use:
    + **Using annotations and training docs**
@@ -107,7 +107,7 @@ For more information on creating and using KMS keys and the associated encryptio
 1. Under **Training data**, choose **Augmented manifest** as your data format:
    + **Augmented manifest** — is a labeled dataset that is produced by Amazon SageMaker Ground Truth\. This file is in JSON lines format\. Each line in the file is a complete JSON object that contains a training document and its labels\. Each label annotates a named entity in the training document\. You can provide up to 5 augmented manifest files\. If you are using PDF documents for training data, you must select **Augmented manifest**\. You can provide up to 5 augmented manifest files\. For each file, you can name up to 5 attributes to use as training data\.
 
-   For more information about available formats, and for examples, see [Training Custom Entity Recognizers](training-recognizers.md)\.
+   For more information about available formats, and for examples, see [Training custom entity recognizers](training-recognizers.md)\.
 
 1. Select the training model type\. 
 

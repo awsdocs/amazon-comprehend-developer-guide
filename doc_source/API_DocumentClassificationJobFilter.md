@@ -1,6 +1,6 @@
 # DocumentClassificationJobFilter<a name="API_DocumentClassificationJobFilter"></a>
 
-Provides information for filtering a list of document classification jobs\. For more information, see the [ ListDocumentClassificationJobs ](API_ListDocumentClassificationJobs.md) operation\. You can provide only one filter parameter in each request\.
+Provides information for filtering a list of document classification jobs\. For more information, see the [ListDocumentClassificationJobs](API_ListDocumentClassificationJobs.md) operation\. You can provide only one filter parameter in each request\.
 
 ## Contents<a name="API_DocumentClassificationJobFilter_Contents"></a>
 
@@ -30,7 +30,7 @@ Required: No
 ## See Also<a name="API_DocumentClassificationJobFilter_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DocumentClassificationJobFilter) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DocumentClassificationJobFilter) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DocumentClassificationJobFilter) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DocumentClassificationJobFilter) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DocumentClassificationJobFilter) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DocumentClassificationJobFilter) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DocumentClassificationJobFilter) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DocumentClassificationJobFilter) 

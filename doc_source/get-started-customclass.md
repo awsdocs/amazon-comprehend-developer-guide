@@ -1,6 +1,6 @@
 # Using Custom Classification<a name="get-started-customclass"></a>
 
-To create and train a custom classifier, use the Amazon Comprehend [ CreateDocumentClassifier ](API_CreateDocumentClassifier.md)\. To identify custom classifiers in a corpus of documents, use the [ StartDocumentClassificationJob ](API_StartDocumentClassificationJob.md) operation\. 
+To create and train a custom classifier, use the Amazon Comprehend [CreateDocumentClassifier](API_CreateDocumentClassifier.md)\. To identify custom classifiers in a corpus of documents, use the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) operation\. 
 
 **Topics**
 + [Using Custom Classification With the AWS Command Line Interface](#get-started-api-customclass-cli)

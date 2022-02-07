@@ -14,8 +14,8 @@ For jobs, you can only configure subnets with a default tenancy VPC in which you
 To specify subnets and security groups in your VPC, use the `VpcConfig` request parameter of the applicable API, or provide this information when you create a job in the Amazon Comprehend console\. Amazon Comprehend uses this information to create ENIs and attach them to our job containers\. The ENIs provide our job containers with a network connection within your VPC that is not connected to the internet\. 
 
 The following APIs contain the `VpcConfig` request parameter: 
-+ `Create*` APIs: ` CreateDocumentClassifier `, ` CreateEntityRecognizer `
-+ `Start*` APIs: ` StartDocumentClassificationJob `, ` StartDominantLanguageDetectionJob `, ` StartEntitiesDetectionJob `, ` StartKeyPhrasesDetectionJob `, ` StartSentimentDetectionJob `, ` StartTopicsDetectionJob `
++ `Create*` APIs: `CreateDocumentClassifier`, `CreateEntityRecognizer`
++ `Start*` APIs: `StartDocumentClassificationJob`, `StartDominantLanguageDetectionJob`, `StartEntitiesDetectionJob`, `StartKeyPhrasesDetectionJob`, `StartSentimentDetectionJob`, `StartTopicsDetectionJob`
 
 The following is an example of the VpcConfig parameter that you include in your API call: 
 

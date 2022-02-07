@@ -9,7 +9,7 @@ For more information on how the input file is formatted, see [Creating Training 
  ** AugmentedManifests **   <a name="comprehend-Type-DocumentClassifierInputDataConfig-AugmentedManifests"></a>
 A list of augmented manifest files that provide training data for your custom model\. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth\.  
 This parameter is required if you set `DataFormat` to `AUGMENTED_MANIFEST`\.  
-Type: Array of [ AugmentedManifestsListItem ](API_AugmentedManifestsListItem.md) objects  
+Type: Array of [AugmentedManifestsListItem](API_AugmentedManifestsListItem.md) objects  
 Required: No
 
  ** DataFormat **   <a name="comprehend-Type-DocumentClassifierInputDataConfig-DataFormat"></a>
@@ -49,7 +49,7 @@ Required: No
 ## See Also<a name="API_DocumentClassifierInputDataConfig_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DocumentClassifierInputDataConfig) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DocumentClassifierInputDataConfig) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DocumentClassifierInputDataConfig) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DocumentClassifierInputDataConfig) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DocumentClassifierInputDataConfig) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DocumentClassifierInputDataConfig) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DocumentClassifierInputDataConfig) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DocumentClassifierInputDataConfig) 

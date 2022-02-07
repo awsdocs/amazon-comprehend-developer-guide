@@ -2,7 +2,7 @@
 
 You can use an Amazon S3 Object Lambda Access Point to control access to documents with personally identifiable information \(PII\)\.
 
-To ensure that only authorized users have access to documents that contain PII stored in your Amazon S3 bucket, you use the `ComprehendPiiAccessControlS3ObjectLambda` function\. This Lambda function uses the [ ContainsPiiEntities ](API_ContainsPiiEntities.md) operation when processing a standard Amazon S3 GET request on document objects\.
+To ensure that only authorized users have access to documents that contain PII stored in your Amazon S3 bucket, you use the `ComprehendPiiAccessControlS3ObjectLambda` function\. This Lambda function uses the [ContainsPiiEntities](API_ContainsPiiEntities.md) operation when processing a standard Amazon S3 GET request on document objects\.
 
 For example, if you have documents in your S3 bucket that include PII such as credit card numbers or bank account information, you can configure the `ComprehendPiiAccessControlS3ObjectLambda` function to detect these PII entity types and restrict access to unauthorized users\. For more information about supported PII entity types, see [PII Entity Types](how-pii.md#how-pii-types)\.
 

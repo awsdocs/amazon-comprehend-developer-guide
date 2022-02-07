@@ -16,7 +16,7 @@ For information about the parameters that are common to all actions, see [Common
 
 The request accepts the following data in JSON format\.
 
- ** [ EndpointArn ](#API_DescribeEndpoint_RequestSyntax) **   <a name="comprehend-DescribeEndpoint-request-EndpointArn"></a>
+ ** [EndpointArn](#API_DescribeEndpoint_RequestSyntax) **   <a name="comprehend-DescribeEndpoint-request-EndpointArn"></a>
 The Amazon Resource Number \(ARN\) of the endpoint being described\.  
 Type: String  
 Length Constraints: Maximum length of 256\.  
@@ -49,9 +49,9 @@ If the action is successful, the service sends back an HTTP 200 response\.
 
 The following data is returned in JSON format by the service\.
 
- ** [ EndpointProperties ](#API_DescribeEndpoint_ResponseSyntax) **   <a name="comprehend-DescribeEndpoint-response-EndpointProperties"></a>
+ ** [EndpointProperties](#API_DescribeEndpoint_ResponseSyntax) **   <a name="comprehend-DescribeEndpoint-response-EndpointProperties"></a>
 Describes information associated with the specific endpoint\.  
-Type: [ EndpointProperties ](API_EndpointProperties.md) object
+Type: [EndpointProperties](API_EndpointProperties.md) object
 
 ## Errors<a name="API_DescribeEndpoint_Errors"></a>
 
@@ -76,12 +76,12 @@ HTTP Status Code: 400
 ## See Also<a name="API_DescribeEndpoint_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DescribeEndpoint) 
-+  [ AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DescribeEndpoint) 
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DescribeEndpoint) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DescribeEndpoint) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DescribeEndpoint) 
-+  [ AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DescribeEndpoint) 
-+  [ AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DescribeEndpoint) 
-+  [ AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DescribeEndpoint) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS Command Line Interface](https://docs.aws.amazon.com/goto/aws-cli/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS SDK for \.NET](https://docs.aws.amazon.com/goto/DotNetSDKV3/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS SDK for JavaScript](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS SDK for PHP V3](https://docs.aws.amazon.com/goto/SdkForPHPV3/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS SDK for Python](https://docs.aws.amazon.com/goto/boto3/comprehend-2017-11-27/DescribeEndpoint) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DescribeEndpoint) 

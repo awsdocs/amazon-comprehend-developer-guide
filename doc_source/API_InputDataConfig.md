@@ -7,7 +7,7 @@ The input properties for an inference job\.
  ** DocumentReaderConfig **   <a name="comprehend-Type-InputDataConfig-DocumentReaderConfig"></a>
 The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob\.   
 Use DocumentReaderConfig to provide specifications about how you want your inference documents read\. Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference\.  
-Type: [ DocumentReaderConfig ](API_DocumentReaderConfig.md) object  
+Type: [DocumentReaderConfig](API_DocumentReaderConfig.md) object  
 Required: No
 
  ** InputFormat **   <a name="comprehend-Type-InputDataConfig-InputFormat"></a>
@@ -29,7 +29,7 @@ Required: Yes
 ## See Also<a name="API_InputDataConfig_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/InputDataConfig) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/InputDataConfig) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/InputDataConfig) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/InputDataConfig) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/InputDataConfig) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/InputDataConfig) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/InputDataConfig) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/InputDataConfig) 

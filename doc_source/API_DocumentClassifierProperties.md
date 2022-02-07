@@ -6,7 +6,7 @@ Provides information about a document classifier\.
 
  ** ClassifierMetadata **   <a name="comprehend-Type-DocumentClassifierProperties-ClassifierMetadata"></a>
 Information about the document classifier, including the number of documents used for training the classifier, the number of documents used for test the classifier, and an accuracy rating\.  
-Type: [ ClassifierMetadata ](API_ClassifierMetadata.md) object  
+Type: [ClassifierMetadata](API_ClassifierMetadata.md) object  
 Required: No
 
  ** DataAccessRoleArn **   <a name="comprehend-Type-DocumentClassifierProperties-DataAccessRoleArn"></a>
@@ -30,7 +30,7 @@ Required: No
 
  ** InputDataConfig **   <a name="comprehend-Type-DocumentClassifierProperties-InputDataConfig"></a>
 The input data configuration that you supplied when you created the document classifier for training\.  
-Type: [ DocumentClassifierInputDataConfig ](API_DocumentClassifierInputDataConfig.md) object  
+Type: [DocumentClassifierInputDataConfig](API_DocumentClassifierInputDataConfig.md) object  
 Required: No
 
  ** LanguageCode **   <a name="comprehend-Type-DocumentClassifierProperties-LanguageCode"></a>
@@ -56,12 +56,19 @@ ID for the AWS Key Management Service \(KMS\) key that Amazon Comprehend uses to
 + Amazon Resource Name \(ARN\) of a KMS Key: `"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"` 
 Type: String  
 Length Constraints: Maximum length of 2048\.  
-Pattern: `.*`   
+Pattern: `^\p{ASCII}+$`   
 Required: No
 
  ** OutputDataConfig **   <a name="comprehend-Type-DocumentClassifierProperties-OutputDataConfig"></a>
  Provides output results configuration parameters for custom classifier jobs\.  
-Type: [ DocumentClassifierOutputDataConfig ](API_DocumentClassifierOutputDataConfig.md) object  
+Type: [DocumentClassifierOutputDataConfig](API_DocumentClassifierOutputDataConfig.md) object  
+Required: No
+
+ ** SourceModelArn **   <a name="comprehend-Type-DocumentClassifierProperties-SourceModelArn"></a>
+The Amazon Resource Name \(ARN\) of the source model\. This model was imported from a different AWS account to create the document classifier model in your AWS account\.  
+Type: String  
+Length Constraints: Maximum length of 256\.  
+Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*(/version/[a-zA-Z0-9](-*[a-zA-Z0-9])*)?`   
 Required: No
 
  ** Status **   <a name="comprehend-Type-DocumentClassifierProperties-Status"></a>
@@ -98,18 +105,18 @@ ID for the AWS Key Management Service \(KMS\) key that Amazon Comprehend uses to
 + Amazon Resource Name \(ARN\) of a KMS Key: `"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"` 
 Type: String  
 Length Constraints: Maximum length of 2048\.  
-Pattern: `.*`   
+Pattern: `^\p{ASCII}+$`   
 Required: No
 
  ** VpcConfig **   <a name="comprehend-Type-DocumentClassifierProperties-VpcConfig"></a>
  Configuration parameters for a private Virtual Private Cloud \(VPC\) containing the resources you are using for your custom classifier\. For more information, see [Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)\.   
-Type: [ VpcConfig ](API_VpcConfig.md) object  
+Type: [VpcConfig](API_VpcConfig.md) object  
 Required: No
 
 ## See Also<a name="API_DocumentClassifierProperties_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DocumentClassifierProperties) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DocumentClassifierProperties) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DocumentClassifierProperties) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DocumentClassifierProperties) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DocumentClassifierProperties) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DocumentClassifierProperties) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DocumentClassifierProperties) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DocumentClassifierProperties) 

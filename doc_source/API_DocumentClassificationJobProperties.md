@@ -25,7 +25,7 @@ Required: No
 
  ** InputDataConfig **   <a name="comprehend-Type-DocumentClassificationJobProperties-InputDataConfig"></a>
 The input data configuration that you supplied when you created the document classification job\.  
-Type: [ InputDataConfig ](API_InputDataConfig.md) object  
+Type: [InputDataConfig](API_InputDataConfig.md) object  
 Required: No
 
  ** JobArn **   <a name="comprehend-Type-DocumentClassificationJobProperties-JobArn"></a>
@@ -65,7 +65,7 @@ Required: No
 
  ** OutputDataConfig **   <a name="comprehend-Type-DocumentClassificationJobProperties-OutputDataConfig"></a>
 The output data configuration that you supplied when you created the document classification job\.  
-Type: [ OutputDataConfig ](API_OutputDataConfig.md) object  
+Type: [OutputDataConfig](API_OutputDataConfig.md) object  
 Required: No
 
  ** SubmitTime **   <a name="comprehend-Type-DocumentClassificationJobProperties-SubmitTime"></a>
@@ -79,18 +79,18 @@ ID for the AWS Key Management Service \(KMS\) key that Amazon Comprehend uses to
 + Amazon Resource Name \(ARN\) of a KMS Key: `"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"` 
 Type: String  
 Length Constraints: Maximum length of 2048\.  
-Pattern: `.*`   
+Pattern: `^\p{ASCII}+$`   
 Required: No
 
  ** VpcConfig **   <a name="comprehend-Type-DocumentClassificationJobProperties-VpcConfig"></a>
  Configuration parameters for a private Virtual Private Cloud \(VPC\) containing the resources you are using for your document classification job\. For more information, see [Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)\.   
-Type: [ VpcConfig ](API_VpcConfig.md) object  
+Type: [VpcConfig](API_VpcConfig.md) object  
 Required: No
 
 ## See Also<a name="API_DocumentClassificationJobProperties_SeeAlso"></a>
 
 For more information about using this API in one of the language\-specific AWS SDKs, see the following:
-+  [ AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DocumentClassificationJobProperties) 
-+  [ AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DocumentClassificationJobProperties) 
-+  [ AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DocumentClassificationJobProperties) 
-+  [ AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DocumentClassificationJobProperties) 
++  [AWS SDK for C\+\+](https://docs.aws.amazon.com/goto/SdkForCpp/comprehend-2017-11-27/DocumentClassificationJobProperties) 
++  [AWS SDK for Go](https://docs.aws.amazon.com/goto/SdkForGoV1/comprehend-2017-11-27/DocumentClassificationJobProperties) 
++  [AWS SDK for Java V2](https://docs.aws.amazon.com/goto/SdkForJavaV2/comprehend-2017-11-27/DocumentClassificationJobProperties) 
++  [AWS SDK for Ruby V3](https://docs.aws.amazon.com/goto/SdkForRubyV3/comprehend-2017-11-27/DocumentClassificationJobProperties) 

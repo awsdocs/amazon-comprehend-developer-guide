@@ -1,6 +1,6 @@
 # Detecting Named Entities<a name="get-started-api-entities"></a>
 
-To determine the named entities in a document, use the Amazon Comprehend [ DetectEntities ](API_DetectEntities.md) operation\. To detect entities in up to 25 documents in a batch, use the [ BatchDetectEntities ](API_BatchDetectEntities.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
+To determine the named entities in a document, use the Amazon Comprehend [DetectEntities](API_DetectEntities.md) operation\. To detect entities in up to 25 documents in a batch, use the [BatchDetectEntities](API_BatchDetectEntities.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
 
 **Topics**
 + [Detecting Named Entities Using the AWS Command Line Interface](#get-started-api-entities-cli)

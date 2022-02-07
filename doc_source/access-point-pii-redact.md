@@ -2,7 +2,7 @@
 
 You can use an Amazon S3 Object Lambda Access Point to redact personally identifiable information \(PII\) from documents\. 
 
-To redact PII entity types from documents stored in an S3 bucket, you use the `ComprehendPiiRedactionS3ObjectLambda` function\. This Lambda function uses the [ ContainsPiiEntities ](API_ContainsPiiEntities.md) and [ DetectPiiEntities ](API_DetectPiiEntities.md) operations when processing a standard Amazon S3 GET request on document objects\.
+To redact PII entity types from documents stored in an S3 bucket, you use the `ComprehendPiiRedactionS3ObjectLambda` function\. This Lambda function uses the [ContainsPiiEntities](API_ContainsPiiEntities.md) and [DetectPiiEntities](API_DetectPiiEntities.md) operations when processing a standard Amazon S3 GET request on document objects\.
 
 For example, if documents in your S3 bucket include PII such as credit card numbers or bank account information, you can configure the `ComprehendPiiRedactionS3ObjectLambda` function to detect PII and then return a copy of these documents in which PII entity types are redacted\. For more information about supported PII entity types, see [PII Entity Types](how-pii.md#how-pii-types)\.
 
