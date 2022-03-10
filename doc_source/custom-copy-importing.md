@@ -96,9 +96,9 @@ The following permissions policy allows the AWS KMS operations that Amazon Compr
 }
 ```
 
-**Example trust policy**  
+**Example Trust policy**  
 
-The following trust policy allows Amazon Comprehend to assume the role and gain its permissions\. It allows the `comprehend.amazonaws.com` service principal to perform the `sts:AssumeRole` action\.
+The following trust policy allows Amazon Comprehend to assume the role and gain its permissions\. It allows the `comprehend.amazonaws.com` service principal to perform the `sts:AssumeRole` operation\. To help with [confused deputy prevention](cross-service-confused-deputy-prevention.md), you restrict the scope of the permission by using one or more global condition context keys\. For `aws:SourceAccount`, specify the account Id of the user who is importing the model\. 
 
 ```
 {
@@ -109,7 +109,12 @@ The following trust policy allows Amazon Comprehend to assume the role and gain 
       "Principal": {
         "Service": "comprehend.amazonaws.com"
       },
-      "Action": "sts:AssumeRole"
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": {
+          "aws:SourceAccount": "444455556666"  
+        }
+      }
     }
   ]
 }

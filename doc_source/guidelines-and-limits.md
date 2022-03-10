@@ -4,6 +4,19 @@ Many of the Amazon Comprehend quotas shown here can be increased if needed for y
 
 Remember the following information when using Amazon Comprehend\.
 
+**Topics**
++ [Supported Regions](#limits-regions)
++ [Overall Quotas](#limits-all)
++ [Throttling When Using Single Transactions](#limits-throttling)
++ [Multiple Document Operations](#limits-batch)
++ [Asynchronous Operations](#limits-asynchronous)
++ [Targeted Sentiment](#limits-targeted-sentiment)
++ [Document Classification](#limits-document-classification)
++ [Language Detection](#limits-language-detection)
++ [Events](#limits-events)
++ [Topic Modeling](#limits-topic-modeling)
++ [Entity Recognition](#limits-custom-entity-recognition)
+
 ## Supported Regions<a name="limits-regions"></a>
 
 For a list of AWS Regions where Amazon Comprehend is available, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#comprehend_region) in the *Amazon Web Services General Reference*\.
@@ -41,11 +54,11 @@ The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDet
 | --- | --- | 
 | Documents per request | 25 | 
 
-If you plan to send more than 20 requests per second, you should consider using the batch operations\. Batch operations enable you to send more documents in each request which may result in higher throughput\. For example, when you use the `DetectDominantLanguage` operation, you can send up to 20 documents per second\. However, if you use the `BatchRequestDominantLanguage` operation, you can send up to 250 documents per second, but processing speed may be lower\. For more information about throttling quotas see [ Amazon Comprehend Quotas ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. For more information about using the multiple document APIs, see [Multiple Document Synchronous Processing](how-batch.md)\.
+If you plan to send more than 20 requests per second, you should consider using the batch operations\. With batch operations, you send more documents in each request, which may result in higher throughput\. For example, when you use the `DetectDominantLanguage` operation, you can send up to 20 documents per second\. However, if you use the `BatchRequestDominantLanguage` operation, you can send up to 250 documents per second, but processing speed may be lower\. For more information about throttling quotas, see [ Amazon Comprehend Quotas ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. For more information about using the multiple document API operations, see [Multiple Document Synchronous Processing](how-batch.md)\.
 
 ## Asynchronous Operations<a name="limits-asynchronous"></a>
 
-Asynchronous batch jobs are run with the [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md), [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md), [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md), [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md), and [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) operations\. These jobs have the following limits:
+Asynchronous batch jobs that you run using the [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md), [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md), [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md), [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md), [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) operations have the following limits:
 
 
 | Description | Quota/Guideline | 
@@ -61,9 +74,24 @@ You should use the asynchronous operations:
 
 For more information, see [Asynchronous Batch Processing](how-async.md)\.
 
+## Targeted Sentiment<a name="limits-targeted-sentiment"></a>
+
+Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with the [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) operation have the following limits:
+
+
+**Targeted sentiment detection \- inference \(StartTargetedSentimentDetectionJob\)**  
+
+| Description | Quota/Guideline | 
+| --- | --- | 
+| Supported document formats | UTF\-8 | 
+| Maximum size of each document in a job | 10 KB | 
+| Maximum size of all documents in a job | 300 MB | 
+| Maximum number of files, one document per file | 30,000 | 
+| Maximum number of lines, one document per line \(for all files in a request\) | 30,000 | 
+
 ## Document Classification<a name="limits-document-classification"></a>
 
-Document classifier training jobs started with the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation, asynchronous document classification jobs started with the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) , and synchronous document classification requests started with the [ClassifyDocument](API_ClassifyDocument.md) operation have the following limits: 
+Document classifier training jobs started with the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation, asynchronous document classification jobs started with the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md), and synchronous document classification requests started with the [ClassifyDocument](API_ClassifyDocument.md) operation have the following limits: 
 
 
 **General**  
@@ -142,24 +170,24 @@ Entity recognizer training jobs started with the [CreateEntityRecognizer](API_Cr
 
 | Description | Quota/Guideline | 
 | --- | --- | 
-| Number of entities per model/custom entity recognizer | 1 \- 25 | 
-| Document size \(UTF\-8\) | 1 \- 5,000 byte | 
-| Number of documents | 250 \- 120,000 | 
-| Document corpus size \(all docs in plain text combined\) | 5 KB \- 100MB | 
+| Number of entities per model/custom entity recognizer | 1–25 | 
+| Document size \(UTF\-8\) | 1–5,000 byte | 
+| Number of documents | 250–120,000 | 
+| Document corpus size \(all docs in plaintext combined\) | 5 KB \- 100 MB | 
 | Minimum number of annotations per entity | 100 | 
-| Number of items in entity list | 1 \- 1 million | 
-| Length of individual entry \(post\-strip\) in entry list | 1 \- 5,000 | 
-| Entity list corpus size \(all docs in plain text combined\) | 5KB \- 100 MB | 
+| Number of items in entity list | 1–1 million | 
+| Length of individual entry \(post\-strip\) in entry list | 1–5,000 | 
+| Entity list corpus size \(all docs in plaintext combined\) | 5 KB –100 MB | 
 
 
 **PDF or Word text entity recognition \- training \(CreateEntityRecognizer\)**  
 
 | Description | Quota/Guideline | 
 | --- | --- | 
-| Number of entities per model/custom entity recognizer | 1 \- 25 | 
+| Number of entities per model/custom entity recognizer | 1–25 | 
 | Maximum annotation file size \(UTF\-8 JSON\) | 5 MB | 
-| Number of documents | 250 \- 10,000 | 
-| Document corpus size \(all docs in plain text combined\) | 5 KB \- 1 GB | 
+| Number of documents | 250–10,000 | 
+| Document corpus size \(all docs in plaintext combined\) | 5 KB–1 GB | 
 | Minimum number of annotations per entity | 100 | 
 
 
@@ -172,26 +200,30 @@ Entity recognizer training jobs started with the [CreateEntityRecognizer](API_Cr
 | Maximum length of attribute name | 63 characters | 
 
 
-**Plain text entity recognition \- inference \(StartEntitiesDetectionJob\)**  
+**Entity recognition for plaintext files \- inference \(StartEntitiesDetectionJob\)**  
 
 | Description | Quota/Guideline | 
 | --- | --- | 
-| Document size \(UTF\-8\) | 1 byte \- 1 MB | 
+| Document size \(UTF\-8\) | 1 byte–1 MB | 
 | Maximum number of files, one document per file | 1,000,000 | 
 | Maximum number of lines, one document per line \(for all files in request\) | 1,000,000 | 
-| Document corpus size \(all docs in plain text combined\) | 1 byte \- 5 GB | 
+| Document corpus size \(all docs in plaintext combined\) | 1 byte–5 GB | 
 
 
-**PDF or Word text entity recognition \- inference \(StartEntitiesDetectionJob\)**  
+**Entity recognition for image, PDF, or Word files \- inference \(StartEntitiesDetectionJob\)**  
 
 | Description | Quota/Guideline | 
 | --- | --- | 
-| Document size \(PDF\) | 1 byte \- 50 MB | 
-| Document size \(Docx\) | 1 byte \- 5 MB | 
-| Document size \(UTF\-8\) | 1 byte \- 1 MB | 
-| Maximum number of files, one document per file \(one document per line not allowed for PDF or Word documents\) | 500 | 
-| Maximum number of pages for single PDF or Docx file | 100 | 
-| Document corpus size \(all docs in plain text combined\) | 1 byte \- 5 GB | 
+| Image size \(JPG or PNG\) | 1 byte–10 MB | 
+| Image size \(TIFF\) | 1 byte–10 MB\. Maximum one page\. | 
+| Document size \(PDF\) | 1 byte–50 MB | 
+| Document size \(Docx\) | 1 byte–5 MB | 
+| Document size \(UTF\-8\) | 1 byte–1 MB | 
+| Maximum number of files, one document per file \(one document per line not allowed for image files or PDF/Word documents\) | 500 | 
+| Maximum number of pages for a PDF or Docx file | 100 | 
+| Document corpus size after text extraction \(plaintext, all files combined\) | 1 byte–5 GB | 
+
+For more information about limits for images, see [Hard Limits in Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/limits.html) 
 
 
 **Real\-time analysis**  

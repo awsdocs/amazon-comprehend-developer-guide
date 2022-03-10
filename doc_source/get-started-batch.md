@@ -3,13 +3,13 @@
 To send batches of up to 25 documents, you can use the Amazon Comprehend batch operations\. Calling a batch operation is identical to calling the single document APIs for each document in the request\. Using the batch APIs can result in better performance for your applications\. For more information, see [Multiple Document Synchronous Processing](how-batch.md)\.
 
 **Topics**
-+ [Batch Processing With the SDK for Java](#batch-java)
-+ [Batch Processing With the AWS SDK for \.NET](#batch-csharp)
++ [Batch Processing with the SDK for Java](#batch-java)
++ [Batch Processing with the AWS SDK for \.NET](#batch-csharp)
 + [Batch Processing With the AWS CLI](#batch-cli)
 
-## Batch Processing With the SDK for Java<a name="batch-java"></a>
+## Batch Processing with the SDK for Java<a name="batch-java"></a>
 
-The following sample program shows how to use the [BatchDetectEntities](API_BatchDetectEntities.md) operation with the SDK for Java\. The response from the server contains a [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
+The following sample program shows how to use the [BatchDetectEntities](API_BatchDetectEntities.md) operation with the SDK for Java\. The response from the server contains a [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document, there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
 
 ```
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -71,9 +71,9 @@ public class App
 }
 ```
 
-## Batch Processing With the AWS SDK for \.NET<a name="batch-csharp"></a>
+## Batch Processing with the AWS SDK for \.NET<a name="batch-csharp"></a>
 
-The following sample program shows how to use the [BatchDetectEntities](API_BatchDetectEntities.md) operation with the AWS SDK for \.NET\. The response from the server contains a [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
+The following sample program shows how to use the [BatchDetectEntities](API_BatchDetectEntities.md) operation with the AWS SDK for \.NET\. The response from the server contains a [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document, there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
 
 The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
 

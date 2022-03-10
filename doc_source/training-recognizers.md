@@ -1,17 +1,17 @@
 # Training custom entity recognizers<a name="training-recognizers"></a>
 
-Amazon Comprehend's custom entity recognition helps you to analyze your documents to find entities specific to your needs, rather than the entity types already available in the Detect Entities API\. You can analyze plain text, PDF, and Word documents with no pre\-processing or doc flattening required\. You can identify almost any kind of entity, simply by providing a sufficient number of details to train your model effectively\. 
+Amazon Comprehend's custom entity recognition helps you to analyze your documents to find entities specific to your needs, rather than the entity types already available in the Detect Entities API\. You can analyze plain text, image files \(JPG, PNG, TIFF\), PDF files, and Word documents, with no pre\-processing or doc flattening required\. You can identify almost any kind of entity, simply by providing a sufficient number of details to train your model effectively\. 
 
 **Note**  
-For an analysis job on Word docs or PDFs, you need to have trained a custom entity recognizer from annotated PDFs\. We don't support Word documents with macro\.
+After you train a custom entity recognizer from annotated PDF files, you can use that recognizer to analyzed jobs that include image files, PDF files, and Word documents\. Amazon Comprehend doesn't support annotation of image files or Word documents\.
 
 Building a successful custom entity recognition model requires training your model\. The training process usually requires extensive knowledge of machine learning \(ML\) and a complex process for model optimization\. Amazon Comprehend automates this for you using a technique called *transfer learning* which builds on state of the art models in natural language processing \(NLP\) and generates a sophisticated general\-purpose entity recognition model framework\. When you prepare to build a successful custom entity recognition model it's important that you supply the model trainer with high quality data as input\. Without good data the model won't learn how to correctly identify entities\. 
 
 You can choose one of two ways to provide data to Amazon Comprehend in order to train a custom entity recognition model:
-+ [Annotations](cer-annotation.md)—Provides the location of your entities in a large number of documents so Amazon Comprehend can train on both the entity and its context\. To create a model which can be used to analyze PDF, Word and plain text documents, you must train your recognizer using PDF annotations\. 
++ [Annotations](cer-annotation.md)—Provides the location of your entities in a large number of documents so Amazon Comprehend can train on both the entity and its context\. To create a model for analyzing image files, PDFs, or Word documents, you must train your recognizer using PDF annotations\. 
 + [Entity lists \(plain text only\)](cer-entity-list.md)—Lists the specific entities so Amazon Comprehend can train to identify your custom entities\. Note: Entity lists can only be used for plain text documents\. 
 
-In both cases, Amazon Comprehend will learn about the kind of documents and the context where the entities occur and build a recognizer that can generalize to new entities in documents at inference\.
+In both cases, Amazon Comprehend learns about the kind of documents and the context where the entities occur and build a recognizer that can generalize to new entities in documents at inference\.
 
 **Annotations**
 
@@ -34,7 +34,7 @@ For instance, if you are searching for the name John Johnson, with the entity ty
 This comparison would make it seem as if annotations are always the best approach, but this isn't the case\. Only the name John Johnson might be significant to your search and whether it's the exact individual isn't relevant\. Or the result is useful, but not worth the time and cost of producing an annotation list\. Or the metrics when using the entity list are good enough to provide you with the recognizer you need\. There are many scenarios when it makes more business sense to avoid the higher expense and workload of creating the annotations necessary for the other option\. In such instances, using an entity list instead can be the more effective choice\. 
 
 We recommend using the annotations mode in the following cases:
-+ Annotations are required if you want to get inferences for PDF or Word documents\. In this scenario, you can only annotate PDFs but your model can run inferences for PDF and Word documents\. 
++ If you plan to run inferences for image files, PDFs, or Word documents\. In this scenario, you train a model using annotated PDF files and use the model to run inference jobs for image files, PDFs, and Word documents\. 
 + When the meaning of the entities could be ambiguous and context\-dependent\. For example, the term *Amazon* could either refer to the river in Brazil, or the online retailer Amazon\.com\. When you build a custom entity recognizer to identify business entities such as *Amazon*, you should use annotations instead of an entity list because this method is better able to use context to find entities\.
 + When you are comfortable setting up a process to acquire annotations, which can require some effort\.
 

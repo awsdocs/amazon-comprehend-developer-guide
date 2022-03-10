@@ -36,7 +36,8 @@ To submit an analysis job, use either the Amazon Comprehend console or the appro
 + [StartEventsDetectionJob](API_StartEventsDetectionJob.md) — Start a job to detect events in each document in the collection\. For more information about entities, see [Detect Events](how-events.md)\.
 + [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md) — Start a job to detect key phrases in each document in the collection\. For more information about key phrases, see [Detect Key Phrases](how-key-phrases.md)\.
 + [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) — Start a job to detect personally identifiable information \(PII\) in each document in the collection\. For more information about PII, see [Detect Personally Identifiable Information \(PII\)](how-key-phrases.md)\.
-+ [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) — Start a job to detect the emotional sentiment in each document in the collection\. For more information about sentiments, see [Determine Sentiment](how-sentiment.md)\.
++ [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) — Start a job to detect the sentiment in each document in the collection\. For more information about sentiments, see [Determine Sentiment](how-sentiment.md)\.
++ [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) — Start a job to detect the sentiment of specific entities in each document in the collection\. For more information, see [Analyze Targeted Sentiment](how-targeted-sentiment.md)\.
 + [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) — Start a job to detect the topics in a document collection\. For more information about topic modeling, see [Topic Modeling](topic-modeling.md)\.
 
 ## Monitoring Analysis Jobs<a name="how-monitor-progress"></a>
@@ -58,6 +59,7 @@ To get the status of individual jobs, use the `Describe*` operation for the anal
 + [DescribeKeyPhrasesDetectionJob](API_DescribeKeyPhrasesDetectionJob.md)
 + [DescribePiiEntitiesDetectionJob](API_DescribePiiEntitiesDetectionJob.md)
 + [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md)
++ [DescribeTargetedSentimentDetectionJob](API_DescribeTargetedSentimentDetectionJob.md)
 + [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md)
 
 To get the status of a multiple jobs, use the `List*` operation for the analysis that you are performing\.
@@ -67,6 +69,7 @@ To get the status of a multiple jobs, use the `List*` operation for the analysis
 + [ListKeyPhrasesDetectionJobs](API_ListKeyPhrasesDetectionJobs.md)
 + [ListPiiEntitiesDetectionJobs](API_ListPiiEntitiesDetectionJobs.md)
 + [ListSentimentDetectionJobs](API_ListSentimentDetectionJobs.md)
++ [ListTargetedSentimentDetectionJobs](API_ListTargetedSentimentDetectionJobs.md)
 + [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md)
 
 To restrict the results to jobs that match certain criteria, use the `List*` operations' `Filter` parameter\. You can filter on the job name, the job status, and the date and time that the job was submitted\. For more information, see the `Filter` parameter for each of the `List*` operations in the [Actions](API_Operations.md) reference\.
@@ -83,6 +86,7 @@ To get the status of individual jobs, use the appropriate `Describe*` operation:
 + [DescribeEventsDetectionJob](API_DescribeEventsDetectionJob.md)
 + [DescribeKeyPhrasesDetectionJob](API_DescribeKeyPhrasesDetectionJob.md)
 + [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md)
++ [DescribeTargetedSentimentDetectionJob](API_DescribeTargetedSentimentDetectionJob.md)
 + [DescribeTopicsDetectionJob](API_DescribeTopicsDetectionJob.md)
 
 The results are returned in a single file, with one JSON structure for each document\. Each response file also includes error messages for any job with the status field set to `FAILED`\.

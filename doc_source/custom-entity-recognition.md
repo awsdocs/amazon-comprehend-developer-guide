@@ -6,15 +6,15 @@ A custom entity recognizer identifies only the entity types that you include whe
 
 Building an accurate in\-house custom entity recognizer on your own can be a complex process, requiring preparation of large sets of manually annotated training documents and the selection of the right algorithms and parameters for model training\. Amazon Comprehend helps you to sidestep some of these issues by providing automatic annotation and model development to create a custom entity recognition model\.
 
-Creating a custom entity recognition model is a more effective approach, compared to using string matching or regular expressions to extract entities from documents\. For example, to extract ENGINEER names in a document, it would be difficult to enumerate all possible names\. Additionally, without context, it would be challenging to to distinguish between ENGINEER names and ANALYST names\. A custom entity recognition model can learn the context where those names are likely to appear\. Additionally, string matching will not detect entities that have typos or follow new naming conventions, while this is possible using a custom model\. 
+Creating a custom entity recognition model is a more effective approach, compared to using string matching or regular expressions to extract entities from documents\. For example, to extract ENGINEER names in a document, it would be difficult to enumerate all possible names\. Additionally, without context, it would be challenging to distinguish between ENGINEER names and ANALYST names\. A custom entity recognition model can learn the context where those names are likely to appear\. Additionally, string matching will not detect entities that have typos or follow new naming conventions, while this is possible using a custom model\. 
 
-To use Amazon Comprehend's custom entity recognition service, you have two options: 
+To use Amazon Comprehend's custom entity recognition service, you have two options for creating a custom model: 
 
-1. [Annotations](cer-annotation.md)— provide a data set containing annotated entities for model training\. For an analysis job of Word docs or PDFs, you need to train a custom entity recognizer from annotated PDFs\. We don't support Word document annotation\.
+1. [Annotations](cer-annotation.md)— provide a data set containing annotated entities for model training\. 
 
 1. [Entity lists \(plain text only\)](cer-entity-list.md)— provide a list of entities and their type label \(such as `PRODUCT_CODES` and a set of unannotated documents containing those entities for model training\.
 
-The service automatically tests for the best algorithm and parameters while training the model to use, looking for the most accurate combination of these components\. 
+To analyze image files \(JPG, PNG, or TIFF\), Word documents or PDF files, train a custom entity recognizer from annotated PDF files\. We don't support annotation of image files or Word documents\.
 
 You can train a model on up to 25 custom entities at once\. Once your model is trained, you can search for those custom entities in each entities detection job\. For more details, see the [Guidelines and Quotas page](https://docs.aws.amazon.com/comprehend/latest/dg/guidelines-and-limits.html)\.
 

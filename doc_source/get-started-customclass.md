@@ -3,13 +3,13 @@
 To create and train a custom classifier, use the Amazon Comprehend [CreateDocumentClassifier](API_CreateDocumentClassifier.md)\. To identify custom classifiers in a corpus of documents, use the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) operation\. 
 
 **Topics**
-+ [Using Custom Classification With the AWS Command Line Interface](#get-started-api-customclass-cli)
++ [Using Custom Classification With theAWS Command Line Interface](#get-started-api-customclass-cli)
 + [Using Custom Classification Using the AWS SDK for Java](#get-started-api-customclass-java)
 + [Using Custom Classification Using the AWS SDK for Python \(Boto\)](#get-started-api-customclass-python)
 
-## Using Custom Classification With the AWS Command Line Interface<a name="get-started-api-customclass-cli"></a>
+## Using Custom Classification With theAWS Command Line Interface<a name="get-started-api-customclass-cli"></a>
 
-The following examples demonstrates using the `CreateDocumentClassifier` operation, `StartDocumentClassificationJob` operation, and other custom classifier APIs with the AWS CLI\. 
+The following examples demonstrate using the `CreateDocumentClassifier` operation, `StartDocumentClassificationJob` operation, and other custom classifier APIs with the AWS CLI\. 
 
 The examples are formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
@@ -24,7 +24,7 @@ aws comprehend create-document-classifier \
      --data-access-role-arn arn:aws:iam::account number:role/testDeepInsightDataAccess
 ```
 
-Get information on a custom classifier with the document classifier arn using the `DescribeDocumentClassifier` operation\.
+Get information on a custom classifier with the document classifier ARN using the `DescribeDocumentClassifier` operation\.
 
 ```
 aws comprehend describe-document-classifier \

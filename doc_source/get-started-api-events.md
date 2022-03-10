@@ -59,7 +59,7 @@ If the request to start the events detection job was successful, you will receiv
 }
 ```
 
-Use the [ListEventsDetectionJobs](API_ListEventsDetectionJobs.md) operation to see a list of the events detection jobs that you have submitted\. The list includes information about the input and output locations that you used as well as the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
+Use the [ListEventsDetectionJobs](API_ListEventsDetectionJobs.md) operation to see a list of the events detection jobs that you have submitted\. The list includes information about the input and output locations that you used and the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
 ```
 aws comprehend list-events-detection-jobs --region region 

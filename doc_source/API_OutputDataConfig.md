@@ -1,6 +1,6 @@
 # OutputDataConfig<a name="API_OutputDataConfig"></a>
 
-Provides configuration parameters for the output of topic detection jobs\.
+Provides configuration parameters for the output of inference jobs\.
 
 
 

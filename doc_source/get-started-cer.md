@@ -9,7 +9,7 @@ To create the custom entities in a document, use the Amazon Comprehend [CreateEn
 
 ## Creating and Detecting Custom Entities Using the AWS Command Line Interface<a name="get-started-api-cer-cli"></a>
 
-The following examples demonstrates using the `CreateEntityRecognizer` operation, `StartEntitiesDetectionJob` operation and other associated APIs with the AWS CLI\. 
+The following examples demonstrate using the `CreateEntityRecognizer` operation, `StartEntitiesDetectionJob` operation, and other associated APIs with the AWS CLI\. 
 
 The examples are formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 

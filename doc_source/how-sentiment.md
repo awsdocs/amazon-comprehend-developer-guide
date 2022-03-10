@@ -5,8 +5,8 @@ Use Amazon Comprehend to determine the sentiment of a document\. For example, yo
 You can determine sentiment for documents in any of the primary languages supported by Amazon Comprehend\. All documents in one job must be in the same language\.
 
 Sentiment determination returns the following values:
-+ **Positive** – The text expresses an overall positive emotional sentiment\.
-+ **Negative** – The text expresses an overall negative emotional sentiment\.
++ **Positive** – The text expresses an overall positive sentiment\.
++ **Negative** – The text expresses an overall negative sentiment\.
 + **Mixed** – The text expresses both positive and negative sentiments\.
 + **Neutral** – The text does not express either positive or negative sentiments\.
 

@@ -8,7 +8,7 @@ The easiest way to get started using Amazon Comprehend is to use the console to 
 + [Creating and Using Custom Classifiers](getting-started-document-classification.md)
 + [Model Versioning with Amazon Comprehend](model-versioning.md)
 + [Creating a Topic Modeling Job Using the Console](getting-started-console-topics.md)
-+ [Creating an Events Detection Job Using the Console](getting-started-console-events.md)
++ [Creating Analysis Jobs Using Built\-in models](getting-started-console-events.md)
 
 **Next Step**  
-[Step 4: Getting Started Using the Amazon Comprehend API](get-started-api.md)
+[Using the Amazon Comprehend API](get-started-api.md)

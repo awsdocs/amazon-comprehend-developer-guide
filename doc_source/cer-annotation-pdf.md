@@ -15,7 +15,7 @@ Before you can annotate your training PDFs in SageMaker Ground Truth, you'll nee
 + [Setting up your environment](#cer-annotation-pdf-set-up)
 + [Uploading a PDF to an S3 bucket](#cer-annotation-pdf-upload)
 + [Creating an annotation job](#cer-annotation-pdf-job)
-+ [Annotating with SageMaker Ground Truth](#w73aac19c21c43c13c15)
++ [Annotating with SageMaker Ground Truth](#w75aac19c21c43c13c15)
 
 ## Setting up your environment<a name="cer-annotation-pdf-set-up"></a>
 
@@ -108,7 +108,7 @@ To view additional arguments the script supports, use the `-h` option to display
   (amazon-comprehend-semi-structured-documents-annotation-tools-main) user@3c063014d632 amazon-comprehend-semi-structured-documents-annotation-tools-main %
   ```
 
-## Annotating with SageMaker Ground Truth<a name="w73aac19c21c43c13c15"></a>
+## Annotating with SageMaker Ground Truth<a name="w75aac19c21c43c13c15"></a>
 
 Now that you have configured the required resources and created a labeling job, you can log in to the labeling portal and annotate your PDFs\.
 
@@ -131,3 +131,15 @@ Now that you have configured the required resources and created a labeling job, 
    To use auto tag, annotate an instance of one of your entities; all other instances of that specific word are then automatically annotated with that entity type\.
 
    Once you've finished, select **Submit** on the bottom right, then use the navigation arrows to move to the next document\. Repeat this until you've annotated all your PDFs\.
+
+After you annotate all the training documents, you can find the annotations in JSON format in the Amazon S3 bucket at this location:
+
+```
+/output/your labeling job name/annotations/
+```
+
+The output folder also contains an output manifest file, which lists all the annotations within your training documents\. You can find your output manifest file at the following location\.
+
+```
+/output/your labeling job name/manifests/
+```

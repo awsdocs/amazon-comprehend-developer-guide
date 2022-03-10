@@ -1,6 +1,6 @@
 # StartSentimentDetectionJob<a name="API_StartSentimentDetectionJob"></a>
 
-Starts an asynchronous sentiment detection job for a collection of documents\. use the [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md) operation to track the status of a job\.
+Starts an asynchronous sentiment detection job for a collection of documents\. Use the [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md) operation to track the status of a job\.
 
 ## Request Syntax<a name="API_StartSentimentDetectionJob_RequestSyntax"></a>
 

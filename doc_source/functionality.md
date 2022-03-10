@@ -10,6 +10,7 @@ With Amazon Comprehend, you can perform the following on your documents:
 + [Detect Personally Identifiable Information \(PII\)](how-pii.md) — Analyze documents to detect personal data that could be used to identify an individual, such as an address, bank account number, or phone number\.
 + [Label Documents with Personally Identifiable Information \(PII\)](how-pii-labels.md) — Label text documents with personally identifiable information \(PII\)\.
 + [Determine Sentiment](how-sentiment.md)—Analyze documents and determine the dominant sentiment of the text\.
++ [Analyze Targeted Sentiment](how-targeted-sentiment.md)—Analyze documents to determine the sentiment associated with specific entities mentioned in the text\.
 + [Analyze Syntax](how-syntax.md)—Parse the words in your text and show the speech syntax for each word and enable you to understand the content of the document\.
 + [Topic Modeling](topic-modeling.md)—Search the content of documents to determine common themes and topics\.
 

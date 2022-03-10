@@ -1,6 +1,6 @@
 # What Is Amazon Comprehend?<a name="what-is"></a>
 
-Amazon Comprehend uses natural language processing \(NLP\) to extract insights about the content of documents\. Amazon Comprehend processes any text file in UTF\-8 format, and semi\-structured documents, like PDF and Word documents\. It develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document\. Use Amazon Comprehend to create new products based on understanding the structure of documents\. For example, using Amazon Comprehend you can search social networking feeds for mentions of products or scan an entire document repository for key phrases\.
+Amazon Comprehend uses natural language processing \(NLP\) to extract insights about the content of documents\. Amazon Comprehend processes any text file in UTF\-8 format, image files \(JPG, PNG, or TIFF\), and semi\-structured documents \(PDF or Word files\)\. It develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document\. Use Amazon Comprehend to create new products based on understanding the structure of documents\. For example, using Amazon Comprehend you can search social networking feeds for mentions of products or scan an entire document repository for key phrases\.
 
 **Topics**
 + [Amazon Comprehend Insights](#what-is-entities)
@@ -17,7 +17,8 @@ You work with one or more documents at a time to evaluate their content and gain
 + **Key phrases** – Amazon Comprehend extracts key phrases that appear in a document\. For example, a document about a basketball game might return the names of the teams, the name of the venue, and the final score\. For more information, see [Detect Key Phrases](how-key-phrases.md)\.
 + **PII** – Amazon Comprehend analyzes documents to detect personal data that could be used to identify an individual, such as an address, bank account number, or phone number\. For more information, see [Detect Personally Identifiable Information \(PII\)](how-pii.md)\.
 + **Language** – Amazon Comprehend identifies the dominant language in a document\. Amazon Comprehend can identify 100 languages\. For more information, see [Detect the Dominant Language](how-languages.md)\.
-+ **Sentiment** – Amazon Comprehend determines the emotional sentiment of a document\. Sentiment can be positive, neutral, negative, or mixed\. For more information, see [Determine Sentiment](how-sentiment.md)\. 
++ **Sentiment** – Amazon Comprehend determines the dominant sentiment of a document\. Sentiment can be positive, neutral, negative, or mixed\. For more information, see [Determine Sentiment](how-sentiment.md)\. 
++ **Targeted Sentiment** – Amazon Comprehend determines the sentiment associated with specific entities in a document\. The sentiment of each entity occurrence can be positive, neutral, negative, or mixed\. For more information, see [Analyze Targeted Sentiment](how-targeted-sentiment.md)\. 
 + **Syntax** – Amazon Comprehend parses each word in your document and determines the part of speech for the word\. For example, in the sentence "It is raining today in Seattle," "it" is identified as a pronoun, "raining" is identified as a verb, and "Seattle" is identified as a proper noun\. For more information, see [Analyze Syntax](how-syntax.md)\. 
 
 ## Comprehend Custom<a name="how-doc-class"></a>

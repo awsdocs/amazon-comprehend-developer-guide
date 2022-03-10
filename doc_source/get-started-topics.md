@@ -53,7 +53,7 @@ If the request to start the topic detection job was successful, you will receive
 }
 ```
 
-Use the [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) operation to see a list of the topic detection jobs that you have submitted\. The list includes information about the input and output locations that you used as well as the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
+Use the [ListTopicsDetectionJobs](API_ListTopicsDetectionJobs.md) operation to see a list of the topic detection jobs that you have submitted\. The list includes information about the input and output locations that you used and the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
 ```
 aws comprehend list-topics-detection-jobs \-- region

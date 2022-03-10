@@ -14,5 +14,6 @@ We strongly recommend that you never put confidential or sensitive information, 
 
 **Topics**
 + [KMS Encryption in Amazon Comprehend](kms-in-comprehend.md)
++ [Cross\-service Confused Deputy Prevention](cross-service-confused-deputy-prevention.md)
 + [Protect Jobs by Using an Amazon Virtual Private Cloud](usingVPC.md)
 + [Amazon Comprehend and interface VPC endpoints \(AWS PrivateLink\)](vpc-interface-endpoints.md)

@@ -59,6 +59,8 @@ The following data types are supported:
 +  [SentimentScore](API_SentimentScore.md) 
 +  [SyntaxToken](API_SyntaxToken.md) 
 +  [Tag](API_Tag.md) 
++  [TargetedSentimentDetectionJobFilter](API_TargetedSentimentDetectionJobFilter.md) 
++  [TargetedSentimentDetectionJobProperties](API_TargetedSentimentDetectionJobProperties.md) 
 +  [TopicsDetectionJobFilter](API_TopicsDetectionJobFilter.md) 
 +  [TopicsDetectionJobProperties](API_TopicsDetectionJobProperties.md) 
 +  [VpcConfig](API_VpcConfig.md) 

@@ -1,8 +1,15 @@
-# Creating an Events Detection Job Using the Console<a name="getting-started-console-events"></a>
+# Creating Analysis Jobs Using Built\-in models<a name="getting-started-console-events"></a>
 
-You can use the Amazon Comprehend console to create and manage asynchronous events detection jobs\.
+You can use the Amazon Comprehend console to create and manage asynchronous analysis jobs\. Your job analyzes the input documents that you store in Amazon S3 and writes the output files to your specified Amazon S3 bucket\. You can use the following procedure to start any of these analysis job types:
++ Entities
++ Events
++ Key phrases
++ Personally identifiable information \(PII\)
++ Primary language
++ Sentiment
++ Target sentiment
 
-**To create an events detection job**
+**To create an analysis job**
 
 1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/)
 
@@ -10,11 +17,20 @@ You can use the Amazon Comprehend console to create and manage asynchronous even
 
 1. Under **Job settings**, give the analysis job a unique name\.
 
-1. For **Analysis type**, choose **Events**\.
+1. For **Analysis type**, choose one of the **Built\-in** analysis types\.
 
-1. For **Language**, choose the language of your input documents\.
+   If you choose **Primary langugage** or **Topic modeling**, you can skip the next step\.
 
-1. For **Target event types**, select the types of events to detect in your input documents\. For more information about supported event types, see [Event Types](how-events.md#events-types)\.
+1. Depending on the **Analysis type** that you choose, the console displays one or more of the following additional fields:
+   + **Language** is required for all built\-in analysis types except **Primary langugage** and **Topic modeling**\.
+
+     Choose the language of your input documents\.
+   + **Target event types** is required for the **Events** analysis type\.
+
+     Select the types of events to detect in your input documents\. For more information about supported event types, see [Event Types](how-events.md#events-types)\.
+   + **PII detection settings** is required for the **PII** analysis type\.
+
+     Select the output mode\. For more information about PII detection settings, see [Detect Personally Identifiable Information \(PII\)](how-pii.md)\.
 
 1. Under **Input data**, specify where the input documents are located in Amazon S3:
    + To analyze your own documents, choose **My documents**, and choose **Browse S3** to provide the path to the bucket or folder that contains your files\.

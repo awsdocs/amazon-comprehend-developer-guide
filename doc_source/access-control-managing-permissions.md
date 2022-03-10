@@ -158,9 +158,9 @@ You can also create your own custom IAM policies to allow permissions for Amazon
 
 ## Role\-Based Permissions Required for Asynchronous Operations<a name="auth-role-permissions"></a>
 
-To use the Amazon Comprehend asynchronous operations, you must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection\. You do this by creating a data access role in your account to trust the Amazon Comprehend service principal\. For more information about creating a role, see [Creating a Role to Delegate Permissions to an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *AWS Identity and Access Management User Guide*\. 
+To use the Amazon Comprehend asynchronous operations, you must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection\. You do this by creating a data access role in your account with a trust policy to trust the Amazon Comprehend service principal\. For more information about creating a role, see [Creating a Role to Delegate Permissions to an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *AWS Identity and Access Management User Guide*\. 
 
-The following is the role's trust policy:
+The following shows an example trust policy for the role that you create\. To help with [confused deputy prevention](cross-service-confused-deputy-prevention.md), you restrict the scope of the permission by using one or more global condition context keys\. Set the `aws:SourceAccount` value to your account ID\. If you use the `ArnEquals` condition, set the `aws:SourceArn` value to the ARN of the job\. Use a wildcard for the job number in the ARN, because Amazon Comprehend generates this number as part of job creation\. 
 
 ```
 {
@@ -171,15 +171,21 @@ The following is the role's trust policy:
       "Principal": {
         "Service": "comprehend.amazonaws.com"
       },
-      "Action": "sts:AssumeRole"
+      "Action": "sts:AssumeRole",
+      "Condition": {
+          "StringEquals": {
+              "aws:SourceAccount": "111122223333"
+          },
+          "ArnEquals": {
+              "aws:SourceArn": "arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/*"
+          }
+      }
     }
   ]
 }
 ```
 
-After you have created the role, you must create an access policy for that role\. This should grant the Amazon S3 `GetObject` and `ListBucket` permissions to the Amazon S3 bucket that contains your input data, and the Amazon S3 `PutObject` permission to your Amazon S3 output data bucket\. 
-
-The following example access policy contains those permissions\.
+After you create the role, create an access policy for that role\. This should grant the Amazon S3 `GetObject` and `ListBucket` permissions to the Amazon S3 bucket that contains your input data, and the Amazon S3 `PutObject` permission to your Amazon S3 output data bucket\. 
 
 ## Customer Managed Policy Examples<a name="access-policy-customer-managed-examples"></a>
 

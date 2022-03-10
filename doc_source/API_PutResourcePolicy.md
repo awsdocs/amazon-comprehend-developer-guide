@@ -84,7 +84,7 @@ HTTP Status Code: 400
 
 The following example shows a resource\-based policy for a custom model in Amazon Comprehend\. The policy allows an entity in another AWS account to import the model that the policy is attached to\. The policy specifies the authorized entity for the `Principal` attribute, and it specifies the ARN of the model version for the `Resource` attribute\.
 
-#### <a name="w71aac49b5d149c15b3b5"></a>
+#### <a name="w75aac49b5d155c15b3b5"></a>
 
 ```
 {
