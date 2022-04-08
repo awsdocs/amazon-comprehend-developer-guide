@@ -1,14 +1,14 @@
-# Detecting Named Entities<a name="get-started-api-entities"></a>
+# Detecting named entities<a name="get-started-api-entities"></a>
 
-To determine the named entities in a document, use the Amazon Comprehend [DetectEntities](API_DetectEntities.md) operation\. To detect entities in up to 25 documents in a batch, use the [BatchDetectEntities](API_BatchDetectEntities.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
+To determine the named entities in a document, use the Amazon Comprehend [DetectEntities](API_DetectEntities.md) operation\. To detect entities in up to 25 documents in a batch, use the [BatchDetectEntities](API_BatchDetectEntities.md) operation\. For more information, see [Real\-time batch APIs](get-started-batch.md)\.
 
 **Topics**
-+ [Detecting Named Entities Using the AWS Command Line Interface](#get-started-api-entities-cli)
-+ [Detecting Named Entities Using the AWS SDK for Java](#get-started-api-entities-java)
-+ [Detecting Named Entities Using the AWS SDK for Python \(Boto\)](#get-started-api-entities-python)
-+ [Detecting Entities Using the AWS SDK for \.NET](#get-started-api-entities-c-sharp)
++ [Detecting named entities using the AWS Command Line Interface](#get-started-api-entities-cli)
++ [Detecting named entities using the AWS SDK for Java](#get-started-api-entities-java)
++ [Detecting named entities using the AWS SDK for Python \(Boto\)](#get-started-api-entities-python)
++ [Detecting entities using the AWS SDK for \.NET](#get-started-api-entities-c-sharp)
 
-## Detecting Named Entities Using the AWS Command Line Interface<a name="get-started-api-entities-cli"></a>
+## Detecting named entities using the AWS Command Line Interface<a name="get-started-api-entities-cli"></a>
 
 The following example demonstrates using the `DetectEntities` operation using the AWS CLI\. You must specify the language of the input text\. 
 
@@ -45,7 +45,7 @@ Amazon Comprehend responds with the following:
 }
 ```
 
-## Detecting Named Entities Using the AWS SDK for Java<a name="get-started-api-entities-java"></a>
+## Detecting named entities using the AWS SDK for Java<a name="get-started-api-entities-java"></a>
 
 The following example uses the `DetectEntities` operation with Java\. You must specify the language of the input text\.
 
@@ -57,7 +57,7 @@ import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.DetectEntitiesRequest;
 import com.amazonaws.services.comprehend.model.DetectEntitiesResult;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
@@ -67,13 +67,13 @@ public class App
         // Create credentials using a provider chain. For more information, see
         // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
         AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
- 
+
         AmazonComprehend comprehendClient =
             AmazonComprehendClientBuilder.standard()
                                          .withCredentials(awsCreds)
                                          .withRegion("region")
                                          .build();
-                                         
+
         // Call detectEntities API
         System.out.println("Calling DetectEntities");
         DetectEntitiesRequest detectEntitiesRequest = new DetectEntitiesRequest().withText(text)
@@ -85,7 +85,7 @@ public class App
 }
 ```
 
-## Detecting Named Entities Using the AWS SDK for Python \(Boto\)<a name="get-started-api-entities-python"></a>
+## Detecting named entities using the AWS SDK for Python \(Boto\)<a name="get-started-api-entities-python"></a>
 
 The following example uses the `DetectEntities` operation with Python\. You must specify the language of the input text\.
 
@@ -101,9 +101,9 @@ print(json.dumps(comprehend.detect_entities(Text=text, LanguageCode='en'), sort_
 print('End of DetectEntities\n')
 ```
 
-## Detecting Entities Using the AWS SDK for \.NET<a name="get-started-api-entities-c-sharp"></a>
+## Detecting entities using the AWS SDK for \.NET<a name="get-started-api-entities-c-sharp"></a>
 
-The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
+The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS guide for \.NET developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
 
 ```
 using System;
@@ -129,7 +129,7 @@ namespace Comprehend
             };
             DetectEntitiesResponse detectEntitiesResponse = comprehendClient.DetectEntities(detectEntitiesRequest);
             foreach (Entity e in detectEntitiesResponse.Entities)
-                Console.WriteLine("Text: {0}, Type: {1}, Score: {2}, BeginOffset: {3}, EndOffset: {4}", 
+                Console.WriteLine("Text: {0}, Type: {1}, Score: {2}, BeginOffset: {3}, EndOffset: {4}",
                     e.Text, e.Type, e.Score, e.BeginOffset, e.EndOffset);
             Console.WriteLine("Done");
         }

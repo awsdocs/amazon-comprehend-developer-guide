@@ -1,4 +1,4 @@
-# AWS Managed Policies for Amazon Comprehend<a name="security-iam-awsmanpol"></a>
+# AWS managed policies for Amazon Comprehend<a name="security-iam-awsmanpol"></a>
 
 
 
@@ -47,6 +47,7 @@ This policy grants read\-only permissions to run all Amazon Comprehend actions *
 +  `StartEntitiesDetectionJob`
 +  `StartKeyPhrasesDetectionJob`
 +  `StartSentimentDetectionJob`
++  `StartTargetedSentimentDetectionJob`
 +  `StartTopicsDetectionJob`
 
 ```
@@ -72,6 +73,7 @@ This policy grants read\-only permissions to run all Amazon Comprehend actions *
                 "comprehend:DescribePiiEntitiesDetectionJob",
                 "comprehend:DescribeResourcePolicy",
                 "comprehend:DescribeSentimentDetectionJob",
+                "comprehend:DescribeTargetedSentimentDetectionJob",
                 "comprehend:DescribeTopicsDetectionJob",
                 "comprehend:DetectDominantLanguage",
                 "comprehend:DetectEntities",
@@ -90,6 +92,7 @@ This policy grants read\-only permissions to run all Amazon Comprehend actions *
                 "comprehend:ListKeyPhrasesDetectionJobs",
                 "comprehend:ListPiiEntitiesDetectionJobs",
                 "comprehend:ListSentimentDetectionJobs",
+                "comprehend:ListTargetedSentimentDetectionJobs",
                 "comprehend:ListTagsForResource",
                 "comprehend:ListTopicsDetectionJobs"
             ],
@@ -111,6 +114,7 @@ View details about updates to AWS managed policies for Amazon Comprehend since t
 
 | Change | Description | Date | 
 | --- | --- | --- | 
+|  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  |  Amazon Comprehend now allows the `comprehend:DescribeTargetedSentimentDetectionJob` and `comprehend:ListTargetedSentimentDetectionJobs` actions in the ComprehendReadOnly policy  | Mar 30, 2022 | 
 |  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  |  Amazon Comprehend now allows the `comprehend:DescribeResourcePolicy` action in the ComprehendReadOnly policy  | Feb 2, 2022 | 
 |  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  |  Amazon Comprehend now allows the `ListDocumentClassifierSummaries` and `ListEntityRecognizerSummaries` actions in the ComprehendReadOnly policy  | September 21, 2021 | 
 |  [ComprehendReadOnly](#security-iam-awsmanpol-ComprehendReadOnly) – Update to an existing policy  | Amazon Comprehend now allows the ContainsPIIEntities action in the ComprehendReadOnly policy | March 26, 2021 | 

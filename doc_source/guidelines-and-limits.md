@@ -1,4 +1,4 @@
-# Guidelines and Quotas<a name="guidelines-and-limits"></a>
+# Guidelines and quotas<a name="guidelines-and-limits"></a>
 
 Many of the Amazon Comprehend quotas shown here can be increased if needed for your applications\. For information about service quotas and to request a quota increase, see [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html)\. 
 
@@ -7,15 +7,16 @@ Remember the following information when using Amazon Comprehend\.
 **Topics**
 + [Supported Regions](#limits-regions)
 + [Overall Quotas](#limits-all)
-+ [Throttling When Using Single Transactions](#limits-throttling)
-+ [Multiple Document Operations](#limits-batch)
-+ [Asynchronous Operations](#limits-asynchronous)
-+ [Targeted Sentiment](#limits-targeted-sentiment)
-+ [Document Classification](#limits-document-classification)
-+ [Language Detection](#limits-language-detection)
++ [Throttling for single transactions](#limits-throttling)
++ [Multiple document operations](#limits-batch)
++ [Concurrent active asynchronous jobs](#limits-active-jobs)
++ [Asynchronous jobs](#limits-asynchronous)
++ [Targeted sentiment](#limits-targeted-sentiment)
++ [Document classification](#limits-document-classification)
++ [Language detection](#limits-language-detection)
 + [Events](#limits-events)
-+ [Topic Modeling](#limits-topic-modeling)
-+ [Entity Recognition](#limits-custom-entity-recognition)
++ [Topic modeling](#limits-topic-modeling)
++ [Entity recognition](#limits-custom-entity-recognition)
 
 ## Supported Regions<a name="limits-regions"></a>
 
@@ -41,11 +42,11 @@ Synchronous requests to label documents with PII using the [ContainsPiiEntities]
 
 Amazon Comprehend may store your content to continuously improve the quality of its analysis models\. See the [Amazon Comprehend FAQ](https://aws.amazon.com/comprehend/faqs/) to learn more\. 
 
-## Throttling When Using Single Transactions<a name="limits-throttling"></a>
+## Throttling for single transactions<a name="limits-throttling"></a>
 
-You may be able to avoid throttling by using the batch operations instead of the single transaction operations\. For more information, see [Multiple Document Operations](#limits-batch)\.
+You may be able to avoid throttling by using the batch operations instead of the single transaction operations\. For more information, see [Multiple document operations](#limits-batch)\.
 
-## Multiple Document Operations<a name="limits-batch"></a>
+## Multiple document operations<a name="limits-batch"></a>
 
 The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDetectEntities](API_BatchDetectEntities.md), [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md), and [BatchDetectSentiment](API_BatchDetectSentiment.md) operations have the following quotas:
 
@@ -54,11 +55,20 @@ The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDet
 | --- | --- | 
 | Documents per request | 25 | 
 
-If you plan to send more than 20 requests per second, you should consider using the batch operations\. With batch operations, you send more documents in each request, which may result in higher throughput\. For example, when you use the `DetectDominantLanguage` operation, you can send up to 20 documents per second\. However, if you use the `BatchRequestDominantLanguage` operation, you can send up to 250 documents per second, but processing speed may be lower\. For more information about throttling quotas, see [ Amazon Comprehend Quotas ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. For more information about using the multiple document API operations, see [Multiple Document Synchronous Processing](how-batch.md)\.
+If you plan to send more than 20 requests per second, you should consider using the batch operations\. With batch operations, you send more documents in each request, which may result in higher throughput\. For example, when you use the `DetectDominantLanguage` operation, you can send up to 20 documents per second\. However, if you use the `BatchRequestDominantLanguage` operation, you can send up to 250 documents per second, but processing speed may be lower\. For more information about throttling quotas, see [ Amazon Comprehend Quotas ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. For more information about using the multiple document API operations, see [Multiple document synchronous processing](concepts-processing-modes.md#how-batch)\.
 
-## Asynchronous Operations<a name="limits-asynchronous"></a>
+## Concurrent active asynchronous jobs<a name="limits-active-jobs"></a>
 
-Asynchronous batch jobs that you run using the [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md), [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md), [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md), [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md), [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) operations have the following limits:
+You create new analysis jobs using the Amazon Comprehend console or one of the `API_Start*` operations\. Each account can have up to 10 concurrent active jobs of a given job type\. 
+
+
+| Description | Quota/Guideline | 
+| --- | --- | 
+| Maximum number of concurrent active jobs per job type | 10 | 
+
+## Asynchronous jobs<a name="limits-asynchronous"></a>
+
+Asynchronous analysis jobs that you run using one of the `API_Start*` operations have the following limits:
 
 
 | Description | Quota/Guideline | 
@@ -72,9 +82,9 @@ You should use the asynchronous operations:
 + To analyze more than 25 documents at a time
 + To analyze documents larger than 5,000 bytes for keywords and entities
 
-For more information, see [Asynchronous Batch Processing](how-async.md)\.
+For more information, see [Asynchronous batch processing](concepts-processing-modes.md#how-async)\.
 
-## Targeted Sentiment<a name="limits-targeted-sentiment"></a>
+## Targeted sentiment<a name="limits-targeted-sentiment"></a>
 
 Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with the [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) operation have the following limits:
 
@@ -89,7 +99,7 @@ Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with 
 | Maximum number of files, one document per file | 30,000 | 
 | Maximum number of lines, one document per line \(for all files in a request\) | 30,000 | 
 
-## Document Classification<a name="limits-document-classification"></a>
+## Document classification<a name="limits-document-classification"></a>
 
 Document classifier training jobs started with the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation, asynchronous document classification jobs started with the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md), and synchronous document classification requests started with the [ClassifyDocument](API_ClassifyDocument.md) operation have the following limits: 
 
@@ -124,7 +134,7 @@ Document classifier training jobs started with the [CreateDocumentClassifier](AP
 | Maximum throughput per inference unit \(characters\) | 100/second | 
 | Maximum throughput per inference unit \(documents\) | 2/second | 
 
-## Language Detection<a name="limits-language-detection"></a>
+## Language detection<a name="limits-language-detection"></a>
 
 The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [DetectDominantLanguage](API_DetectDominantLanguage.md) operations and asynchronous jobs started with the [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) operation have the following limitations:
 + They don't support phonetic language detection\. For example, they will not detect "arigato" as Japanese nor "nihao" as Chinese\.
@@ -144,7 +154,7 @@ Events detection jobs created with the [StartEventsDetectionJob](API_StartEvents
 | Maximum number of files, one document per file | 5,000 | 
 | Maximum number of lines, one document per line \(for all files in request\) | 5,000 | 
 
-## Topic Modeling<a name="limits-topic-modeling"></a>
+## Topic modeling<a name="limits-topic-modeling"></a>
 
 Topic detection jobs created with the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation have the following limits:
 
@@ -161,7 +171,7 @@ Topic detection jobs created with the [StartTopicsDetectionJob](API_StartTopicsD
 
 For best results, you should include at least 1,000 input documents\.
 
-## Entity Recognition<a name="limits-custom-entity-recognition"></a>
+## Entity recognition<a name="limits-custom-entity-recognition"></a>
 
 Entity recognizer training jobs started with the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) operation, asynchronous entity recognition jobs started with the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation, and synchronous entity recognition requests started with the [DetectEntities](API_DetectEntities.md) operation have the following limits:
 

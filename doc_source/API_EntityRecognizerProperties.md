@@ -31,7 +31,7 @@ Required: No
  ** LanguageCode **   <a name="comprehend-Type-EntityRecognizerProperties-LanguageCode"></a>
  The language of the input documents\. All documents must be in the same language\. Only English \("en"\) is currently supported\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
+Valid Values:` en | es | fr | it | de | pt`   
 Required: No
 
  ** Message **   <a name="comprehend-Type-EntityRecognizerProperties-Message"></a>

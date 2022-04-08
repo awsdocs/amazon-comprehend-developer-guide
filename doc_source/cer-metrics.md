@@ -1,4 +1,4 @@
-# Custom Entity Recognizer Metrics<a name="cer-metrics"></a>
+# Custom entity recognizer metrics<a name="cer-metrics"></a>
 
 Amazon Comprehend provides you with metrics to help you estimate how well an entity recognizer should work for your job\. They are based on training the recognizer model, and so while they accurately represent the performance of the model during training, they are only an approximation of the API performance during entity discovery\. 
 
@@ -23,7 +23,7 @@ Three metrics are available, both as global and entity metrics:
    It is calculated as *recall = tp / \(tp \+ fn\)*\. For example if a model correctly identifies one entity, but misses two other instances where that entity is present, the result is one true positive and two false negatives\. In this case, *recall = 1 / \(1 \+ 2\)*\. The recall is 33\.33%, as one entity is correct out of a possible three examples\.
 
   
-+ **F1 Score** 
++ **F1 score** 
 
   This is a combination of the Precision and Recall metrics, which measures the overall accuracy of the model for custom entity recognition\. The F1 score is the harmonic mean of the Precision and Recall metrics: *F1 = 2 \* Precision \* Recall / \(Precision \+ Recall\) *\.
 **Note**  
@@ -33,7 +33,7 @@ Intuitively, the harmonic mean penalizes the extremes more than the simple avera
 
   
 
-**Global and Individual Entity Metrics**
+**Global and individual entity metrics**
 
 The relationship between global and individual entity metrics can be seen when analyzing the following sentence for entities that are either a *place* or a *person*
 
@@ -111,7 +111,7 @@ Global:
 
 
 
-## Improving Custom Entity Recognizer Performance<a name="cer-performance"></a>
+## Improving custom entity recognizer performance<a name="cer-performance"></a>
 
 These metrics provide an insight into how accurately the trained model will perform when you use it to identify entities\. Here are a few options you can use to improve your metrics if they are lower than your expectations:
 

@@ -1,11 +1,11 @@
-# Scheduled Scaling<a name="ScheduledScaling"></a>
+# Scheduled scaling<a name="ScheduledScaling"></a>
 
-With scheduled scaling, you can adjust endpoint provisioning to fit your capacity needs on a specified schedule\. Scheduled scaling automatically adjusts the number of inference units to accommodate surges of use at specific times\. You can use scheduled scaling for document classification endpoints and entity recognizer endpoints\. For additional information about scheduled scaling, see [Scheduled Scaling for Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html)\.
+With scheduled scaling, you can adjust endpoint provisioning to fit your capacity needs on a specified schedule\. Scheduled scaling automatically adjusts the number of inference units to accommodate surges of use at specific times\. You can use scheduled scaling for document classification endpoints and entity recognizer endpoints\. For additional information about scheduled scaling, see [Scheduled scaling for Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html)\.
 
 **Note**  
 The following examples are formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
-## Setting up Scheduled Scaling<a name="setup-scheduled-scaling"></a>
+## Setting up scheduled scaling<a name="setup-scheduled-scaling"></a>
 
 To set up scheduled scaling for an endpoint, you use AWS CLI commands to register a scalable target and then create a scheduled action\. The scalable target defines inference units as the resource used to adjust endpoint provisioning, and the scheduled action controls the auto scaling of the provisioned capacity at specific times\.
 
@@ -35,7 +35,7 @@ To set up scheduled scaling for an endpoint, you use AWS CLI commands to registe
        --max-capacity 2
    ```
 
-1. Create a scheduled action\. The following examples create a scheduled action to automatically adjust the provisioned capacity every day at 12:00 UTC with a minimum of 2 inference units and a maximum of 5 inference units\. For more information about chronological expressions and scheduled scaling, see [Schedule Expressions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html)\. 
+1. Create a scheduled action\. The following examples create a scheduled action to automatically adjust the provisioned capacity every day at 12:00 UTC with a minimum of 2 inference units and a maximum of 5 inference units\. For more information about chronological expressions and scheduled scaling, see [Schedule expressions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html)\. 
 
    For a document classification endpoint, use the following AWS CLI command:
 
@@ -61,7 +61,7 @@ To set up scheduled scaling for an endpoint, you use AWS CLI commands to registe
        --scalable-target-action MinCapacity=2,MaxCapacity=5
    ```
 
-## Removing Scheduled Scaling<a name="remove-scheduled-scaling"></a>
+## Removing scheduled scaling<a name="remove-scheduled-scaling"></a>
 
 To remove scheduled scaling for an endpoint, you use AWS CLI commands to delete the scheduled action and then deregister the scalable target\.
 

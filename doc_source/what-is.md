@@ -1,39 +1,50 @@
-# What Is Amazon Comprehend?<a name="what-is"></a>
+# What is Amazon Comprehend?<a name="what-is"></a>
 
-Amazon Comprehend uses natural language processing \(NLP\) to extract insights about the content of documents\. Amazon Comprehend processes any text file in UTF\-8 format, image files \(JPG, PNG, or TIFF\), and semi\-structured documents \(PDF or Word files\)\. It develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document\. Use Amazon Comprehend to create new products based on understanding the structure of documents\. For example, using Amazon Comprehend you can search social networking feeds for mentions of products or scan an entire document repository for key phrases\.
+Amazon Comprehend uses natural language processing \(NLP\) to extract insights about the content of documents\. It develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document\. Use Amazon Comprehend to create new products based on understanding the structure of documents\. For example, using Amazon Comprehend you can search social networking feeds for mentions of products or scan an entire document repository for key phrases\.
+
+You can access Amazon Comprehend document analysis capabilities using the Amazon Comprehend console or using the Amazon Comprehend APIs\. You can run real\-time analysis for small workloads or you can start asynchronous analysis jobs for large document sets\. You can use the pre\-trained models that Amazon Comprehend provides, or you can train your own custom models for classification and entity recognition\.
+
+All of the Amazon Comprehend features can analyze UTF\-8 text documents as the input files\. In addition, custom entity recognition can analyze image files, PDF files, and Word files\. 
+
+Amazon Comprehend can examine and analyze documents in a variety of languages, depending on the specific feature\. For more information, see [Languages supported in Amazon Comprehend](supported-languages.md)\. Amazon Comprehend's [Dominant language](how-languages.md) capability can examine documents and determine the dominant language for a far wider selection of languages\.
 
 **Topics**
-+ [Amazon Comprehend Insights](#what-is-entities)
-+ [Comprehend Custom](#how-doc-class)
-+ [Document Clustering \(Topic Modeling\)](#how-topics)
++ [Amazon Comprehend insights](#what-is-insights)
++ [Amazon Comprehend Custom](#how-doc-class)
++ [Document clustering \(topic modeling\)](#how-topics)
 + [Examples](#how-examples)
 + [Benefits](#how-benefits)
-+ [Are You a First\-time User of Amazon Comprehend?](#first-time-user)
++ [Amazon Comprehend pricing](#what-pricing)
++ [Are you a first\-time user of Amazon Comprehend?](#first-time-user)
 
-## Amazon Comprehend Insights<a name="what-is-entities"></a>
+## Amazon Comprehend insights<a name="what-is-insights"></a>
 
-You work with one or more documents at a time to evaluate their content and gain insights about them\. Some of the insights that Amazon Comprehend develops about a document include:
-+ **Entities** – Amazon Comprehend returns a list of entities, such as people, places, and locations, identified in a document\. For more information, see [Detect Entities](how-entities.md)\.
-+ **Key phrases** – Amazon Comprehend extracts key phrases that appear in a document\. For example, a document about a basketball game might return the names of the teams, the name of the venue, and the final score\. For more information, see [Detect Key Phrases](how-key-phrases.md)\.
-+ **PII** – Amazon Comprehend analyzes documents to detect personal data that could be used to identify an individual, such as an address, bank account number, or phone number\. For more information, see [Detect Personally Identifiable Information \(PII\)](how-pii.md)\.
-+ **Language** – Amazon Comprehend identifies the dominant language in a document\. Amazon Comprehend can identify 100 languages\. For more information, see [Detect the Dominant Language](how-languages.md)\.
-+ **Sentiment** – Amazon Comprehend determines the dominant sentiment of a document\. Sentiment can be positive, neutral, negative, or mixed\. For more information, see [Determine Sentiment](how-sentiment.md)\. 
-+ **Targeted Sentiment** – Amazon Comprehend determines the sentiment associated with specific entities in a document\. The sentiment of each entity occurrence can be positive, neutral, negative, or mixed\. For more information, see [Analyze Targeted Sentiment](how-targeted-sentiment.md)\. 
-+ **Syntax** – Amazon Comprehend parses each word in your document and determines the part of speech for the word\. For example, in the sentence "It is raining today in Seattle," "it" is identified as a pronoun, "raining" is identified as a verb, and "Seattle" is identified as a proper noun\. For more information, see [Analyze Syntax](how-syntax.md)\. 
+Amazon Comprehend uses a pre\-trained model to examine and analyze a document or set of documents to gather insights about it\. This model is continuously trained on a large body of text so that there is no need for you to provide training data\. 
 
-## Comprehend Custom<a name="how-doc-class"></a>
+Amazon Comprehend gathers the following types of insights:
++ **Entities** – References to the names of people, places, items, and locations contained in a document\. 
++ **Key phrases** – Phrases that appear in a document\. For example, a document about a basketball game might return the names of the teams, the name of the venue, and the final score\. 
++ **Personally Identifiable Information \(PII\)** – Personal data that can identify an individual, such as an address, bank account number, or phone number\. 
++ **Language** – The dominant language of a document\. 
++ **Sentiment** – The dominant sentiment of a document, which can be positive, neutral, negative, or mixed\. 
++ **Targeted sentiment** – The sentiments associated with specific entities in a document\. The sentiment for each entity occurrence can be positive, negative, neutral or mixed\. 
++ **Syntax** – The parts of speech for each word in the document\. 
 
-Customize Comprehend for your specific requirements without the skillset required to build machine learning\-based NLP solutions\. Using automatic machine learning, or AutoML, Comprehend Custom builds customized NLP models on your behalf, using data you already have\.
+For more information, see [Insights](concepts-insights.md)\.
 
-**Custom Classification** – Create custom document classifiers to organize your documents into your own categories\. For each classification label, provide a set of documents that best represent that label and train your classifier on it\. Once trained, a classifier can be used on any number of unlabeled document sets\. You can use the console for a code\-free experience or install the latest AWS SDK\. For more information, see [Custom Classification](how-document-classification.md)\.
+## Amazon Comprehend Custom<a name="how-doc-class"></a>
 
-**Custom Entities** – Create custom entity types that analyze text for your specific terms and noun\-based phrases\. You can train custom entities to extract terms like policy numbers, or phrases that imply a customer escalation\. To train the model, you provide a list of the entities and a set of documents that contain them\. Once the model is trained, you can submit analysis jobs against it to extract their custom entities\. For more information, see [Custom Entity Recognition](custom-entity-recognition.md)\. 
+You can customize Amazon Comprehend for your specific requirements without the skillset required to build machine learning\-based NLP solutions\. Using automatic machine learning, or AutoML, Amazon Comprehend Custom builds customized NLP models on your behalf, using data you already have\.
 
-## Document Clustering \(Topic Modeling\)<a name="how-topics"></a>
+**Custom classification** – Create custom classification models \(classifiers\) to organize your documents into your own categories\. For each classification label, provide a set of documents that best represent that label and train your classifier on it\. Use the trained classifier to analyze any number of unlabeled document sets\. You can run custom classification from the console or from your code using the API or one of the SDKs\. For more information, see [Custom classification](how-document-classification.md)\.
 
-You can also use Amazon Comprehend to examine a corpus of documents to organize them based on similar keywords within them\. Document clustering \(topic modeling\) is useful to organize a large corpus of documents into topics or clusters that are similar based on the frequency of words within them\.
+**Custom entity recognition** – Create custom entity recognition models \(recognizers\) that can analyze text for your specific terms and noun\-based phrases\. For example, you can train custom entities to extract terms like policy numbers or phrases that imply a customer escalation\. To train the model, you provide a list of the entities and a set of documents that contain them\. Once the model is trained, you can submit analysis jobs against it to extract their custom entities\. For more information, see [Custom entity recognition](custom-entity-recognition.md)\. 
 
-Topic modeling is a asynchronous process, you submit a set of documents for processing and then later get the results when processing is complete\. Amazon Comprehend does topic modeling on large document sets, for best results you should include at least 1,000 documents when you submit a topic modeling job\. For more information, see [Topic Modeling](topic-modeling.md)\.
+## Document clustering \(topic modeling\)<a name="how-topics"></a>
+
+You can also use Amazon Comprehend to examine a corpus of documents to organize them based on similar keywords within them\. Document clustering \(topic modeling\) is useful to organize a large corpus of documents into topics or clusters that are similar based on word frequency\.
+
+Topic modeling is an asynchronous process, so you submit a set of documents for processing and get the results later when processing is complete\. Amazon Comprehend does topic modeling on large document sets\. For best results, include at least 1,000 documents when you submit a topic modeling job\. For more information, see [Topic modeling](topic-modeling.md)\.
 
 ## Examples<a name="how-examples"></a>
 
@@ -51,19 +62,29 @@ Use Amazon Comprehend topic modeling to discover the topics that your customers 
 ## Benefits<a name="how-benefits"></a>
 
 Some of the benefits of using Amazon Comprehend include:
-+ **Integrate powerful natural language processing into your apps**—Amazon Comprehend removes the complexity of building text analysis capabilities into your applications by making powerful and accurate natural language processing available with a simple API\. You don't need textual analysis expertise to take advantage of the insights that Amazon Comprehend produces\.
-+ **Deep learning based natural language processing**—Amazon Comprehend uses deep learning technology to accurately analyze text\. Our models are constantly trained with new data across multiple domains to improve accuracy\.
-+ **Scalable natural language processing**—Amazon Comprehend enables you to analyze millions of documents so that you can discover the insights that they contain\.
-+ **Integrate with other AWS services**—Amazon Comprehend is designed to work seamlessly with other AWS services like Amazon S3, AWS KMS, and AWS Lambda\. Store your documents in Amazon S3, or analyze real\-time data with Kinesis Data Firehose\. Support for AWS Identity and Access Management \(IAM\) makes it easy to securely control access to Amazon Comprehend operations\. Using IAM, you can create and manage AWS users and groups to grant the appropriate access to your developers and end users\.
-+ **Encryption of output results and volume data **—Amazon S3 already enables you to encrypt your input documents, and Amazon Comprehend extends this even farther\. By using your own KMS key, you can not only encrypt the output results of your job, but also the data on the storage volume attached to the compute instance that processes the analysis job\. The result is significantly enhanced security\.
-+ **Low cost**—With Amazon Comprehend, you only pay for the documents that you analyze\. There are no minimum fees or upfront commitments\. 
++ **Integrate powerful natural language processing into your apps** – Amazon Comprehend removes the complexity of building text analysis capabilities into your applications by making powerful and accurate natural language processing available with a simple API\. You don't need textual analysis expertise to take advantage of the insights that Amazon Comprehend produces\.
++ **Deep learning based natural language processing** – Amazon Comprehend uses deep learning technology to accurately analyze text\. Our models are constantly trained with new data across multiple domains to improve accuracy\.
++ **Scalable natural language processing** – Amazon Comprehend enables you to analyze millions of documents so that you can discover the insights that they contain\.
++ **Integrate with other AWS services** – Amazon Comprehend is designed to work seamlessly with other AWS services like Amazon S3, AWS KMS, and AWS Lambda\. Store your documents in Amazon S3, or analyze real\-time data with Kinesis Data Firehose\. Support for AWS Identity and Access Management \(IAM\) makes it easy to securely control access to Amazon Comprehend operations\. Using IAM, you can create and manage AWS users and groups to grant the appropriate access to your developers and end users\.
++ **Encryption of output results and volume data ** – Amazon S3 already enables you to encrypt your input documents, and Amazon Comprehend extends this even farther\. By using your own KMS key, you can not only encrypt the output results of your job, but also the data on the storage volume attached to the compute instance that processes the analysis job\. The result is significantly enhanced security\.
++ **Low cost** – With Amazon Comprehend, there are no minimum fees or upfront commitments\. You pay for the documents that you analyze and custom models that you train\. 
 
-## Are You a First\-time User of Amazon Comprehend?<a name="first-time-user"></a>
+## Amazon Comprehend pricing<a name="what-pricing"></a>
+
+There is a usage charge for running real\-time or asynchronous analysis jobs\. You pay to train custom models, and you pay for custom model management\. For real\-time requests using custom models, you pay for the endpoint from the time that you start your endpoint until you delete the endpoint\.
+
+For the rates and additional detailed information, see [http://aws.amazon.com/comprehend/pricing](http://aws.amazon.com/comprehend/pricing)\.
+
+## Are you a first\-time user of Amazon Comprehend?<a name="first-time-user"></a>
 
 If you are a first\-time user of Amazon Comprehend, we recommend that you read the following sections in order:
 
-1. **[How It Works](how-it-works.md)** – This section introduces Amazon Comprehend concepts\. 
+1. **[How it works](how-it-works.md)** – This section introduces Amazon Comprehend concepts\. 
 
-1. **[Getting Started with Amazon Comprehend](getting-started.md)** – In this section, you set up your account and test Amazon Comprehend\. 
+1. **[Setting up](setting-up.md)** – In this section, you create an IAM user and set up the AWS CLI\. 
 
-1. ** [API Reference](API_Reference.md) ** – In this section you'll find reference documentation for Amazon Comprehend operations\.
+1. **[Getting started with Amazon Comprehend](getting-started.md)** – In this section, you run a Amazon Comprehend analysis job\. 
+
+1. **[Tutorial: Analyzing insights from customer reviews with Amazon Comprehend](tutorial-reviews.md)** – In this section, you perform sentiment and entities analysis and visualize the results\.
+
+1. ** [API reference](API_Reference.md) ** – In this section you'll find reference documentation for Amazon Comprehend operations\.

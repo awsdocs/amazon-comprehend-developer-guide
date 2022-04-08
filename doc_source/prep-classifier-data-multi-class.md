@@ -1,12 +1,12 @@
-# Multi\-Class Mode<a name="how-document-classification-training-multi-class"></a>
+# Multi\-class mode<a name="prep-classifier-data-multi-class"></a>
 
 In multi\-class classification, each document can have one and only one class assigned to it\. The individual classes are mutually exclusive\. For example, a movie can be classed as a documentary or as science fiction, but not both at the same time\. 
 
-After you train the custom classifier, you can analyze documents in either asynchronous or synchronous operations\. You can analyze a large number of documents at once using the asynchronous operation\. The resulting analysis is returned in a separate file\. Using the synchronous operation, you can only analyze a single document, but you can get results in real time\. These options are not available when you use multi\-label mode\. For more information, see [Asynchronous Classification](how-document-classification.md#multiclass-async-sync)\.
+After you train the custom classifier, you can analyze documents in either asynchronous or synchronous operations\. You can analyze a large number of documents at once using the asynchronous operation\. The resulting analysis is returned in a separate file\. Using the synchronous operation, you can only analyze a single document, but you can get results in real time\. These options are not available when you use multi\-label mode\. 
 
 To train a custom classifier, you must provide labeled training data\. The labels in your training data should resemble the type of output that the trained model produces later when you provide unlabeled input\. You can provide training data as a CSV file or as an augmented manifest file from SageMaker Ground Truth\.
 
-## CSV File<a name="how-document-classification-training-multi-class-csv"></a>
+## CSV file<a name="prep-classifier-data-multi-class-csv"></a>
 
 To train a custom classifier, you can provide training data as a two\-column CSV file\. In it, labels are provided in the first column, and documents are provided in the second\.
 
@@ -28,7 +28,7 @@ For example, the following line belongs to a CSV file that trains a custom class
 SPAM, "Paulo, your $1000 award is waiting for you! Claim it while you still can at http://example.com."
 ```
 
-## Augmented Manifest File<a name="how-document-classification-training-multi-class-manifest"></a>
+## Augmented manifest file<a name="prep-classifier-data-multi-class-manifest"></a>
 
 An augmented manifest file is a labeled dataset that is produced by SageMaker Ground Truth\. Ground Truth is a data labeling service that helps you—or a workforce that you employ—build training datasets for machine learning models\. Amazon Comprehend accepts augmented manifest files as training data for custom models\. You can provide these files when you create a custom classifier by using the Amazon Comprehend console or the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) API action\. 
 

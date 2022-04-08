@@ -1,10 +1,12 @@
-# Creating a Custom Classifier \(Console\)<a name="getting-started-console-classifier"></a>
+# Train custom classifiers \(console\)<a name="create-custom-classifier-console"></a>
 
-Create a custom document classifier to identify the categories of a set of documents\.
+You can create and train a custom classifier using the console, and then use the custom classifier to analyze your documents\.
 
-To train the classifier, you need a set of training documents\. You label these documents with the categories that you want the document classifier to recognize\. For more information on these training documents, see [Custom Classification](how-document-classification.md)\.
+To train a custom classifier, you need a set of training documents\. You label these documents with the categories that you want the document classifier to recognize\. For more information about these training documents, see [Custom classification](how-document-classification.md)\.
 
-**To train a document classifier**
+
+
+**To create and train a document classifier**
 
 1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/home?region=us-east-1#api-explorer:)
 
@@ -20,7 +22,7 @@ To train the classifier, you need a set of training documents\. You label these 
    + If you are using a key associated with the current account, choose the key ID for **KMS key ID**\.
    + If you are using a key associated with a different account, enter the ARN for the key ID under **KMS key ARN**\.
 **Note**  
-For more information on creating and using KMS keys and the associated encryption, see [Key Management Service \(KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
+For more information on creating and using KMS keys and the associated encryption, see [Key management service \(KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
 
 1. Under **Data specifications**, choose which classifier mode to use\.
    + **Single\-label mode:** Choose this option if the categories you are assigning to documents are mutually exclusive and you are training your classifier to assign one and only one label to each document\.
@@ -32,7 +34,7 @@ For more information on creating and using KMS keys and the associated encryptio
    + **CSV file** — A two\-column CSV file, where labels are provided in the first column, and documents are provided in the second\.
    + **Augmented manifest** — A labeled dataset that is produced by Amazon SageMaker Ground Truth\. This file is in JSON lines format\. Each line is a complete JSON object that contains a training document and its associated labels\.
 
-   For more information about these formats, and for examples, see [Training a Custom Classifier](how-document-classification-training.md)\.
+   For more information about these formats, and for examples, see [Preparing training data](prep-classifier-data.md)\.
 
 1. Under **Training dataset**, enter the location of the Amazon S3 bucket that contains your training documents or navigate to it by choosing **Select folder**\. The IAM role you're using for access permissions for the training job must have reading permissions for the S3 bucket\. 
 
@@ -40,7 +42,7 @@ For more information on creating and using KMS keys and the associated encryptio
    + **Autosplit**: Autosplit automatically selects 10% of your provided training data to use as testing data 
    + \(Optional\) **Customer provided**: When you select customer provided, you can specify exactly what test data you want to use\. If you select Customer provided test dataset, enter the URL of the annotations file in Amazon S3\. You can also navigate to the bucket or folder in Amazon S3 where the annotation files are located and choose **Select folder**\.
 
-1. \(Optional\) If you want Amazon Comprehend to create a confusion matrix that provides metrics on how well the classifier performed during training, enter the location of an Amazon S3 bucket where it will be saved\. For more information, see [Confusion Matrix](conf-matrix.md)\.
+1. \(Optional\) If you want Amazon Comprehend to create a confusion matrix that provides metrics on how well the classifier performed during training, enter the location of an Amazon S3 bucket where it will be saved\. For more information, see [Confusion matrix](cer-doc-class.md#conf-matrix)\.
 
    \(Optional\) If you choose to encrypt the output result from your training job, choose **Encryption** and then choose whether to use a KMS key associated with the current account, or one from another account\.
    + If you are using a key associated with the current account, choose the key alias for **KMS key ID**\.
@@ -50,7 +52,7 @@ For more information on creating and using KMS keys and the associated encryptio
 
    If you don't already have an IAM role with these permissions, choose **Create an IAM role** to make one\. Choose the access permissions to grant this role, and then choose a name suffix to distinguish the role from IAM roles in your account\.
 **Note**  
-If the input documents are encrypted, the IAM role used must also have `kms:Decrypt` permission\. For more information, see [Permissions Required to Use KMS Encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
+If the input documents are encrypted, the IAM role used must also have `kms:Decrypt` permission\. For more information, see [Permissions required to use KMS encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
 
 1. \(Optional\) To launch your resources into Amazon Comprehend from a VPC, enter the VPC ID under **VPC** or choose the ID from the drop\-down list\. 
 

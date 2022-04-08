@@ -1,13 +1,6 @@
-# Creating Analysis Jobs Using Built\-in models<a name="getting-started-console-events"></a>
+# Creating analysis jobs using built\-in models<a name="getting-started-console-events"></a>
 
-You can use the Amazon Comprehend console to create and manage asynchronous analysis jobs\. Your job analyzes the input documents that you store in Amazon S3 and writes the output files to your specified Amazon S3 bucket\. You can use the following procedure to start any of these analysis job types:
-+ Entities
-+ Events
-+ Key phrases
-+ Personally identifiable information \(PII\)
-+ Primary language
-+ Sentiment
-+ Target sentiment
+You can use the Amazon Comprehend console to create and manage asynchronous analysis jobs\. Your job analyzes documents stored in Amazon S3 to find entities like events, phrases, primary language, sentiment, or personally identifiable information \(PII\)\.
 
 **To create an analysis job**
 
@@ -27,10 +20,10 @@ You can use the Amazon Comprehend console to create and manage asynchronous anal
      Choose the language of your input documents\.
    + **Target event types** is required for the **Events** analysis type\.
 
-     Select the types of events to detect in your input documents\. For more information about supported event types, see [Event Types](how-events.md#events-types)\.
+     Select the types of events to detect in your input documents\. For more information about supported event types, see [Event types](how-events.md#events-types)\.
    + **PII detection settings** is required for the **PII** analysis type\.
 
-     Select the output mode\. For more information about PII detection settings, see [Detect Personally Identifiable Information \(PII\)](how-pii.md)\.
+     Select the output mode\. For more information about PII detection settings, see [PII entities](how-pii.md)\.
 
 1. Under **Input data**, specify where the input documents are located in Amazon S3:
    + To analyze your own documents, choose **My documents**, and choose **Browse S3** to provide the path to the bucket or folder that contains your files\.
@@ -46,7 +39,7 @@ You can use the Amazon Comprehend console to create and manage asynchronous anal
    + If you are using a key associated with the current account, choose the key alias or ID for **KMS key ID**\.
    + If you are using a key associated with a different account, enter the ARN for the key alias or ID under **KMS key ID**\.
 **Note**  
-For more information on creating and using KMS keys and the associated encryption, see [Key Management Service \(KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
+For more information on creating and using KMS keys and the associated encryption, see [Key management service \(KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
 
 1. Under **Access permissions**, provide an IAM role that:
    + Grants read access to the Amazon S3 location of your input documents\.
@@ -58,3 +51,5 @@ For more information on creating and using KMS keys and the associated encryptio
 1. When you have finished filling out the form, choose **Create job** to create and start the topic detection job\.
 
 The new job appears in the job list with the status field showing the status of the job\. The field can be `IN_PROGRESS` for a job that is processing, `COMPLETED` for a job that has finished successfully, and `FAILED` for a job that has an error\. You can click on a job to get more information about the job, including any error messages\.
+
+When the job is completed, Amazon Comprehend stores the analysis results in the output Amazon S3 location that you specified for the job\. For a description of the analysis results for each insight type, see [Insights](concepts-insights.md)\. 

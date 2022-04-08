@@ -16,4 +16,4 @@ There are a number of things to consider to get the best result when using annot
 + It is important that documents should be diverse in terms of word count\. For example, if all documents in the training data are short, the resulting model may have difficulty predicting entities in longer documents\.
 + Try and give the same data distribution for training as you expect to be using when you're actually detecting your custom entities \(inference time\)\. For example, at inference time, if you expect to be sending us documents that have no entities in them, this should also be part of your training document set\.
 
-For additional suggestions, see [Improving Custom Entity Recognizer Performance](https://docs.aws.amazon.com/comprehend/latest/dg/cer-metrics.html#cer-performance)\.
+For additional suggestions, see [Improving custom entity recognizer performance](https://docs.aws.amazon.com/comprehend/latest/dg/cer-metrics.html#cer-performance)\.

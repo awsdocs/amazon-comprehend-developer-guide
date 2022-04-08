@@ -68,7 +68,7 @@ Required: No
  ** [LanguageCode](#API_StartEventsDetectionJob_RequestSyntax) **   <a name="comprehend-StartEventsDetectionJob-request-LanguageCode"></a>
 The language code of the input documents\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
+Valid Values:` en`   
 Required: Yes
 
  ** [OutputDataConfig](#API_StartEventsDetectionJob_RequestSyntax) **   <a name="comprehend-StartEventsDetectionJob-request-OutputDataConfig"></a>

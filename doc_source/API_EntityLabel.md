@@ -7,13 +7,13 @@ Specifies one of the label or labels that categorize the personally identifiable
  ** Name **   <a name="comprehend-Type-EntityLabel-Name"></a>
 The name of the label\.  
 Type: String  
-Valid Values:` BANK_ACCOUNT_NUMBER | BANK_ROUTING | CREDIT_DEBIT_NUMBER | CREDIT_DEBIT_CVV | CREDIT_DEBIT_EXPIRY | PIN | EMAIL | ADDRESS | NAME | PHONE | SSN | DATE_TIME | PASSPORT_NUMBER | DRIVER_ID | URL | AGE | USERNAME | PASSWORD | AWS_ACCESS_KEY | AWS_SECRET_KEY | IP_ADDRESS | MAC_ADDRESS | ALL`   
-Required: No
+Valid Values:` BANK_ACCOUNT_NUMBER | BANK_ROUTING | CREDIT_DEBIT_NUMBER | CREDIT_DEBIT_CVV | CREDIT_DEBIT_EXPIRY | PIN | EMAIL | ADDRESS | NAME | PHONE | SSN | DATE_TIME | PASSPORT_NUMBER | DRIVER_ID | URL | AGE | USERNAME | PASSWORD | AWS_ACCESS_KEY | AWS_SECRET_KEY | IP_ADDRESS | MAC_ADDRESS`   
+Required: Yes
 
  ** Score **   <a name="comprehend-Type-EntityLabel-Score"></a>
 The level of confidence that Amazon Comprehend has in the accuracy of the detection\.  
 Type: Float  
-Required: No
+Required: Yes
 
 ## See Also<a name="API_EntityLabel_SeeAlso"></a>
 

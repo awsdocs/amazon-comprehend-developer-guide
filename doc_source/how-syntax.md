@@ -1,6 +1,6 @@
-# Analyze Syntax<a name="how-syntax"></a>
+# Syntax analysis<a name="how-syntax"></a>
 
-Use the [DetectSyntax](API_DetectSyntax.md) and [BatchDetectSyntax](API_BatchDetectSyntax.md) operations to analyze your documents to parse the words from the document and return the part of speech, or syntactic function, for each word in the document\. You can identify the nouns, verbs, adjectives and so on in your document\. Use this information to gain a richer understanding of the content of your documents, and to understand the relationship of the words in the document\.
+Use syntax analysis to parse the words from the document and return the part of speech, or syntactic function, for each word in the document\. You can identify the nouns, verbs, adjectives and so on in your document\. Use this information to gain a richer understanding of the content of your documents, and to understand the relationship of the words in the document\.
 
 For example, you can look for the nouns in a document and then look for the verbs related to those nouns\. In a sentence like "My grandmother moved her couch" you can see the nouns, "grandmother" and "couch," and the verb, "moved\." You can use this information to build applications for analyzing text for word combinations that you are interested in\.
 

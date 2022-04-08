@@ -15,7 +15,7 @@ Before you can annotate your training PDFs in SageMaker Ground Truth, you'll nee
 + [Setting up your environment](#cer-annotation-pdf-set-up)
 + [Uploading a PDF to an S3 bucket](#cer-annotation-pdf-upload)
 + [Creating an annotation job](#cer-annotation-pdf-job)
-+ [Annotating with SageMaker Ground Truth](#w75aac19c21c43c13c15)
++ [Annotating with SageMaker Ground Truth](#w82aac31c21c41c13c15)
 
 ## Setting up your environment<a name="cer-annotation-pdf-set-up"></a>
 
@@ -40,7 +40,7 @@ Before you can annotate your training PDFs in SageMaker Ground Truth, you'll nee
    This command presents a set of configuration options\. Be sure your AWS Region is correct\. For all other fields, you can either accept the default values or fill in custom values\. If you modify the AWS CloudFormation stack name, write it down as you need it in the next steps\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/deploy_guided_anno.png)
 
-   The command defines a CloudFormation stack\. This CloudFormation stack will create and manage the [AWS Lambdas](https://aws.amazon.com/lambda/), [AWS IAM](https://aws.amazon.com/iam/) roles, and [AWS S3](https://aws.amazon.com/s3/) buckets required for the annotation tool\.
+   The command defines a CloudFormation stack\. This CloudFormation stack will create and manage the [AWS lambdas](https://aws.amazon.com/lambda/), [AWS IAM](https://aws.amazon.com/iam/) roles, and [AWS S3](https://aws.amazon.com/s3/) buckets required for the annotation tool\.
 
    You can review each of these resources in the stack details page in the CloudFormation console\.
 
@@ -108,7 +108,7 @@ To view additional arguments the script supports, use the `-h` option to display
   (amazon-comprehend-semi-structured-documents-annotation-tools-main) user@3c063014d632 amazon-comprehend-semi-structured-documents-annotation-tools-main %
   ```
 
-## Annotating with SageMaker Ground Truth<a name="w75aac19c21c43c13c15"></a>
+## Annotating with SageMaker Ground Truth<a name="w82aac31c21c41c13c15"></a>
 
 Now that you have configured the required resources and created a labeling job, you can log in to the labeling portal and annotate your PDFs\.
 

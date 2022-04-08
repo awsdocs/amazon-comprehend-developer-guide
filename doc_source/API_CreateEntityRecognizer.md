@@ -85,7 +85,7 @@ Required: Yes
  ** [LanguageCode](#API_CreateEntityRecognizer_RequestSyntax) **   <a name="comprehend-CreateEntityRecognizer-request-LanguageCode"></a>
  You can specify any of the following languages supported by Amazon Comprehend: English \("en"\), Spanish \("es"\), French \("fr"\), Italian \("it"\), German \("de"\), or Portuguese \("pt"\)\. All documents must be in the same language\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
+Valid Values:` en | es | fr | it | de | pt`   
 Required: Yes
 
  ** [ModelKmsKeyId](#API_CreateEntityRecognizer_RequestSyntax) **   <a name="comprehend-CreateEntityRecognizer-request-ModelKmsKeyId"></a>
@@ -194,7 +194,7 @@ The request contains more tags than can be associated with a resource \(50 tags 
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages Supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_CreateEntityRecognizer_SeeAlso"></a>

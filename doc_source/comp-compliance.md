@@ -1,4 +1,4 @@
-# Compliance Validation for Amazon Comprehend<a name="comp-compliance"></a>
+# Compliance validation for Amazon Comprehend<a name="comp-compliance"></a>
 
 Third\-party auditors assess the security and compliance of Amazon Comprehend as part of multiple AWS compliance programs\. These include PCI, FedRAMP, HIPAA, and others\. You can download third\-party audit reports using AWS Artifact\. For more information, see [Downloading Reports in AWS Artifact](https://docs.aws.amazon.com/artifact/latest/ug/downloading-documents.html)\.
 

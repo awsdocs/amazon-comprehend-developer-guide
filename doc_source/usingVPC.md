@@ -1,4 +1,4 @@
-# Protect Jobs by Using an Amazon Virtual Private Cloud<a name="usingVPC"></a>
+# Protect jobs by using an Amazon Virtual Private Cloud<a name="usingVPC"></a>
 
 Amazon Comprehend uses a variety of security measures to ensure the safety of your data with our job containers where it's stored while being used by Amazon Comprehend\. However, job containers access AWS resources—such as the Amazon S3 buckets where you store data and model artifacts—over the internet\. 
 
@@ -9,13 +9,13 @@ You specify your VPC configuration when you create a job, by specifying the subn
 **Note**  
 For jobs, you can only configure subnets with a default tenancy VPC in which your instance runs on shared hardware\. For more information on the tenancy attribute for VPCs, see [Dedicated Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
-## Configure a Job for Amazon VPC Access<a name="VPCaccess"></a>
+## Configure a job for Amazon VPC access<a name="VPCaccess"></a>
 
 To specify subnets and security groups in your VPC, use the `VpcConfig` request parameter of the applicable API, or provide this information when you create a job in the Amazon Comprehend console\. Amazon Comprehend uses this information to create ENIs and attach them to our job containers\. The ENIs provide our job containers with a network connection within your VPC that is not connected to the internet\. 
 
 The following APIs contain the `VpcConfig` request parameter: 
 + `Create*` APIs: `CreateDocumentClassifier`, `CreateEntityRecognizer`
-+ `Start*` APIs: `StartDocumentClassificationJob`, `StartDominantLanguageDetectionJob`, `StartEntitiesDetectionJob`, `StartKeyPhrasesDetectionJob`, `StartSentimentDetectionJob`, `StartTopicsDetectionJob`
++ `Start*` APIs: `StartDocumentClassificationJob`, `StartDominantLanguageDetectionJob`, `StartEntitiesDetectionJob`, `StartKeyPhrasesDetectionJob`, `StartSentimentDetectionJob`, `StartTargetedSentimentDetectionJob`, `StartTopicsDetectionJob`
 
 The following is an example of the VpcConfig parameter that you include in your API call: 
 
@@ -36,7 +36,7 @@ To configure a VPC from the Amazon Comprehend console, choose the configuration 
 
 ![\[Optional VPC section in Creating Analysis Job\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/vpc-image-10.png)
 
-## Configure Your VPC for Amazon Comprehend Job<a name="configureVPC"></a>
+## Configure your VPC for Amazon Comprehend jobs<a name="configureVPC"></a>
 
 When configuring the VPC for your Amazon Comprehend jobs, use the following guidelines\. For information about setting up a VPC, see [Working with VPCs and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html) in the *Amazon VPC User Guide*\. 
 
@@ -139,11 +139,11 @@ The following policy provides the access needed to the `DataAccessRole` used for
 }
 ```
 
-**Configure the VPC Security Group**
+**Configure the VPC security group**
 
 With distributed jobs, you must allow communication between the different job containers in the same job\. To do that, configure a rule for your security group that allows inbound connections between members of the same security group\. For information, see [Security Group Rules](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules) in the *Amazon VPC User Guide*\. 
 
-**Connect to Resources Outside Your VPC**
+**Connect to resources outside your VPC**
 
 If you configure your VPC so that it doesn't have internet access, jobs that use that VPC do not have access to resources outside your VPC\. If your jobs need access to resources outside your VPC, provide access with one of the following options: 
 + If your job needs access to an AWS service that supports interface VPC endpoints, create an endpoint to connect to that service\. For a list of services that support interface endpoints, see [VPC Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html) in the *Amazon VPC User Guide*\. For information about creating an interface VPC endpoint, see [Interface VPC Endpoints \(AWS PrivateLink\)](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) in the *Amazon VPC User Guide*\. 

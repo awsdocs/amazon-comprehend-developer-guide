@@ -1,6 +1,6 @@
 # PartOfSpeechTag<a name="API_PartOfSpeechTag"></a>
 
-Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified\. For more information about the parts of speech that Amazon Comprehend can identify, see [Analyze Syntax](how-syntax.md)\.
+Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified\. For more information about the parts of speech that Amazon Comprehend can identify, see [Syntax analysis](how-syntax.md)\.
 
 ## Contents<a name="API_PartOfSpeechTag_Contents"></a>
 

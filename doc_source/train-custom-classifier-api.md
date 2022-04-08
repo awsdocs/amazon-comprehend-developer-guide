@@ -1,13 +1,13 @@
-# Using Custom Classification<a name="get-started-customclass"></a>
+# Train and run custom classifiers \(API\)<a name="train-custom-classifier-api"></a>
 
 To create and train a custom classifier, use the Amazon Comprehend [CreateDocumentClassifier](API_CreateDocumentClassifier.md)\. To identify custom classifiers in a corpus of documents, use the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) operation\. 
 
 **Topics**
-+ [Using Custom Classification With theAWS Command Line Interface](#get-started-api-customclass-cli)
-+ [Using Custom Classification Using the AWS SDK for Java](#get-started-api-customclass-java)
-+ [Using Custom Classification Using the AWS SDK for Python \(Boto\)](#get-started-api-customclass-python)
++ [Using custom classification with the AWS Command Line Interface](#get-started-api-customclass-cli)
++ [Using custom classification using the AWS SDK for Java](#get-started-api-customclass-java)
++ [Using custom classification using the AWS SDK for Python \(Boto\)](#get-started-api-customclass-python)
 
-## Using Custom Classification With theAWS Command Line Interface<a name="get-started-api-customclass-cli"></a>
+## Using custom classification with the AWS Command Line Interface<a name="get-started-api-customclass-cli"></a>
 
 The following examples demonstrate using the `CreateDocumentClassifier` operation, `StartDocumentClassificationJob` operation, and other custom classifier APIs with the AWS CLI\. 
 
@@ -121,7 +121,7 @@ aws comprehend list-endpoint \
     --max-results 50
 ```
 
-## Using Custom Classification Using the AWS SDK for Java<a name="get-started-api-customclass-java"></a>
+## Using custom classification using the AWS SDK for Java<a name="get-started-api-customclass-java"></a>
 
 This example creates a custom classifier and trains it using Java
 
@@ -155,10 +155,10 @@ public class DocumentClassifierDemo {
             .withInputDataConfig(new DocumentClassifierInputDataConfig()
                 .withS3Uri("s3://S3Bucket/docclass/file name"));
 
-        final CreateDocumentClassifierResult createDocumentClassifierResult = 
+        final CreateDocumentClassifierResult createDocumentClassifierResult =
             comprehendClient.createDocumentClassifier(createDocumentClassifierRequest);
         final String documentClassifierArn = createDocumentClassifierResult.getDocumentClassifierArn();
-        
+
         System.out.println("Document Classifier ARN: " + documentClassifierArn);
 
         final DescribeDocumentClassifierRequest describeDocumentClassifierRequest = new DescribeDocumentClassifierRequest()
@@ -167,7 +167,7 @@ public class DocumentClassifierDemo {
         System.out.println("DescribeDocumentClassifierResult: " + describeDocumentClassifierResult);
 
         final ListDocumentClassifiersRequest listDocumentClassifiersRequest = new ListDocumentClassifiersRequest();
-            
+
         final ListDocumentClassifiersResult listDocumentClassifiersResult = comprehendClient
             .listDocumentClassifiers(listDocumentClassifiersRequest);
         System.out.println("ListDocumentClassifierResult: " + listDocumentClassifiersResult );
@@ -175,7 +175,7 @@ public class DocumentClassifierDemo {
 }
 ```
 
-## Using Custom Classification Using the AWS SDK for Python \(Boto\)<a name="get-started-api-customclass-python"></a>
+## Using custom classification using the AWS SDK for Python \(Boto\)<a name="get-started-api-customclass-python"></a>
 
 This example creates a custom classifier and trains it using Python
 

@@ -1,4 +1,4 @@
-# Determine Sentiment<a name="how-sentiment"></a>
+# Sentiment<a name="how-sentiment"></a>
 
 Use Amazon Comprehend to determine the sentiment of a document\. For example, you can use sentiment analysis to determine the sentiments of comments on a blog posting to determine if your readers liked the post\.
 

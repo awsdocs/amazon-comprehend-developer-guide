@@ -58,4 +58,4 @@ There are a number of things to consider to get the best result when using an en
 + The entity list is case sensitive, and regular expressions are not currently supported\. However, the trained model can often still recognize entities even if they do not match exactly to the casing provided in the entity list\.
 + If you have an entity that is a substring of another entity \(such as “Smith” and “Jane Smith”\), provide both in the entity list\.
 
-Additional suggestions can be found at [Improving Custom Entity Recognizer Performance](cer-metrics.md#cer-performance) 
+Additional suggestions can be found at [Improving custom entity recognizer performance](cer-metrics.md#cer-performance) 

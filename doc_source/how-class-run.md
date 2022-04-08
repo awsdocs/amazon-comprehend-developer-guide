@@ -1,9 +1,9 @@
-# Running an Asynchronous Classification Job<a name="how-class-run"></a>
+# Inputs and outputs for asynchronous classification jobs<a name="how-class-run"></a>
 
 After you've trained your model, your custom classifier is available for asynchronous use to categorize unlabeled documents\. 
 
 **Note**  
-If trained in multi\-class mode, your customer classifier can also be used for real\-time insights into documents\. However, real\-time analysis can only be applied to a single document at a time\. For more information, see [Real\-time Analysis with Custom Classification](custom-sync.md)\.
+If trained in multi\-class mode, your customer classifier can also be used for real\-time insights into documents\. However, real\-time analysis can only be applied to a single document at a time\. For more information, see [Real\-time analysis for custom classification \(console\)](custom-sync.md)\.
 
 For asynchronous analysis, all documents must be in UTF\-8\-formatted text files\. Although you can only train your custom classification model using the `one document per line` format, you can submit your documents in that format or as `one document per file`\. The format you use depends on the type of documents you want to analyze, as described below\.
 
@@ -28,7 +28,7 @@ Text of document 4 \n
 
 After preparing the documents file, you place that file in the S3 bucket that you're using for input data\.
 
-**One Document per File**
+**One document per file**
 
 As with the previous method, the files used for this must be UTF\-8 formatted text files\. Each of these is placed into the S3 bucket being used for input data\.
 
@@ -38,15 +38,15 @@ When you start a classification job, you will specify this Amazon S3 location fo
 
 For example, if you use the URI `S3://bucketName/prefix`, if the prefix is a single file, Amazon Comprehend uses that file as input\. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input\. 
 
-Grant Amazon Comprehend access to the S3 bucket that contains your document collection and output files\. For more information, see [Role\-Based Permissions Required for Asynchronous Operations](access-control-managing-permissions.md#auth-role-permissions)\.
+Grant Amazon Comprehend access to the S3 bucket that contains your document collection and output files\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 
-## The Classification Job<a name="the-class-job"></a>
+## The classification job<a name="the-class-job"></a>
 
 Use the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md) operation to start classifying unlabeled documents\. You provide the S3 bucket that contains the documents to be classified, the S3 bucket where the output should be placed, and classifier to use\.
 
 Custom classification is asynchronous\. Once you have started the job, use the [DescribeDocumentClassificationJob](API_DescribeDocumentClassificationJob.md) operation to monitor its progress\. When the `Status` field in the response shows `COMPLETED`, you can access the output in the location that you specified\.
 
-### Classification Job Output<a name="class-output"></a>
+### Classification job output<a name="class-output"></a>
 
 For asynchronous analysis, all documents must be in UTF\-8\-formatted text files\. Although you can only train your custom classification model using the `one document per line` format, you can submit your documents in that format or as `one document per file`\. The format you use depends on the type of documents you want to analyze, as described below\.
 
@@ -54,7 +54,7 @@ The output from your classification job depends not only on the dataset you use\
 
 Regardless of the mode used, the job output consists of a single file named `output.tar.gz`\. It is a compressed archive file that contains a text file with the output\. 
 
-**Multi\-Class Output**
+**Multi\-class output**
 
 When you use a classifier trained in multi\-class mode, your results are shown in terms of `classes`\. Each of these `classes` is the class used to create the set of categories when training your classifier\.
 
@@ -90,7 +90,7 @@ For example:
 {"File": "file3.txt", "Classes": [{"Name": "Serious_Drama", "Score": 0.3141}, {"Name": "Other", "Score": 0.0381}, {"Name": "Other", "Score": 0.0372}]}
 ```
 
-**Multi\-Label Output**
+**Multi\-label output**
 
 When you use a classifier trained in multi\-label mode, your results are shown in terms of `labels`\. Each of these `labels` is the labels used to create the set of categories when training your classifier\.
 
@@ -127,4 +127,4 @@ For example:
 ```
 
 **Note**  
-For more information about the asynchronous analysis job format, see [Asynchronous Batch Processing](how-async.md) 
+For more information about the asynchronous analysis job format, see [Asynchronous batch processing](concepts-processing-modes.md#how-async) 

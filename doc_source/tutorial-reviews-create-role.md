@@ -1,25 +1,25 @@
-# Step 2: \(CLI Only\) Creating an IAM Role for Amazon Comprehend<a name="tutorial-reviews-create-role"></a>
+# Step 2: \(CLI only\) creating an IAM role for Amazon Comprehend<a name="tutorial-reviews-create-role"></a>
 
-This step is necessary only if you are using the AWS Command Line Interface \(AWS CLI\) to complete this tutorial\. If you are using the Amazon Comprehend console to run the analysis jobs, skip to [Step 3: Running Analysis Jobs on Documents in Amazon S3](tutorial-reviews-analysis.md)\.
+This step is necessary only if you are using the AWS Command Line Interface \(AWS CLI\) to complete this tutorial\. If you are using the Amazon Comprehend console to run the analysis jobs, skip to [Step 3: Running analysis jobs on documents in Amazon S3](tutorial-reviews-analysis.md)\.
 
 To run analysis jobs, Amazon Comprehend requires access to the Amazon S3 bucket that contains the sample dataset and will contain the jobs' output\. IAM roles allow you to control the permissions of AWS services or users\. In this step, you create an IAM role for Amazon Comprehend\. Then, you create and attach to this role a resource\-based policy that grants Amazon Comprehend access to your S3 bucket\. By the end of this step, Amazon Comprehend will have the necessary permissions to access your input data, store your output, and run sentiment and entities analysis jobs\.
 
-For more information about using IAM with Amazon Comprehend, see [Overview of Managing Access Permissions to Amazon Comprehend Resources](access-control-overview.md) and [Using Identity\-Based Policies \(IAM Policies\) for Amazon Comprehend](access-control-managing-permissions.md) in the *Amazon Comprehend User Guide*\.
+For more information about using IAM with Amazon Comprehend, see [Overview of managing access permissions to Amazon Comprehend resources](access-control-overview.md) and [Using identity\-based policies \(IAM policies\) for Amazon Comprehend](access-control-managing-permissions.md) in the *Amazon Comprehend User Guide*\.
 
 **Topics**
 + [Prerequisites](#tutorial-reviews-create-role-prereqs)
-+ [Create an IAM Role](#tutorial-reviews-create-role-trust-policy)
-+ [Attach an IAM Policy to the IAM Role](#tutorial-reviews-create-role-policy)
++ [Create an IAM role](#tutorial-reviews-create-role-trust-policy)
++ [Attach an IAM policy to the IAM role](#tutorial-reviews-create-role-policy)
 
 ## Prerequisites<a name="tutorial-reviews-create-role-prereqs"></a>
 
 Before you begin, do the following:
-+ Complete [Step 1: Adding Documents to Amazon S3](tutorial-reviews-add-docs.md)\.
++ Complete [Step 1: Adding documents to Amazon S3](tutorial-reviews-add-docs.md)\.
 + Have a code or text editor to save JSON policies and keep track of your Amazon Resource Names \(ARNs\)\.
 
-## Create an IAM Role<a name="tutorial-reviews-create-role-trust-policy"></a>
+## Create an IAM role<a name="tutorial-reviews-create-role-trust-policy"></a>
 
-To access your Amazon Simple Storage Service \(Amazon S3\) bucket, Amazon Comprehend needs to assume an AWS Identity and Access Management \(IAM\) role\. The IAM role declares Amazon Comprehend as a trusted entity\. After Amazon Comprehend assumes the role and becomes a trusted entity, you can grant bucket access permissions to Amazon Comprehend\. In this step, you create a role that labels Amazon Comprehend as a trusted entity\. You can create a role with the AWS CLI or the Amazon Comprehend console\. To use the console, skip to [Step 3: Running Analysis Jobs on Documents in Amazon S3](tutorial-reviews-analysis.md)\.
+To access your Amazon Simple Storage Service \(Amazon S3\) bucket, Amazon Comprehend needs to assume an AWS Identity and Access Management \(IAM\) role\. The IAM role declares Amazon Comprehend as a trusted entity\. After Amazon Comprehend assumes the role and becomes a trusted entity, you can grant bucket access permissions to Amazon Comprehend\. In this step, you create a role that labels Amazon Comprehend as a trusted entity\. You can create a role with the AWS CLI or the Amazon Comprehend console\. To use the console, skip to [Step 3: Running analysis jobs on documents in Amazon S3](tutorial-reviews-analysis.md)\.
 
 The Amazon Comprehend console lets you select roles where the role name contains 'Comprehend' and the trust policy includes comprehend\.amazonaws\.com\. Configure your CLI\-created roles to meet these criteria if you want the console to display them\.
 
@@ -55,7 +55,7 @@ If you get an Error parsing parameter message, the path to your JSON trust polic
 
 1. Copy the Amazon Resource Name \(ARN\) and save it in a text editor\. The ARN has a format similar to `arn:aws:iam::123456789012:role/AmazonComprehendServiceRole-access-role`\. You need this ARN to run Amazon Comprehend analysis jobs\.
 
-## Attach an IAM Policy to the IAM Role<a name="tutorial-reviews-create-role-policy"></a>
+## Attach an IAM policy to the IAM role<a name="tutorial-reviews-create-role-policy"></a>
 
 To access your Amazon S3 bucket, Amazon Comprehend needs permissions to list, read, and write\. To give Amazon Comprehend the required permissions, create and attach an IAM policy to your IAM role\. The IAM policy allows Amazon Comprehend to retrieve the input data from your bucket and write analysis results to the bucket\. After creating the policy, you attach it to your IAM role\.
 

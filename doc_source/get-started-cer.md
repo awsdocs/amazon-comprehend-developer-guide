@@ -1,13 +1,13 @@
-# Detecting Custom Entities<a name="get-started-cer"></a>
+# Train and run custom recognizers \(API\)<a name="get-started-cer"></a>
 
 To create the custom entities in a document, use the Amazon Comprehend [CreateEntityRecognizer](API_CreateEntityRecognizer.md) to create an entity recognizer\. To identify those custom entities, use the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation\. 
 
 **Topics**
-+ [Creating and Detecting Custom Entities Using the AWS Command Line Interface](#get-started-api-cer-cli)
-+ [Detecting Custom Entities Using the AWS SDK for Java](#get-started-api-cer-java)
-+ [Detecting Custom Entities Using the AWS SDK for Python \(Boto3\)](#cer-python)
++ [Creating and detecting custom entities using the AWS Command Line Interface](#get-started-api-cer-cli)
++ [Detecting custom entities using the AWS SDK for Java](#get-started-api-cer-java)
++ [Detecting custom entities using the AWS SDK for Python \(Boto3\)](#cer-python)
 
-## Creating and Detecting Custom Entities Using the AWS Command Line Interface<a name="get-started-api-cer-cli"></a>
+## Creating and detecting custom entities using the AWS Command Line Interface<a name="get-started-api-cer-cli"></a>
 
 The following examples demonstrate using the `CreateEntityRecognizer` operation, `StartEntitiesDetectionJob` operation, and other associated APIs with the AWS CLI\. 
 
@@ -53,7 +53,7 @@ aws comprehend start-entities-detection-job \
      --region region
 ```
 
-## Detecting Custom Entities Using the AWS SDK for Java<a name="get-started-api-cer-java"></a>
+## Detecting custom entities using the AWS SDK for Java<a name="get-started-api-cer-java"></a>
 
 This example creates a custom entity recognizer, trains the model, and then runs it in an entity recognizer job using Java
 
@@ -131,7 +131,7 @@ public class CustomEntityRecognizerDemo {
 }
 ```
 
-## Detecting Custom Entities Using the AWS SDK for Python \(Boto3\)<a name="cer-python"></a>
+## Detecting custom entities using the AWS SDK for Python \(Boto3\)<a name="cer-python"></a>
 
 Instantiate Boto3 SDK: 
 

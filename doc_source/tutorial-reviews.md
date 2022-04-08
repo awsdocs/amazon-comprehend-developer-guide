@@ -1,4 +1,4 @@
-# Tutorial: Analyzing Insights from Customer Reviews with Amazon Comprehend<a name="tutorial-reviews"></a>
+# Tutorial: Analyzing insights from customer reviews with Amazon Comprehend<a name="tutorial-reviews"></a>
 
 This tutorial explains how to use Amazon Comprehend with [Amazon Simple Storage Service](https://aws.amazon.com/s3/), [AWS Glue](https://aws.amazon.com/glue/), [Amazon Athena](https://aws.amazon.com/athena/), and [Amazon QuickSight](https://aws.amazon.com/quicksight/) to gain valuable insights into your documents\. Amazon Comprehend can extract sentiment \(the mood of a document\) and entities \(names of people, organizations, events, dates, products, places, quantities, and titles\) from unstructured text\.
 
@@ -26,17 +26,17 @@ The following diagram shows the workflow\.
 
 **Topics**
 + [Prerequisites](#tutorial-reviews-prereqs)
-+ [Step 1: Adding Documents to Amazon S3](tutorial-reviews-add-docs.md)
-+ [Step 2: \(CLI Only\) Creating an IAM Role for Amazon Comprehend](tutorial-reviews-create-role.md)
-+ [Step 3: Running Analysis Jobs on Documents in Amazon S3](tutorial-reviews-analysis.md)
-+ [Step 4: Preparing the Amazon Comprehend Output for Data Visualization](tutorial-reviews-tables.md)
-+ [Step 5: Visualizing Amazon Comprehend Output in Amazon QuickSight](tutorial-reviews-visualize.md)
++ [Step 1: Adding documents to Amazon S3](tutorial-reviews-add-docs.md)
++ [Step 2: \(CLI only\) creating an IAM role for Amazon Comprehend](tutorial-reviews-create-role.md)
++ [Step 3: Running analysis jobs on documents in Amazon S3](tutorial-reviews-analysis.md)
++ [Step 4: Preparing the Amazon Comprehend output for data visualization](tutorial-reviews-tables.md)
++ [Step 5: Visualizing Amazon Comprehend output in Amazon QuickSight](tutorial-reviews-visualize.md)
 
 ## Prerequisites<a name="tutorial-reviews-prereqs"></a>
 
 To complete this tutorial, you need the following:
-+ An AWS account\. If you don't have an AWS account, see the topic [Step 1: Set up an AWS Account and Create an Administrator User](https://docs.aws.amazon.com/comprehend/latest/dg/setting-up.html) in the *Amazon Comprehend User Guide* to set up a new account\.
-+ An [AWS Identity and Access Management](https://aws.amazon.com/iam/) \(IAM\) user\. We highly recommend that you use an IAM user to protect your root account\. The root account has unrestricted access to AWS resources and billing information\. Using an IAM user with restricted permissions limits how much access you have within your account\. To learn how to set up an IAM user and group for your account, see the [Getting Started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html) tutorial in the *IAM User Guide*\.
++ An AWS account\. If you don't have an AWS account, see the topic [Step 1: Set up an AWS account and create an administrator user](https://docs.aws.amazon.com/comprehend/latest/dg/setting-up.html) in the *Amazon Comprehend User Guide* to set up a new account\.
++ An [AWS Identity and Access Management](https://aws.amazon.com/iam/) \(IAM\) user\. We highly recommend that you use an IAM user to protect your root account\. The root account has unrestricted access to AWS resources and billing information\. Using an IAM user with restricted permissions limits how much access you have within your account\. To learn how to set up an IAM user and group for your account, see the [Getting started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html) tutorial in the *IAM User Guide*\.
 + The following permissions policy attached to your IAM group or user\. The policy grants your IAM user some of the permissions required to complete this tutorial\. The next prerequisite describes the additional permissions you need\. 
 
   ```

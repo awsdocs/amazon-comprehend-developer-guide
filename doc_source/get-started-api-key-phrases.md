@@ -1,14 +1,14 @@
-# Detecting Key Phrases<a name="get-started-api-key-phrases"></a>
+# Detecting key phrases<a name="get-started-api-key-phrases"></a>
 
-To determine the key noun phrases used in text, use the Amazon Comprehend [DetectKeyPhrases](API_DetectKeyPhrases.md) operation\. To detect the key noun phrases in up to 25 documents in a batch, use the [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
+To determine the key noun phrases used in text, use the Amazon Comprehend [DetectKeyPhrases](API_DetectKeyPhrases.md) operation\. To detect the key noun phrases in up to 25 documents in a batch, use the [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) operation\. For more information, see [Real\-time batch APIs](get-started-batch.md)\.
 
 **Topics**
-+ [Detecting Key Phrases Using the AWS Command Line Interface](#get-started-api-key-phrases-cli)
-+ [Detecting Key Phrases Using the AWS SDK for Java](#get-started-api-key-phrases-java)
-+ [Detecting Key Phrases Using the AWS SDK for Python \(Boto\)](#get-started-api-key-phrases-python)
-+ [Detecting Key Phrases Using the AWS SDK for \.NET](#get-started-api-phrases-c-sharp)
++ [Detecting key phrases using the AWS Command Line Interface](#get-started-api-key-phrases-cli)
++ [Detecting key phrases using the AWS SDK for Java](#get-started-api-key-phrases-java)
++ [Detecting key phrases using the AWS SDK for Python \(Boto\)](#get-started-api-key-phrases-python)
++ [Detecting key phrases using the AWS SDK for \.NET](#get-started-api-phrases-c-sharp)
 
-## Detecting Key Phrases Using the AWS Command Line Interface<a name="get-started-api-key-phrases-cli"></a>
+## Detecting key phrases using the AWS Command Line Interface<a name="get-started-api-key-phrases-cli"></a>
 
 The following example demonstrates using the `DetectKeyPhrases` operation with the AWS CLI\. You must specify the language of the input text\.
 
@@ -43,7 +43,7 @@ Amazon Comprehend responds with the following:
 }
 ```
 
-## Detecting Key Phrases Using the AWS SDK for Java<a name="get-started-api-key-phrases-java"></a>
+## Detecting key phrases using the AWS SDK for Java<a name="get-started-api-key-phrases-java"></a>
 
 The following example uses the `DetectKeyPhrases` operation with Java\. You must specify the language of the input text\.
 
@@ -55,7 +55,7 @@ import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.DetectKeyPhrasesRequest;
 import com.amazonaws.services.comprehend.model.DetectKeyPhrasesResult;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
@@ -65,13 +65,13 @@ public class App
         // Create credentials using a provider chain. For more information, see
         // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
         AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
- 
+
         AmazonComprehend comprehendClient =
             AmazonComprehendClientBuilder.standard()
                                          .withCredentials(awsCreds)
                                          .withRegion("region")
                                          .build();
-                                         
+
         // Call detectKeyPhrases API
         System.out.println("Calling DetectKeyPhrases");
         DetectKeyPhrasesRequest detectKeyPhrasesRequest = new DetectKeyPhrasesRequest().withText(text)
@@ -83,7 +83,7 @@ public class App
 }
 ```
 
-## Detecting Key Phrases Using the AWS SDK for Python \(Boto\)<a name="get-started-api-key-phrases-python"></a>
+## Detecting key phrases using the AWS SDK for Python \(Boto\)<a name="get-started-api-key-phrases-python"></a>
 
 The following example uses the `DetectKeyPhrases` operation with Python\. You must specify the language of the input text\.
 
@@ -92,7 +92,7 @@ import boto3
 import json
 
 comprehend = boto3.client(service_name='comprehend', region_name='region')
-                
+
 text = "It is raining today in Seattle"
 
 print('Calling DetectKeyPhrases')
@@ -100,9 +100,9 @@ print(json.dumps(comprehend.detect_key_phrases(Text=text, LanguageCode='en'), so
 print('End of DetectKeyPhrases\n')
 ```
 
-## Detecting Key Phrases Using the AWS SDK for \.NET<a name="get-started-api-phrases-c-sharp"></a>
+## Detecting key phrases using the AWS SDK for \.NET<a name="get-started-api-phrases-c-sharp"></a>
 
-The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
+The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS guide for \.NET developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
 
 ```
 using System;

@@ -24,7 +24,7 @@ Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`
 Required: Yes
 
  ** [TextList](#API_BatchDetectKeyPhrases_RequestSyntax) **   <a name="comprehend-BatchDetectKeyPhrases-request-TextList"></a>
-A list containing the text of the input documents\. The list can contain a maximum of 25 documents\. Each document must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
+A list containing the text of the input documents\. The list can contain a maximum of 25 documents\. Each document must contain fewer than 5,000 bytes of UTF\-8 encoded characters\.  
 Type: Array of strings  
 Length Constraints: Minimum length of 1\.  
 Required: Yes
@@ -91,7 +91,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages Supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_BatchDetectKeyPhrases_SeeAlso"></a>

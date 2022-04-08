@@ -1,8 +1,8 @@
-# Labeling Documents with Personally Identifiable Information \(PII\)<a name="get-started-api-pii-labels"></a>
+# Labeling documents with PII \(API\)<a name="get-started-api-pii-labels"></a>
 
 To label documents with personally identifiable information \(PII\), use the Amazon Comprehend [ContainsPiiEntities](API_ContainsPiiEntities.md) operation\.
 
-## Labeling Documents with PII Using the AWS Command Line Interface<a name="get-started-api-pii-label-cli"></a>
+## Labeling documents with PII using the AWS Command Line Interface<a name="get-started-api-pii-label-cli"></a>
 
 The following example uses the `ContainsPiiEntities` operation with the AWS CLI\.
 

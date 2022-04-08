@@ -1,6 +1,6 @@
-# Detect Entities<a name="how-entities"></a>
+# Entities<a name="how-entities"></a>
 
-Use the [DetectEntities](API_DetectEntities.md), [BatchDetectEntities](API_BatchDetectEntities.md), and [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operations to detect entities in a document\. An *entity* is a textual reference to the unique name of a real\-world object such as people, places, and commercial items, and to precise references to measures such as dates and quantities\.
+An *entity* is a textual reference to the unique name of a real\-world object such as people, places, and commercial items, and to precise references to measures such as dates and quantities\.
 
 For example, in the text "John moved to 1313 Mockingbird Lane in 2012," "John" might be recognized as a `PERSON`, "1313 Mockingbird Lane" might be recognized as a `LOCATION`, and "2012" might be recognized as a `DATE`\.
 
@@ -23,7 +23,7 @@ The following table lists the entity types\.
 
 Detect entities operations can be performed using any of the primary languages supported by Amazon Comprehend\. This includes only predefined \(non\-custom\) entity detection\. All documents must be in the same language\.
 
-You can use any of the following operations to detect entities in a document or set of documents\.
+You can use any of the following API operations to detect entities in a document or set of documents\.
 + [DetectEntities](API_DetectEntities.md)
 + [BatchDetectEntities](API_BatchDetectEntities.md)
 + [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md)

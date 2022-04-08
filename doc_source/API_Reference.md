@@ -1,3 +1,3 @@
-# API Reference<a name="API_Reference"></a>
+# API reference<a name="API_Reference"></a>
 
 This section provides documentation for the Amazon Comprehend API operations\.

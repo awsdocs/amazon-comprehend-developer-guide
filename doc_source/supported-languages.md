@@ -1,14 +1,14 @@
-# Languages Supported in Amazon Comprehend<a name="supported-languages"></a>
+# Languages supported in Amazon Comprehend<a name="supported-languages"></a>
 
 Amazon Comprehend supports a wide variety of languages for its various features\. The languages supported and the features that support them can be seen in the following tables\.
 
 **Topics**
-+ [Supported Languages](#supported-languages-1)
-+ [Languages Supported by Amazon Comprehend Features](#supported-languages-feature)
++ [Supported languages](#supported-languages-1)
++ [Languages supported by Amazon Comprehend features](#supported-languages-feature)
 
-## Supported Languages<a name="supported-languages-1"></a>
+## Supported languages<a name="supported-languages-1"></a>
 
-Amazon Comprehend \(except the **Detect Dominant Language** feature\) supports the following languages for one or more features\. 
+Amazon Comprehend \(except the **detect dominant language** feature\) supports the following languages for one or more features\. 
 
 
 | Code | Language | 
@@ -31,18 +31,19 @@ Amazon Comprehend identifies the language using identifiers from RFC 5646 — if
 
 
 
-## Languages Supported by Amazon Comprehend Features<a name="supported-languages-feature"></a>
+## Languages supported by Amazon Comprehend features<a name="supported-languages-feature"></a>
 
 
-| Feature | Supported Languages | 
+| Feature | Supported languages | 
 | --- | --- | 
-|  [Detect the Dominant Language](how-languages.md)  |  See [Detect the Dominant Language](how-languages.md)\.  | 
-|  [Detect Entities](how-entities.md)  |  All supported languages\.  | 
-|  [Detect Key Phrases](how-key-phrases.md)  |  All supported languages\.  | 
-|  [Detect Personally Identifiable Information \(PII\)](how-pii.md)  |  English  | 
-|  [Label Documents with Personally Identifiable Information \(PII\)](how-pii-labels.md)  | English | 
-|  [Determine Sentiment](how-sentiment.md)  |  All supported languages\.  | 
-|  [Analyze Syntax](how-syntax.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.   | 
-|  [Topic Modeling](topic-modeling.md)  |  Not dependent on the language used\. Does not support character\-based languages such as Chinese, Japanese, and Korean\.  | 
-|  [Custom Classification](how-document-classification.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.  | 
-|  [Custom Entity Recognition](custom-entity-recognition.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.  | 
+|  [Dominant language](how-languages.md)  |  See [Dominant language](how-languages.md)\.  | 
+|  [Entities](how-entities.md)  |  All supported languages\.  | 
+|  [Key phrases](how-key-phrases.md)  |  All supported languages\.  | 
+|  [PII entities](how-pii.md)  |  English\.  | 
+|  [Labeling documents with PII](how-pii-labels.md)  | English\. | 
+|  [Sentiment](how-sentiment.md)  |  All supported languages\.  | 
+|  [Targeted sentiment](how-targeted-sentiment.md)  |  English\.  | 
+|  [Syntax analysis](how-syntax.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.   | 
+|  [Topic modeling](topic-modeling.md)  |  Not dependent on the language used\. Does not support character\-based languages such as Chinese, Japanese, and Korean\.  | 
+|  [Custom classification](how-document-classification.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.  | 
+|  [Custom entity recognition](custom-entity-recognition.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.  | 

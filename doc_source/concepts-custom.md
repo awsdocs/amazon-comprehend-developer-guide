@@ -1,0 +1,7 @@
+# Amazon Comprehend Custom<a name="concepts-custom"></a>
+
+You can customize Amazon Comprehend for your specific requirements without the skillset required to build machine learning\-based NLP solutions\. Using automatic machine learning, or AutoML, Comprehend Custom builds customized NLP models on your behalf, using training data that you provide\.
+
+**Custom classification** – Create custom classification models \(classifiers\) to organize your documents into your own categories\. For each classification label, provide a set of documents that best represent that label and train your classifier on it\. Once trained, a classifier can be used on any number of unlabeled document sets\. You can use the console for a code\-free experience or install the latest AWS SDK\. For more information, see [Custom classification](how-document-classification.md)\.
+
+**Custom entity recognition** – Create custom entity recognition models \(recognizers\) that can analyze text for your specific terms and noun\-based phrases\. You can train recognizers to extract terms like policy numbers, or phrases that imply a customer escalation\. To train the model, you provide a list of the entities and a set of documents that contain them\. Once the model is trained, you can submit analysis jobs against it to extract their custom entities\. For more information, see [Custom entity recognition](custom-entity-recognition.md)\. 

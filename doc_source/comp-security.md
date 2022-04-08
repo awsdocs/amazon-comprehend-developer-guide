@@ -9,10 +9,10 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using Amazon Comprehend\. The following topics show you how to configure Amazon Comprehend to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your Amazon Comprehend resources\. 
 
 **Topics**
-+ [Data Protection in Amazon Comprehend](comp-data-protection.md)
-+ [Authentication and Access Control for Amazon Comprehend](auth-and-access-control.md)
-+ [Logging Amazon Comprehend API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
-+ [Compliance Validation for Amazon Comprehend](comp-compliance.md)
++ [Data protection in Amazon Comprehend](comp-data-protection.md)
++ [Authentication and access control for Amazon Comprehend](auth-and-access-control.md)
++ [Logging Amazon Comprehend API calls with AWS CloudTrail](logging-using-cloudtrail.md)
++ [Compliance validation for Amazon Comprehend](comp-compliance.md)
 + [Resilience in Amazon Comprehend](comp-disaster-recovery-resiliency.md)
-+ [Infrastructure Security in Amazon Comprehend](comp-infrastructure-security.md)
-+ [Permissions Required for a Custom Asynchronous Analysis Job](tagging-resources.md)
++ [Infrastructure security in Amazon Comprehend](comp-infrastructure-security.md)
++ [Permissions required for a custom asynchronous analysis job](tagging-resources.md)

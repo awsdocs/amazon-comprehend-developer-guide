@@ -1,8 +1,8 @@
-# Topic Modeling<a name="topic-modeling"></a>
+# Topic modeling<a name="topic-modeling"></a>
 
 You can use Amazon Comprehend to examine the content of a collection of documents to determine common themes\. For example, you can give Amazon Comprehend a collection of news articles, and it will determine the subjects, such as sports, politics, or entertainment\. The text in the documents doesn't need to be annotated\. 
 
-Amazon Comprehend uses a [Latent Dirichlet Allocation](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)\-based learning model to determine the topics in a set of documents\. It examines each document to determine the context and meaning of a word\. The set of words that frequently belong to the same context across the entire document set make up a topic\.
+Amazon Comprehend uses a [Latent dirichlet allocation](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)\-based learning model to determine the topics in a set of documents\. It examines each document to determine the context and meaning of a word\. The set of words that frequently belong to the same context across the entire document set make up a topic\.
 
 A word is associated to a topic in a document based on how prevalent that topic is in a document and how much affinity the topic has to the word\. The same word can be associated with different topics in different documents based on the topic distribution in a particular document\. 
 
@@ -72,4 +72,4 @@ The second file, `doc-topics.csv`, lists the documents associated with a topic a
 | \.\.\. |   |   | 
 | sample\-docN | 000 | 3\.57E\-04 | 
 
-Amazon Comprehend utilizes information from the *Lemmatization Lists Dataset by MBM*, which is made available [here](https://github.com/michmech/lemmatization-lists) under the [Open Database License \(ODbL\) v1\.0](https://opendatacommons.org/licenses/odbl/1-0/)\.
+Amazon Comprehend utilizes information from the *Lemmatization Lists Dataset by MBM*, which is made available [here](https://github.com/michmech/lemmatization-lists) under the [Open database license \(ODbL\) v1\.0](https://opendatacommons.org/licenses/odbl/1-0/)\.

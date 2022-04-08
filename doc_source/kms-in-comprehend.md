@@ -1,4 +1,4 @@
-# KMS Encryption in Amazon Comprehend<a name="kms-in-comprehend"></a>
+# KMS encryption in Amazon Comprehend<a name="kms-in-comprehend"></a>
 
 Amazon Comprehend works with AWS Key Management Service \(AWS KMS\) to provide enhanced encryption for your data\. Amazon S3 already enables you to encrypt your input documents when creating a text analysis, topic modeling, or custom Amazon Comprehend job\. Integration with AWS KMS enables you to encrypt the data in the storage volume for Start\* and Create\* jobs, and it encrypts the output results of Start\* jobs using your own KMS key\.
 
@@ -24,7 +24,7 @@ Two encryption options are available when using the console:
 
 1. Choose whether the customer\-managed key \(CMK\) is from the account you're currently using or from a different account\. If you want to use a key from the current account, choose the key ID from **KMS key ID**\. If you're using a key from a different account, you must enter the key's ARN\.
 
-If you have previously setup encryption using SSE\-KMS on the your S3 input documents, this can provide you with additional security\. However, if you do this, the IAM role used must have `kms:Decrypt` permission for the KMS key with which the input documents are encrypted\. For more information, see [Permissions Required to Use KMS Encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
+If you have previously setup encryption using SSE\-KMS on the your S3 input documents, this can provide you with additional security\. However, if you do this, the IAM role used must have `kms:Decrypt` permission for the KMS key with which the input documents are encrypted\. For more information, see [Permissions required to use KMS encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
 
 **KMS encryption with API operations** 
 

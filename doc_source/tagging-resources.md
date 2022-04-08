@@ -1,4 +1,4 @@
-# Permissions Required for a Custom Asynchronous Analysis Job<a name="tagging-resources"></a>
+# Permissions required for a custom asynchronous analysis job<a name="tagging-resources"></a>
 
 **Important**  
 If you have an IAM policy which restricts model access, you won't be able to complete an inference job with a custom model\. Your IAM policy should be updated to having a wildcard resource for a custom async analysis job\.

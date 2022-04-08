@@ -6,9 +6,9 @@ If you have a Basic or Developer Support plan, you can use the Trusted Advisor c
 
 Amazon Comprehend supports the following Trusted Advisor checks to help customers optimize the cost and the security of their Amazon Comprehend endpoints by providing actionable recommendations\.
 
-## Amazon Comprehend Underutilized Endpoints<a name="manage-endpoints-trusted-advisor-underutilized-endpoints"></a>
+## Amazon Comprehend underutilized endpoints<a name="manage-endpoints-trusted-advisor-underutilized-endpoints"></a>
 
-The **Amazon Comprehend Underutilized Endpoints** check evaluates the throughput configuration of your endpoints\. This check alerts you when endpoints are not actively used for real\-time inference requests\. An endpoint that isn’t used for more than 15 days is considered underutilized\. All endpoints accrue charges based on both the throughput set and the length of time that the endpoint is active\. For the endpoint not used in last 15 days, we recommend that you define a scaling policy for the resource using [Application Autoscaling](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html)\. For an endpoint that hasn't been used in the last 30 days and does have an auto scaling policy defined we recommend that you use asynchronous inference or delete it\. These check results are automatically refreshed once every day and can be viewed under the **CostOptimization** category on the Trusted Advisor console\.
+The **Amazon Comprehend underutilized endpoints** check evaluates the throughput configuration of your endpoints\. This check alerts you when endpoints are not actively used for real\-time inference requests\. An endpoint that isn’t used for more than 15 days is considered underutilized\. All endpoints accrue charges based on both the throughput set and the length of time that the endpoint is active\. For the endpoint not used in last 15 days, we recommend that you define a scaling policy for the resource using [Application Autoscaling](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html)\. For an endpoint that hasn't been used in the last 30 days and does have an auto scaling policy defined we recommend that you use asynchronous inference or delete it\. These check results are automatically refreshed once every day and can be viewed under the **CostOptimization** category on the Trusted Advisor console\.
 
 **To view the utilization status of all your endpoints and the corresponding recommendations**
 
@@ -41,9 +41,9 @@ Here's an example which shows the CostOptimization category view on the Trusted 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/TA_cost_optimization_new.png)
 
-## Amazon Comprehend Endpoint Access Risk<a name="manage-endpoints-trusted-advisor-endpoint-access-risk"></a>
+## Amazon Comprehend endpoint access risk<a name="manage-endpoints-trusted-advisor-endpoint-access-risk"></a>
 
-The **Amazon Comprehend Endpoint Access Risk** check evaluates the AWS Key Management Service \(AWS KMS\) key permissions for an endpoint where the underlying model was encrypted using customer managed keys\. If the customer managed key is disabled or the key policy was changed to alter the allowed permissions for Amazon Comprehend, the endpoint availability might be affected\. If the key has been disabled, we recommend that you enable it\. If the key policy has been altered and you wish to continue using this endpoint, we recommend that you update the key policy\. The check results are automatically refreshed multiple times during the day\. This check can be viewed under the **Fault Tolerance** category of the Trusted Advisor console\.
+The **Amazon Comprehend endpoint access risk** check evaluates the AWS Key Management Service \(AWS KMS\) key permissions for an endpoint where the underlying model was encrypted using customer managed keys\. If the customer managed key is disabled or the key policy was changed to alter the allowed permissions for Amazon Comprehend, the endpoint availability might be affected\. If the key has been disabled, we recommend that you enable it\. If the key policy has been altered and you wish to continue using this endpoint, we recommend that you update the key policy\. The check results are automatically refreshed multiple times during the day\. This check can be viewed under the **Fault Tolerance** category of the Trusted Advisor console\.
 
 **To view the AWS KMS key status of your Amazon Comprehend endpoints**
 

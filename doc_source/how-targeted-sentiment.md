@@ -1,4 +1,4 @@
-# Analyze Targeted Sentiment<a name="how-targeted-sentiment"></a>
+# Targeted sentiment<a name="how-targeted-sentiment"></a>
 
 *Targeted sentiment* provides a granular understanding of the sentiments associated with specific entities \(such as brands or products\) in your input documents\. 
 
@@ -21,12 +21,12 @@ You can use the [console](getting-started-console-events.md) or the [API](using-
 For additional information about targeted sentiment, including a tutorial, see [ Extract granular sentiment in text with Amazon Comprehend Targeted Sentiment](http://aws.amazon.com/blogs/machine-learning/extract-granular-sentiment-in-text-with-amazon-comprehend-targeted-sentiment/)\. 
 
 **Topics**
-+ [Entity Types](#how-targeted-sentiment-entities)
-+ [Co\-Reference Group](#how-targeted-sentiment-values)
-+ [Output File Organization](#how-targeted-sentiment-output)
-+ [Targeted Sentiment Example](#how-targeted-sentiment-example)
++ [Entity types](#how-targeted-sentiment-entities)
++ [Co\-reference group](#how-targeted-sentiment-values)
++ [Output file organization](#how-targeted-sentiment-output)
++ [Targeted sentiment example](#how-targeted-sentiment-example)
 
-## Entity Types<a name="how-targeted-sentiment-entities"></a>
+## Entity types<a name="how-targeted-sentiment-entities"></a>
 
 Targeted sentiment identifies the following entity types\. It assigns entity type OTHER if the entity doesn’t belong in any other category\. Each entity mention in the output file includes the entity type, such as `"Type": "PERSON"`\.
 
@@ -53,7 +53,7 @@ Targeted sentiment identifies the following entity types\. It assigns entity typ
 | ATTRIBUTE | An attribute, characteristic, or trait of an entity, such as the "quality" of a product, the "price" of a phone, or the "speed" of a CPU\. | 
 | OTHER | Entities that don’t belong in any of the other categories\. | 
 
-## Co\-Reference Group<a name="how-targeted-sentiment-values"></a>
+## Co\-reference group<a name="how-targeted-sentiment-values"></a>
 
 Targeted sentiment identifies co\-reference groups in each input document\. A co\-reference group is a group of mentions in a document that correspond to one real\-world entity\.
 
@@ -64,7 +64,7 @@ In the following example of a customer review, “spa” is the entity, which ha
 I enjoyed visiting the spa. It was very comfortable. But it was also expensive.
 ```
 
-## Output File Organization<a name="how-targeted-sentiment-output"></a>
+## Output file organization<a name="how-targeted-sentiment-output"></a>
 
 The targeted sentiment analysis job creates a JSON text output file\. The file contains one JSON object for each of the input documents\. Each JSON object contains the following fields:
 + **Entities** – An array of entities found in the document\. 
@@ -75,7 +75,7 @@ The following example shows **Entities** for an input file with three lines of i
 
 ```
 { "Entities":[
-    {entityA}, 
+    {entityA},
     {entityB},
     {entityC}
     ],
@@ -83,17 +83,17 @@ The following example shows **Entities** for an input file with three lines of i
   "Line": 0
 }
 { "Entities": [
-    {entityD}, 
-    {entityE} 
+    {entityD},
+    {entityE}
   ],
   "File": "TargetSentimentInputDocs.txt",
   "Line": 1
 }
 { "Entities": [
-    {entityF}, 
+    {entityF},
     {entityG}
     ],
-  "File": "TargetSentimentInputDocs.txt", 
+  "File": "TargetSentimentInputDocs.txt",
   "Line": 2
 }
 ```
@@ -103,16 +103,16 @@ The following example shows **Entities** for an input file with three lines of i
 An entity in the **Entities** array includes a logical grouping \(called a co\-reference group\) of the entity mentions detected in the document\. Each entity has the following overall structure:
 
 ```
-{"DescriptiveMentionIndex": [0],  
+{"DescriptiveMentionIndex": [0],
   "Mentions": [
-     {mentionD}, 
+     {mentionD},
      {mentionE}
-    ] 
+    ]
 }
 ```
 
 An entity contains these fields:
-+ **Mentions** – An array of mentions of the entity in the document\. The array represents a co\-reference group\. See [Co\-Reference Group](#how-targeted-sentiment-values) for an example\. The order of mentions in the Mentions array is the order of their location \(offset\) in the document\. Each mention includes the sentiment score and group score for that mention\. The group score indicates the confidence level that these mentions belong to the same entity\.
++ **Mentions** – An array of mentions of the entity in the document\. The array represents a co\-reference group\. See [Co\-reference group](#how-targeted-sentiment-values) for an example\. The order of mentions in the Mentions array is the order of their location \(offset\) in the document\. Each mention includes the sentiment score and group score for that mention\. The group score indicates the confidence level that these mentions belong to the same entity\.
 + **DescriptiveMentionIndex** – One or more index into the Mentions array that provides the best name for the entity group\. For example, an entity could have three mentions with **Text** values "ABC Hotel," “ABC Hotel,” and “it\.” The best name is “ABC Hotel,” which has a DescriptiveMentionIndex value of \[0,1\]\. 
 
 Each mention includes the following fields
@@ -164,7 +164,7 @@ In the following example, an entity has only one mention in the input document, 
 }
 ```
 
-## Targeted Sentiment Example<a name="how-targeted-sentiment-example"></a>
+## Targeted sentiment example<a name="how-targeted-sentiment-example"></a>
 
 The following example shows the output file from a targeted sentiment analysis job\. The input file consists of three simple documents:
 

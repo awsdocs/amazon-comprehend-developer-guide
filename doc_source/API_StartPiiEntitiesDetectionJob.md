@@ -71,9 +71,9 @@ Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`
 Required: No
 
  ** [LanguageCode](#API_StartPiiEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartPiiEntitiesDetectionJob-request-LanguageCode"></a>
-The language of the input documents\.  
+The language of the input documents\. Currently, `en` is the only valid value\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
+Valid Values:` en`   
 Required: Yes
 
  ** [Mode](#API_StartPiiEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartPiiEntitiesDetectionJob-request-Mode"></a>

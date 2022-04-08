@@ -1,14 +1,14 @@
-# Detecting the Dominant Language<a name="get-started-api-dominant-language"></a>
+# Detecting the dominant language<a name="get-started-api-dominant-language"></a>
 
-To determine the dominant language used in text, use the Amazon Comprehend [DetectDominantLanguage](API_DetectDominantLanguage.md) operation\. To detect the dominant language in up to 25 documents in a batch, use the [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) operation\. For more information, see [Using the Batch APIs](get-started-batch.md)\.
+To determine the dominant language used in text, use the Amazon Comprehend [DetectDominantLanguage](API_DetectDominantLanguage.md) operation\. To detect the dominant language in up to 25 documents in a batch, use the [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) operation\. For more information, see [Real\-time batch APIs](get-started-batch.md)\.
 
 **Topics**
-+ [Detecting the Dominant Language Using the AWS Command Line Interface](#get-started-api-dominant-language-cli)
-+ [Detecting the Dominant Language Using the AWS SDK for Java](#get-started-api-dominant-language-java)
-+ [Detecting the Dominant Language Using the AWS SDK for Python \(Boto\)](#get-started-api-dominant-language-python)
-+ [Detecting the Dominant Language Using the AWS SDK for \.NET](#get-started-api-dominant-language-c-sharp)
++ [Detecting the dominant language using the AWS Command Line Interface](#get-started-api-dominant-language-cli)
++ [Detecting the dominant language using the AWS SDK for Java](#get-started-api-dominant-language-java)
++ [Detecting the dominant language using the AWS SDK for Python \(Boto\)](#get-started-api-dominant-language-python)
++ [Detecting the dominant language using the AWS SDK for \.NET](#get-started-api-dominant-language-c-sharp)
 
-## Detecting the Dominant Language Using the AWS Command Line Interface<a name="get-started-api-dominant-language-cli"></a>
+## Detecting the dominant language using the AWS Command Line Interface<a name="get-started-api-dominant-language-cli"></a>
 
 The following example demonstrates using the `DetectDominantLanguage` operation with the AWS CLI\.
 
@@ -33,7 +33,7 @@ Amazon Comprehend responds with the following:
 }
 ```
 
-## Detecting the Dominant Language Using the AWS SDK for Java<a name="get-started-api-dominant-language-java"></a>
+## Detecting the dominant language using the AWS SDK for Java<a name="get-started-api-dominant-language-java"></a>
 
 The following example uses the `DetectDominantLanguage` operation with Java\.
 
@@ -45,23 +45,23 @@ import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.DetectDominantLanguageRequest;
 import com.amazonaws.services.comprehend.model.DetectDominantLanguageResult;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
 
         String text = "It is raining today in Seattle";
-        
+
         // Create credentials using a provider chain. For more information, see
         // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
         AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
- 
+
         AmazonComprehend comprehendClient =
             AmazonComprehendClientBuilder.standard()
                                          .withCredentials(awsCreds)
                                          .withRegion("region")
                                          .build();
-                                         
+
         // Call detectDominantLanguage API
         System.out.println("Calling DetectDominantLanguage");
         DetectDominantLanguageRequest detectDominantLanguageRequest = new DetectDominantLanguageRequest().withText(text);
@@ -73,7 +73,7 @@ public class App
 }
 ```
 
-## Detecting the Dominant Language Using the AWS SDK for Python \(Boto\)<a name="get-started-api-dominant-language-python"></a>
+## Detecting the dominant language using the AWS SDK for Python \(Boto\)<a name="get-started-api-dominant-language-python"></a>
 
 The following example demonstrates using the `DetectDominantLanguage` operation with Python\.
 
@@ -89,9 +89,9 @@ print(json.dumps(comprehend.detect_dominant_language(Text = text), sort_keys=Tru
 print("End of DetectDominantLanguage\n")
 ```
 
-## Detecting the Dominant Language Using the AWS SDK for \.NET<a name="get-started-api-dominant-language-c-sharp"></a>
+## Detecting the dominant language using the AWS SDK for \.NET<a name="get-started-api-dominant-language-c-sharp"></a>
 
-The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS Guide for \.NET Developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
+The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS guide for \.NET developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
 
 ```
 using System;

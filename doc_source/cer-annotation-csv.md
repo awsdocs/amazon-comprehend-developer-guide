@@ -3,7 +3,7 @@
 When using comma\-separated value \(CSV\) files for your annotations, your CSV files must have the following columns:
 
 
-| File | Line | Begin Offset | End Offset | Type | 
+| File | Line | Begin offset | End offset | Type | 
 | --- | --- | --- | --- | --- | 
 |  The name of the file containing the document\. For example, if one of the document files is located at `s3://my-S3-bucket/test-files/documents.txt`, the value in the `File` column will be `documents.txt`\. You must include the file extension \(in this case '`.txt`'\) as part of the file name\.  |  The line number containing the entity, starting with line 0\.  |  The character offset in the input text \(relative to the beginning of the line\) that shows where the entity begins\. The first character is at position 0\.  |  The character offset in the input text that shows where the entity ends\.  |  The customer\-defined entity type\. Entity types must be an uppercase, underscore\-separated string\. We recommend using descriptive entity types such as `MANAGER`, `SENIOR_MANAGER`, or `PRODUCT_CODE`\. Up to 25 entity types can be trained per model\.  | 
 

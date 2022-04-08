@@ -1,4 +1,4 @@
-# Data Protection in Amazon Comprehend<a name="comp-data-protection"></a>
+# Data protection in Amazon Comprehend<a name="comp-data-protection"></a>
 
 The AWS [shared responsibility model](http://aws.amazon.com/compliance/shared-responsibility-model/) applies to data protection in Amazon Comprehend\. As described in this model, AWS is responsible for protecting the global infrastructure that runs all of the AWS Cloud\. You are responsible for maintaining control over your content that is hosted on this infrastructure\. This content includes the security configuration and management tasks for the AWS services that you use\. For more information about data privacy, see the [Data Privacy FAQ](http://aws.amazon.com/compliance/data-privacy-faq)\. For information about data protection in Europe, see the [AWS Shared Responsibility Model and GDPR](http://aws.amazon.com/blogs/security/the-aws-shared-responsibility-model-and-gdpr/) blog post on the *AWS Security Blog*\.
 
@@ -13,7 +13,7 @@ For data protection purposes, we recommend that you protect AWS account credenti
 We strongly recommend that you never put confidential or sensitive information, such as your customers' email addresses, into tags or free\-form fields such as a **Name** field\. This includes when you work with Amazon Comprehend or other AWS services using the console, API, AWS CLI, or AWS SDKs\. Any data that you enter into tags or free\-form fields used for names may be used for billing or diagnostic logs\. If you provide a URL to an external server, we strongly recommend that you do not include credentials information in the URL to validate your request to that server\.
 
 **Topics**
-+ [KMS Encryption in Amazon Comprehend](kms-in-comprehend.md)
-+ [Cross\-service Confused Deputy Prevention](cross-service-confused-deputy-prevention.md)
-+ [Protect Jobs by Using an Amazon Virtual Private Cloud](usingVPC.md)
++ [KMS encryption in Amazon Comprehend](kms-in-comprehend.md)
++ [Cross\-service confused deputy prevention](cross-service-confused-deputy-prevention.md)
++ [Protect jobs by using an Amazon Virtual Private Cloud](usingVPC.md)
 + [Amazon Comprehend and interface VPC endpoints \(AWS PrivateLink\)](vpc-interface-endpoints.md)

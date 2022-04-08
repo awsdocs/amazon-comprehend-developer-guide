@@ -1,27 +1,27 @@
-# Overview of Managing Access Permissions to Amazon Comprehend Resources<a name="access-control-overview"></a>
+# Overview of managing access permissions to Amazon Comprehend resources<a name="access-control-overview"></a>
 
 Permissions to access an action are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\) to manage access to actions\. 
 
 **Note**  
-An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
+An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
 
 When granting permissions, you decide who is getting the permissions and the actions they get permissions for\.
 
 **Topics**
-+ [Managing Access to Actions](#access-control-manage-access-intro)
-+ [Specifying Policy Elements: Actions, Effects, and Principals](#access-control-specify-comprehend-actions)
-+ [Specifying Conditions in a Policy](#specifying-conditions)
++ [Managing access to actions](#access-control-manage-access-intro)
++ [Specifying policy elements: Actions, effects, and principals](#access-control-specify-comprehend-actions)
++ [Specifying conditions in a policy](#specifying-conditions)
 
-## Managing Access to Actions<a name="access-control-manage-access-intro"></a>
+## Managing access to actions<a name="access-control-manage-access-intro"></a>
 
 A *permissions policy* describes who has access to what\. The following section explains the available options for creating permissions policies\.
 
 **Note**  
-This section discusses using IAM in the context of Amazon Comprehend\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+This section discusses using IAM in the context of Amazon Comprehend\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM policy reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM policies\) and policies attached to a resource are referred to as *resource\-based* policies\. Amazon Comprehend supports only identity\-based policies\. 
+Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM policies\) and policies attached to a resource are referred to as *resource\-based* policies\. 
 
-### Identity\-Based Policies \(IAM Policies\)<a name="access-control-manage-access-intro-iam-policies"></a>
+### Identity\-based policies \(IAM policies\)<a name="access-control-manage-access-intro-iam-policies"></a>
 
 You can attach policies to IAM identities\. For example, you can do the following:
 + **Attach a permissions policy to a user or a group in your account** – To grant a user or a group of users permissions to call and Amazon Comprehend action, you can attach a permissions policy to a user or group that the user belongs to\.
@@ -33,15 +33,19 @@ You can attach policies to IAM identities\. For example, you can do the followin
 
   1. Account B administrator can then delegate permissions to assume the role to any users in Account B\. Doing this allows users in Account B to create or access resources in Account A\. If you want to grant an AWS service permission to assume the role, the principal in the trust policy can also be an AWS service principal\.
 
-  For more information about using IAM to delegate permissions, see [Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\.
+  For more information about using IAM to delegate permissions, see [Access management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\.
 
-For more information about using identity\-based policies with Amazon Comprehend, see [Using Identity\-Based Policies \(IAM Policies\) for Amazon Comprehend](access-control-managing-permissions.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
+For more information about using identity\-based policies with Amazon Comprehend, see [Using identity\-based policies \(IAM policies\) for Amazon Comprehend](access-control-managing-permissions.md)\. For more information about users, groups, roles, and permissions, see [Identities \(users, groups, and roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
 
-### Resource\-Based Policies<a name="access-control-manage-access-intro-resource-policies"></a>
+### Resource\-based policies<a name="access-control-manage-access-intro-resource-policies"></a>
 
-Other services, such as Lambda, support resource\-based permissions policies\. For example, you can attach a policy to an S3 bucket to manage access permissions to that bucket\. Amazon Comprehend doesn't support resource\-based policies\. 
+Resource\-based policies are JSON policy documents that you attach to a resource\. For example, you can attach a policy to an S3 bucket to manage access permissions to that bucket\. 
 
-## Specifying Policy Elements: Actions, Effects, and Principals<a name="access-control-specify-comprehend-actions"></a>
+Service administrators can use resource\-based policies to control access to specific resources\. For the resource where the policy is attached, the policy defines what actions a specified principal can perform on that resource and under what conditions\. You must specify a [ principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html) in a resource\-based policy\. Principals can include accounts, users, roles, federated users, or AWS services\.
+
+For a list of Amazon Comprehend resources, see [Resource types defined by Amazon Comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncomprehend.html#amazoncomprehend-resources-for-iam-policies) in the *Service Authorization Reference*\.
+
+## Specifying policy elements: Actions, effects, and principals<a name="access-control-specify-comprehend-actions"></a>
 
 Amazon Comprehend defines a set of API operations \(see [Actions](API_Operations.md)\)\. To grant permissions for these API operations, Amazon Comprehend defines a set of actions that you can specify in a policy\. 
 
@@ -51,17 +55,18 @@ The following are the most basic policy elements:
 + **Effect** – You specify the effect of the action that occurs when the user requests the specific action—this can be either allow or deny\. If you don't explicitly grant access to \(allow\) a resource, access is implicitly denied\. You can also explicitly deny access to a resource\. You might do this to make sure that a user cannot access the resource, even if a different policy grants access\.
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. 
 
-To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+To learn more about IAM policy syntax and descriptions, see [AWS IAM policy reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-For a table showing all of the Amazon Comprehend API actions, see [Amazon Comprehend API Permissions: Actions, Resources, and Conditions Reference](comprehend-api-permissions-ref.md)\.
+For a table showing all of the Amazon Comprehend API actions, see [ Actions, resources, and condition keys for Amazon Comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncomprehend.html) in the *Service Authorization Reference*\.
 
-## Specifying Conditions in a Policy<a name="specifying-conditions"></a>
+## Specifying conditions in a policy<a name="specifying-conditions"></a>
 
-When you grant permissions, you use the IAM policy language to specify the conditions under which a policy should take effect\. For example, you might want a policy to be applied only after a specific date\. For more information about specifying conditions in a policy language, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition) in the *IAM User Guide*\. 
+Conditions are an optional policy element that applies additional logic to determine if an action is allowed\. AWS provides a set of [common conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html) supported by all actions\.
 
-AWS provides a set of predefined condition keys for all AWS services that support IAM for access control\. For example, you can use the `aws:userid` condition key to require a specific AWS ID when requesting an action\. For more information and a complete list of AWS\-wide keys, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\. 
+When you grant permissions, you use the IAM policy language to specify the conditions under which a policy should take effect\. For example, you can use the `aws:userid` condition key to require a specific AWS ID when requesting an action\. For more information about specifying conditions in a policy language, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition) in the *IAM User Guide*\. 
 
 **Note**  
 Condition keys are case\-sensitive\.
 
-Amazon Comprehend does not provide any additional condition keys\.
+Amazon Comprehend provides additional condition keys that you can use to restrict the values of parameters on specific resources\. For details about the supported resources and condition types, see [ Actions, resources, and condition keys for Amazon Comprehend](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncomprehend.html) in the *Service Authorization Reference*\.
+

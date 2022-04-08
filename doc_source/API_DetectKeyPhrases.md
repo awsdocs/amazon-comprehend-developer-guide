@@ -71,7 +71,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages Supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
 HTTP Status Code: 400
 
 ## Examples<a name="API_DetectKeyPhrases_Examples"></a>
@@ -80,7 +80,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob lives in Seattle\. He is a software engineer at Amazon\.", the API returns the following:
 
-#### <a name="w75aac49b5c95c15b3b5"></a>
+#### <a name="w82aac57b5c95c15b3b5"></a>
 
 ```
           {

@@ -1,4 +1,4 @@
-# Detect Events<a name="how-events"></a>
+# Events<a name="how-events"></a>
 
 ## <a name="events-result-schema"></a>
 
@@ -6,7 +6,7 @@ With Amazon Comprehend, you can analyze your text documents to detect speciﬁc 
 
 You can use the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation to detect events\.
 
-### Detect Events Results<a name="how-events-results"></a>
+### Detect events results<a name="how-events-results"></a>
 
 When your event detection job completes, Amazon Comprehend writes the analysis results to the Amazon S3 output location that you specified\.
 
@@ -64,17 +64,17 @@ Each entity associated with a supported event type returns with the following re
   + **Score**: The level of confidence that Amazon Comprehend has in the accuracy of the entity's type\.
   + **GroupScore**: The level of confidence from Amazon Comprehend that the mention is correctly grouped with other mentions of the same entity\.
   + **Text**: The text of the entity\.
-  + **Type**: The entity's type\. For all supported entity types, see [Entity Types](#events-entity-types)\.
+  + **Type**: The entity's type\. For all supported entity types, see [Entity types](#events-entity-types)\.
 
 #### Events<a name="how-events-output"></a>
 
 Amazon Comprehend returns a list of events detected in the input text\. Only supported event types will be detected\.
 
 Each event returns with the following related details:
-+ **Type**: The event's type\. For all supported event types, see [Event Types](#events-types)\.
++ **Type**: The event's type\. For all supported event types, see [Event types](#events-types)\.
 + **Arguments**: A list of arguments that are related to the detected event\. An *argument* consists of an entity that is related to the detected event\. The argument's role describes the relationship, such as *who* did *what*, *where *and *when*\.
   + **EntityIndex**: An index value that identifies an entity from the list of entities that Amazon Comprehend returned for this analysis\.
-  + **Role**: The argument type, which describes how the entity for this argument is related to the event\. For all supported argument types, see [Argument Types](#events-argument-types)\.
+  + **Role**: The argument type, which describes how the entity for this argument is related to the event\. For all supported argument types, see [Argument types](#events-argument-types)\.
   + **Score**: The level of confidence that Amazon Comprehend has in the accuracy of the role detection\.
 + **Triggers**: A list of triggers for the detected event\. A *trigger* is a single word or phrase that indicates the occurrence of the event\.
   + **BeginOffset**: A character offset in the input text that shows where the trigger begins \(the first character is at position 0\)\.
@@ -84,9 +84,9 @@ Each event returns with the following related details:
   + **GroupScore**: The level of confidence from Amazon Comprehend that the trigger is correctly grouped with other triggers for the same event\.
   + **Type**: The type of event that this trigger indicates\.
 
-## Supported Types for Entities, Events, and Arguments<a name="events-reference-types"></a>
+## Supported types for entities, events, and arguments<a name="events-reference-types"></a>
 
-### Entity Types<a name="events-entity-types"></a>
+### Entity types<a name="events-entity-types"></a>
 
 
 | Type | Description | 
@@ -101,7 +101,7 @@ Each event returns with the following related details:
 | QUANTITY | A number or value and the unit of measurement\. | 
 | STOCK\_CODE | A stock ticker symbol, such as AMZN, an International Securities Identification Number \(ISIN\), Committee on Uniform Securities Identification Procedures \(CUSIP\), or Stock Exchange Daily Official List \(SEDOL\)\. | 
 
-### Event Types<a name="events-types"></a>
+### Event types<a name="events-types"></a>
 
 
 | Type | Description | 
@@ -118,19 +118,19 @@ Each event returns with the following related details:
 | TENDER\_OFFERING | An offer to purchase some or all of shareholders' shares in a company\. | 
 | STOCK\_SPLIT | Occurs when a company's board of directors increases the number of shares that are outstanding by issuing more shares to current shareholders\. This event also applies to reverse stock splits\. | 
 
-### Argument Types<a name="events-argument-types"></a>
+### Argument types<a name="events-argument-types"></a>
 
 
-**Argument Types for BANKRUPTCY**  
+**Argument types for BANKRUPTCY**  
 
-| Argument Type | Description | 
+| Argument type | Description | 
 | --- | --- | 
 | FILER | The person or company filing the bankruptcy\.  | 
 | DATE | The date or time of bankruptcy\. | 
 | PLACE | Location or facility where \(or nearest to where\) the bankruptcy took place\. | 
 
 
-**Argument Types for EMPLOYMENT**  
+**Argument types for EMPLOYMENT**  
 
 | Type | Description | 
 | --- | --- | 
@@ -141,7 +141,7 @@ Each event returns with the following related details:
 | START\_DATE | The end date or time of the employment\. | 
 
 
-**Argument Types for CORPORATE\_ACQUISTION, INVESTMENT\_GENERAL**  
+**Argument types for CORPORATE\_ACQUISTION, INVESTMENT\_GENERAL**  
 
 | Type | Description | 
 | --- | --- | 
@@ -152,7 +152,7 @@ Each event returns with the following related details:
 | PLACE | Location where \(or nearest to where\) the acquisition or investment took place\. | 
 
 
-**Argument Types for CORPORATE\_MERGER**  
+**Argument types for CORPORATE\_MERGER**  
 
 | Type | Description | 
 | --- | --- | 
@@ -161,7 +161,7 @@ Each event returns with the following related details:
 | PARTICIPANT | The company involved in the merger\. | 
 
 
-**Argument Types for IPO, RIGHTS\_ISSUE, SECONDARY\_OFFERING, SHELF\_OFFERING, TENDER\_OFFERING**  
+**Argument types for IPO, RIGHTS\_ISSUE, SECONDARY\_OFFERING, SHELF\_OFFERING, TENDER\_OFFERING**  
 
 | Type | Description | 
 | --- | --- | 
@@ -179,7 +179,7 @@ Each event returns with the following related details:
 | UNDERWRITERS | The company associated with the underwriting of the offering\. | 
 
 
-**Argument Types for STOCK\_SPLIT**  
+**Argument types for STOCK\_SPLIT**  
 
 | Type | Description | 
 | --- | --- | 

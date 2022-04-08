@@ -1,6 +1,6 @@
 # BatchDetectEntities<a name="API_BatchDetectEntities"></a>
 
-Inspects the text of a batch of documents for named entities and returns information about them\. For more information about named entities, see [Detect Entities](how-entities.md) 
+Inspects the text of a batch of documents for named entities and returns information about them\. For more information about named entities, see [Entities](how-entities.md) 
 
 ## Request Syntax<a name="API_BatchDetectEntities_RequestSyntax"></a>
 
@@ -92,7 +92,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages Supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_BatchDetectEntities_SeeAlso"></a>

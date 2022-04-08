@@ -1,6 +1,6 @@
 # BatchDetectSyntax<a name="API_BatchDetectSyntax"></a>
 
-Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them\. For more information, see [Analyze Syntax](how-syntax.md)\.
+Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them\. For more information, see [Syntax analysis](how-syntax.md)\.
 
 ## Request Syntax<a name="API_BatchDetectSyntax_RequestSyntax"></a>
 
@@ -95,7 +95,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages Supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_BatchDetectSyntax_SeeAlso"></a>

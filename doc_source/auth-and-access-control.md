@@ -1,8 +1,8 @@
-# Authentication and Access Control for Amazon Comprehend<a name="auth-and-access-control"></a>
+# Authentication and access control for Amazon Comprehend<a name="auth-and-access-control"></a>
 
 Access to Amazon Comprehend requires credentials that AWS can use to authenticate your requests\. Those credentials must have permissions to access Amazon Comprehend actions\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and Amazon Comprehend to help secure your resources by controlling who can access them\. 
 +  [Authentication](#authentication) 
-+  [Access Control](#access-control) 
++  [Access control](#access-control) 
 
 ## Authentication<a name="authentication"></a>
 
@@ -16,10 +16,10 @@ You can access AWS as any of the following types of identities:
   + **AWS service access** –  A service role is an [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) that a service assumes to perform actions on your behalf\. An IAM administrator can create, modify, and delete a service role from within IAM\. For more information, see [Creating a role to delegate permissions to an AWS service](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *IAM User Guide*\. 
   + **Applications running on Amazon EC2** –  You can use an IAM role to manage temporary credentials for applications that are running on an EC2 instance and making AWS CLI or AWS API requests\. This is preferable to storing access keys within the EC2 instance\. To assign an AWS role to an EC2 instance and make it available to all of its applications, you create an instance profile that is attached to the instance\. An instance profile contains the role and enables programs that are running on the EC2 instance to get temporary credentials\. For more information, see [Using an IAM role to grant permissions to applications running on Amazon EC2 instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) in the *IAM User Guide*\. 
 
-## Access Control<a name="access-control"></a>
+## Access control<a name="access-control"></a>
 
  You must have valid credentials to authenticate your requests\. The credentials must have permissions to call an Amazon Comprehend action\. 
 
  The following sections describe how to manage permissions for Amazon Comprehend\. We recommend that you read the overview first\. 
-+ [Overview of Managing Access Permissions to Amazon Comprehend Resources](access-control-overview.md)
-+ [Using Identity\-Based Policies \(IAM Policies\) for Amazon Comprehend](access-control-managing-permissions.md)
++ [Overview of managing access permissions to Amazon Comprehend resources](access-control-overview.md)
++ [Using identity\-based policies \(IAM policies\) for Amazon Comprehend](access-control-managing-permissions.md)

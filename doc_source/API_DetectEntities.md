@@ -1,6 +1,6 @@
 # DetectEntities<a name="API_DetectEntities"></a>
 
-Inspects text for named entities, and returns information about them\. For more information, about named entities, see [Detect Entities](how-entities.md)\. 
+Inspects text for named entities, and returns information about them\. For more information, about named entities, see [Entities](how-entities.md)\. 
 
 ## Request Syntax<a name="API_DetectEntities_RequestSyntax"></a>
 
@@ -63,7 +63,7 @@ The following data is returned in JSON format by the service\.
 
  ** [Entities](#API_DetectEntities_ResponseSyntax) **   <a name="comprehend-DetectEntities-response-Entities"></a>
 A collection of entities identified in the input text\. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection\.   
-If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize\. Otherwise, it detects the default entity types\. For a list of default entity types, see [Detect Entities](how-entities.md)\.  
+If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize\. Otherwise, it detects the default entity types\. For a list of default entity types, see [Entities](how-entities.md)\.  
 Type: Array of [Entity](API_Entity.md) objects
 
 ## Errors<a name="API_DetectEntities_Errors"></a>
@@ -87,7 +87,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages Supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
 HTTP Status Code: 400
 
 ## Examples<a name="API_DetectEntities_Examples"></a>
@@ -96,7 +96,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob ordered two sandwiches and three ice cream cones today from a store in Seattle\.", the operation returns the following:
 
-#### <a name="w75aac49b5c92c15b3b5"></a>
+#### <a name="w82aac57b5c92c15b3b5"></a>
 
 ```
     {

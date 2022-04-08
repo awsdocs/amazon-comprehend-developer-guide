@@ -67,7 +67,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob lives in Seattle\. He is a software engineer at Amazon\.", the operation returns the following:
 
-#### <a name="w75aac49b5c89c15b3b5"></a>
+#### <a name="w82aac57b5c89c15b3b5"></a>
 
 ```
 {

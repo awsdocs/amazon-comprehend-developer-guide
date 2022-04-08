@@ -1,4 +1,4 @@
-# Infrastructure Security in Amazon Comprehend<a name="comp-infrastructure-security"></a>
+# Infrastructure security in Amazon Comprehend<a name="comp-infrastructure-security"></a>
 
 As a managed service, Amazon Comprehend adheres to the [AWS Best Practices for Security, Identity, and Compliance](http://aws.amazon.com/architecture/security-identity-compliance/)\.
 

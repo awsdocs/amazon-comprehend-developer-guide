@@ -1,4 +1,4 @@
-# Analyzing Targeted Sentiment<a name="using-api-targeted-sentiment"></a>
+# Analyzing targeted sentiment<a name="using-api-targeted-sentiment"></a>
 
 Amazon Comprehend provides the following API operations for analyzing targeted sentiment:
 + [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) – Starts an asynchronous targeted sentiment detection job for a collection of documents\.
@@ -7,23 +7,23 @@ Amazon Comprehend provides the following API operations for analyzing targeted s
 + [StopTargetedSentimentDetectionJob](API_StopTargetedSentimentDetectionJob.md) – Stops the specified in\-progress targeted sentiment job\.
 
 **Topics**
-+ [Before You Start](#api-targeted-sentiment-before)
-+ [Analyzing Targeted Sentiment Using the AWS CLI](#api-targeted-sentiment-cli)
++ [Before you start](#api-targeted-sentiment-before)
++ [Analyzing targeted sentiment using the AWS CLI](#api-targeted-sentiment-cli)
 
-## Before You Start<a name="api-targeted-sentiment-before"></a>
+## Before you start<a name="api-targeted-sentiment-before"></a>
 
 Before you start, make sure that you have:
 + **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input and output\. The buckets must be in the same region as the API that you are calling\.
-+ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-Based Permissions Required for Asynchronous Operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 
-## Analyzing Targeted Sentiment Using the AWS CLI<a name="api-targeted-sentiment-cli"></a>
+## Analyzing targeted sentiment using the AWS CLI<a name="api-targeted-sentiment-cli"></a>
 
 The following example demonstrates using the `StartTargetedSentimentDetectionJob` operation with the AWS CLI\. This example specifies the language of the input text\.
 
 The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
 ```
-aws comprehend start-targeted-sentiment-detection-job \              
+aws comprehend start-targeted-sentiment-detection-job \
        --job-name "job name" \
        --language-code "en" \
        --cli-input-json file://path to JSON input file

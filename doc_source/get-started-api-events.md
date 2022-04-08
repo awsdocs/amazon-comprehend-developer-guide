@@ -1,14 +1,14 @@
-# Detecting Events<a name="get-started-api-events"></a>
+# Detecting events<a name="get-started-api-events"></a>
 
 To detect events in a document set, use the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) to start an asynchronous job\.
 
-## Before You Start<a name="events-before"></a>
+## Before you start<a name="events-before"></a>
 
 Before you start, make sure that you have:
 + **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input and output\. The buckets must be in the same region as the API that you are calling\.
-+ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-Based Permissions Required for Asynchronous Operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 
-## Detecting Events Using the AWS Command Line Interface<a name="events-cli"></a>
+## Detecting events using the AWS Command Line Interface<a name="events-cli"></a>
 
 The following example demonstrates using the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation with the AWS CLI
 
@@ -35,16 +35,16 @@ For the `cli-input-json` parameter you supply the path to a JSON file that conta
     "DataAccessRoleArn": "arn:aws:iam::account ID:role/data access role"
     "LanguageCode": "en",
     "TargetEventTypes": [
-        "BANKRUPTCY", 
+        "BANKRUPTCY",
         "EMPLOYMENT",
         "CORPORATE_ACQUISITION",
         "INVESTMENT_GENERAL",
         "CORPORATE_MERGER",
         "IPO",
         "RIGHTS_ISSUE",
-        "SECONDARY_OFFERING", 
-        "SHELF_OFFERING", 
-        "TENDER_OFFERING", 
+        "SECONDARY_OFFERING",
+        "SHELF_OFFERING",
+        "TENDER_OFFERING",
         "STOCK_SPLIT"
     ]
 }
@@ -69,11 +69,11 @@ You will get JSON similar to the following in response:
 
 ```
 {
-   "EventsDetectionJobPropertiesList": [ 
-      { 
+   "EventsDetectionJobPropertiesList": [
+      {
          "DataAccessRoleArn": "arn:aws:iam::account ID:role/data access role",
          "EndTime": timestamp,
-         "InputDataConfig": { 
+         "InputDataConfig": {
             "InputFormat": "ONE_DOC_PER_LINE",
             "S3Uri": "s3://input bucket/input path"
          },
@@ -82,21 +82,21 @@ You will get JSON similar to the following in response:
          "JobStatus": "COMPLETED",
          "LanguageCode": "en",
          "Message": "message",
-         "OutputDataConfig": { 
+         "OutputDataConfig": {
             "S3Uri": "s3://output bucket/ouput path"
          },
          "SubmitTime": timestamp,
          "TargetEventTypes": [
-           "BANKRUPTCY", 
+           "BANKRUPTCY",
            "EMPLOYMENT",
            "CORPORATE_ACQUISITION",
            "INVESTMENT_GENERAL",
            "CORPORATE_MERGER",
            "IPO",
            "RIGHTS_ISSUE",
-           "SECONDARY_OFFERING", 
-           "SHELF_OFFERING", 
-           "TENDER_OFFERING", 
+           "SECONDARY_OFFERING",
+           "SHELF_OFFERING",
+           "TENDER_OFFERING",
            "STOCK_SPLIT"
     ]
       }
@@ -117,10 +117,10 @@ You will get the following JSON in response:
 
 ```
 {
-   "EventsDetectionJobProperties": { 
+   "EventsDetectionJobProperties": {
       "DataAccessRoleArn": "arn:aws:iam::account ID:role/data access role",
       "EndTime": timestamp,
-      "InputDataConfig": { 
+      "InputDataConfig": {
          "InputFormat": "ONE_DOC_PER_LINE",
          "S3Uri": "S3Uri": "s3://input bucket/input path"
       },
@@ -129,21 +129,21 @@ You will get the following JSON in response:
       "JobStatus": "job status",
       "LanguageCode": "en",
       "Message": "message",
-      "OutputDataConfig": { 
+      "OutputDataConfig": {
          "S3Uri": "s3://output bucket/output path"
       },
       "SubmitTime": timestamp,
       "TargetEventTypes": [
-        "BANKRUPTCY", 
+        "BANKRUPTCY",
         "EMPLOYMENT",
         "CORPORATE_ACQUISITION",
         "INVESTMENT_GENERAL",
         "CORPORATE_MERGER",
         "IPO",
         "RIGHTS_ISSUE",
-        "SECONDARY_OFFERING", 
-        "SHELF_OFFERING", 
-        "TENDER_OFFERING", 
+        "SECONDARY_OFFERING",
+        "SHELF_OFFERING",
+        "TENDER_OFFERING",
         "STOCK_SPLIT"
     ]
    }

@@ -83,7 +83,7 @@ Pattern: `^\p{ASCII}+$`
 Required: No
 
  ** VpcConfig **   <a name="comprehend-Type-DocumentClassificationJobProperties-VpcConfig"></a>
- Configuration parameters for a private Virtual Private Cloud \(VPC\) containing the resources you are using for your document classification job\. For more information, see [Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)\.   
+ Configuration parameters for a private Virtual Private Cloud \(VPC\) containing the resources you are using for your document classification job\. For more information, see [Amazon VPC](https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html)\.   
 Type: [VpcConfig](API_VpcConfig.md) object  
 Required: No
 

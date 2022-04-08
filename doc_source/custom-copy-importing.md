@@ -1,15 +1,15 @@
-# Importing a Custom Model From Another AWS Account<a name="custom-copy-importing"></a>
+# Importing a custom model from another AWS account<a name="custom-copy-importing"></a>
 
 In Amazon Comprehend, you can import a custom model that's in another AWS account\. When you import a model, you create a new custom model in your account\. Your new custom model is a fully\-trained duplicate of the model that you imported\.
 
 **Topics**
-+ [Before You Begin](#custom-copy-importing-prerequisites)
-+ [Importing a Custom Model](#custom-copy-importing-procedure)
++ [Before you begin](#custom-copy-importing-prerequisites)
++ [Importing a custom model](#custom-copy-importing-procedure)
 
-## Before You Begin<a name="custom-copy-importing-prerequisites"></a>
+## Before you begin<a name="custom-copy-importing-prerequisites"></a>
 
 Before you can import a custom model from another AWS account, ensure that the person who shared the model with you does the following:
-+ Authorizes you to do the import\. This authorization is granted in the resource\-based policy that is attached to the model version\. For more information, see [Resource\-Based Policies for Custom Models](custom-copy-sharing.md#custom-copy-sharing-example-policy)\.
++ Authorizes you to do the import\. This authorization is granted in the resource\-based policy that is attached to the model version\. For more information, see [Resource\-based policies for custom models](custom-copy-sharing.md#custom-copy-sharing-example-policy)\.
 + Provides you with the following information:
   + The Amazon Resource Name \(ARN\) of the model version\.
   + The AWS Region that contains the model\. You must use the same AWS Region when you import\.
@@ -18,14 +18,14 @@ Before you can import a custom model from another AWS account, ensure that the p
 If the model is encrypted, you might need to take additional steps, depending on the type of KMS key that is used:
 + **AWS owned key** – This type of KMS key is owned and managed by AWS\. If the model is encrypted with an AWS owned key, no additional steps are needed\.
 + **Customer managed key** – This type of KMS key is created, owned, and managed by an AWS customer in their AWS account\. If the model is encrypted with a customer managed key, then the person who shared the model must:
-  + Authorize you to decrypt the model\. This authorization is granted in the KMS key policy for the customer managed key\. For more information, see [AWS KMS Key Policy Statement](custom-copy-sharing.md#custom-copy-sharing-prerequisites-permissions-kms)\.
+  + Authorize you to decrypt the model\. This authorization is granted in the KMS key policy for the customer managed key\. For more information, see [AWS KMS key policy statement](custom-copy-sharing.md#custom-copy-sharing-prerequisites-permissions-kms)\.
   + Provide the ARN of the customer managed key\. You use this ARN when you create an IAM service role\. This role authorizes Amazon Comprehend to use the KMS key to decrypt the model\.
 
-### Required Permissions<a name="custom-copy-importing-prerequisites-permissions"></a>
+### Required permissions<a name="custom-copy-importing-prerequisites-permissions"></a>
 
 Before you can import a custom model, you or your administrator must authorize the required actions in AWS Identity and Access Management \(IAM\)\. As an Amazon Comprehend user, you must be authorized to import by an IAM policy statement\. If encryption or decryption is required during the import, then Amazon Comprehend must be authorized to use the necessary AWS KMS keys\.
 
-### IAM Policy Statement<a name="custom-copy-importing-prerequisites-permissions-iam"></a>
+### IAM policy statement<a name="custom-copy-importing-prerequisites-permissions-iam"></a>
 
 Your IAM user or group must have a policy attached that allows the `ImportModel` action, as shown in the following example\.
 
@@ -43,13 +43,13 @@ Your IAM user or group must have a policy attached that allows the `ImportModel`
 
 For information about creating an IAM policy, see [Creating IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) in the *IAM User Guide*\. For information about attaching an IAM policy, see [Adding and removing IAM identity permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html) in the *IAM User Guide*\.
 
-### IAM Service Role for AWS KMS Encryption<a name="custom-copy-importing-prerequisites-permissions-kms"></a>
+### IAM service role for AWS KMS encryption<a name="custom-copy-importing-prerequisites-permissions-kms"></a>
 
 When you import a custom model, you must authorize Amazon Comprehend to use AWS KMS keys in either of the following cases:
 + You are importing a custom model that is encrypted with a customer managed key in AWS KMS\. In this case, Amazon Comprehend needs access to the KMS key so that it can decrypt the model during the import\.
 + You want to encrypt the new custom model that you create with the import, and you want to use a customer managed key\. In this case, Amazon Comprehend needs access to your KMS key so that it can encrypt the new model\.
 
-To authorize Amazon Comprehend to use these AWS KMS keys, you create an *IAM service role*\. This type of IAM role allows an AWS service to access resources in other services on your behalf\. For more information about service roles, see [Creating a Role to Delegate Permissions to an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *IAM User Guide*\.
+To authorize Amazon Comprehend to use these AWS KMS keys, you create an *IAM service role*\. This type of IAM role allows an AWS service to access resources in other services on your behalf\. For more information about service roles, see [Creating a role to delegate permissions to an AWS service](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in the *IAM User Guide*\.
 
 If you use the Amazon Comprehend console to import, you can have Amazon Comprehend create the service role for you\. Otherwise, you must create a service role in IAM before you import\.
 
@@ -96,7 +96,7 @@ The following permissions policy allows the AWS KMS operations that Amazon Compr
 }
 ```
 
-**Example Trust policy**  
+**Example trust policy**  
 
 The following trust policy allows Amazon Comprehend to assume the role and gain its permissions\. It allows the `comprehend.amazonaws.com` service principal to perform the `sts:AssumeRole` operation\. To help with [confused deputy prevention](cross-service-confused-deputy-prevention.md), you restrict the scope of the permission by using one or more global condition context keys\. For `aws:SourceAccount`, specify the account Id of the user who is importing the model\. 
 
@@ -120,7 +120,7 @@ The following trust policy allows Amazon Comprehend to assume the role and gain 
 }
 ```
 
-## Importing a Custom Model<a name="custom-copy-importing-procedure"></a>
+## Importing a custom model<a name="custom-copy-importing-procedure"></a>
 
 You can import a custom model by using the AWS Management Console, AWS CLI, or Amazon Comprehend API\.
 
@@ -175,7 +175,7 @@ You can use Amazon Comprehend in the AWS Management Console\.
 
 You can use Amazon Comprehend by running commands with the AWS CLI\.
 
-**Example import\-model command**  
+**Example Import\-model command**  
 To import a custom model, use the `import-model` command:  
 
 ```

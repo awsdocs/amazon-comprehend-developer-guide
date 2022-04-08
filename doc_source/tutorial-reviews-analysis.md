@@ -1,25 +1,25 @@
-# Step 3: Running Analysis Jobs on Documents in Amazon S3<a name="tutorial-reviews-analysis"></a>
+# Step 3: Running analysis jobs on documents in Amazon S3<a name="tutorial-reviews-analysis"></a>
 
 After storing the data in Amazon S3, you can begin running Amazon Comprehend analysis jobs\. A *sentiment* analysis job determines the overall mood of a document \(positive, negative, neutral, or mixed\)\. An *entities* analysis job extracts the names of real\-world objects from a document\. These objects include people, places, titles, events, dates, quantities, products, and organizations\. In this step, you run two Amazon Comprehend analysis jobs to extract the sentiment and entities from the sample dataset\.
 
 **Topics**
 + [Prerequisites](#tutorial-reviews-analysis-prereqs)
-+ [Analyze Sentiment and Entities](#tutorial-reviews-analysis-jobs)
++ [Analyze sentiment and entities](#tutorial-reviews-analysis-jobs)
 
 ## Prerequisites<a name="tutorial-reviews-analysis-prereqs"></a>
 
 Before you begin, do the following:
-+ Complete [Step 1: Adding Documents to Amazon S3](tutorial-reviews-add-docs.md)\.
-+ \(Optional\) If you are using the AWS CLI, complete [Step 2: \(CLI Only\) Creating an IAM Role for Amazon Comprehend](tutorial-reviews-create-role.md) and have your IAM role ARN ready\.
++ Complete [Step 1: Adding documents to Amazon S3](tutorial-reviews-add-docs.md)\.
++ \(Optional\) If you are using the AWS CLI, complete [Step 2: \(CLI only\) creating an IAM role for Amazon Comprehend](tutorial-reviews-create-role.md) and have your IAM role ARN ready\.
 
-## Analyze Sentiment and Entities<a name="tutorial-reviews-analysis-jobs"></a>
+## Analyze sentiment and entities<a name="tutorial-reviews-analysis-jobs"></a>
 
 The first job you run analyzes the sentiment of each customer review in the sample dataset\. The second job extracts the entities in each customer review\. You can perform Amazon Comprehend analysis jobs either using the Amazon Comprehend console or the AWS CLI\. 
 
 **Tip**  
-Make sure that you are in an AWS Region that supports Amazon Comprehend\. For more information, see the [Region Table](http://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) in the *Global Infrastructure Guide*\.
+Make sure that you are in an AWS Region that supports Amazon Comprehend\. For more information, see the [Region table](http://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) in the *Global Infrastructure Guide*\.
 
-### Analyze Sentiments and Entities \(Console\)<a name="tutorial-reviews-analysis-jobs-console"></a>
+### Analyze sentiments and entities \(console\)<a name="tutorial-reviews-analysis-jobs-console"></a>
 
 When using the Amazon Comprehend console, you create one job at a time\. You need to repeat the following steps in order to run both a sentiment and an entities analysis job\. Note that for the first job, you create an IAM role, but for the second job, you can reuse the first job's IAM role\. You can reuse the IAM role as long as you use the same S3 bucket and folders\.
 
@@ -83,7 +83,7 @@ When using the Amazon Comprehend console, you create one job at a time\. You nee
 
    1. In **Access permissions**, choose **Use an existing IAM role**\. For **Role name**, choose `AmazonComprehendServiceRole-comprehend-access-role` \(this is the same role you created for the sentiment job\)\.
 
-### Analyze Sentiments and Entities \(AWS CLI\)<a name="tutorial-reviews-analysis-jobs-cli"></a>
+### Analyze sentiments and entities \(AWS CLI\)<a name="tutorial-reviews-analysis-jobs-cli"></a>
 
 You use the `start-sentiment-detection-job` and the `start-entities-detection-job` commands to run sentiment and entities analysis jobs\. After you run each command, the AWS CLI shows a JSON object with a `JobId` value that allows you to access details about the job, including the output S3 location\.
 

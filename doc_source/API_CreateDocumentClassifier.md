@@ -1,6 +1,6 @@
 # CreateDocumentClassifier<a name="API_CreateDocumentClassifier"></a>
 
-Creates a new document classifier that you can use to categorize documents\. To create a classifier, you provide a set of training documents that labeled with the categories that you want to use\. After the classifier is trained you can use it to categorize a set of labeled documents into the categories\. For more information, see [Custom Classification](how-document-classification.md)\.
+Creates a new document classifier that you can use to categorize documents\. To create a classifier, you provide a set of training documents that labeled with the categories that you want to use\. After the classifier is trained you can use it to categorize a set of labeled documents into the categories\. For more information, see [Custom classification](how-document-classification.md)\.
 
 ## Request Syntax<a name="API_CreateDocumentClassifier_RequestSyntax"></a>
 
@@ -83,7 +83,7 @@ Required: Yes
  ** [LanguageCode](#API_CreateDocumentClassifier_RequestSyntax) **   <a name="comprehend-CreateDocumentClassifier-request-LanguageCode"></a>
 The language of the input documents\. You can specify any of the following languages supported by Amazon Comprehend: German \("de"\), English \("en"\), Spanish \("es"\), French \("fr"\), Italian \("it"\), or Portuguese \("pt"\)\. All documents must be in the same language\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: Yes
 
  ** [Mode](#API_CreateDocumentClassifier_RequestSyntax) **   <a name="comprehend-CreateDocumentClassifier-request-Mode"></a>
@@ -196,7 +196,7 @@ The request contains more tags than can be associated with a resource \(50 tags 
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages Supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_CreateDocumentClassifier_SeeAlso"></a>

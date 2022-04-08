@@ -1,4 +1,148 @@
-# Asynchronous Batch Processing<a name="how-async"></a>
+# Document processing modes<a name="concepts-processing-modes"></a>
+
+When evaluating your documents, you can use one of several methods to process them, depending on the number documents you have and how you want to view the results:
++ **Single\-document synchronous** —You call Amazon Comprehend with a single document and receive a synchronous response, delivered to your application right away\. 
++ **Multi\-document synchronous** —You call Amazon Comprehend with a collection of up to 25 documents and receive a synchronous response\.
++ **Asynchronous batch** —You put a collection of documents into an Amazon S3 bucket and start an asynchronous operation to analyze the documents\. The results of the analysis are returned in an S3 bucket\.
+
+**Topics**
++ [Single\-document processing](#how-single)
++ [Multiple document synchronous processing](#how-batch)
++ [Asynchronous batch processing](#how-async)
+
+## Single\-document processing<a name="how-single"></a>
+
+The single\-document operations are synchronous operations that return the results of analyzing the document directly to your application\. You should use the single\-document operations when you are creating an interactive application that works on one document at a time\.
+
+You can use the following single\-document operations:
++ [DetectDominantLanguage](API_DetectDominantLanguage.md)
++ [DetectEntities](API_DetectEntities.md)
++ [DetectKeyPhrases](API_DetectKeyPhrases.md)
++ [DetectPiiEntities](API_DetectPiiEntities.md)
++ [ContainsPiiEntities](API_ContainsPiiEntities.md)
++ [DetectSentiment](API_DetectSentiment.md)
++ [DetectSyntax](API_DetectSyntax.md)
+
+## Multiple document synchronous processing<a name="how-batch"></a>
+
+When you have multiple documents that you want to process, you can use the `Batch*` operations to send more than one document to Amazon Comprehend at a time\. You can send up to 25 documents in each request\. Amazon Comprehend sends back a list of responses, one for each document in the request\. 
+
+You can use the following operations to process multiple documents in a single request\. Requests made with these operations are synchronous\. Your application calls the operation and then waits for the response from the service\. 
++ [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md)
++ [BatchDetectEntities](API_BatchDetectEntities.md)
++ [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md)
++ [BatchDetectSentiment](API_BatchDetectSentiment.md)
++ [BatchDetectSyntax](API_BatchDetectSyntax.md)
+
+Using the `Batch*` operations is identical to calling the single document APIs for each of the documents in the request\. Using these APIs can result in better performance for your applications\.
+
+The input to each of the APIs is a JSON structure containing the documents to process\. For all operations except `BatchDetectDominantLanguage`, you must set the input language\. You can set only one input language for each request\. For example, the following is the input to the `BatchDetectEntities` operation\. It contains two documents and is in English\.
+
+```
+{
+   "LanguageCode": "en",
+   "TextList": [
+      "I have been living in Seattle for almost 4 years",
+      "It is raining today in Seattle"
+   ]
+}
+```
+
+The response from a `Batch*` operation contains two lists, the `ResultList` and the `ErrorList`\. The `ResultList` contains one record for each document that was successfully processed\. The result for each document in the request is identical to the result you would get if you ran a single document operation on the document\. The results for each document are assigned an index based on the order of the documents in the input file\. The response from the `BatchDetectEntities` operation is:
+
+```
+{
+   "ResultList"  : [
+      {
+         "Index": 0,
+         "Entities": [
+            {
+               "Text": "Seattle", 
+               "Score": 0.95, 
+               "Type": "LOCATION", 
+               "BeginOffset": 22, 
+               "EndOffset": 29
+            },
+            {
+               "Text": "almost 4 years", 
+               "Score": 0.89, 
+               "Type": "QUANTITY", 
+               "BeginOffset": 34, 
+               "EndOffset": 48
+            }
+         ]
+      },
+      {
+         "Index": 1,
+         "Entities": [
+            {
+              "Text": "today",
+              "Score": 0.87,
+              "Type": "DATE",
+              "BeginOffset": 14,
+              "EndOffset": 19
+            },
+            {
+               "Text": "Seattle",
+               "Score": 0.96,
+               "Type": "LOCATION",
+               "BeginOffset": 23,
+               "EndOffset": 30
+            }
+         ]
+      }
+   ],
+   "ErrorList": []
+}
+```
+
+When an error occurs in the request the response contains an `ErrorList` that identifies the documents that contained an error\. The document is identified by its index in the input list\. For example, the following input to the `BatchDetectLanguage` operation contains a document that cannot be processed:
+
+```
+{
+   "TextList": [
+     "hello friend", 
+     "$$$$$$",
+     "hola amigo"
+   ]       
+}
+```
+
+The response from Amazon Comprehend includes an error list that identifies the document that contained an error:
+
+```
+{
+    "ResultList": [
+        {
+          "Index": 0,
+          "Languages":[
+            {
+              "LanguageCode":"en",
+              "Score": 0.99
+            }
+          ]
+        },
+        {
+          "Index": 2
+          "Languages":[
+            {
+              "LanguageCode":"es",
+              "Score": 0.82
+            }
+          ]
+        }
+    ],
+    "ErrorList": [
+      {
+        "Index": 1,
+        "ErrorCode": "InternalServerException",
+        "ErrorMessage": "Unexpected Server Error. Please try again."
+      }
+    ]
+}
+```
+
+## Asynchronous batch processing<a name="how-async"></a>
 
 To analyze large documents and large collections of documents, use one of the Amazon Comprehend asynchronous operations\. There is an asynchronous version of each of the Amazon Comprehend operations and an additional set of operations for topic modeling\. 
 
@@ -14,7 +158,7 @@ To analyze a collection of documents, you typically perform the following steps:
 
 The following sections describe using the Amazon Comprehend API to run asynchronous operations\.
 
-## Prerequisites<a name="detect-topics-role-auth"></a>
+### Prerequisites<a name="detect-topics-role-auth"></a>
 
 Documents must be in UTF\-8\-formatted text files\. You can submit your documents in two formats\. The format you use depends on the type of documents you want to analyze, as described in the following table\.
 
@@ -26,21 +170,21 @@ Documents must be in UTF\-8\-formatted text files\. You can submit your document
 
 When you start an analysis job, you specify the S3 location for your input data\. The URI must be in the same AWS Region as the API endpoint that you are calling\. The URI can point to a single file or it can be the prefix for a collection of data files\. For more information, see the [InputDataConfig](API_InputDataConfig.md) data type\.
 
-You must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection and output files\. For more information, see [Role\-Based Permissions Required for Asynchronous Operations](access-control-managing-permissions.md#auth-role-permissions)\.
+You must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection and output files\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 
-## Starting an Analysis Job<a name="how-start-job"></a>
+### Starting an analysis job<a name="how-start-job"></a>
 
 To submit an analysis job, use either the Amazon Comprehend console or the appropriate `Start*` operation:
-+ [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) — Start a job to detect the dominant language in each document in the collection\. For more information about the dominant language in a document, see [Detect the Dominant Language](how-languages.md)\.
-+ [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) — Start a job to detect entities in each document in the collection\. For more information about entities, see [Detect Entities](how-entities.md)\.
-+ [StartEventsDetectionJob](API_StartEventsDetectionJob.md) — Start a job to detect events in each document in the collection\. For more information about entities, see [Detect Events](how-events.md)\.
-+ [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md) — Start a job to detect key phrases in each document in the collection\. For more information about key phrases, see [Detect Key Phrases](how-key-phrases.md)\.
-+ [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) — Start a job to detect personally identifiable information \(PII\) in each document in the collection\. For more information about PII, see [Detect Personally Identifiable Information \(PII\)](how-key-phrases.md)\.
-+ [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) — Start a job to detect the sentiment in each document in the collection\. For more information about sentiments, see [Determine Sentiment](how-sentiment.md)\.
-+ [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) — Start a job to detect the sentiment of specific entities in each document in the collection\. For more information, see [Analyze Targeted Sentiment](how-targeted-sentiment.md)\.
-+ [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) — Start a job to detect the topics in a document collection\. For more information about topic modeling, see [Topic Modeling](topic-modeling.md)\.
++ [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) — Start a job to detect the dominant language in each document in the collection\. For more information about the dominant language in a document, see [Dominant language](how-languages.md)\.
++ [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) — Start a job to detect entities in each document in the collection\. For more information about entities, see [Entities](how-entities.md)\.
++ [StartEventsDetectionJob](API_StartEventsDetectionJob.md) — Start a job to detect events in each document in the collection\. For more information about entities, see [Events](how-events.md)\.
++ [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md) — Start a job to detect key phrases in each document in the collection\. For more information about key phrases, see [Key phrases](how-key-phrases.md)\.
++ [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) — Start a job to detect personally identifiable information \(PII\) in each document in the collection\. For more information about PII, see [PII entities](how-key-phrases.md)\.
++ [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) — Start a job to detect the sentiment in each document in the collection\. For more information about sentiments, see [Sentiment](how-sentiment.md)\.
++ [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) — Start a job to detect the sentiment of specific entities in each document in the collection\. For more information, see [Targeted sentiment](how-targeted-sentiment.md)\.
++ [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) — Start a job to detect the topics in a document collection\. For more information about topic modeling, see [Topic modeling](topic-modeling.md)\.
 
-## Monitoring Analysis Jobs<a name="how-monitor-progress"></a>
+### Monitoring analysis jobs<a name="how-monitor-progress"></a>
 
 The `Start*` operation returns an ID that you can use to monitor the job's progress\. 
 
@@ -74,7 +218,7 @@ To get the status of a multiple jobs, use the `List*` operation for the analysis
 
 To restrict the results to jobs that match certain criteria, use the `List*` operations' `Filter` parameter\. You can filter on the job name, the job status, and the date and time that the job was submitted\. For more information, see the `Filter` parameter for each of the `List*` operations in the [Actions](API_Operations.md) reference\.
 
-## Getting Analysis Results<a name="how-get-results"></a>
+### Getting analysis results<a name="how-get-results"></a>
 
 After an analysis job has finished, use a `Describe*` operation to get the location of the results\. If the job status is `COMPLETED`, the response includes an `OutputDataConfig` field that contains a field with the Amazon S3 location of the output file\. The file, `output.tar.gz`, is a compressed archive that contains the results of the analysis\.
 
@@ -93,7 +237,7 @@ The results are returned in a single file, with one JSON structure for each docu
 
 Each of the following sections shows examples of output for the two input formats\.
 
-### Getting Dominant Language Detection Results<a name="async-dominant-language"></a>
+#### Getting dominant language detection results<a name="async-dominant-language"></a>
 
 The following is an example of an output file from an analysis that detected the dominant language\. The format of the input is one document per line\. For more information, see the [DetectDominantLanguage](API_DetectDominantLanguage.md) operation\.
 
@@ -109,7 +253,7 @@ The following is an example of output from an analysis where the format of the i
 {"File": "huge_doc", "Languages": [{"LanguageCode": "en", "Score": 0.984955906867981}, {"LanguageCode": "de", "Score": 0.0026436643674969673}, {"LanguageCode": "fr", "Score": 0.0014206881169229746}]}
 ```
 
-### Getting Entity Detection Results<a name="async-entities"></a>
+#### Getting entity detection results<a name="async-entities"></a>
 
 The following is an example of an output file from an analysis that detected entities in documents\. The format of the input is one document per line\. For more information, see the [DetectEntities](API_DetectEntities.md) operation\. The output contains two error messages, one for a document that is too long and one for a document that isn't in UTF\-8 format\.
 
@@ -128,7 +272,7 @@ The following is an example of output from an analysis where the format of the i
 {"File": "huge_doc", "ErrorCode": "DOCUMENT_SIZE_EXCEEDED", "ErrorMessage": "Document size exceeds size limit 102400 bytes."}
 ```
 
-### Getting Events Detection Results<a name="async-events"></a>
+#### Getting events detection results<a name="async-events"></a>
 
 The following is an example an output file from an analysis job that detected events in documents\. The format of the input is one document per line\. 
 
@@ -136,9 +280,9 @@ The following is an example an output file from an analysis job that detected ev
 {"Entities": [{"Mentions": [{"BeginOffset": 12, "EndOffset": 27, "GroupScore": 1.0, "Score": 0.916355, "Text": "over a year ago", "Type": "DATE"}]}, {"Mentions": [{"BeginOffset": 33, "EndOffset": 39, "GroupScore": 1.0, "Score": 0.996603, "Text": "Amazon", "Type": "ORGANIZATION"}]}, {"Mentions": [{"BeginOffset": 66, "EndOffset": 77, "GroupScore": 1.0, "Score": 0.999283, "Text": "Whole Foods", "Type": "ORGANIZATION"}]}], "Events": [{"Arguments": [{"EntityIndex": 2, "Role": "INVESTEE", "Score": 0.999283}, {"EntityIndex": 0, "Role": "DATE", "Score": 0.916355}, {"EntityIndex": 1, "Role": "INVESTOR", "Score": 0.996603}], "Triggers": [{"BeginOffset": 373, "EndOffset": 380, "GroupScore": 0.999984, "Score": 0.999955, "Text": "acquire", "Type": "CORPORATE_ACQUISITION"}], "Type": "CORPORATE_ACQUISITION"}, {"Arguments": [{"EntityIndex": 2, "Role": "PARTICIPANT", "Score": 0.999283}], "Triggers": [{"BeginOffset": 115, "EndOffset": 123, "GroupScore": 1.0, "Score": 0.999967, "Text": "combined", "Type": "CORPORATE_MERGER"}], "Type": "CORPORATE_MERGER"}], "File": "doc.txt", "Line": 0}
 ```
 
-For more information about events output file structure and supported event types, see [Detect Events](how-events.md)\.
+For more information about events output file structure and supported event types, see [Events](how-events.md)\.
 
-### Getting Key Phrase Detection Results<a name="async-key-phrases"></a>
+#### Getting key phrase detection results<a name="async-key-phrases"></a>
 
 The following is an example of an output file from an analysis that detected key phrases in a document\. The format of the input is one document per line\. For more information, see the [DetectKeyPhrases](API_DetectKeyPhrases.md) operation\.
 
@@ -152,7 +296,7 @@ The following is an example of the output from an analysis where the format of t
 {"File": "1_doc", "KeyPhrases": [{"BeginOffset": 0, "EndOffset": 22, "Score": 0.8948641419410706, "Text": "Cluj-NapocaCluj-Napoca"}, {"BeginOffset": 45, "EndOffset": 49, "Score": 0.9989854693412781, "Text": "Cluj"}]}            
 ```
 
-### Getting Personally Identifiable Information \(PII\) Detection Results<a name="async-pii"></a>
+#### Getting personally identifiable information \(PII\) detection results<a name="async-pii"></a>
 
 The following is an example an output file from an analysis job that detected PII entities in documents\. The format of the input is one document per line\. 
 
@@ -167,7 +311,7 @@ The following is an example of output from an analysis where the format of the i
 {"Entities":[{"Type":"NAME","BeginOffset":40,"EndOffset":69,"Score":0.999995},{"Type":"ADDRESS","BeginOffset":247,"EndOffset":253,"Score":0.998828},{"Type":"BANK_ROUTING","BeginOffset":279,"EndOffset":289,"Score":0.999999}],"File":"doc.txt"}
 ```
 
-### Getting Sentiment Detection Results<a name="async-sentiment"></a>
+#### Getting sentiment detection results<a name="async-sentiment"></a>
 
 The following is an example of an output file from an analysis that detected the sentiment expressed in a document\. It includes an error message because one document is too long\. The format of the input is one document per line\. For more information, see the [DetectSentiment](API_DetectSentiment.md) operation\.
 
@@ -184,6 +328,6 @@ The following is an example of the output from an analysis where the format of t
 {"File": "huge_doc", "ErrorCode": "DOCUMENT_SIZE_EXCEEDED", "ErrorMessage": "Document size is exceeds the limit of 5120 bytes."}
 ```
 
-### Getting Topic Modeling Results<a name="async-topic-modeling"></a>
+#### Getting topic modeling results<a name="async-topic-modeling"></a>
 
-Topic modeling analysis returns two files in the `output.tar.gz` file\. For more information, see [Topic Modeling](topic-modeling.md)\.
+Topic modeling analysis returns two files in the `output.tar.gz` file\. For more information, see [Topic modeling](topic-modeling.md)\.

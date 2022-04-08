@@ -1,14 +1,13 @@
-# Step 3: Getting Started Using the Amazon Comprehend Console<a name="get-started-console"></a>
+# Analysis using the Amazon Comprehend console<a name="get-started-console"></a>
 
-The easiest way to get started using Amazon Comprehend is to use the console to analyze a short text file\. If you haven't reviewed the concepts and terminology in [How It Works](how-it-works.md), we recommend that you do that before proceeding\.
+You can use the Amazon Comprehend console to analyze documents in real\-time or to run asynchronous analysis jobs\.
+
+Using real\-time analysis with built\-in models, you can recognize entities, extract key phrases, detect primary language, detect PII, determine sentiment, and analyze syntax\. 
+
+You can run analysis jobs using the built\-in models to find insights such as entities, events, phrases, primary language, sentiment, targeted sentiment, and personally identifiable information \(PII\)\. You can also run topic\-modeling jobs\. 
+
+The console also supports real\-time and asynchronous analysis using custom models\. For more information, see [Custom classification](how-document-classification.md) and [Custom entity recognition](custom-entity-recognition.md)\.
 
 **Topics**
-+ [Analyzing Documents Using the Console](get-started-console-analysis.md)
-+ [Creating and Using Custom Entity Recognizer](getting-started-custom-entity-recognizer.md)
-+ [Creating and Using Custom Classifiers](getting-started-document-classification.md)
-+ [Model Versioning with Amazon Comprehend](model-versioning.md)
-+ [Creating a Topic Modeling Job Using the Console](getting-started-console-topics.md)
-+ [Creating Analysis Jobs Using Built\-in models](getting-started-console-events.md)
-
-**Next Step**  
-[Using the Amazon Comprehend API](get-started-api.md)
++ [Real\-time analysis using the built\-in models](realtime-console-analysis.md)
++ [Creating analysis jobs using built\-in models](getting-started-console-events.md)

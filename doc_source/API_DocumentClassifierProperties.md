@@ -36,7 +36,7 @@ Required: No
  ** LanguageCode **   <a name="comprehend-Type-DocumentClassifierProperties-LanguageCode"></a>
 The language code for the language of the documents that the classifier was trained on\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
+Valid Values:` en | es | fr | de | it | pt`   
 Required: No
 
  ** Message **   <a name="comprehend-Type-DocumentClassifierProperties-Message"></a>
@@ -109,7 +109,7 @@ Pattern: `^\p{ASCII}+$`
 Required: No
 
  ** VpcConfig **   <a name="comprehend-Type-DocumentClassifierProperties-VpcConfig"></a>
- Configuration parameters for a private Virtual Private Cloud \(VPC\) containing the resources you are using for your custom classifier\. For more information, see [Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)\.   
+ Configuration parameters for a private Virtual Private Cloud \(VPC\) containing the resources you are using for your custom classifier\. For more information, see [Amazon VPC](https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html)\.   
 Type: [VpcConfig](API_VpcConfig.md) object  
 Required: No
 

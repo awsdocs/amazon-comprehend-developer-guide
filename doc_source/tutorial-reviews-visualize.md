@@ -1,23 +1,23 @@
-# Step 5: Visualizing Amazon Comprehend Output in Amazon QuickSight<a name="tutorial-reviews-visualize"></a>
+# Step 5: Visualizing Amazon Comprehend output in Amazon QuickSight<a name="tutorial-reviews-visualize"></a>
 
 After storing the Amazon Comprehend results in tables, you can connect to and visualize the data with Amazon QuickSight\. Amazon QuickSight is an AWS managed business intelligence \(BI\) tool for visualizing data\. Amazon QuickSight makes it easy to connect to your data source and create powerful visuals\. In this step, you connect Amazon QuickSight to your data, create visualizations that extract insights from the data, and publish a dashboard of visualizations\.
 
 **Topics**
 + [Prerequisites](#tutorial-reviews-visualize-prereqs)
-+ [Give Amazon QuickSight Access](#tutorial-reviews-visualize-access)
-+ [Import the Datasets](#tutorial-reviews-visualize-import)
-+ [Create a Sentiment Visualization](#tutorial-reviews-visualize-sentiment)
-+ [Create an Entities Visualization](#tutorial-reviews-visualize-entities)
-+ [Publish a Dashboard](#tutorial-reviews-visualize-dashboard)
-+ [Clean Up](#tutorial-reviews-visualize-clean)
++ [Give Amazon QuickSight access](#tutorial-reviews-visualize-access)
++ [Import the datasets](#tutorial-reviews-visualize-import)
++ [Create a sentiment visualization](#tutorial-reviews-visualize-sentiment)
++ [Create an entities visualization](#tutorial-reviews-visualize-entities)
++ [Publish a dashboard](#tutorial-reviews-visualize-dashboard)
++ [Clean up](#tutorial-reviews-visualize-clean)
 
 ## Prerequisites<a name="tutorial-reviews-visualize-prereqs"></a>
 
-Before you begin, complete [Step 4: Preparing the Amazon Comprehend Output for Data Visualization](tutorial-reviews-tables.md)\.
+Before you begin, complete [Step 4: Preparing the Amazon Comprehend output for data visualization](tutorial-reviews-tables.md)\.
 
-## Give Amazon QuickSight Access<a name="tutorial-reviews-visualize-access"></a>
+## Give Amazon QuickSight access<a name="tutorial-reviews-visualize-access"></a>
 
-To import the data, Amazon QuickSight requires access to your Amazon Simple Storage Service \(Amazon S3\) bucket and Amazon Athena tables\. To give Amazon QuickSight access to your data, you must be signed in as a QuickSight administrator and have access to edit the resource permissions\. If you are unable to complete the following steps, review the IAM prerequisites from the overview page [Tutorial: Analyzing Insights from Customer Reviews with Amazon Comprehend](tutorial-reviews.md)\.
+To import the data, Amazon QuickSight requires access to your Amazon Simple Storage Service \(Amazon S3\) bucket and Amazon Athena tables\. To give Amazon QuickSight access to your data, you must be signed in as a QuickSight administrator and have access to edit the resource permissions\. If you are unable to complete the following steps, review the IAM prerequisites from the overview page [Tutorial: Analyzing insights from customer reviews with Amazon Comprehend](tutorial-reviews.md)\.
 
 **To give Amazon QuickSight access to your data**
 
@@ -39,7 +39,7 @@ To import the data, Amazon QuickSight requires access to your Amazon Simple Stor
 
 1. Choose **Update**\.
 
-## Import the Datasets<a name="tutorial-reviews-visualize-import"></a>
+## Import the datasets<a name="tutorial-reviews-visualize-import"></a>
 
 Before creating visualizations, you must add the sentiment and entities datasets to Amazon QuickSight\. You do this with the Amazon QuickSight console\. You import your unnested sentiment and unnested entities tables from Amazon Athena\.
 
@@ -65,7 +65,7 @@ Before creating visualizations, you must add the sentiment and entities datasets
 
    1. For **Tables**, choose the entities table `entities_results_final`\.
 
-## Create a Sentiment Visualization<a name="tutorial-reviews-visualize-sentiment"></a>
+## Create a sentiment visualization<a name="tutorial-reviews-visualize-sentiment"></a>
 
 Now that you can access your data in Amazon QuickSight, you can begin creating visualizations\. You create a pie chart with the Amazon Comprehend sentiment data\. The pie chart shows what proportion of the reviews are positive, neutral, mixed, and negative\.
 
@@ -85,7 +85,7 @@ A pie chart similar to the following with positive, neutral, mixed, and negative
 
 ![\[Screenshot of sentiment pie chart with sections positive, negative, neutral, and mixed.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/tutorial-reviews-pie.png)
 
-## Create an Entities Visualization<a name="tutorial-reviews-visualize-entities"></a>
+## Create an entities visualization<a name="tutorial-reviews-visualize-entities"></a>
 
 Now create a second visualization with the entities dataset\. You create a tree map of the distinct entities in the data\. Each block in the tree map represents an entity, and the size of the block correlates to the number of times that the entity appears in the dataset\.
 
@@ -107,7 +107,7 @@ A tree map similar to the following is displayed next to your pie chart\. To see
 
 ![\[Screenshot of a tree map with blocks for each unique entity.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/tutorial-reviews-tree.png)
 
-## Publish a Dashboard<a name="tutorial-reviews-visualize-dashboard"></a>
+## Publish a dashboard<a name="tutorial-reviews-visualize-dashboard"></a>
 
 After creating the visualizations, you can publish them as a dashboard\. You can perform various tasks with a dashboard, such as sharing it with users in your AWS account, saving it as a PDF, or emailing it as a report \(limited to the Enterprise edition of Amazon QuickSight\)\. In this step, you publish the visualizations as a dashboard in your account\.
 
@@ -132,11 +132,11 @@ You now have a dashboard with sentiment and entities visualizations that looks s
 **Tip**  
  If you want to edit the visualizations in your dashboard, return to **Analyses** and edit the visualization that you want to update\. Then, publish the dashboard again either as a new dashboard or as a replacement of the existing dashboard\. 
 
-## Clean Up<a name="tutorial-reviews-visualize-clean"></a>
+## Clean up<a name="tutorial-reviews-visualize-clean"></a>
 
 After completing this tutorial, you might want to clean up any AWS resources you no longer want to use\. Active AWS resources can continue to incur charges in your account\.
 
 The following actions can help prevent incurring ongoing charges:
-+ Cancel your Amazon QuickSight subscription\. Amazon QuickSight is a monthly subscription service\. To cancel your subscription, see [Canceling your Subscription](https://docs.aws.amazon.com/quicksight/latest/user/closing-account.html) in the *Amazon QuickSight User Guide*\.
++ Cancel your Amazon QuickSight subscription\. Amazon QuickSight is a monthly subscription service\. To cancel your subscription, see [Canceling your subscription](https://docs.aws.amazon.com/quicksight/latest/user/closing-account.html) in the *Amazon QuickSight User Guide*\.
 + Delete your Amazon S3 bucket\. Amazon S3 charges you for storage\. To clean up your Amazon S3 resources, delete your bucket\. For information about deleting a bucket, see [How do I delete an S3 Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/delete-bucket.html) in the *Amazon Simple Storage Service User Guide*\. Make sure that you save all of your important files before deleting your bucket\.
-+ Clear your AWS Glue Data Catalog\. The AWS Glue Data Catalog charges you monthly for storage\. You can delete your databases to prevent incurring ongoing charges\. For information about managing your AWS Glue Data Catalog databases, see [Working with Databases on the AWS Glue Console](https://docs.aws.amazon.com/glue/latest/dg/console-databases.html) in the *AWS Glue Developer Guide*\. Make sure that you export your data before clearing any databases or tables\.
++ Clear your AWS Glue Data Catalog\. The AWS Glue Data Catalog charges you monthly for storage\. You can delete your databases to prevent incurring ongoing charges\. For information about managing your AWS Glue Data Catalog databases, see [Working with databases on the AWS Glue console](https://docs.aws.amazon.com/glue/latest/dg/console-databases.html) in the *AWS Glue Developer Guide*\. Make sure that you export your data before clearing any databases or tables\.

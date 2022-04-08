@@ -1,4 +1,4 @@
-# Multi\-Label Mode<a name="how-document-classification-training-multi-label"></a>
+# Multi\-label mode<a name="prep-classifier-data-multi-label"></a>
 
 In multi\-label classification, individual classes represent different categories, but these categories are somehow related and are not mutually exclusive\. As a result, each document has at least one class assigned to it, but can have more\. For example, a movie can simply be an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time\.
 
@@ -6,7 +6,7 @@ For training, multi\-label mode supports up to 1 million examples containing up 
 
 You can provide training data as a CSV file or as an augmented manifest file from Amazon SageMaker Ground Truth\.
 
-## CSV File<a name="how-document-classification-training-multi-label-csv"></a>
+## CSV file<a name="prep-classifier-data-multi-label-csv"></a>
 
 To train a custom classifier, you can provide training data as a two\-column CSV file\. In it, labels are provided in the first column, and documents are provided in the second\.
 
@@ -26,7 +26,7 @@ COMEDY|MYSTERY|SCIENCE_FICTION|TEEN,"A band of misfit teens become unlikely dete
 
 The default delimiter between class names is a pipe \(\|\)\. However, you can use a different character as a delimiter\. The delimiter cannot be part of your class name\. For example, if your classes are CLASS\_1, CLASS\_2, and CLASS\_3, the underscore \(**\_**\) is part of the class name\. You cannot use then use an underscore as the delimiter for separating class names\.
 
-## Augmented Manifest File<a name="how-document-classification-training-multi-label-manifest"></a>
+## Augmented manifest file<a name="prep-classifier-data-multi-label-manifest"></a>
 
 An augmented manifest file is a labeled dataset that is produced by SageMaker Ground Truth\. Ground Truth is a data labeling service that helps you—or a workforce that you employ—build training datasets for machine learning models\. Amazon Comprehend accepts augmented manifest files as training data for custom models\. You can provide these files when you create a custom classifier by using the Amazon Comprehend console or the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) API action\. 
 

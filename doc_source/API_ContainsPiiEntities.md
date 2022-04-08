@@ -18,9 +18,9 @@ For information about the parameters that are common to all actions, see [Common
 The request accepts the following data in JSON format\.
 
  ** [LanguageCode](#API_ContainsPiiEntities_RequestSyntax) **   <a name="comprehend-ContainsPiiEntities-request-LanguageCode"></a>
-The language of the input documents\.  
+The language of the input documents\. Currently, `en` is the only valid value\.  
 Type: String  
-Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`   
+Valid Values:` en`   
 Required: Yes
 
  ** [Text](#API_ContainsPiiEntities_RequestSyntax) **   <a name="comprehend-ContainsPiiEntities-request-Text"></a>
@@ -69,7 +69,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages Supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_ContainsPiiEntities_SeeAlso"></a>

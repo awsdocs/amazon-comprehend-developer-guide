@@ -1,10 +1,10 @@
-# Monitoring an Endpoint with Amazon Comprehend<a name="manage-endpoints-monitor"></a>
+# Monitoring Amazon Comprehend endpoints<a name="manage-endpoints-monitor"></a>
 
 Depending on your needs, you might need to adjust the throughput of your endpoint after creating it\. This can be achieved by updating the endpoint's inference units \(IUs\)\. When you edit an endpoint, you can add more IUs to an endpoint, or you can decrease the IUs\. A single endpoint can have 1 to 10 IUs\. 
 
-For more information on updating your endpoint, see [Updating an Endpoint with Amazon Comprehend](manage-endpoints-update.md)\.
+For more information on updating your endpoint, see [Updating Amazon Comprehend endpoints](manage-endpoints-update.md)\.
 
-To view all of your endpoints, see [Endpoints Overview with Amazon Comprehend](manage-endpoints-overview.md)\.
+To view all of your endpoints, see [Overview of Amazon Comprehend endpoints](manage-endpoints-overview.md)\.
 
 You can determine how to best adjust your endpoint's throughput by monitoring its usage with the Amazon CloudWatch console\.
 
@@ -38,7 +38,7 @@ You can determine how to best adjust your endpoint's throughput by monitoring it
      
 
 
-Based on the CloudWatch metrics, you can also set up auto scaling to automatically adjust the throughput of your endpoint\. For more information about using auto scaling with your endpoints, see [Auto Scaling with Endpoints](comprehend-autoscaling.md)\. 
+Based on the CloudWatch metrics, you can also set up auto scaling to automatically adjust the throughput of your endpoint\. For more information about using auto scaling with your endpoints, see [Auto scaling with endpoints](comprehend-autoscaling.md)\. 
 
 
 + **ProvisionedInferenceUnits**\- This metric represents the number of average provisioned IUs at the time the request was made\. 

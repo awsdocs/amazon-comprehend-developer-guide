@@ -1,12 +1,12 @@
-# Creating and Using Custom Entity Recognizer<a name="getting-started-custom-entity-recognizer"></a>
+# Train custom recognizers \(console\)<a name="realtime-analysis-cer"></a>
 
-You can create custom entity recognizers using the Amazon Comprehend console\. This section shows you how to create and train a custom entity recognizer and then how to create an entity recognizer job\.
+You can create custom entity recognizers using the Amazon Comprehend console\. This section shows you how to create and train a custom entity recognizer\.
 
 **Topics**
 
-## Creating a Custom Entity Recognizer Using the Console \- CSV Format<a name="getting-started-console-CER"></a>
+## Creating a custom entity recognizer using the console \- CSV format<a name="console-CER"></a>
 
-To create the custom entity recognizer, first provide a dataset to train your model\. With this dataset, include one of the following: a set of annotated documents or a list of entities and their type label, along with a set of documents containing those entities\. For more information, see [Custom Entity Recognition](custom-entity-recognition.md)
+To create the custom entity recognizer, first provide a dataset to train your model\. With this dataset, include one of the following: a set of annotated documents or a list of entities and their type label, along with a set of documents containing those entities\. For more information, see [Custom entity recognition](custom-entity-recognition.md)
 
 **To train a custom entity recognizer with a CSV file**
 
@@ -32,13 +32,13 @@ To create the custom entity recognizer, first provide a dataset to train your mo
    + If you are using a key associated with the current account, for **KMS key ID** choose the key ID\.
    + If you are using a key associated with a different account, for **KMS key ARN** enter the ARN for the key ID\.
 **Note**  
-For more information on creating and using KMS keys and the associated encryption, see [Key Management Service \(KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
+For more information on creating and using KMS keys and the associated encryption, see [AWS Key Management Service](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
 
 1. Under **Data specifications**, choose the format of your training documents:
    + **CSV file** — A CSV file that supplements your training documents\. The CSV file contains information about the custom entities that your trained model will detect\. The required format of the file depends on whether you are providing annotations or an entity list\.
    + **Augmented manifest** — A labeled dataset that is produced by Amazon SageMaker Ground Truth\. This file is in JSON lines format\. Each line is a complete JSON object that contains a training document and its labels\. Each label annotates a named entity in the training document\. You can provide up to 5 augmented manifest files\.
 
-   For more information about available formats, and for examples, see [Training custom entity recognizers](training-recognizers.md)\.
+   For more information about available formats, and for examples, see [Training recognizer models](training-recognizers.md)\.
 
 1. Under **Training type**, choose the training type to use:
    + **Using annotations and training docs**
@@ -60,7 +60,7 @@ For more information on creating and using KMS keys and the associated encryptio
    + **Choose an existing IAM role** – Select this option if you already have an IAM role with permissions to access the input and output Amazon S3 buckets\.
    + **Create a new IAM role** – Select this option when you want to create a new IAM role with the proper permissions for Amazon Comprehend to access the input and output buckets\. 
 **Note**  
-If the input documents are encrypted, the IAM role used must have `kms:Decrypt` permission\. For more information, see [Permissions Required to Use KMS Encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
+If the input documents are encrypted, the IAM role used must have `kms:Decrypt` permission\. For more information, see [Permissions required to use KMS encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
 
 1. \(Optional\) To launch your resources into Amazon Comprehend from a VPC, enter the VPC ID under **VPC** or choose the ID from the drop\-down list\. 
 
@@ -76,9 +76,9 @@ When you use a VPC with your custom entity recognition job, the `DataAccessRole`
 
 The new recognizer will then appear in the list, showing its status\. It will first show as `Submitted`\. It will then show `Training` for a classifier that is processing training documents, `Trained` for a classifier that is ready to use, and `In error` for a classifier that has an error\. You can click on a job to get more information about the recognizer, including any error messages\.
 
-## Creating a Custom Entity Recognizer Using the Console \- Augmented Manifest<a name="getting-started-console-CER-PDF"></a>
+## Creating a custom entity recognizer using the console \- augmented manifest<a name="getting-started-CER-PDF"></a>
 
-**To train a custom entity recognizer with a Plain text, PDF, or Word Document**
+**To train a custom entity recognizer with a plain text, PDF, or word document**
 
 1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/home?region=us-east-1#api-explorer:)
 
@@ -102,12 +102,12 @@ The new recognizer will then appear in the list, showing its status\. It will fi
    + If you are using a key associated with the current account, for **KMS key ID** choose the key ID\.
    + If you are using a key associated with a different account, for **KMS key ARN** enter the ARN for the key ID\.
 **Note**  
-For more information on creating and using KMS keys and the associated encryption, see [Key Management Service \(KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
+For more information on creating and using KMS keys and the associated encryption, see [AWS Key Management Service](https://docs.aws.amazon.com/kms/latest/developerguide/overview.html)\.
 
 1. Under **Training data**, choose **Augmented manifest** as your data format:
    + **Augmented manifest** — is a labeled dataset that is produced by Amazon SageMaker Ground Truth\. This file is in JSON lines format\. Each line in the file is a complete JSON object that contains a training document and its labels\. Each label annotates a named entity in the training document\. You can provide up to 5 augmented manifest files\. If you are using PDF documents for training data, you must select **Augmented manifest**\. You can provide up to 5 augmented manifest files\. For each file, you can name up to 5 attributes to use as training data\.
 
-   For more information about available formats, and for examples, see [Training custom entity recognizers](training-recognizers.md)\.
+   For more information about available formats, and for examples, see [Training recognizer models](training-recognizers.md)\.
 
 1. Select the training model type\. 
 
@@ -131,7 +131,7 @@ For more information on creating and using KMS keys and the associated encryptio
    + **Choose an existing IAM role** – Select this option if you already have an IAM role with permissions to access the input and output Amazon S3 buckets\.
    + **Create a new IAM role** – Select this option when you want to create a new IAM role with the proper permissions for Amazon Comprehend to access the input and output buckets\. 
 **Note**  
-If the input documents are encrypted, the IAM role used must have `kms:Decrypt` permission\. For more information, see [Permissions Required to Use KMS Encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
+If the input documents are encrypted, the IAM role used must have `kms:Decrypt` permission\. For more information, see [Permissions required to use KMS encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
 
 1. \(Optional\) To launch your resources into Amazon Comprehend from a VPC, enter the VPC ID under **VPC** or choose the ID from the drop\-down list\. 
 

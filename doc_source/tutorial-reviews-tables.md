@@ -1,4 +1,4 @@
-# Step 4: Preparing the Amazon Comprehend Output for Data Visualization<a name="tutorial-reviews-tables"></a>
+# Step 4: Preparing the Amazon Comprehend output for data visualization<a name="tutorial-reviews-tables"></a>
 
 To prepare the results of the sentiment and entities analysis jobs for creating data visualizations, you use AWS Glue and Amazon Athena\. In this step, you extract the Amazon Comprehend results files\. Then, you create an AWS Glue *crawler* that explores your data and automatically catalogs it in tables in the AWS Glue Data Catalog\. After that, you access and transform these tables using Amazon Athena, a serverless and interactive query service\. When you have finished this step, your Amazon Comprehend results are clean and ready for visualization\.
 
@@ -9,14 +9,14 @@ For a PII entity detection job, the output file is plain text, not a compressed 
 **Topics**
 + [Prerequisites](#tutorial-reviews-tables-prereqs)
 + [Download the Output](#tutorial-reviews-tables-download)
-+ [Extract the Output Files](#tutorial-reviews-tables-extract)
-+ [Upload the Extracted Files](#tutorial-reviews-tables-upload)
-+ [Load the Data into an AWS Glue Data Catalog](#tutorial-reviews-tables-crawler)
-+ [Prepare the Data for Analysis](#tutorial-reviews-tables-prep)
++ [Extract the output files](#tutorial-reviews-tables-extract)
++ [Upload the extracted files](#tutorial-reviews-tables-upload)
++ [Load the data into an AWS Glue Data Catalog](#tutorial-reviews-tables-crawler)
++ [Prepare the data for analysis](#tutorial-reviews-tables-prep)
 
 ## Prerequisites<a name="tutorial-reviews-tables-prereqs"></a>
 
-Before you begin, complete [Step 3: Running Analysis Jobs on Documents in Amazon S3](tutorial-reviews-analysis.md)\.
+Before you begin, complete [Step 3: Running analysis jobs on documents in Amazon S3](tutorial-reviews-analysis.md)\.
 
 ## Download the Output<a name="tutorial-reviews-tables-download"></a>
 
@@ -42,7 +42,7 @@ To find the output files for each job, return to the analysis job in the Amazon 
 
 1. Repeat steps 1\-4 to find and download the output from your `reviews-entities-analysis` job\. On your computer, rename the archive as `entities-output.tar.gz`\.
 
-### Download the Output Files \(AWS CLI\)<a name="tutorial-reviews-tables-download-cli"></a>
+### Download the output files \(AWS CLI\)<a name="tutorial-reviews-tables-download-cli"></a>
 
 To find the output files for each job, use the `JobId` from the analysis job to find the output's S3 location\. Then, use the `cp` command to download the output file to your computer\.
 
@@ -93,11 +93,11 @@ To find the output files for each job, use the `JobId` from the analysis job to 
    path/entities-output.tar.gz
    ```
 
-## Extract the Output Files<a name="tutorial-reviews-tables-extract"></a>
+## Extract the output files<a name="tutorial-reviews-tables-extract"></a>
 
 Before you can access the Amazon Comprehend results, unpack the sentiment and entities archives\. You can use either your local file system or a terminal to unpack the archives\. 
 
-### Extract the Output Files \(GUI File System\)<a name="tutorial-reviews-tables-extract-gui"></a>
+### Extract the output files \(GUI file system\)<a name="tutorial-reviews-tables-extract-gui"></a>
 
 If you use macOS, double\-click the archive in your GUI file system to extract the output file from the archive\.
 
@@ -105,7 +105,7 @@ If you use Windows, you can use a third\-party tool such as 7\-Zip to extract th
 
 Rename the sentiment file as `sentiment-output` and the entities file as `entities-output` to distinguish between the output files\.
 
-### Extract the Output Files \(Terminal\)<a name="tutorial-reviews-tables-extract-terminal"></a>
+### Extract the output files \(terminal\)<a name="tutorial-reviews-tables-extract-terminal"></a>
 
 If you use Linux or macOS, you can use your standard terminal\. If you use Windows, you must have access to a Unix\-style environment, such as Cygwin, to run tar commands\.
 
@@ -128,11 +128,11 @@ The `--transform` parameter adds the prefix `entities-` to the output file name\
 **Tip**  
 To save storage costs in Amazon S3, you can compress the files again with Gzip before uploading them\. It's important to decompress and unpack the original archives because AWS Glue can’t automatically read data from a tar archive\. However, AWS Glue can read from files in Gzip format\.
 
-## Upload the Extracted Files<a name="tutorial-reviews-tables-upload"></a>
+## Upload the extracted files<a name="tutorial-reviews-tables-upload"></a>
 
 After extracting the files, upload them to your bucket\. You must store the sentiment and entities output files in separate folders in order for AWS Glue to read the data properly\. In your bucket, create a folder for the extracted sentiment results and a second folder for the extracted entities results\. You can create folders either with the Amazon S3 console or the AWS CLI\. 
 
-### Upload the Extracted Files to Amazon S3 \(Console\)<a name="tutorial-reviews-tables-upload-console"></a>
+### Upload the extracted files to Amazon S3 \(console\)<a name="tutorial-reviews-tables-upload-console"></a>
 
 In your S3 bucket, create one folder for the extracted sentiment results file and one folder for the entities results file\. Then, upload the extracted results files to their respective folders\.
 
@@ -156,7 +156,7 @@ In your S3 bucket, create one folder for the extracted sentiment results file an
 
 1. Repeat steps 1\-8 to create a folder called `entities-results`, and upload the `entities-output` file to it\.
 
-### Upload the Extracted Files to Amazon S3 \(AWS CLI\)<a name="tutorial-reviews-tables-upload-cli"></a>
+### Upload the extracted files to Amazon S3 \(AWS CLI\)<a name="tutorial-reviews-tables-upload-cli"></a>
 
 You can create a folder in your S3 bucket while uploading a file with the `cp` command\. 
 
@@ -174,11 +174,11 @@ You can create a folder in your S3 bucket while uploading a file with the `cp` c
    aws s3 cp path/entities-output s3://DOC-EXAMPLE-BUCKET/entities-results/
    ```
 
-## Load the Data into an AWS Glue Data Catalog<a name="tutorial-reviews-tables-crawler"></a>
+## Load the data into an AWS Glue Data Catalog<a name="tutorial-reviews-tables-crawler"></a>
 
 To get the results into a database, you can use an AWS Glue *crawler*\. An AWS Glue *crawler* scans files and discovers the schema of the data\. It then arranges the data in tables in an AWS Glue Data Catalog \(a serverless database\)\. You can create a crawler with the AWS Glue console or the AWS CLI\.
 
-### Load the Data into an AWS Glue Data Catalog \(Console\)<a name="tutorial-reviews-tables-crawler-console"></a>
+### Load the data into an AWS Glue Data Catalog \(console\)<a name="tutorial-reviews-tables-crawler-console"></a>
 
 Create an AWS Glue crawler that scans your `sentiment-results` and `entities-results` folders separately\. A new IAM role for AWS Glue gives the crawler permission to access your S3 bucket\. You create this IAM role while setting up the crawler\.
 
@@ -230,7 +230,7 @@ Create an AWS Glue crawler that scans your `sentiment-results` and `entities-res
 
 1. In the Glue console, in **Crawlers**, choose `comprehend-analysis-crawler` and choose **Run crawler**\. It can take a few minutes for the crawler to finish\.
 
-### Load the Data into an AWS Glue Data Catalog \(AWS CLI\)<a name="tutorial-reviews-tables-crawler-cli"></a>
+### Load the data into an AWS Glue Data Catalog \(AWS CLI\)<a name="tutorial-reviews-tables-crawler-cli"></a>
 
 Create an IAM role for AWS Glue that provides permission to access your S3 bucket\. Then, create a database in the AWS Glue Data Catalog\. Finally, create and run a crawler that loads your data into tables in the database\.
 
@@ -336,7 +336,7 @@ Create an IAM role for AWS Glue that provides permission to access your S3 bucke
 
    It can take a few minutes for the crawler to finish\.
 
-## Prepare the Data for Analysis<a name="tutorial-reviews-tables-prep"></a>
+## Prepare the data for analysis<a name="tutorial-reviews-tables-prep"></a>
 
 Now you have a database populated with the Amazon Comprehend results\. However, the results are nested\. To unnest them, you run a few SQL statements in Amazon Athena\. Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL\. Athena is serverless, so there is no infrastructure to manage and it has a pay\-per\-query pricing model\. In this step, you create new tables of cleaned data that you can use for analysis and visualization\. You use the Athena console to prepare the data\.
 

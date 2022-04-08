@@ -1,29 +1,8 @@
-# Detect Personally Identifiable Information \(PII\)<a name="how-pii"></a>
+# PII entities<a name="how-pii"></a>
 
-You can use Amazon Comprehend to detect entities in your text that contain personally identifiable information \(PII\), or *PII entities*\. A PII entity is a textual reference to personal data that could be used to identify an individual, such as an address, bank account number, or phone number\.
+You can use Amazon Comprehend to detect *PII entities*\. A Personally Identifiable Information \(PII\) entity is a textual reference to personal data that could be used to identify an individual, such as an address, bank account number, or phone number\.
 
-For example, you can detect the PII entities in the following text by submitting it to Amazon Comprehend:
-
-*Hello Paulo Santos\. The latest statement for your credit card account 1111\-0000\-1111\-0000 was mailed to 123 Any Street, Seattle, WA 98109\.*
-
-When Amazon Comprehend completes its analysis, it returns output that either locates or redacts the PII entities in the text\.
-
-For example, if you choose to locate the PII entities, the output includes the character offsets for each one, along with the entity type and other details\. In this case, the output states that "Paul Santos" has the type `NAME`, "1111\-0000\-1111\-0000" has the type `CREDIT_DEBIT_NUMBER`, and "123 Any Street, Seattle, WA 98109" has the type `ADDRESS`\.
-
-Alternatively, if you choose to redact the PII entities, Amazon Comprehend returns a copy of the input text in which each PII entity is redacted:
-
-*Hello \*\*\*\*\* \*\*\*\*\*\*\. The latest statement for your credit card account \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* was mailed to \*\*\* \*\*\* \*\*\*\*\*\*\* \*\*\*\*\*\*\*\* \*\* \*\*\*\*\*\.*
-
-You can detect PII entities with both real\-time synchronous operations and batch asynchronous jobs\. However, you must use an asynchronous job if you want to produce output with redacted PII entities\. 
-
-You can use the following operations to detect PII entities in a document or set of documents:
-+ [DetectPiiEntities](API_DetectPiiEntities.md)
-+ [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md)
-
-You can use the following operation to label PII in a document or set of documents:
-+ [ContainsPiiEntities](API_ContainsPiiEntities.md)
-
-## PII Entity Types<a name="how-pii-types"></a>
+## PII entity types<a name="how-pii-types"></a>
 
 Amazon Comprehend can detect the following types of PII entities:
 
@@ -53,7 +32,7 @@ Amazon Comprehend can detect the following types of PII entities:
 | URL |  A web address, such as www\.example\.com\.  | 
 | USERNAME |  A user name that identifies an account, such as a login name, screen name, nick name, or handle\.  | 
 
-## Locate PII Entities<a name="how-pii-locate"></a>
+## Locate PII entities<a name="how-pii-locate"></a>
 
 To locate the PII entities in your text, you can quickly analyze a single document, or you can start an asynchronous batch job on a large collection of documents\.
 
@@ -91,16 +70,16 @@ In addition to the character offsets, Amazon Comprehend provides the following f
 To run the same analysis on a large collection of documents, run an asynchronous batch job\. To run the job, upload your documents to Amazon S3, and submit a [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) request\. In your request, include the following required parameters:
 + `InputDataConfig` – Provide an [InputDataConfig](API_InputDataConfig.md) definition for your request, which includes the input properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location of your input documents\.
 + `OutputDataConfig` – Provide an [OutputDataConfig](API_OutputDataConfig.md) definition for your request, which includes the output properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location where Amazon Comprehend writes the results of its analysis\.
-+ `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-Based Permissions Required for Asynchronous Operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 + `Mode` – Set this parameter to `ONLY_OFFSETS`\. With this setting, the output provides the character offsets that locate each PII entity in the input text\. The output also includes confidence scores and PII entity types\.
 + `LanguageCode` – Set this parameter to `en`\. Amazon Comprehend supports PII detection in only English text\.
 
-## Redact PII Entities<a name="how-pii-redact"></a>
+## Redact PII entities<a name="how-pii-redact"></a>
 
 To redact the PII entities in your text, you must run an asynchronous batch job\. To run the job, upload your documents to Amazon S3, and submit a [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) request\. In your request, include the following required parameters:
 + `InputDataConfig` – Provide an [InputDataConfig](API_InputDataConfig.md) definition for your request, which includes the input properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location of your input documents\.
 + `OutputDataConfig` – Provide an [OutputDataConfig](API_OutputDataConfig.md) definition for your request, which includes the output properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location where Amazon Comprehend writes the results of its analysis\.
-+ `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-Based Permissions Required for Asynchronous Operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 + `Mode` – Set this parameter to `ONLY_REDACTION`\. With this setting, Amazon Comprehend writes a copy of your input documents to the output location in Amazon S3\. In this copy, each PII entity is redacted\.
 + `RedactionConfig` – Provide a [RedactionConfig](API_RedactionConfig.md) definition for your request, which includes the configuration parameters for the redaction\. Specify the types of PII to redact, and specify whether each PII entity is replaced with the name of its type or a character of your choice:
   + To replace each PII entity with its type, set the `MaskMode` parameter to `REPLACE_WITH_PII_ENTITY_TYPE`\. For example, with this setting, the PII entity "Jane Doe" is replaced with "\[NAME\]"\.

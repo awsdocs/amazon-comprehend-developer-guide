@@ -1,11 +1,11 @@
-# Testing the Training Data<a name="testing-the-model"></a>
+# Test the training data<a name="testing-the-model"></a>
 
 Once the model has been trained, Amazon Comprehend uses between 10 and 20 percent of the training documents to test the custom classifier model\. Testing the model provides you with metrics that you can use to determine if the model is trained well enough for your purposes\. These metrics are displayed in the **Classifier performance** section of the **Classifier details** page in the console\. They are also returned in the `Metrics` fields returned by the [DescribeDocumentClassifier](API_DescribeDocumentClassifier.md) operation\.
 
 For example, in the sample of training data below, there are 5 labels, DOCUMENTARY, DOCUMENTARY, SCIENCE\_FICTION, DOCUMENTARY, ROMANTIC\_COMEDY\. There are **3 unique classes**: DOCUMENTARY, SCIENCE\_FICTION, ROMANTIC\_COMEDY\. 
 
 
-| column 1 | column 2 | 
+| Column 1 | Column 2 | 
 | --- | --- | 
 | DOCUMENTARY | document text 1 | 
 | DOCUMENTARY | document text 2 | 

@@ -1,4 +1,4 @@
-# Updating an Endpoint with Amazon Comprehend<a name="manage-endpoints-update"></a>
+# Updating Amazon Comprehend endpoints<a name="manage-endpoints-update"></a>
 
 Frequently, the level of throughput you need changes after creating an endpoint, or your first estimation of your needs changes\. When this happens, it may be necessary to update your endpoint to adjust the throughput up or down\. Throughput is governed by the number of inference units with which you've provisioned your endpoint\. Each inference unit represents a throughput of 100 characters per second for up to 2 documents per second\. You might also want to update the version of the model associated with the endpoint\. When you edit an endpoint, you can choose a different version of the model for the endpoint\.
 
@@ -24,7 +24,7 @@ It can also be helpful to add tags to your endpoint to help keep them organized\
 
 1. Enter the updated number of inference units to assign to the endpoint\. Each unit represents a throughput of 100 characters per second\. You can assign up to a maximum of 10 inference units per endpoint\. 
 **Note**  
-The cost of using an endpoint is based on the amount of time operating and the throughput \(based on the number of inference units\. Increasing the number of inference units will thus increase the cost of operation\. For more information, see [Amazon Comprehend Pricing](https://aws.amazon.com/comprehend/pricing)\.
+The cost of using an endpoint is based on the amount of time operating and the throughput \(based on the number of inference units\. Increasing the number of inference units will thus increase the cost of operation\. For more information, see [Amazon Comprehend pricing](https://aws.amazon.com/comprehend/pricing)\.
 
 1. Choose **Edit endpoint**\. The endpoint details page is displayed\. 
 

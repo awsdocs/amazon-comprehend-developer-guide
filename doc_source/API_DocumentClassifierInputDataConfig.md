@@ -2,7 +2,7 @@
 
 The input properties for training a document classifier\. 
 
-For more information on how the input file is formatted, see [Creating Training Data](how-document-classification-training-data.md)\. 
+For more information on how the input file is formatted, see [Preparing training data](prep-classifier-data.md)\. 
 
 ## Contents<a name="API_DocumentClassifierInputDataConfig_Contents"></a>
 
