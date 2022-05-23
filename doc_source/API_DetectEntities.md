@@ -21,6 +21,7 @@ The request accepts the following data in JSON format\.
  ** [EndpointArn](#API_DetectEntities_RequestSyntax) **   <a name="comprehend-DetectEntities-request-EndpointArn"></a>
 The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model\. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend\.  
 If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request\.  
+For information about endpoints, see [Managing endpoints](https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html)\.  
 Type: String  
 Length Constraints: Maximum length of 256\.  
 Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer-endpoint/[a-zA-Z0-9](-*[a-zA-Z0-9])*`   
@@ -96,7 +97,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob ordered two sandwiches and three ice cream cones today from a store in Seattle\.", the operation returns the following:
 
-#### <a name="w82aac57b5c92c15b3b5"></a>
+#### <a name="w88aac57b5c92c15b3b5"></a>
 
 ```
     {

@@ -1,6 +1,6 @@
 # UpdateEndpoint<a name="API_UpdateEndpoint"></a>
 
-Updates information about the specified endpoint\.
+Updates information about the specified endpoint\. For information about endpoints, see [Managing endpoints](https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html)\.
 
 ## Request Syntax<a name="API_UpdateEndpoint_RequestSyntax"></a>
 

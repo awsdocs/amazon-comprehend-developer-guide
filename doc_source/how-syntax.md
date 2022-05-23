@@ -6,7 +6,7 @@ For example, you can look for the nouns in a document and then look for the verb
 
 To start the analysis, Amazon Comprehend parses the source text to find the individual words in the text\. After the text is parsed, each word is assigned the part of speech that it takes in the source text\.
 
-Amazon Comprehend can identify 17 parts of speech\. The parts of speech recognized are:
+Amazon Comprehend can identify the following parts of speech\. 
 
 
 | Token | Part of speech | 
@@ -15,7 +15,8 @@ Amazon Comprehend can identify 17 parts of speech\. The parts of speech recogniz
 | ADP | Adposition The head of a prepositional or postpositional phrase\. | 
 | ADV | Adverb Words that typically modify verbs\. They may also modify adjectives and other adverbs\. | 
 | AUX | Auxiliary Function words that accompanies the verb of a verb phrase\. | 
-| CCONJ | Coordinating conjunction Words that links words or phrases without subordinating one to the other\. | 
+| CCONJ | Coordinating conjunction A coordinating conjunction connects words, phrases, or clauses in a sentence without subordinating one to the other\. | 
+| CONJ | Conjunction A conjunction connects words, phrases, or clauses in a sentence\. | 
 | DET | Determiner Articles and other words that specify a particular noun phrase\. | 
 | INTJ | Interjection Words used as an exclamation or part of an exclamation\. | 
 | NOUN | Noun Words that specify a person, place, thing, animal, or idea\. | 
@@ -25,7 +26,7 @@ Amazon Comprehend can identify 17 parts of speech\. The parts of speech recogniz
 | PRON | Pronoun Words that substitute for nouns or noun phrases\. | 
 | PROPN | Proper nounA noun that is the name of a specific individual, place or object\. | 
 | PUNCT | Punctuation Non\-alphabetical characters that delimit text\. | 
-| SCONJ | Subordinating conjunction A conjunction that links parts of sentences by make one of them part of the other\. | 
+| SCONJ | Subordinating conjunction A conjunction that joins a dependent clause to a sentence\. An example of a subordinating conjunction is "because"\. | 
 | SYM | SymbolWord\-like entities such as the dollar sign \($\) or mathematical symbols\. | 
 | VERB | VerbWords that signal events and actions\. | 
 

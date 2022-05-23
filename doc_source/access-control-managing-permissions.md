@@ -42,12 +42,25 @@ To fully use Amazon Key Management Service \(KMS\) for data and job encryption i
     "Statement": [
         {
             "Action": [
-                "kms:CreateGrant",
+                "kms:CreateGrant"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Action": [
                 "kms:Decrypt",
                 "kms:GenerateDatakey"
             ],
             "Effect": "Allow",
-            "Resource": "*"
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "kms:ViaService": [
+                        "s3.region.amazonaws.com"
+                    ]
+                }
+            }
         }
     ]
 }

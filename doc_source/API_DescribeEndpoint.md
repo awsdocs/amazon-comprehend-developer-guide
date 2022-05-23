@@ -1,6 +1,6 @@
 # DescribeEndpoint<a name="API_DescribeEndpoint"></a>
 
-Gets the properties associated with a specific endpoint\. Use this operation to get the status of an endpoint\.
+Gets the properties associated with a specific endpoint\. Use this operation to get the status of an endpoint\. For information about endpoints, see [Managing endpoints](https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html)\.
 
 ## Request Syntax<a name="API_DescribeEndpoint_RequestSyntax"></a>
 

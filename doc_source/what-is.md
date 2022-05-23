@@ -36,25 +36,27 @@ For more information, see [Insights](concepts-insights.md)\.
 
 You can customize Amazon Comprehend for your specific requirements without the skillset required to build machine learning\-based NLP solutions\. Using automatic machine learning, or AutoML, Amazon Comprehend Custom builds customized NLP models on your behalf, using data you already have\.
 
-**Custom classification** – Create custom classification models \(classifiers\) to organize your documents into your own categories\. For each classification label, provide a set of documents that best represent that label and train your classifier on it\. Use the trained classifier to analyze any number of unlabeled document sets\. You can run custom classification from the console or from your code using the API or one of the SDKs\. For more information, see [Custom classification](how-document-classification.md)\.
+**Custom classification** – Create custom classification models \(classifiers\) to organize your documents into your own categories\. 
 
-**Custom entity recognition** – Create custom entity recognition models \(recognizers\) that can analyze text for your specific terms and noun\-based phrases\. For example, you can train custom entities to extract terms like policy numbers or phrases that imply a customer escalation\. To train the model, you provide a list of the entities and a set of documents that contain them\. Once the model is trained, you can submit analysis jobs against it to extract their custom entities\. For more information, see [Custom entity recognition](custom-entity-recognition.md)\. 
+**Custom entity recognition** – Create custom entity recognition models \(recognizers\) that can analyze text for your specific terms and noun\-based phrases\. 
+
+For more information, see [Amazon Comprehend Custom](concepts-custom.md)\. 
 
 ## Document clustering \(topic modeling\)<a name="how-topics"></a>
 
-You can also use Amazon Comprehend to examine a corpus of documents to organize them based on similar keywords within them\. Document clustering \(topic modeling\) is useful to organize a large corpus of documents into topics or clusters that are similar based on word frequency\.
-
-Topic modeling is an asynchronous process, so you submit a set of documents for processing and get the results later when processing is complete\. Amazon Comprehend does topic modeling on large document sets\. For best results, include at least 1,000 documents when you submit a topic modeling job\. For more information, see [Topic modeling](topic-modeling.md)\.
+You can also use Amazon Comprehend to examine a corpus of documents to organize them based on similar keywords within them\. Document clustering \(topic modeling\) is useful to organize a large corpus of documents into topics or clusters that are similar based on word frequency\. For more information, see [Topic modeling](topic-modeling.md)\.
 
 ## Examples<a name="how-examples"></a>
 
 The following examples show how you might use the Amazon Comprehend operations in your applications\.
 
 **Example 1: Find documents about a subject**  
-Find the documents about a particular subject using Amazon Comprehend topic modeling\. Scan a set of documents to determine the topics discussed, and to find the documents associated with each topic\. You can specify the number of topics that Amazon Comprehend should return from the document set\.
+Find the documents about a particular subject using Amazon Comprehend topic modeling\. Scan a set of documents to determine the topics discussed, and to find the documents associated with each topic\. You can specify the number of topics that Amazon Comprehend should return from the document set\.  
+ 
 
 **Example 2: Find out how customers feel about your products**  
-If your company publishes a catalog, let Amazon Comprehend tell you what customers think of your products\. Send each customer comment to the `DetectSentiment` operation and it will tell you whether customers feel positive, negative, neutral, or mixed about a product\. 
+If your company publishes a catalog, let Amazon Comprehend tell you what customers think of your products\. Send each customer comment to the `DetectSentiment` operation and it will tell you whether customers feel positive, negative, neutral, or mixed about a product\.   
+ 
 
 **Example 3: Discover what matters to your customers**  
 Use Amazon Comprehend topic modeling to discover the topics that your customers are talking about on your forums and message boards, then use entity detection to determine the people, places, and things that they associate with the topic\. Finally, use sentiment analysis to determine how your customers feel about a topic\.
@@ -88,3 +90,7 @@ If you are a first\-time user of Amazon Comprehend, we recommend that you read t
 1. **[Tutorial: Analyzing insights from customer reviews with Amazon Comprehend](tutorial-reviews.md)** – In this section, you perform sentiment and entities analysis and visualize the results\.
 
 1. ** [API reference](API_Reference.md) ** – In this section you'll find reference documentation for Amazon Comprehend operations\.
+
+AWS provides the following resources for learning about the Amazon Comprehend service:
++ The [AWS Machine Learning Blog](http://aws.amazon.com/blogs/machine-learning/ ) includes useful articles about Amazon Comprehend\.
++ [Amazon Comprehend Resources](http://aws.amazon.com/comprehend/resources/) provides useful videos and tutorials about Amazon Comprehend\.

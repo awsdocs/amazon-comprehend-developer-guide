@@ -2,60 +2,11 @@
 
 ## <a name="events-result-schema"></a>
 
-With Amazon Comprehend, you can analyze your text documents to detect speciﬁc types of events and related details\. You can apply natural language processing with asynchronous jobs for event detection across large collections of documents\. 
+Use *event detection* to analyze text documents for speciﬁc types of events and their related entities\. Amazon Comprehend supports event detection across large collections of documents using asynchronous analysis jobs\. For more information about events, including example event analysis jobs, see [ Announcing the launch of Amazon Comprehend Events ](http://aws.amazon.com/blogs/machine-learning/announcing-the-launch-of-amazon-comprehend-events/)
 
-You can use the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation to detect events\.
+### Entities<a name="how-events-entities"></a>
 
-### Detect events results<a name="how-events-results"></a>
-
-When your event detection job completes, Amazon Comprehend writes the analysis results to the Amazon S3 output location that you specified\.
-
-For each detected event, the output provides details in the following format:
-
-```
-{
-  "Entities": [
-    {
-      "Mentions": [
-        {
-          "BeginOffset": number,
-          "EndOffset": number,
-          "Score": number,
-          "GroupScore": number,
-          "Text": "string",
-          "Type": "string"
-        }, ...
-      ]    
-    }, ...
-  ],
-  "Events": [
-    {
-      "Type": "string",
-      "Arguments": [
-        {                   
-          "EntityIndex": number,   
-          "Role": "string",
-          "Score": number
-        }, ...
-      ],
-      "Triggers": [
-        {
-          "BeginOffset": number,
-          "EndOffset": number,
-          "Score": number,
-          "Text": "string",
-          "GroupScore": number,
-          "Type": "string"
-        }, ...
-      ]
-    }, ...
-  ]
-}
-```
-
-#### Entities<a name="how-events-entities"></a>
-
-Amazon Comprehend returns a list of entities from the input text that are related to the detected event\. An *entity* can be a real\-world object, such as a person, place, or location; an entity can also be a concept, such as a measurement, date, or quantity\. Each occurrence of an entity is identified by a *mention*, which is a textual reference to the entity in the input text\. For each unique entity, all mentions are grouped into a list\. This list provides details for each location in the input text where the entity occurs\. Only entities associated with a supported event type will be detected\. You can use the [DetectEntities](API_DetectEntities.md) and [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation to detect additional entities\.
+From the input text, Amazon Comprehend extracts a list of entities that are related to the detected event\. An *entity* can be a real\-world object, such as a person, place, or location; an entity can also be a concept, such as a measurement, date, or quantity\. Each occurrence of an entity is identified by a *mention*, which is a textual reference to the entity in the input text\. For each unique entity, all mentions are grouped into a list\. This list provides details for each location in the input text where the entity occurs\. Amazon Comprehend detects only the entities associated with supported event types\.
 
 Each entity associated with a supported event type returns with the following related details:
 + **Mentions**: Details for each occurrence of the same entity in the input text\.
@@ -66,11 +17,9 @@ Each entity associated with a supported event type returns with the following re
   + **Text**: The text of the entity\.
   + **Type**: The entity's type\. For all supported entity types, see [Entity types](#events-entity-types)\.
 
-#### Events<a name="how-events-output"></a>
+### Events<a name="how-events-output"></a>
 
-Amazon Comprehend returns a list of events detected in the input text\. Only supported event types will be detected\.
-
-Each event returns with the following related details:
+Amazon Comprehend returns the list of events \(of supported event types\) that it detects in the input text\. Each event returns with the following related details:
 + **Type**: The event's type\. For all supported event types, see [Event types](#events-types)\.
 + **Arguments**: A list of arguments that are related to the detected event\. An *argument* consists of an entity that is related to the detected event\. The argument's role describes the relationship, such as *who* did *what*, *where *and *when*\.
   + **EntityIndex**: An index value that identifies an entity from the list of entities that Amazon Comprehend returned for this analysis\.
@@ -83,6 +32,53 @@ Each event returns with the following related details:
   + **Text**: The text of the trigger\.
   + **GroupScore**: The level of confidence from Amazon Comprehend that the trigger is correctly grouped with other triggers for the same event\.
   + **Type**: The type of event that this trigger indicates\.
+
+## Detect events results format<a name="how-events-results"></a>
+
+When your event detection job completes, Amazon Comprehend writes the analysis results to the Amazon S3 output location that you specified when you started the job\.
+
+For each detected event, the output provides details in the following format:
+
+```
+{
+   "Entities": [
+     {
+       "Mentions": [
+         {
+           "BeginOffset": number,
+           "EndOffset": number,
+           "Score": number,
+           "GroupScore": number,
+           "Text": "string",
+           "Type": "string"
+         }, ...
+       ]    
+     }, ...
+   ],
+   "Events": [
+     {
+       "Type": "string",
+       "Arguments": [
+         {                   
+           "EntityIndex": number,   
+           "Role": "string",
+           "Score": number
+         }, ...
+       ],
+       "Triggers": [
+         {
+           "BeginOffset": number,
+           "EndOffset": number,
+           "Score": number,
+           "Text": "string",
+           "GroupScore": number,
+           "Type": "string"
+         }, ...
+       ]
+     }, ...
+   ]
+ }
+```
 
 ## Supported types for entities, events, and arguments<a name="events-reference-types"></a>
 

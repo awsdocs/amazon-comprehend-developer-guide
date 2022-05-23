@@ -39,8 +39,8 @@ Amazon Comprehend identifies the language using identifiers from RFC 5646 — if
 |  [Dominant language](how-languages.md)  |  See [Dominant language](how-languages.md)\.  | 
 |  [Entities](how-entities.md)  |  All supported languages\.  | 
 |  [Key phrases](how-key-phrases.md)  |  All supported languages\.  | 
-|  [PII entities](how-pii.md)  |  English\.  | 
-|  [Labeling documents with PII](how-pii-labels.md)  | English\. | 
+|  [Detecting PII entities](how-pii.md)  |  English\.  | 
+|  [Labeling PII entities](how-pii-labels.md)  | English\. | 
 |  [Sentiment](how-sentiment.md)  |  All supported languages\.  | 
 |  [Targeted sentiment](how-targeted-sentiment.md)  |  English\.  | 
 |  [Syntax analysis](how-syntax.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.   | 

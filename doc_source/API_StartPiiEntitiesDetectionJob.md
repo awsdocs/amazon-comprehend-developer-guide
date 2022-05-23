@@ -71,7 +71,7 @@ Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`
 Required: No
 
  ** [LanguageCode](#API_StartPiiEntitiesDetectionJob_RequestSyntax) **   <a name="comprehend-StartPiiEntitiesDetectionJob-request-LanguageCode"></a>
-The language of the input documents\. Currently, `en` is the only valid value\.  
+The language of the input documents\. Currently, English is the only valid language\.  
 Type: String  
 Valid Values:` en`   
 Required: Yes

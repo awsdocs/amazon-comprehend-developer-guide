@@ -1,6 +1,6 @@
-# Creating analysis jobs using built\-in models<a name="getting-started-console-events"></a>
+# PII asynchronous analysis jobs \(Console\)<a name="async-pii-console"></a>
 
-You can use the Amazon Comprehend console to create and manage asynchronous analysis jobs\. Your job analyzes documents stored in Amazon S3 to find entities like events, phrases, primary language, sentiment, or personally identifiable information \(PII\)\.
+You can use the console to create async analysis jobs to detect PII entities\. For more information about PII entity types, see [Detecting PII entities](how-pii.md)\.
 
 **To create an analysis job**
 
@@ -10,20 +10,13 @@ You can use the Amazon Comprehend console to create and manage asynchronous anal
 
 1. Under **Job settings**, give the analysis job a unique name\.
 
-1. For **Analysis type**, choose one of the **Built\-in** analysis types\.
+1. For **Analysis type**, choose **Personally identifiable information \(PII\)**\.
 
-   If you choose **Primary langugage**, **Personally identifiable information \(PII\)**, or **Topic modeling**, you can skip the next step\.
+1. From **Output mode**, select one of the following choices:
+   + **Offsets** – The job output returns the location of each PII entity\. 
+   + **Redactions** – The job output returns a copy of the input text with each PII entry redacted\.
 
-1. Depending on the **Analysis type** that you choose, the console displays one or more of the following additional fields:
-   + **Language** is required for all built\-in analysis types except **Primary langugage** and **Topic modeling**\.
-
-     Choose the language of your input documents\.
-   + **Target event types** is required for the **Events** analysis type\.
-
-     Select the types of events to detect in your input documents\. For more information about supported event types, see [Event types](how-events.md#events-types)\.
-   + **PII detection settings** is required for the **PII** analysis type\.
-
-     Select the output mode\. For more information about PII detection settings, see [Detecting PII entities](how-pii.md)\.
+1. \(Optional\)If you choose **Redactions** as the output mode, you can select the PII entity types to redact\.
 
 1. Under **Input data**, specify where the input documents are located in Amazon S3:
    + To analyze your own documents, choose **My documents**, and choose **Browse S3** to provide the path to the bucket or folder that contains your files\.
@@ -52,4 +45,4 @@ For more information on creating and using KMS keys and the associated encryptio
 
 The new job appears in the job list with the status field showing the status of the job\. The field can be `IN_PROGRESS` for a job that is processing, `COMPLETED` for a job that has finished successfully, and `FAILED` for a job that has an error\. You can click on a job to get more information about the job, including any error messages\.
 
-When the job is completed, Amazon Comprehend stores the analysis results in the output Amazon S3 location that you specified for the job\. For a description of the analysis results for each insight type, see [Insights](concepts-insights.md)\. 
+When the job is completed, Amazon Comprehend stores the analysis results in the output Amazon S3 location that you specified for the job\. For a description of the analysis results, see [Detecting PII entities](how-pii.md)\. 

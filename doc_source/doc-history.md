@@ -4,6 +4,7 @@ The following table describes the documentation for this release of Amazon Compr
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Additional PII entity types](https://docs.aws.amazon.com/comprehend/latest/dg/how-pii.html) | Additional PII entity types now detected by Amazon Comprehend\. For more information, see [Detecting PII entities in Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/how-pii.html)\. | May 20, 2022 | 
 | [Table of Contents restructure](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html) | Restructured the Amazon Comprehend Developer Guide table of contents for easier navigation\. For more information, see [What is Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html)\. | April 7, 2022 | 
 | [Targeted sentiment](https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html) |  Amazon Comprehend now supports targeted sentiment analysis, which determines the sentiment associated with specific entities in a document\. For more information, see [Targeted sentiment in Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html)\. | March 9, 2022 | 
 | [New feature](https://docs.aws.amazon.com/comprehend/latest/dg/detecting-cer.html) |  Amazon Comprehend now allows you to analyze images for custom entitiy recognition\. For more information, see [Detecting custom entities in Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/detecting-cer.html)\. | February 28, 2022 | 

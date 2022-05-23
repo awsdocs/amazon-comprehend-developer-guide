@@ -18,7 +18,7 @@ For information about the parameters that are common to all actions, see [Common
 The request accepts the following data in JSON format\.
 
  ** [EndpointArn](#API_ClassifyDocument_RequestSyntax) **   <a name="comprehend-ClassifyDocument-request-EndpointArn"></a>
-The Amazon Resource Number \(ARN\) of the endpoint\.  
+The Amazon Resource Number \(ARN\) of the endpoint\. For information about endpoints, see [Managing endpoints](https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html)\.  
 Type: String  
 Length Constraints: Maximum length of 256\.  
 Pattern: `arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier-endpoint/[a-zA-Z0-9](-*[a-zA-Z0-9])*`   

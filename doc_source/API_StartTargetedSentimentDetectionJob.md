@@ -70,7 +70,7 @@ Pattern: `^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$`
 Required: No
 
  ** [LanguageCode](#API_StartTargetedSentimentDetectionJob_RequestSyntax) **   <a name="comprehend-StartTargetedSentimentDetectionJob-request-LanguageCode"></a>
-The language of the input documents must be English\. Specify `en` as the language\.   
+The language of the input documents\. Currently, English is the only valid language\.  
 Type: String  
 Valid Values:` en`   
 Required: Yes

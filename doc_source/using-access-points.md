@@ -1,6 +1,6 @@
 # Using Amazon S3 object Lambda access points for personally identifiable information \(PII\)<a name="using-access-points"></a>
 
-Use Amazon S3 Object Lambda Access Points for personally identifiable information \(PII\) to configure how documents are retrieved from your Amazon S3 bucket\. You can control access to documents that contain PII and redact PII from documents\. For more information on how Amazon Comprehend can detect PII in your documents, see [PII entities](how-pii.md)\. Amazon S3 Object Lambda Access Points use AWS Lambda functions to automatically transform the output of a standard Amazon S3 GET request\. For more information see, [Transforming objects with S3 object Lambda](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html) in the *Amazon Simple Storage Service User Guide*\. 
+Use Amazon S3 Object Lambda Access Points for personally identifiable information \(PII\) to configure how documents are retrieved from your Amazon S3 bucket\. You can control access to documents that contain PII and redact PII from documents\. For more information on how Amazon Comprehend can detect PII in your documents, see [Detecting PII entities](how-pii.md)\. Amazon S3 Object Lambda Access Points use AWS Lambda functions to automatically transform the output of a standard Amazon S3 GET request\. For more information see, [Transforming objects with S3 object Lambda](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html) in the *Amazon Simple Storage Service User Guide*\. 
 
 When you create an Amazon S3 Object Lambda Access Point for PII, documents are processed using Amazon Comprehend Lambda functions to control access of documents that contain PII and redact PII from documents\.
 
@@ -22,7 +22,7 @@ You can use an Amazon S3 Object Lambda Access Point to control access to documen
 
 To ensure that only authorized users have access to documents that contain PII stored in your Amazon S3 bucket, you use the `ComprehendPiiAccessControlS3ObjectLambda` function\. This Lambda function uses the [ContainsPiiEntities](API_ContainsPiiEntities.md) operation when processing a standard Amazon S3 GET request on document objects\.
 
-For example, if you have documents in your S3 bucket that include PII such as credit card numbers or bank account information, you can configure the `ComprehendPiiAccessControlS3ObjectLambda` function to detect these PII entity types and restrict access to unauthorized users\. For more information about supported PII entity types, see [PII entity types](how-pii.md#how-pii-types)\.
+For example, if you have documents in your S3 bucket that include PII such as credit card numbers or bank account information, you can configure the `ComprehendPiiAccessControlS3ObjectLambda` function to detect these PII entity types and restrict access to unauthorized users\. For more information about supported PII entity types, see [PII universal entity types](how-pii.md#how-pii-types)\.
 
 For more information about this Lambda function, sign in to the AWS Management Console to view the [ComprehendPiiAccessControlS3ObjectLambda](https://console.aws.amazon.com/lambda/home#/create/app?applicationId=arn:aws:serverlessrepo:us-east-1:839782855223:applications/ComprehendPiiAccessControlS3ObjectLambda) function in the AWS Serverless Application Repository\.
 
@@ -88,7 +88,7 @@ You can use an Amazon S3 Object Lambda Access Point to redact personally identif
 
 To redact PII entity types from documents stored in an S3 bucket, you use the `ComprehendPiiRedactionS3ObjectLambda` function\. This Lambda function uses the [ContainsPiiEntities](API_ContainsPiiEntities.md) and [DetectPiiEntities](API_DetectPiiEntities.md) operations when processing a standard Amazon S3 GET request on document objects\.
 
-For example, if documents in your S3 bucket include PII such as credit card numbers or bank account information, you can configure the `ComprehendPiiRedactionS3ObjectLambda` function to detect PII and then return a copy of these documents in which PII entity types are redacted\. For more information about supported PII entity types, see [PII entity types](how-pii.md#how-pii-types)\.
+For example, if documents in your S3 bucket include PII such as credit card numbers or bank account information, you can configure the `ComprehendPiiRedactionS3ObjectLambda` function to detect PII and then return a copy of these documents in which PII entity types are redacted\. For more information about supported PII entity types, see [PII universal entity types](how-pii.md#how-pii-types)\.
 
 For more information about this Lambda function, sign in to the AWS Management Console to view the [ComprehendPiiRedactionS3ObjectLambda](https://console.aws.amazon.com/lambda/home#/create/app?applicationId=arn:aws:serverlessrepo:us-east-1:839782855223:applications/ComprehendPiiRedactionS3ObjectLambda) function in the AWS Serverless Application Repository\.
 

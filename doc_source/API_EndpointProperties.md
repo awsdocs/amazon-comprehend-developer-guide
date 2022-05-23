@@ -1,6 +1,6 @@
 # EndpointProperties<a name="API_EndpointProperties"></a>
 
-Specifies information about the specified endpoint\.
+Specifies information about the specified endpoint\. For information about endpoints, see [Managing endpoints](https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html)\.
 
 ## Contents<a name="API_EndpointProperties_Contents"></a>
 

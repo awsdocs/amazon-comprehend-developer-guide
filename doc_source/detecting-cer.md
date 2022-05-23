@@ -2,10 +2,6 @@
 
 You can run an asynchronous analysis job to detect custom entities in a set of one or more documents\. The input files can include text files, image files, PDFs, or Word documents\. For files other than text files, Amazon Comprehend performs text extraction prior to the analysis\.
 
-**Before you begin**  
-You need a custom entity recognition model \(also known as a recognizer\) before you can detect custom entities\. A recognizer that is trained with plain\-text annotations supports entity detection for plain\-text documents only\. A recognizer that is trained with PDF document annotations supports entity detection for plain\-text documents, images, PDF files, and Word documents\.  
-For more information about these models, see [Training recognizer models](training-recognizers.md)\. 
-
 To start the job, you perform the following steps:
 
 1. Store the documents in an Amazon S3 bucket\.

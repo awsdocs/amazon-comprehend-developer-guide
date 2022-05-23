@@ -46,7 +46,7 @@ The **Language** tab shows the dominant language of the text and Amazon Comprehe
 
 ## Personally identifiable information \(PII\)<a name="realtime-analysis-console-pii"></a>
 
-The **PII** tab lists entities in your input text that contain personally identifiable information \(PII\)\. A PII entity is a textual reference to personal data that could be used to identify an individual, such as an address, bank account number, or phone number\. For more information, see [PII entities](how-pii.md)\.
+The **PII** tab lists entities in your input text that contain personally identifiable information \(PII\)\. A PII entity is a textual reference to personal data that could be used to identify an individual, such as an address, bank account number, or phone number\. For more information, see [Detecting PII entities](how-pii.md)\.
 
 The **PII** tab provides two analysis modes: 
 + Offsets
@@ -60,7 +60,7 @@ The **Offsets** analysis mode identifies the location of PII in your text docume
 
 ### Labels<a name="realtime-analysis-console-pii-labels"></a>
 
-The **Labels** analysis mode checks for the presence of PII in your text document and returns the labels of identified PII entity types\. For more information, see [Labeling documents with PII](how-pii-labels.md)\. 
+The **Labels** analysis mode checks for the presence of PII in your text document and returns the labels of identified PII entity types\. For more information, see [Labeling PII entities](how-pii-labels.md)\. 
 
 ![\[The PII labels analysis mode.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-pii-labels.png)
 

@@ -18,7 +18,7 @@ For information about the parameters that are common to all actions, see [Common
 The request accepts the following data in JSON format\.
 
  ** [LanguageCode](#API_ContainsPiiEntities_RequestSyntax) **   <a name="comprehend-ContainsPiiEntities-request-LanguageCode"></a>
-The language of the input documents\. Currently, `en` is the only valid value\.  
+The language of the input documents\. Currently, English is the only valid language\.  
 Type: String  
 Valid Values:` en`   
 Required: Yes
