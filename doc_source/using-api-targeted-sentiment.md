@@ -1,4 +1,4 @@
-# Analyzing targeted sentiment<a name="using-api-targeted-sentiment"></a>
+# Async analysis for targeted sentiment<a name="using-api-targeted-sentiment"></a>
 
 Amazon Comprehend provides the following API operations for analyzing targeted sentiment:
 + [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) – Starts an asynchronous targeted sentiment detection job for a collection of documents\.

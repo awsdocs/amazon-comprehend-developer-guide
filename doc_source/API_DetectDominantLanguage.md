@@ -17,7 +17,7 @@ For information about the parameters that are common to all actions, see [Common
 The request accepts the following data in JSON format\.
 
  ** [Text](#API_DetectDominantLanguage_RequestSyntax) **   <a name="comprehend-DetectDominantLanguage-request-Text"></a>
-A UTF\-8 text string\. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
+A UTF\-8 text string\. The string must contain at least 20 characters\. The maximum string size is 100 KB\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
 Required: Yes
@@ -67,7 +67,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob lives in Seattle\. He is a software engineer at Amazon\.", the operation returns the following:
 
-#### <a name="w88aac57b5c89c15b3b5"></a>
+#### <a name="w96aac57c17c89c15b3b5"></a>
 
 ```
 {

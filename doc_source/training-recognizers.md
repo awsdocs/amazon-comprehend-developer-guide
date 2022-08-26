@@ -2,10 +2,10 @@
 
 A custom entity recognizer identifies only the entity types that you include when you train the model\. It does not automatically include the preset entity types\. If you want to also identify the preset entity types,such as LOCATION, DATE, or PERSON, you need to provide additional training data for those entities\.
 
-When you create a custom entity recognizer using annotated PDF files, you can use the recognizer with a variety of input file formats: plain text, image files \(JPG, PNG, TIFF\), PDF files, and Word documents, with no pre\-processing or doc flattening required\. 
+When you create a custom entity recognizer using annotated PDF files, you can use the recognizer with a variety of input file formats: plain text, image files \(JPG, PNG, TIFF\), PDF files, and Word documents, with no pre\-processing or doc flattening required\. Amazon Comprehend doesn't support annotation of image files or Word documents\.
 
 **Note**  
- Amazon Comprehend doesn't support annotation of image files or Word documents\.
+A custom entity recognizer using annotated PDF files supports English documents only\.
 
 After you create a custom entity recognizer, you can monitor the progress of the request using the [DescribeEntityRecognizer](API_DescribeEntityRecognizer.md) operation\. Once the `Status` field is `TRAINED`, the recognizer model is ready to use for custom entity recognition\.
 

@@ -1,6 +1,6 @@
 # DetectSyntax<a name="API_DetectSyntax"></a>
 
-Inspects text for syntax and the part of speech of words in the document\. For more information, [Syntax analysis](how-syntax.md)\.
+Inspects text for syntax and the part of speech of words in the document\. For more information, see [Syntax](https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html) in the Comprehend Developer Guide\. 
 
 ## Request Syntax<a name="API_DetectSyntax_RequestSyntax"></a>
 
@@ -24,7 +24,7 @@ Valid Values:` en | es | fr | de | it | pt`
 Required: Yes
 
  ** [Text](#API_DetectSyntax_RequestSyntax) **   <a name="comprehend-DetectSyntax-request-Text"></a>
-A UTF\-8 string\. Each string must contain fewer that 5,000 bytes of UTF encoded characters\.  
+A UTF\-8 string\. The maximum string size is 5 KB\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
 Required: Yes
@@ -55,7 +55,7 @@ If the action is successful, the service sends back an HTTP 200 response\.
 The following data is returned in JSON format by the service\.
 
  ** [SyntaxTokens](#API_DetectSyntax_ResponseSyntax) **   <a name="comprehend-DetectSyntax-response-SyntaxTokens"></a>
-A collection of syntax tokens describing the text\. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct\. For a list of token types, see [Syntax analysis](how-syntax.md)\.  
+A collection of syntax tokens describing the text\. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct\. For a list of token types, see [Syntax](https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html) in the Comprehend Developer Guide\.   
 Type: Array of [SyntaxToken](API_SyntaxToken.md) objects
 
 ## Errors<a name="API_DetectSyntax_Errors"></a>
@@ -75,7 +75,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, [Supported languages](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html) in the Comprehend Developer Guide\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_DetectSyntax_SeeAlso"></a>

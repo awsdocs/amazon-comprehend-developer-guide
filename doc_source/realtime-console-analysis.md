@@ -1,6 +1,6 @@
 # Real\-time analysis using the built\-in models<a name="realtime-console-analysis"></a>
 
-You can use the Amazon Comprehend console to analyze the contents of a document up to 5,000 characters long\. The document can be English or one of the other languages supported by Amazon Comprehend\. The results are shown in the console so that you can review the analysis\.
+You can use the Amazon Comprehend console to run real\-time analysis of a UTF\-8 encoded text document\. The document can be English or one of the other languages supported by Amazon Comprehend\. The results are shown in the console so that you can review the analysis\.
 
 To start analyzing documents, sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/home?region=us-east-1#api-explorer:)
 
@@ -66,7 +66,10 @@ The **Labels** analysis mode checks for the presence of PII in your text documen
 
 ## Sentiment<a name="realtime-analysis-console-sentiment"></a>
 
-The **Sentiment** tab shows the dominant sentiment of the text\. Sentiment can be rated neutral, positive, negative, or mixed\. In this case, each sentiment has a confidence rating, providing an estimate by Amazon Comprehend for that sentiment being dominant\. For more information, see [Sentiment](how-sentiment.md)\. Real\-time analysis does not provide targeted sentiment\.
+The **Sentiment** tab shows the dominant sentiment of the text\. Sentiment can be rated neutral, positive, negative, or mixed\. In this case, each sentiment has a confidence rating, providing an estimate by Amazon Comprehend for that sentiment being dominant\. For more information, see [Sentiment](how-sentiment.md)\.
+
+**Note**  
+Amazon Comprehend performs real\-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input\.
 
 ![\[The Sentiment tab.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-sentiment.png)
 

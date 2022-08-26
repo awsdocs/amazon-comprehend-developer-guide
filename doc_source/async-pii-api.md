@@ -1,6 +1,6 @@
 # Locating PII entities with asynchronous jobs \(API\)<a name="async-pii-api"></a>
 
-Run an asynchronous batch job to locate PII in a collection of documents\. To run the job, upload your documents to Amazon S3, and submit a [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) request\.
+Run an asynchronous batch job to locate PII in a collection of documents\. To run the job, upload your documents to Amazon S3, and submit an [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) request\.
 
 **Topics**
 + [Before you start](#detect-pii-before)

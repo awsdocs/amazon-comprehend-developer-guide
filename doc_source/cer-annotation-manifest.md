@@ -1,6 +1,6 @@
-# Augmented manifest files<a name="cer-annotation-manifest"></a>
+# PDF annotation files<a name="cer-annotation-manifest"></a>
 
-An augmented manifest file is a labeled dataset that is produced by SageMaker Ground Truth\. Ground Truth is a data labeling service that helps you—or a workforce that you employ—build training datasets for machine learning models\. Amazon Comprehend accepts augmented manifest files as training data for custom models\. You can provide these files when you create a custom entity recognizer by using the Amazon Comprehend console or the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) API action\. 
+For PDF annotations, you use SageMaker Ground Truth to create a labeled dataset in an augmented manifest file\. Ground Truth is a data labeling service that helps you \(or a workforce that you employ\) to build training datasets for machine learning models\. Amazon Comprehend accepts augmented manifest files as training data for custom models\. You can provide these files when you create a custom entity recognizer by using the Amazon Comprehend console or the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) API action\. 
 
 You can use the Ground Truth built\-in task type, Named Entity Recognition, to create a labeling job to have workers identify entities in text\. To learn more, see [Named Entity Recognition](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-console) in the *Amazon SageMaker Developer Guide*\. To learn more about Amazon SageMaker Ground Truth, see [Use Amazon SageMaker Ground Truth to Label Data](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html)\.
 

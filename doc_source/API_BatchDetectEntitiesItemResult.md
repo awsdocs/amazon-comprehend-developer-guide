@@ -5,7 +5,7 @@ The result of calling the [BatchDetectEntities](API_BatchDetectEntities.md) oper
 ## Contents<a name="API_BatchDetectEntitiesItemResult_Contents"></a>
 
  ** Entities **   <a name="comprehend-Type-BatchDetectEntitiesItemResult-Entities"></a>
-One or more [Entity](API_Entity.md) objects, one for each entity detected in the document\.  
+One or more DominantLanguage objects, one for each entity detected in the document\.  
 Type: Array of [Entity](API_Entity.md) objects  
 Required: No
 

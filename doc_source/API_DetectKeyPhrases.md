@@ -24,7 +24,7 @@ Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`
 Required: Yes
 
  ** [Text](#API_DetectKeyPhrases_RequestSyntax) **   <a name="comprehend-DetectKeyPhrases-request-Text"></a>
-A UTF\-8 text string\. Each string must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
+A UTF\-8 text string\. The string must contain less than 100 KB of UTF\-8 encoded characters\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
 Required: Yes
@@ -71,7 +71,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, [Supported languages](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html) in the Comprehend Developer Guide\.   
 HTTP Status Code: 400
 
 ## Examples<a name="API_DetectKeyPhrases_Examples"></a>
@@ -80,7 +80,7 @@ HTTP Status Code: 400
 
 If the input text is "Bob lives in Seattle\. He is a software engineer at Amazon\.", the API returns the following:
 
-#### <a name="w88aac57b5c95c15b3b5"></a>
+#### <a name="w96aac57c17c95c15b3b5"></a>
 
 ```
           {

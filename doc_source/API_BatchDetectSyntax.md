@@ -1,6 +1,6 @@
 # BatchDetectSyntax<a name="API_BatchDetectSyntax"></a>
 
-Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them\. For more information, see [Syntax analysis](how-syntax.md)\.
+Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them\. For more information, see [Syntax](https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html) in the Comprehend Developer Guide\. 
 
 ## Request Syntax<a name="API_BatchDetectSyntax_RequestSyntax"></a>
 
@@ -24,7 +24,7 @@ Valid Values:` en | es | fr | de | it | pt`
 Required: Yes
 
  ** [TextList](#API_BatchDetectSyntax_RequestSyntax) **   <a name="comprehend-BatchDetectSyntax-request-TextList"></a>
-A list containing the text of the input documents\. The list can contain a maximum of 25 documents\. Each document must contain fewer that 5,000 bytes of UTF\-8 encoded characters\.  
+A list containing the UTF\-8 encoded text of the input documents\. The list can contain a maximum of 25 documents\. The maximum size for each document is 5 KB\.  
 Type: Array of strings  
 Length Constraints: Minimum length of 1\.  
 Required: Yes
@@ -95,7 +95,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, [Supported languages](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html) in the Comprehend Developer Guide\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_BatchDetectSyntax_SeeAlso"></a>

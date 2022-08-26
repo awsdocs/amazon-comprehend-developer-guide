@@ -1,6 +1,6 @@
 # BatchDetectEntities<a name="API_BatchDetectEntities"></a>
 
-Inspects the text of a batch of documents for named entities and returns information about them\. For more information about named entities, see [Entities](how-entities.md) 
+Inspects the text of a batch of documents for named entities and returns information about them\. For more information about named entities, see [Entities](https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html) in the Comprehend Developer Guide\. 
 
 ## Request Syntax<a name="API_BatchDetectEntities_RequestSyntax"></a>
 
@@ -24,7 +24,7 @@ Valid Values:` en | es | fr | de | it | pt | ar | hi | ja | ko | zh | zh-TW`
 Required: Yes
 
  ** [TextList](#API_BatchDetectEntities_RequestSyntax) **   <a name="comprehend-BatchDetectEntities-request-TextList"></a>
-A list containing the text of the input documents\. The list can contain a maximum of 25 documents\. Each document must contain fewer than 5,000 bytes of UTF\-8 encoded characters\.  
+A list containing the UTF\-8 encoded text of the input documents\. The list can contain a maximum of 25 documents\. The maximum size of each document is 5 KB\.  
 Type: Array of strings  
 Length Constraints: Minimum length of 1\.  
 Required: Yes
@@ -92,7 +92,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, [Supported languages](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html) in the Comprehend Developer Guide\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_BatchDetectEntities_SeeAlso"></a>

@@ -12,7 +12,10 @@ You have two options for creating a custom model:
 
 1. Entity lists \(plain text only\) – provide a list of entities and their type label \(such as `PRODUCT_CODES` and a set of unannotated documents containing those entities for model training\.
 
-To analyze image files \(JPG, PNG, or TIFF\), Word documents or PDF files, train a custom entity recognizer from annotated PDF files\. We don't support annotation of image files or Word documents\.
+When you create a custom entity recognizer using annotated PDF files, you can use that recognizer with a variety of input file formats: plain text, image files \(JPG, PNG, TIFF\), PDF files, and Word documents, with no pre\-processing or doc flattening required\. Amazon Comprehend doesn't support annotation of image files or Word documents\.
+
+**Note**  
+A custom entity recognizer using annotated PDF files supports English documents only\.
 
 You can train a model on up to 25 custom entities at once\. For more details, see the [Guidelines and quotas page](https://docs.aws.amazon.com/comprehend/latest/dg/guidelines-and-limits.html)\.
 

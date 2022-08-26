@@ -17,7 +17,7 @@ For information about the parameters that are common to all actions, see [Common
 The request accepts the following data in JSON format\.
 
  ** [TextList](#API_BatchDetectDominantLanguage_RequestSyntax) **   <a name="comprehend-BatchDetectDominantLanguage-request-TextList"></a>
-A list containing the text of the input documents\. The list can contain a maximum of 25 documents\. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF\-8 encoded characters\.  
+A list containing the UTF\-8 encoded text of the input documents\. The list can contain a maximum of 25 documents\. Each document should contain at least 20 characters\. The maximum size of each document is 5 KB\.  
 Type: Array of strings  
 Length Constraints: Minimum length of 1\.  
 Required: Yes

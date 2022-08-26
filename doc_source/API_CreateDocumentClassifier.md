@@ -1,6 +1,6 @@
 # CreateDocumentClassifier<a name="API_CreateDocumentClassifier"></a>
 
-Creates a new document classifier that you can use to categorize documents\. To create a classifier, you provide a set of training documents that labeled with the categories that you want to use\. After the classifier is trained you can use it to categorize a set of labeled documents into the categories\. For more information, see [Custom classification](how-document-classification.md)\.
+Creates a new document classifier that you can use to categorize documents\. To create a classifier, you provide a set of training documents that labeled with the categories that you want to use\. After the classifier is trained you can use it to categorize a set of labeled documents into the categories\. For more information, see [Document Classification](https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html) in the Comprehend Developer Guide\. 
 
 ## Request Syntax<a name="API_CreateDocumentClassifier_RequestSyntax"></a>
 
@@ -196,7 +196,7 @@ The request contains more tags than can be associated with a resource \(50 tags 
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, [Supported languages](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html) in the Comprehend Developer Guide\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_CreateDocumentClassifier_SeeAlso"></a>

@@ -1,5 +1,11 @@
 # Entity lists \(plain text only\)<a name="cer-entity-list"></a>
 
+To train a model using an entity list, you provide two pieces of information: a list of the entity names with their corresponding custom entity types and a collection of unannotated documents in which you expect your entities to appear\. 
+
+When you provide an Entity List, Amazon Comprehend uses an intelligent algorithm to detect occurrences of the entity in the documents to serve as the basis for training the custom entity recognizer model\.
+
+For entity lists, provide at least 200 entity matches per entity in the entity list\.
+
 An entity list for custom entity recognition needs a comma\-separated value \(CSV\) file, with the following columns:
 + **Text**— The text of an entry example exactly as seen in the accompanying document corpus\.
 + **Type**—The customer\-defined entity type\. Entity types must an uppercase, underscore separated string such as MANAGER or SENIOR\_MANAGER\. Up to 25 entity types can be trained per model\. 

@@ -24,7 +24,7 @@ Valid Values:` en`
 Required: Yes
 
  ** [Text](#API_ContainsPiiEntities_RequestSyntax) **   <a name="comprehend-ContainsPiiEntities-request-Text"></a>
-Creates a new document classification request to analyze a single document in real\-time, returning personally identifiable information \(PII\) entity labels\.  
+A UTF\-8 text string\. The maximum string size is 100 KB\.  
 Type: String  
 Length Constraints: Minimum length of 1\.  
 Required: Yes
@@ -69,7 +69,7 @@ The size of the input text exceeds the limit\. Use a smaller document\.
 HTTP Status Code: 400
 
  ** UnsupportedLanguageException **   
-Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, see [Languages supported in Amazon Comprehend](supported-languages.md)\.   
+Amazon Comprehend can't process the language of the input text\. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted\. For a list of supported languages, [Supported languages](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html) in the Comprehend Developer Guide\.   
 HTTP Status Code: 400
 
 ## See Also<a name="API_ContainsPiiEntities_SeeAlso"></a>

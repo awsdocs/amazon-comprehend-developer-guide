@@ -4,13 +4,13 @@
 *****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
-Amazon's trademarks and trade dress may not be used in 
-     connection with any product or service that is not Amazon's, 
-     in any manner that is likely to cause confusion among customers, 
-     or in any manner that disparages or discredits Amazon. All other 
-     trademarks not owned by Amazon are the property of their respective
-     owners, who may or may not be affiliated with, connected to, or 
-     sponsored by Amazon.
+Amazon's trademarks and trade dress may not be used in
+connection with any product or service that is not Amazon's,
+in any manner that is likely to cause confusion among customers,
+or in any manner that disparages or discredits Amazon. All other
+trademarks not owned by Amazon are the property of their respective
+owners, who may or may not be affiliated with, connected to, or
+sponsored by Amazon.
 
 -----
 ## Contents
@@ -32,17 +32,14 @@ Amazon's trademarks and trade dress may not be used in
 + [Getting started with Amazon Comprehend](getting-started.md)
 + [Analysis using the Amazon Comprehend console](get-started-console.md)
    + [Real-time analysis using the built-in models](realtime-console-analysis.md)
-   + [Creating analysis jobs using built-in models](getting-started-console-events.md)
-+ [Using the Amazon Comprehend API](get-started-api.md)
-   + [Detecting the dominant language](get-started-api-dominant-language.md)
-   + [Detecting named entities](get-started-api-entities.md)
-   + [Detecting key phrases](get-started-api-key-phrases.md)
-   + [Determining sentiment](get-started-api-sentiment.md)
-   + [Analyzing targeted sentiment](using-api-targeted-sentiment.md)
-   + [Detecting syntax](get-started-api-syntax.md)
-   + [Detecting events](get-started-api-events.md)
-   + [Topic modeling](get-started-topics.md)
-   + [Real-time batch APIs](get-started-batch.md)
+   + [Running analysis jobs using the console](analysis-jobs.md)
++ [Using the Amazon Comprehend API](using-the-api.md)
+   + [Real-time analysis using the API](using-api-sync.md)
+   + [Async analysis jobs using the API](api-async.md)
+      + [Async analysis for Amazon Comprehend insights](api-async-insights.md)
+      + [Async analysis for targeted sentiment](using-api-targeted-sentiment.md)
+      + [Async analysis for event detection](get-started-api-events.md)
+      + [Async analysis for topic modeling](get-started-topics.md)
 + [Personally identifiable information (PII)](pii.md)
    + [Detecting PII entities](how-pii.md)
    + [Labeling PII entities](how-pii-labels.md)
@@ -67,11 +64,11 @@ Amazon's trademarks and trade dress may not be used in
       + [Analysis jobs for custom classification (console)](analysis-jobs-custom-classifier.md)
 + [Custom entity recognition](custom-entity-recognition.md)
    + [Preparing the training data](prep-training-data-cer.md)
-      + [Annotations](cer-annotation.md)
-         + [CSV files (plain text only)](cer-annotation-csv.md)
-         + [Augmented manifest files](cer-annotation-manifest.md)
-         + [Annotating PDF files](cer-annotation-pdf.md)
       + [Entity lists (plain text only)](cer-entity-list.md)
+      + [Annotations](cer-annotation.md)
+         + [Plain-text annotation files](cer-annotation-csv.md)
+         + [PDF annotation files](cer-annotation-manifest.md)
+         + [Annotating PDF files](cer-annotation-pdf.md)
    + [Training recognizer models](training-recognizers.md)
       + [Train custom recognizers (console)](realtime-analysis-cer.md)
       + [Train and run custom recognizers (API)](get-started-cer.md)
@@ -259,7 +256,7 @@ Amazon's trademarks and trade dress may not be used in
       + [TopicsDetectionJobFilter](API_TopicsDetectionJobFilter.md)
       + [TopicsDetectionJobProperties](API_TopicsDetectionJobProperties.md)
       + [VpcConfig](API_VpcConfig.md)
-   + [Common Errors](CommonErrors.md)
    + [Common Parameters](CommonParameters.md)
+   + [Common Errors](CommonErrors.md)
 + [Document history for Amazon Comprehend](doc-history.md)
 + [AWS glossary](glossary.md)

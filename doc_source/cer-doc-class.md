@@ -1,6 +1,6 @@
 # Custom classifier metrics<a name="cer-doc-class"></a>
 
-Amazon Comprehend provides you with metrics to help you estimate how well a custom classifier should work for your job\. They are based on training the classifier model, and so while they accurately represent the performance of the model during training, they are only an approximation of the API performance during classification\. 
+Amazon Comprehend provides you with metrics to help you estimate how well a custom classifier should work for your job\. They are based on training the classifier model, and so while they accurately represent the performance of the model during training, they are only an approximation of the model performance during classification\. 
 
 Metrics are included any time metadata from a trained custom classifier is returned\. 
 
@@ -101,11 +101,9 @@ Macro Recall = (0.70 + 0.70 + 0.98 + 0.80 + 0.10)/5 = 0.656
 
 ### F1 score \(macro F1 score\)<a name="class-macrof1score-metric"></a>
 
- A combination of the Precision and Recall metrics\. The F1 score is the harmonic mean of the Precision and Recall metrics\. This score is based on the Precision and Recall created by the averaging method and is also known as the Macro F1 score\. A measure of how accurate the classifier results are for the test data\. It is derived from the `Precision` and `Recall` values\. The `F1Score` is the harmonic average of the two scores\. The highest score is 1, and the worst score is 0\. 
+The F1 score is derived from the `Precision` and `Recall` values\. It measures the overall accuracy of the classifier\. The highest score is 1, and the lowest score is 0\. 
 
-The `F1 Score` metric is also known as the *Macro F1 Score*\.
-
-This is demonstrated in the following test set:
+Amazon Comprehend calculates the *Macro F1 Score*\. It is the unweighted average of the label F1 scores\. Using the following test set as an example:
 
 
 | Label | Sample size | Label F1 score | 
@@ -116,7 +114,7 @@ This is demonstrated in the following test set:
 |  Label\_4  |  20  |  0\.62  | 
 |  Label\_5  |  10  |  0\.16  | 
 
-The F1 Score \(Macro F1 Score\) for the model is therefore as follows:
+The F1 Score \(Macro F1 Score\) for the model is calculated as follows:
 
 ```
 Macro F1 Score = (0.724 + 0.824 + 0.94 + 0.62 + 0.16)/5 = 0.6536
@@ -127,6 +125,8 @@ Macro F1 Score = (0.724 + 0.824 + 0.94 + 0.62 + 0.16)/5 = 0.6536
 The fraction of labels that are incorrectly predicted\. Also seen as the fraction of wrong labels compared to the total number of labels\. Scores closer to zero are better\.
 
 ### Micro precision<a name="class-microprecision-metric"></a>
+
+Original: 
 
 As Precision above, except that instead of averaging the precision scores of all available labels, this is based on the overall score of all precision scores added together\.
 

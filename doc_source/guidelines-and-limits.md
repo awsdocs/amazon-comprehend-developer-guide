@@ -24,21 +24,18 @@ For a list of AWS Regions where Amazon Comprehend is available, see [AWS Regions
 
 ## Overall Quotas<a name="limits-all"></a>
 
-All operations except asynchronous operations and topic modeling operations have the following quotas:
+All single\-document synchronous operations except sentiment analysis and syntax detection have the following quotas\.
 
 
 | Description | Quota/Guideline | 
 | --- | --- | 
 | Character encoding | UTF\-8 | 
-| Document size \(UTF\-8 characters\) | 5,000 bytes | 
+| Maximum document size  | 100 KB | 
 
-Synchronous requests to label documents with PII using the [ContainsPiiEntities](API_ContainsPiiEntities.md) operation have the following quotas:
+The maximum document size for sentiment analysis, syntax detection, and the batch synchronous operations is 5 KB\.
 
-
-| Description | Quota/Guideline | 
-| --- | --- | 
-| Character encoding | UTF\-8 | 
-| Document size \(UTF\-8 characters\) | 50,000 bytes | 
+**Note**  
+Amazon Comprehend performs real\-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input\.
 
 Amazon Comprehend may store your content to continuously improve the quality of its analysis models\. See the [Amazon Comprehend FAQ](https://aws.amazon.com/comprehend/faqs/) to learn more\. 
 
@@ -48,7 +45,7 @@ You may be able to avoid throttling by using the batch operations instead of the
 
 ## Multiple document operations<a name="limits-batch"></a>
 
-The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDetectEntities](API_BatchDetectEntities.md), [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md), and [BatchDetectSentiment](API_BatchDetectSentiment.md) operations have the following quotas:
+The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDetectEntities](API_BatchDetectEntities.md), [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md), and [BatchDetectSentiment](API_BatchDetectSentiment.md) operations have the following quotas\.
 
 
 | Description | Quota/Guideline | 
@@ -68,7 +65,7 @@ You create new analysis jobs using the Amazon Comprehend console or one of the `
 
 ## Asynchronous jobs<a name="limits-asynchronous"></a>
 
-Asynchronous analysis jobs that you run using one of the `API_Start*` operations have the following limits:
+Asynchronous analysis jobs that you run using one of the `API_Start*` operations have the following quotas\.
 
 
 | Description | Quota/Guideline | 
@@ -86,7 +83,7 @@ For more information, see [Asynchronous batch processing](concepts-processing-mo
 
 ## Targeted sentiment<a name="limits-targeted-sentiment"></a>
 
-Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with the [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) operation have the following limits:
+Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with the [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) operation have the following quotas\.
 
 
 **Targeted sentiment detection \- inference \(StartTargetedSentimentDetectionJob\)**  
@@ -101,7 +98,7 @@ Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with 
 
 ## Document classification<a name="limits-document-classification"></a>
 
-Document classifier training jobs started with the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation, asynchronous document classification jobs started with the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md), and synchronous document classification requests started with the [ClassifyDocument](API_ClassifyDocument.md) operation have the following limits: 
+Document classifier training jobs started with the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation, asynchronous document classification jobs started with the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md), and synchronous document classification requests started with the [ClassifyDocument](API_ClassifyDocument.md) operation have the following quotas\. 
 
 
 **General**  
@@ -143,7 +140,7 @@ The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [DetectDo
 
 ## Events<a name="limits-events"></a>
 
-Events detection jobs created with the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation have the following limits:
+Events detection jobs created with the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation have the following quotas\.
 
 
 | Description | Quotas | 
@@ -156,7 +153,7 @@ Events detection jobs created with the [StartEventsDetectionJob](API_StartEvents
 
 ## Topic modeling<a name="limits-topic-modeling"></a>
 
-Topic detection jobs created with the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation have the following limits:
+Topic detection jobs created with the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation have the following quotas\.
 
 
 | Description | Quota/Guideline | 
@@ -173,7 +170,7 @@ For best results, you should include at least 1,000 input documents\.
 
 ## Entity recognition<a name="limits-custom-entity-recognition"></a>
 
-Entity recognizer training jobs started with the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) operation, asynchronous entity recognition jobs started with the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation, and synchronous entity recognition requests started with the [DetectEntities](API_DetectEntities.md) operation have the following limits:
+Entity recognizer training jobs started with the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) operation, asynchronous entity recognition jobs started with the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation, and synchronous entity recognition requests started with the [DetectEntities](API_DetectEntities.md) operation have the following quotas\.
 
 
 **Plain text entity recognition \- training \(CreateEntityRecognizer\)**  
@@ -182,9 +179,9 @@ Entity recognizer training jobs started with the [CreateEntityRecognizer](API_Cr
 | --- | --- | 
 | Number of entities per model/custom entity recognizer | 1–25 | 
 | Document size \(UTF\-8\) | 1–5,000 byte | 
-| Number of documents | 250–120,000 | 
+| Number of documents \(see [Plain\-text annotations](cer-annotation.md#prep-training-data-ann)\) | 3–120,000 | 
 | Document corpus size \(all docs in plaintext combined\) | 5 KB \- 100 MB | 
-| Minimum number of annotations per entity | 100 | 
+| Minimum number of annotations per entity | 25 | 
 | Number of items in entity list | 1–1 million | 
 | Length of individual entry \(post\-strip\) in entry list | 1–5,000 | 
 | Entity list corpus size \(all docs in plaintext combined\) | 5 KB –100 MB | 

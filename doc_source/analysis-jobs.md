@@ -1,6 +1,6 @@
-# Creating analysis jobs using built\-in models<a name="getting-started-console-events"></a>
+# Running analysis jobs using the console<a name="analysis-jobs"></a>
 
-You can use the Amazon Comprehend console to create and manage asynchronous analysis jobs\. Your job analyzes documents stored in Amazon S3 to find entities like events, phrases, primary language, sentiment, or personally identifiable information \(PII\)\.
+You can use the Amazon Comprehend console to create and manage asynchronous analysis jobs\. Your job analyzes documents stored in Amazon S3 to find entities such as events, phrases, primary language, sentiment, or personally identifiable information \(PII\)\.
 
 **To create an analysis job**
 

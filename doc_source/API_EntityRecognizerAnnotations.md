@@ -12,7 +12,7 @@ Pattern: `s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?`
 Required: Yes
 
  ** TestS3Uri **   <a name="comprehend-Type-EntityRecognizerAnnotations-TestS3Uri"></a>
-This specifies the Amazon S3 location where the test annotations for an entity recognizer are located\. The URI must be in the same AWS Region as the API endpoint that you are calling\.  
+ Specifies the Amazon S3 location where the test annotations for an entity recognizer are located\. The URI must be in the same region as the API endpoint that you are calling\.  
 Type: String  
 Length Constraints: Maximum length of 1024\.  
 Pattern: `s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?`   

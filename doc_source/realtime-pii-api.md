@@ -8,7 +8,7 @@ Amazon Comprehend provides real\-time synchronous API operations to analyze pers
 
 ## Locating PII real\-time entities \(API\)<a name="realtime-pii-api-locate"></a>
 
-To locate PII in a single document, you can use the Amazon Comprehend [DetectPiiEntities](API_DetectPiiEntities.md) operation\. Your input text can include up to 5,000 bytes of UTF\-8 encoded characters\. 
+To locate PII in a single document, you can use the Amazon Comprehend [DetectPiiEntities](API_DetectPiiEntities.md) operation\. Your input text can include up to 100 kilobytes of UTF\-8 encoded characters\. 
 
 ### Locating PII using \(CLI\)<a name="realtime-pii-api-cli"></a>
 

@@ -12,7 +12,7 @@ You can use Amazon Comprehend to detect *PII entities* in English text documents
 
 To locate the PII entities in your text, you can quickly analyze a single document using real\-time analysis\.You also can start an asynchronous batch job on a collection of documents\. 
 
-You can use the console or the API for real\-time analysis of a single document\. Your input text can include up to 5,000 bytes of UTF\-8 encoded characters\.
+You can use the console or the API for real\-time analysis of a single document\. Your input text can include up to 100 kilobytes of UTF\-8 encoded characters\.
 
 For example, you can submit the following input text to locate the PII entities:
 

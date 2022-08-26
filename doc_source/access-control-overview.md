@@ -47,7 +47,7 @@ For a list of Amazon Comprehend resources, see [Resource types defined by Amazon
 
 ## Specifying policy elements: Actions, effects, and principals<a name="access-control-specify-comprehend-actions"></a>
 
-Amazon Comprehend defines a set of API operations \(see [Actions](API_Operations.md)\)\. To grant permissions for these API operations, Amazon Comprehend defines a set of actions that you can specify in a policy\. 
+Amazon Comprehend defines a set of [Actions](API_Operations.md)\. To grant permissions for these API operations, Amazon Comprehend defines a set of actions that you can specify in a policy\. 
 
 The following are the most basic policy elements:
 + **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For Amazon Comprehend, the resource is always `"*"`\.

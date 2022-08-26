@@ -14,7 +14,7 @@ Targeted sentiment provides the following outputs for each analysis job:
 + The sentiment and a sentiment score for each entity mention\.
 + Groups of mentions \(co\-reference groups\) that correspond to a single entity\.
 
-You can use the [console](getting-started-console-events.md) or the [API](using-api-targeted-sentiment.md) to run targeted sentiment analysis\. To run targeted sentiment, you start an asynchronous analysis job; real\-time analysis is not available for targeted sentiment\.
+You can use the [console](analysis-jobs.md) or the [API](using-api-targeted-sentiment.md) to run targeted sentiment analysis\. To run targeted sentiment, you start an asynchronous analysis job; real\-time analysis is not available for targeted sentiment\.
 
  Amazon Comprehend supports targeted sentiment for documents in the English language\. 
 

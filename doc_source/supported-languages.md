@@ -46,4 +46,4 @@ Amazon Comprehend identifies the language using identifiers from RFC 5646 — if
 |  [Syntax analysis](how-syntax.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.   | 
 |  [Topic modeling](topic-modeling.md)  |  Not dependent on the language used\. Does not support character\-based languages such as Chinese, Japanese, and Korean\.  | 
 |  [Custom classification](how-document-classification.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.  | 
-|  [Custom entity recognition](custom-entity-recognition.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\.  | 
+|  [Custom entity recognition](custom-entity-recognition.md)  |  German \(de\), English \(en\), Spanish \(es\), French \(fr\), Italian \(it\), and Portuguese \(pt\)\. Custom Entity Recognition for PDF and Word supports English documents only\.  | 

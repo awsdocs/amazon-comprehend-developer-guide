@@ -10,4 +10,4 @@ The console also supports real\-time and asynchronous analysis using custom mode
 
 **Topics**
 + [Real\-time analysis using the built\-in models](realtime-console-analysis.md)
-+ [Creating analysis jobs using built\-in models](getting-started-console-events.md)
++ [Running analysis jobs using the console](analysis-jobs.md)

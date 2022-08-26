@@ -1,6 +1,6 @@
-# CSV files \(plain text only\)<a name="cer-annotation-csv"></a>
+# Plain\-text annotation files<a name="cer-annotation-csv"></a>
 
-When using comma\-separated value \(CSV\) files for your annotations, your CSV files must have the following columns:
+For plain\-text annotations, you create a comma\-separated value \(CSV\) file that contains a list of annotations\. The CSV file must have the following columns:
 
 
 | File | Line | Begin offset | End offset | Type | 
