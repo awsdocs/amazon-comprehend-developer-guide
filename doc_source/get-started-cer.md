@@ -1,6 +1,6 @@
 # Train and run custom recognizers \(API\)<a name="get-started-cer"></a>
 
-To create the custom entities in a document, use the Amazon Comprehend [CreateEntityRecognizer](API_CreateEntityRecognizer.md) to create an entity recognizer\. To identify those custom entities, use the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation\. 
+To create the custom entities in a document, use the Amazon Comprehend [CreateEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html) to create an entity recognizer\. To identify those custom entities, use the [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html) operation\. 
 
 **Topics**
 + [Creating and detecting custom entities using the AWS Command Line Interface](#get-started-api-cer-cli)

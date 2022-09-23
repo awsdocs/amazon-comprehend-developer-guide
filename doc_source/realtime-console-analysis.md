@@ -24,6 +24,7 @@ You can replace the sample text with your own text and then choose **Analyze** t
 + [Language](#realtime-analysis-console-language)
 + [Personally identifiable information \(PII\)](#realtime-analysis-console-pii)
 + [Sentiment](#realtime-analysis-console-sentiment)
++ [Targeted sentiment](#realtime-analysis-console-targeted-sentiment)
 + [Syntax](#realtime-analysis-console-syntax)
 
 ## Entities<a name="realtime-analysis-console-entities"></a>
@@ -72,6 +73,24 @@ The **Sentiment** tab shows the dominant sentiment of the text\. Sentiment can b
 Amazon Comprehend performs real\-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input\.
 
 ![\[The Sentiment tab.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-sentiment.png)
+
+## Targeted sentiment<a name="realtime-analysis-console-targeted-sentiment"></a>
+
+**Targeted sentiment** analysis identifies the sentiments expressed about entities mentioned in the text\. Amazon Comprehend assigns a sentiment rating to each mention of an entity, along with a confidence rating and other information\. A sentiment rating can be neutral, positive, negative, or mixed\. 
+
+In the **Analyzed text** panel, the console underlines each of analyzed entities\. The color of the underlined text indicates the overall sentiment of the entity\. If you hover your cursor over an entity, the console displays additional information in a pop\-up window\.
+
+![\[The Targeted sentiment tab.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-targeted-sentiment2.png)
+
+The **Results** table provides additional detail about each entity\. If there are multiple mentions of the same entity, called a co\-reference group, the table displays these mentions as a collapsible set of rows associated with the main entity\.
+
+In the following example, the entity is a person named **Zhang Wei**\. The targeted sentiment analysis recognizes that each mention of **your** is a reference to the same person\. The console displays these mentions as sub\-entries of the main entity\.
+
+![\[The Results table for targeted sentiment analysis.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-targeted-sentiment1.png)
+
+If the text you are analyzing doesn't include any targeted sentiment [Entity types](how-targeted-sentiment.md#how-targeted-sentiment-entities), the targeted sentiment analysis displays an empty results field\.
+
+For more information about how to use the console for targeted sentiment real\-time analysis, see [Real time analysis using the console](how-targeted-sentiment.md#how-targeted-sentiment-console)\.
 
 ## Syntax<a name="realtime-analysis-console-syntax"></a>
 

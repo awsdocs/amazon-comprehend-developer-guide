@@ -2,7 +2,7 @@
 
 You can use the Amazon Comprehend console to analyze documents in real\-time or to run asynchronous analysis jobs\.
 
-Using real\-time analysis with built\-in models, you can recognize entities, extract key phrases, detect primary language, detect PII, determine sentiment, and analyze syntax\. 
+Using real\-time analysis with built\-in models, you can recognize entities, extract key phrases, detect primary language, detect PII, determine sentiment, analyze targeted sentiment, and analyze syntax\. 
 
 You can run analysis jobs using the built\-in models to find insights such as entities, events, phrases, primary language, sentiment, targeted sentiment, and personally identifiable information \(PII\)\. You can also run topic\-modeling jobs\. 
 

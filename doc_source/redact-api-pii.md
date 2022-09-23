@@ -1,6 +1,6 @@
 # Redacting PII entities with asynchronous jobs \(API\)<a name="redact-api-pii"></a>
 
-To redact the PII entities in your text, you start an asynchronous batch job\. To run the job, upload your documents to Amazon S3, and submit a [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) request\. 
+To redact the PII entities in your text, you start an asynchronous batch job\. To run the job, upload your documents to Amazon S3, and submit a [StartPiiEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartPiiEntitiesDetectionJob.html) request\. 
 
 **Topics**
 + [Before you start](#redact-pii-before)
@@ -17,11 +17,11 @@ Before you start, make sure that you have:
 ## Input parameters<a name="redact-pii-api-inputs"></a>
 
 In your request, include the following required parameters:
-+ `InputDataConfig` – Provide an [InputDataConfig](API_InputDataConfig.md) definition for your request, which includes the input properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location of your input documents\.
-+ `OutputDataConfig` – Provide an [OutputDataConfig](API_OutputDataConfig.md) definition for your request, which includes the output properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location where Amazon Comprehend writes the results of its analysis\.
++ `InputDataConfig` – Provide an [InputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_InputDataConfig.html) definition for your request, which includes the input properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location of your input documents\.
++ `OutputDataConfig` – Provide an [OutputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_OutputDataConfig.html) definition for your request, which includes the output properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location where Amazon Comprehend writes the results of its analysis\.
 + `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 + `Mode` – Set this parameter to `ONLY_REDACTION`\. With this setting, Amazon Comprehend writes a copy of your input documents to the output location in Amazon S3\. In this copy, each PII entity is redacted\.
-+ `RedactionConfig` – Provide an [RedactionConfig](API_RedactionConfig.md) definition for your request, which includes the configuration parameters for the redaction\. Specify the types of PII to redact, and specify whether each PII entity is replaced with the name of its type or a character of your choice:
++ `RedactionConfig` – Provide an [RedactionConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_RedactionConfig.html) definition for your request, which includes the configuration parameters for the redaction\. Specify the types of PII to redact, and specify whether each PII entity is replaced with the name of its type or a character of your choice:
   + Specify the PII entity types to redact in the `PiiEntityTypes` array\. To redact all entity types, set the array value to `["ALL"]`\.
   + To replace each PII entity with its type, set the `MaskMode` parameter to `REPLACE_WITH_PII_ENTITY_TYPE`\. For example, with this setting, the PII entity "Jane Doe" is replaced with "\[NAME\]"\.
   + To replace the characters in each PII entity with a character of your choice, set the `MaskMode` parameter to `MASK`, and set the `MaskCharacter` parameter to the replacement character\. Provide only a single character\. Valid characters are \!, \#, $, %, &, \*, and @\. For example, with this setting, the PII entity "Jane Doe" can be replaced with "\*\*\*\* \*\*\*"
@@ -91,7 +91,7 @@ If the request to start the events detection job was successful, you will receiv
 }
 ```
 
-You can use the [DescribeEventsDetectionJob](API_DescribeEventsDetectionJob.md) operation to get the status of an existing job\. 
+You can use the [DescribeEventsDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEventsDetectionJob.html) operation to get the status of an existing job\. 
 
 ```
 aws comprehend describe-pii-entities-detection-job \

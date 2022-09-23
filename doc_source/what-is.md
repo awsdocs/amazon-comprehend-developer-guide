@@ -89,7 +89,7 @@ If you are a first\-time user of Amazon Comprehend, we recommend that you read t
 
 1. **[Tutorial: Analyzing insights from customer reviews with Amazon Comprehend](tutorial-reviews.md)** – In this section, you perform sentiment and entities analysis and visualize the results\.
 
-1. ** [API reference](API_Reference.md) ** – In this section you'll find reference documentation for Amazon Comprehend operations\.
+1. ** [Amazon Comprehend API Reference](https://docs.aws.amazon.com/api-ref)\. **– Reference documentation for Amazon Comprehend operations\.
 
 AWS provides the following resources for learning about the Amazon Comprehend service:
 + The [AWS Machine Learning Blog](http://aws.amazon.com/blogs/machine-learning/ ) includes useful articles about Amazon Comprehend\.

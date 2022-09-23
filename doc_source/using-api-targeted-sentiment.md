@@ -1,10 +1,12 @@
 # Async analysis for targeted sentiment<a name="using-api-targeted-sentiment"></a>
 
-Amazon Comprehend provides the following API operations for analyzing targeted sentiment:
-+ [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) – Starts an asynchronous targeted sentiment detection job for a collection of documents\.
-+ [ListTargetedSentimentDetectionJobs](API_ListTargetedSentimentDetectionJobs.md) – Returns the list of targeted sentiment detection jobs that you have submitted\.
-+ [DescribeTargetedSentimentDetectionJob](API_DescribeTargetedSentimentDetectionJob.md) – Gets the properties \(including status\) associated with the specified targeted sentiment detection job\.
-+ [StopTargetedSentimentDetectionJob](API_StopTargetedSentimentDetectionJob.md) – Stops the specified in\-progress targeted sentiment job\.
+For information about real\-time analysis for Targeted sentiment, see [Real\-time analysis for targeted sentiment](using-api-sync.md#get-started-api-targeted-sentiment)\.
+
+Amazon Comprehend provides the following API operations to start and manage asynchronous targeted sentiment analysis:
++  [StartTargetedSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTargetedSentimentDetectionJob.html) – Starts an asynchronous targeted sentiment detection job for a collection of documents\.
++  [ListTargetedSentimentDetectionJobs](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListTargetedSentimentDetectionJobs.html) – Returns the list of targeted sentiment detection jobs that you have submitted\.
++  [DescribeTargetedSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeTargetedSentimentDetectionJob.html) – Gets the properties \(including status\) associated with the specified targeted sentiment detection job\.
++  [StopTargetedSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopTargetedSentimentDetectionJob.html) – Stops the specified in\-progress targeted sentiment job\.
 
 **Topics**
 + [Before you start](#api-targeted-sentiment-before)

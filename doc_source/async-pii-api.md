@@ -1,6 +1,6 @@
 # Locating PII entities with asynchronous jobs \(API\)<a name="async-pii-api"></a>
 
-Run an asynchronous batch job to locate PII in a collection of documents\. To run the job, upload your documents to Amazon S3, and submit an [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) request\.
+Run an asynchronous batch job to locate PII in a collection of documents\. To run the job, upload your documents to Amazon S3, and submit an [StartPiiEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartPiiEntitiesDetectionJob.html) request\.
 
 **Topics**
 + [Before you start](#detect-pii-before)
@@ -18,8 +18,8 @@ Before you start, make sure that you have:
 ## Input parameters<a name="async-pii-api-inputs"></a>
 
  In your request, include the following required parameters:
-+ `InputDataConfig` – Provide an [InputDataConfig](API_InputDataConfig.md) definition for your request, which includes the input properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location of your input documents\.
-+ `OutputDataConfig` – Provide an [OutputDataConfig](API_OutputDataConfig.md) definition for your request, which includes the output properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location where Amazon Comprehend writes the results of its analysis\.
++ `InputDataConfig` – Provide an [InputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_InputDataConfig.html) definition for your request, which includes the input properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location of your input documents\.
++ `OutputDataConfig` – Provide an [OutputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_OutputDataConfig.html) definition for your request, which includes the output properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location where Amazon Comprehend writes the results of its analysis\.
 + `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 + `Mode` – Set this parameter to `ONLY_OFFSETS`\. With this setting, the output provides the character offsets that locate each PII entity in the input text\. The output also includes confidence scores and PII entity types\.
 + `LanguageCode` – Set this parameter to `en`\. Amazon Comprehend supports PII detection in only English text\.
@@ -28,7 +28,7 @@ Before you start, make sure that you have:
 
 The `StartPiiEntitiesDetectionJob` returns a job ID, so that you can monitor the progress of the job and retrieve the job status when it completes\.
 
-To monitor the progress of an analysis job, provide the job ID to the [DescribePiiEntitiesDetectionJob](API_DescribePiiEntitiesDetectionJob.md) operation\. The response from `DescribePiiEntitiesDetectionJob` contains the `JobStatus` field with the current status of the job\. A successful job transitions through the following states: 
+To monitor the progress of an analysis job, provide the job ID to the [DescribePiiEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribePiiEntitiesDetectionJob.html) operation\. The response from `DescribePiiEntitiesDetectionJob` contains the `JobStatus` field with the current status of the job\. A successful job transitions through the following states: 
 
 SUBMITTED \-> IN\_PROGRESS \-> COMPLETED\. 
 
@@ -161,7 +161,7 @@ If the request to start the events detection job was successful, you will receiv
 }
 ```
 
-You can use the [DescribeEventsDetectionJob](API_DescribeEventsDetectionJob.md) operation to get the status of an existing job\. If the request to start the events detection job was successful, you will receive a response similar to the following:
+You can use the [DescribeEventsDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEventsDetectionJob.html) operation to get the status of an existing job\. If the request to start the events detection job was successful, you will receive a response similar to the following:
 
 ```
 aws comprehend describe-pii-entities-detection-job \

@@ -6,7 +6,7 @@ To start the job, you perform the following steps:
 
 1. Store the documents in an Amazon S3 bucket\.
 
-1. Invoke the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) API operation to start the asynchronous job\.
+1. Invoke the [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html) API operation to start the asynchronous job\.
 
 1. Monitor the progress of the analysis job\.
 
@@ -62,7 +62,7 @@ When you use a VPC with your analysis job, the `DataAccessRole` used for the Cre
 
 ## Starting a custom entity detection job<a name="detecting-cer-api"></a>
 
-To start a custom entity detection job with the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation, you must provide the EntityRecognizerArn, which is the Amazon Resource Name \(ARN\) of the trained model\. You can find this ARN in the response to the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) operation\. 
+To start a custom entity detection job with the [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html) operation, you must provide the EntityRecognizerArn, which is the Amazon Resource Name \(ARN\) of the trained model\. You can find this ARN in the response to the [CreateEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html) operation\. 
 
 Use the following example for Unix, Linux, and macOS environments\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\. To detect custom entities in a document set, use the following request syntax:
 
@@ -257,7 +257,7 @@ Amazon Comprehend responds with the `JobID` and `JobStatus` and will return the 
 
 ## Setting text extraction options<a name="detecting-cer-pdf"></a>
 
-If your input files include image files, PDFs, or Word documents, you can specify options for text extraction\. In the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation, configure the `DocumentReaderConfig` parameter in `InputDataConfig` to specify the following options :
+If your input files include image files, PDFs, or Word documents, you can specify options for text extraction\. In the [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html) operation, configure the `DocumentReaderConfig` parameter in `InputDataConfig` to specify the following options :
 + **DocumentReadMode** – If you set to `SERVICE_DEFAULT`, Amazon Comprehend automatically selects the text extraction actions based on the input document types\. If you set to `FORCE_DOCUMENT_READ_ACTION`, Amazon Comprehend uses the Amazon Textract APIs to parse PDF, Word, or image files\.
 + **DocumentReadAction** – Set to `TEXTRACT_DETECT_DOCUMENT_TEXT` for Amazon Comprehend to invoke the Amazon Textract `DetectDocumentText` API\. Set to `TEXTRACT_ANALYZE_DOCUMENT` for Amazon Comprehend to invoke the Amazon Textract `AnalyzeDocument` API\.
 
@@ -284,4 +284,4 @@ In the `StartEntitiesDetectionJob` operation, specify the parameter as a file:
   --input-data-config file://myInputDataConfig.json  
 ```
 
-For more information about the Amazon Textract options, see [DocumentReaderConfig](API_DocumentReaderConfig.md)\.
+For more information about the Amazon Textract options, see [DocumentReaderConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DocumentReaderConfig.html)\.

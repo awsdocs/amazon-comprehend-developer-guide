@@ -7,7 +7,7 @@
 + [Describe events using the AWS CLI](#describe-events)
 + [Get events detection results](#async-events)
 
-To detect events in a document set, use the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) to start an asynchronous job\.
+To detect events in a document set, use the [StartEventsDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEventsDetectionJob.html) to start an asynchronous job\.
 
 ## Before you start<a name="events-before"></a>
 
@@ -17,7 +17,7 @@ Before you start, make sure that you have:
 
 ## Detect events using the AWS CLI<a name="events-cli"></a>
 
-The following example demonstrates using the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation with the AWS CLI
+The following example demonstrates using the [StartEventsDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEventsDetectionJob.html) operation with the AWS CLI
 
 The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
@@ -68,7 +68,7 @@ If the request to start the events detection job was successful, you will receiv
 
 ## List events using the AWS CLI<a name="list-events"></a>
 
-Use the [ListEventsDetectionJobs](API_ListEventsDetectionJobs.md) operation to see a list of the events detection jobs that you have submitted\. The list includes information about the input and output locations that you used and the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
+Use the [ListEventsDetectionJobs](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListEventsDetectionJobs.html) operation to see a list of the events detection jobs that you have submitted\. The list includes information about the input and output locations that you used and the status of each of the detection jobs\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
 ```
 aws comprehend list-events-detection-jobs --region region 
@@ -116,7 +116,7 @@ You will get JSON similar to the following in response:
 
 ## Describe events using the AWS CLI<a name="describe-events"></a>
 
-You can use the [DescribeEventsDetectionJob](API_DescribeEventsDetectionJob.md) operation to get the status of an existing job\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
+You can use the [DescribeEventsDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEventsDetectionJob.html) operation to get the status of an existing job\. The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
 ```
 aws comprehend describe-events-detection-job \

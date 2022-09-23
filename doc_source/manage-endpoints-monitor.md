@@ -36,7 +36,7 @@ You can determine how to best adjust your endpoint's throughput by monitoring it
    Your graph is ready for analysis\. 
 
      
-
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/graphed_metrics_endpoint.png)
 
 Based on the CloudWatch metrics, you can also set up auto scaling to automatically adjust the throughput of your endpoint\. For more information about using auto scaling with your endpoints, see [Auto scaling with endpoints](comprehend-autoscaling.md)\. 
 

@@ -20,18 +20,18 @@ Documents must be in UTF\-8\-formatted text files\. You can submit your document
 | Each file contains one input document\. This is best for collections of large documents\. | One document per file | 
 |  The input is one or more files\. Each line in a file is considered a document\. This is best for short documents, such as social media postings\. Each line must end with a line feed \(LF, \\n\), a carriage return \(CR, \\r\), or both \(CRLF, \\r\\n\)\. You can't use the UTF\-8 line separator \(u\+2028\) to end a line\.  | One document per line | 
 
-When you start an analysis job, you specify the S3 location for your input data\. The URI must be in the same AWS Region as the API endpoint that you are calling\. The URI can point to a single file or it can be the prefix for a collection of data files\. For more information, see the [InputDataConfig](API_InputDataConfig.md) data type\.
+When you start an analysis job, you specify the S3 location for your input data\. The URI must be in the same AWS Region as the API endpoint that you are calling\. The URI can point to a single file or it can be the prefix for a collection of data files\. For more information, see the [InputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_InputDataConfig.html) data type\.
 
 You must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection and output files\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
 
 ## Starting an analysis job<a name="how-start-job"></a>
 
 To submit an analysis job, use either the Amazon Comprehend console or the appropriate `Start*` operation:
-+ [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) — Start a job to detect the dominant language in each document in the collection\. For more information about the dominant language in a document, see [Dominant language](how-languages.md)\.
-+ [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) — Start a job to detect entities in each document in the collection\. For more information about entities, see [Entities](how-entities.md)\.
-+ [StartKeyPhrasesDetectionJob](API_StartKeyPhrasesDetectionJob.md) — Start a job to detect key phrases in each document in the collection\. For more information about key phrases, see [Key phrases](how-key-phrases.md)\.
-+ [StartPiiEntitiesDetectionJob](API_StartPiiEntitiesDetectionJob.md) — Start a job to detect personally identifiable information \(PII\) in each document in the collection\. For more information about PII, see [Detecting PII entities](how-key-phrases.md)\.
-+ [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) — Start a job to detect the sentiment in each document in the collection\. For more information about sentiments, see [Sentiment](how-sentiment.md)\.
++  [StartDominantLanguageDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDominantLanguageDetectionJob.html) — Start a job to detect the dominant language in each document in the collection\. For more information about the dominant language in a document, see [Dominant language](how-languages.md)\.
++  [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html) — Start a job to detect entities in each document in the collection\. For more information about entities, see [Entities](how-entities.md)\.
++  [StartKeyPhrasesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartKeyPhrasesDetectionJob.html) — Start a job to detect key phrases in each document in the collection\. For more information about key phrases, see [Key phrases](how-key-phrases.md)\.
++  [StartPiiEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartPiiEntitiesDetectionJob.html) — Start a job to detect personally identifiable information \(PII\) in each document in the collection\. For more information about PII, see [Detecting PII entities](how-key-phrases.md)\.
++  [StartSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartSentimentDetectionJob.html) — Start a job to detect the sentiment in each document in the collection\. For more information about sentiments, see [Sentiment](how-sentiment.md)\.
 
 ## Monitoring analysis jobs<a name="how-monitor-progress"></a>
 
@@ -46,20 +46,20 @@ To monitor the progress of multiple analysis jobs, use the `List*` operations\. 
 If the status field is set to `COMPLETED` or `FAILED`, job processing has completed\.
 
 To get the status of individual jobs, use the `Describe*` operation for the analysis that you are performing\.
-+ [DescribeDominantLanguageDetectionJob](API_DescribeDominantLanguageDetectionJob.md)
-+ [DescribeEntitiesDetectionJob](API_DescribeEntitiesDetectionJob.md)
-+ [DescribeKeyPhrasesDetectionJob](API_DescribeKeyPhrasesDetectionJob.md)
-+ [DescribePiiEntitiesDetectionJob](API_DescribePiiEntitiesDetectionJob.md)
-+ [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md)
++  [DescribeDominantLanguageDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeDominantLanguageDetectionJob.html)
++  [DescribeEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEntitiesDetectionJob.html)
++  [DescribeKeyPhrasesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeKeyPhrasesDetectionJob.html)
++  [DescribePiiEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribePiiEntitiesDetectionJob.html)
++  [DescribeSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeSentimentDetectionJob.html)
 
 To get the status of a multiple jobs, use the `List*` operation for the analysis that you are performing\.
-+ [ListDominantLanguageDetectionJobs](API_ListDominantLanguageDetectionJobs.md)
-+ [ListEntitiesDetectionJobs](API_ListEntitiesDetectionJobs.md)
-+ [ListKeyPhrasesDetectionJobs](API_ListKeyPhrasesDetectionJobs.md)
-+ [ListPiiEntitiesDetectionJobs](API_ListPiiEntitiesDetectionJobs.md)
-+ [ListSentimentDetectionJobs](API_ListSentimentDetectionJobs.md)
++  [ListDominantLanguageDetectionJobs](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListDominantLanguageDetectionJobs.html)
++  [ListEntitiesDetectionJobs](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListEntitiesDetectionJobs.html)
++  [ListKeyPhrasesDetectionJobs](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListKeyPhrasesDetectionJobs.html)
++  [ListPiiEntitiesDetectionJobs](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListPiiEntitiesDetectionJobs.html)
++  [ListSentimentDetectionJobs](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListSentimentDetectionJobs.html)
 
-To restrict the results to jobs that match certain criteria, use the `List*` operations' `Filter` parameter\. You can filter on the job name, the job status, and the date and time that the job was submitted\. For more information, see the `Filter` parameter for each of the `List*` operations in the [Actions](API_Operations.md) reference\.
+To restrict the results to jobs that match certain criteria, use the `List*` operations' `Filter` parameter\. You can filter on the job name, the job status, and the date and time that the job was submitted\. For more information, see the `Filter` parameter for each of the `List*` operations in the Amazon Comprehend API reference\.
 
 ## Getting analysis results<a name="how-get-results"></a>
 
@@ -68,10 +68,10 @@ After an analysis job has finished, use a `Describe*` operation to get the locat
 If the status of a job is `FAILED`, the response contains a `Message` field that describes the reason that the analysis job didn't complete successfully\.
 
 To get the status of individual jobs, use the appropriate `Describe*` operation:
-+ [DescribeDominantLanguageDetectionJob](API_DescribeDominantLanguageDetectionJob.md)
-+ [DescribeEntitiesDetectionJob](API_DescribeEntitiesDetectionJob.md)
-+ [DescribeKeyPhrasesDetectionJob](API_DescribeKeyPhrasesDetectionJob.md)
-+ [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md)
++  [DescribeDominantLanguageDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeDominantLanguageDetectionJob.html)
++  [DescribeEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEntitiesDetectionJob.html)
++  [DescribeKeyPhrasesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeKeyPhrasesDetectionJob.html)
++  [DescribeSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeSentimentDetectionJob.html)
 
 The results are returned in a single file, with one JSON structure for each document\. Each response file also includes error messages for any job with the status field set to `FAILED`\.
 
@@ -79,7 +79,7 @@ Each of the following sections shows examples of output for the two input format
 
 ### Getting dominant language detection results<a name="async-dominant-language"></a>
 
-The following is an example of an output file from an analysis that detected the dominant language\. The format of the input is one document per line\. For more information, see the [DetectDominantLanguage](API_DetectDominantLanguage.md) operation\.
+The following is an example of an output file from an analysis that detected the dominant language\. The format of the input is one document per line\. For more information, see the [DetectDominantLanguage](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectDominantLanguage.html) operation\.
 
 ```
 {"File": "0_doc", "Languages": [{"LanguageCode": "en", "Score": 0.9514502286911011}, {"LanguageCode": "de", "Score": 0.02374090999364853}, {"LanguageCode": "nl", "Score": 0.003208699868991971}, "Line": 0}
@@ -95,7 +95,7 @@ The following is an example of output from an analysis where the format of the i
 
 ### Getting entity detection results<a name="async-entities"></a>
 
-The following is an example of an output file from an analysis that detected entities in documents\. The format of the input is one document per line\. For more information, see the [DetectEntities](API_DetectEntities.md) operation\. The output contains two error messages, one for a document that is too long and one for a document that isn't in UTF\-8 format\.
+The following is an example of an output file from an analysis that detected entities in documents\. The format of the input is one document per line\. For more information, see the [DetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html) operation\. The output contains two error messages, one for a document that is too long and one for a document that isn't in UTF\-8 format\.
 
 ```
 {"File": "50_docs", "Line": 0, "Entities": [{"BeginOffset": 0, "EndOffset": 22, "Score": 0.9763959646224976, "Text": "Cluj-NapocaCluj-Napoca", "Type": "LOCATION"}"]}
@@ -114,7 +114,7 @@ The following is an example of output from an analysis where the format of the i
 
 ### Getting key phrase detection results<a name="async-key-phrases"></a>
 
-The following is an example of an output file from an analysis that detected key phrases in a document\. The format of the input is one document per line\. For more information, see the [DetectKeyPhrases](API_DetectKeyPhrases.md) operation\.
+The following is an example of an output file from an analysis that detected key phrases in a document\. The format of the input is one document per line\. For more information, see the [DetectKeyPhrases](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectKeyPhrases.html) operation\.
 
 ```
 {"File": "50_docs", "KeyPhrases": [{"BeginOffset": 0, "EndOffset": 22, "Score": 0.8948641419410706, "Text": "Cluj-NapocaCluj-Napoca"}, {"BeginOffset": 45, "EndOffset": 49, "Score": 0.9989854693412781, "Text": "Cluj"}], "Line": 0}            
@@ -143,7 +143,7 @@ The following is an example of output from an analysis where the format of the i
 
 ### Getting sentiment detection results<a name="async-sentiment"></a>
 
-The following is an example of an output file from an analysis that detected the sentiment expressed in a document\. It includes an error message because one document is too long\. The format of the input is one document per line\. For more information, see the [DetectSentiment](API_DetectSentiment.md) operation\.
+The following is an example of an output file from an analysis that detected the sentiment expressed in a document\. It includes an error message because one document is too long\. The format of the input is one document per line\. For more information, see the [DetectSentiment](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectSentiment.html) operation\.
 
 ```
 {"File": "50_docs", "Line": 0, "Sentiment": "NEUTRAL", "SentimentScore": {"Mixed": 0.002734508365392685, "Negative": 0.008935936726629734, "Neutral": 0.9841893315315247, "Positive": 0.004140198230743408}}

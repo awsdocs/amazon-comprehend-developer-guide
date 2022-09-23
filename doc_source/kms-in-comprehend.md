@@ -30,7 +30,7 @@ If you have previously setup encryption using SSE\-KMS on the your S3 input docu
 
 All Amazon Comprehend `Start*` and `Create*` API operations support KMS encrypted input documents\. `Describe*` and `List*` API operations return the `KmsKeyId` in `OutputDataConfig` if the original job had `KmsKeyId` provided as an input\. If it was not provided as input, it isn't returned\. 
 
-This can be seen in the following AWS CLI example using the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation:
+This can be seen in the following AWS CLI example using the [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html) operation:
 
  
 
@@ -55,7 +55,7 @@ Amazon Comprehend custom model API operations, `CreateEntityRecognizer`, `Create
 
 You need an IAM policy to allow a principal to use or manage customer managed keys\. These keys are specified in the `Resource` element of the policy statement\. As best practice, limit customer managed keys to only those that the principals must use in your policy statement\.
 
-The following AWS CLI example creates a custom entity recognizer with model encryption using the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) operation:
+The following AWS CLI example creates a custom entity recognizer with model encryption using the [CreateEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html) operation:
 
 
 

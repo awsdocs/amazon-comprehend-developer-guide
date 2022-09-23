@@ -7,7 +7,7 @@ When you create a custom entity recognizer using annotated PDF files, you can us
 **Note**  
 A custom entity recognizer using annotated PDF files supports English documents only\.
 
-After you create a custom entity recognizer, you can monitor the progress of the request using the [DescribeEntityRecognizer](API_DescribeEntityRecognizer.md) operation\. Once the `Status` field is `TRAINED`, the recognizer model is ready to use for custom entity recognition\.
+After you create a custom entity recognizer, you can monitor the progress of the request using the [DescribeEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeEntityRecognizer.html) operation\. Once the `Status` field is `TRAINED`, the recognizer model is ready to use for custom entity recognition\.
 
 **Topics**
 + [Train custom recognizers \(console\)](realtime-analysis-cer.md)

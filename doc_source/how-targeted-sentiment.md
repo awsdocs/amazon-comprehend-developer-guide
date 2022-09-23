@@ -14,17 +14,18 @@ Targeted sentiment provides the following outputs for each analysis job:
 + The sentiment and a sentiment score for each entity mention\.
 + Groups of mentions \(co\-reference groups\) that correspond to a single entity\.
 
-You can use the [console](analysis-jobs.md) or the [API](using-api-targeted-sentiment.md) to run targeted sentiment analysis\. To run targeted sentiment, you start an asynchronous analysis job; real\-time analysis is not available for targeted sentiment\.
+You can use the [console](get-started-console.md) or the [API](using-api-targeted-sentiment.md) to run targeted sentiment analysis\. The console and the API support real\-time analysis and asynchronous analysis for targeted sentiment\.
 
  Amazon Comprehend supports targeted sentiment for documents in the English language\. 
 
-For additional information about targeted sentiment, including a tutorial, see [ Extract granular sentiment in text with Amazon Comprehend Targeted Sentiment](http://aws.amazon.com/blogs/machine-learning/extract-granular-sentiment-in-text-with-amazon-comprehend-targeted-sentiment/)\. 
+For additional information about targeted sentiment, including a tutorial, see [ Extract granular sentiment in text with Amazon Comprehend Targeted Sentiment](http://aws.amazon.com/blogs/machine-learning/extract-granular-sentiment-in-text-with-amazon-comprehend-targeted-sentiment/) in the AWS machine learning blog\. 
 
 **Topics**
 + [Entity types](#how-targeted-sentiment-entities)
 + [Co\-reference group](#how-targeted-sentiment-values)
 + [Output file organization](#how-targeted-sentiment-output)
-+ [Targeted sentiment example](#how-targeted-sentiment-example)
++ [Real time analysis using the console](#how-targeted-sentiment-console)
++ [Targeted sentiment output example](#how-targeted-sentiment-example)
 
 ## Entity types<a name="how-targeted-sentiment-entities"></a>
 
@@ -60,9 +61,7 @@ Targeted sentiment identifies co\-reference groups in each input document\. A co
 **Example**  
 In the following example of a customer review, “spa” is the entity, which has entity type `FACILITY`\. The entity has two additional mentions as a pronoun \("it"\)\.   
 
-```
-I enjoyed visiting the spa. It was very comfortable. But it was also expensive.
-```
+![\[Targeted sentiment co-reference group.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-targeted-sentiment4.png)
 
 ## Output file organization<a name="how-targeted-sentiment-output"></a>
 
@@ -70,6 +69,9 @@ The targeted sentiment analysis job creates a JSON text output file\. The file c
 + **Entities** – An array of entities found in the document\. 
 + **File** – The file name of the input document\.
 + **Line** – If the input file is one document per line, **Entities** contains the line number of the document in the file\.
+
+**Note**  
+If targeted sentiment doesn't identify any entities in the input text, it returns an empty array as the Entities result\.
 
 The following example shows **Entities** for an input file with three lines of input\. The input format is **ONE\_DOC\_PER\_LINE**, so each line of input is a document\.
 
@@ -164,7 +166,45 @@ In the following example, an entity has only one mention in the input document, 
 }
 ```
 
-## Targeted sentiment example<a name="how-targeted-sentiment-example"></a>
+## Real time analysis using the console<a name="how-targeted-sentiment-console"></a>
+
+You can use the Amazon Comprehend console to run [Targeted sentiment](realtime-console-analysis.md#realtime-analysis-console-targeted-sentiment) in real\-time\. Use the sample text or paste your own text into the input text box, then choose **Analyze**\.
+
+In the **Insights** panel, the console displays three views of the targeted sentiment analysis:
++ **Analyzed text** – Displays the analyzed text and underlines each entity\. The color of the underline indicates the sentiment value \(positive, neutral, negative, or mixed\) that the analysis assigned to the entity\. The console displays the color mappings at the top right corner of the analzed text box\. If you hover your cursor over an entity, the console displays a popup panel containing analysis values \(entity type, sentiment score\) for the entity\.
++ **Results** – Displays a table containing a row for each entity mention identified in the text\. For each entity, the table shows the [entity](#how-targeted-sentiment-entities) and entity score\. The row also includes the primary sentiment and the score for each sentiment value\. If there are multiple mentions of the same entity, known as a [Co\-reference group](#how-targeted-sentiment-values), the table displays these mentions as a collapsible set of rows associated with the main entity\. 
+
+  If you hover over an entity row in the **Results** table, the console highlights the entity mention in the **Analyzed text** panel\.
++ **Application integration** – Displays the parameter values of the API request and the structure of the JSON object returned in the API response\. For a description of the fields in the JSON object, see [Output file organization](#how-targeted-sentiment-output)\.
+
+### Console real\-time analysis example<a name="targeted-sentiment-example"></a>
+
+This example uses the following text as input, which is the default input text that the console provides\.
+
+```
+Hello Zhang Wei, I am John. Your AnyCompany Financial Services, LLC credit card account 1111-0000-1111-0008 has a minimum payment 
+  of $24.53 that is due by July 31st. Based on your autopay settings, we will withdraw your payment on the due date from your 
+  bank account number XXXXXX1111 with the routing number XXXXX0000. 
+  Customer feedback for Sunshine Spa, 123 Main St, Anywhere. Send comments to Alice at sunspa@mail.com. 
+  I enjoyed visiting the spa. It was very comfortable but it was also very expensive. The amenities were ok but the service made 
+  the spa a great experience.
+```
+
+The **Analyzed text** panel shows the following output for this example\. Hover your mouse over the text `Zhang Wei` to view the popup panel for this entity\.
+
+![\[Targeted sentiment analyzed text.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-targeted-sentiment2.png)
+
+The **Results** table provides additional detail about each entity, including the entity score, the primary sentiment, and the score for each sentiment\. 
+
+![\[Targeted sentiment results table.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-targeted-sentiment3.png)
+
+In our example, targeted sentiment analysis recognizes that each mention of **your** in the input text is a reference to the person entity **Zhang Wei**\. The console displays these mentions as a set of collapsible rows associated with the main entity\.
+
+![\[Targeted sentiment results table.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-targeted-sentiment5.png)
+
+The **Application integration** panel displays the JSON object that the DetectTargetedSentiment API generates\. See the following section for a full example\.
+
+## Targeted sentiment output example<a name="how-targeted-sentiment-example"></a>
 
 The following example shows the output file from a targeted sentiment analysis job\. The input file consists of three simple documents:
 
@@ -174,7 +214,7 @@ My burger was good, and it was warm. The burger had plenty of toppings.
 The burger was cooked perfectly but it was cold. The service was OK.
 ```
 
-The output file from analysis of this input file 
+The targeted sentiment analysis of this input file produces the following output\.
 
 ```
   {"Entities":[

@@ -10,6 +10,13 @@ For more information, see [Interface VPC endpoints \(AWS PrivateLink\)](https://
 
 Before you set up an interface VPC endpoint for Amazon Comprehend, ensure that you review [Interface endpoint properties and limitations](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#vpce-interface-limitations) in the *Amazon VPC User Guide*\. 
 
+Amazon Comprehend endpoints are not available in all availability zones in a region\. When you create the endpoint, use the following command to list the availability zones\.
+
+```
+aws ec2 describe-vpc-endpoint-services \
+  --service-names com.amazonaws.us-west-2.comprehend
+```
+
 Amazon Comprehend supports making calls to all of its API actions from your VPC\. 
 
 ## Creating an interface VPC endpoint for Amazon Comprehend<a name="vpc-endpoint-create"></a>

@@ -28,7 +28,7 @@ The default delimiter between class names is a pipe \(\|\)\. However, you can us
 
 ## Augmented manifest file<a name="prep-classifier-data-multi-label-manifest"></a>
 
-An augmented manifest file is a labeled dataset that is produced by SageMaker Ground Truth\. Ground Truth is a data labeling service that helps you—or a workforce that you employ—build training datasets for machine learning models\. Amazon Comprehend accepts augmented manifest files as training data for custom models\. You can provide these files when you create a custom classifier by using the Amazon Comprehend console or the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) API action\. 
+An augmented manifest file is a labeled dataset that is produced by SageMaker Ground Truth\. Ground Truth is a data labeling service that helps you—or a workforce that you employ—build training datasets for machine learning models\. Amazon Comprehend accepts augmented manifest files as training data for custom models\. You can provide these files when you create a custom classifier by using the Amazon Comprehend console or the [CreateDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html) API action\. 
 
 For more information about Ground Truth and the output that it produces, see [Use Amazon SageMaker Ground Truth to Label Data](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html) in the *Amazon SageMaker Developer Guide*\.
 

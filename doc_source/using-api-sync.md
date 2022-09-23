@@ -7,12 +7,13 @@ The following examples demonstrate how to use Amazon Comprehend API for real\-ti
 + [Detecting named entities](#get-started-api-entities)
 + [Detecting key phrases](#get-started-api-key-phrases)
 + [Determining sentiment](#get-started-api-sentiment)
++ [Real\-time analysis for targeted sentiment](#get-started-api-targeted-sentiment)
 + [Detecting syntax](#get-started-api-syntax)
 + [Real\-time batch APIs](#get-started-batch)
 
 ## Detecting the dominant language<a name="get-started-api-dominant-language"></a>
 
-To determine the dominant language used in text, use the [DetectDominantLanguage](API_DetectDominantLanguage.md) operation\. To detect the dominant language in up to 25 documents in a batch, use the [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) operation\. For more information, see [Real\-time batch APIs](#get-started-batch)\.
+To determine the dominant language used in text, use the [DetectDominantLanguage](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectDominantLanguage.html) operation\. To detect the dominant language in up to 25 documents in a batch, use the [BatchDetectDominantLanguage](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectDominantLanguage.html) operation\. For more information, see [Real\-time batch APIs](#get-started-batch)\.
 
 **Topics**
 + [Detecting the dominant language using the AWS Command Line Interface](#get-started-api-dominant-language-cli)
@@ -137,7 +138,7 @@ namespace Comprehend
 
 ## Detecting named entities<a name="get-started-api-entities"></a>
 
-To determine the named entities in a document, use the [DetectEntities](API_DetectEntities.md) operation\. To detect entities in up to 25 documents in a batch, use the [BatchDetectEntities](API_BatchDetectEntities.md) operation\. For more information, see [Real\-time batch APIs](#get-started-batch)\.
+To determine the named entities in a document, use the [DetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html) operation\. To detect entities in up to 25 documents in a batch, use the [BatchDetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntities.html) operation\. For more information, see [Real\-time batch APIs](#get-started-batch)\.
 
 **Topics**
 + [Detecting named entities using the AWS Command Line Interface](#get-started-api-entities-cli)
@@ -276,7 +277,7 @@ namespace Comprehend
 
 ## Detecting key phrases<a name="get-started-api-key-phrases"></a>
 
-To determine the key noun phrases used in text, use the [DetectKeyPhrases](API_DetectKeyPhrases.md) operation\. To detect the key noun phrases in up to 25 documents in a batch, use the [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) operation\. For more information, see [Real\-time batch APIs](#get-started-batch)\.
+To determine the key noun phrases used in text, use the [DetectKeyPhrases](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectKeyPhrases.html) operation\. To detect the key noun phrases in up to 25 documents in a batch, use the [BatchDetectKeyPhrases](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectKeyPhrases.html) operation\. For more information, see [Real\-time batch APIs](#get-started-batch)\.
 
 **Topics**
 + [Detecting key phrases using the AWS Command Line Interface](#get-started-api-key-phrases-cli)
@@ -415,12 +416,12 @@ namespace Comprehend
 ## Determining sentiment<a name="get-started-api-sentiment"></a>
 
 Amazon Comprehend provides the following API operations for analyzing sentiment:
-+ [DetectSentiment](API_DetectSentiment.md) – Determines the overall emotional sentiment of a document\.
-+ [BatchDetectSentiment](API_BatchDetectSentiment.md) – Determine the overall sentiment in up to 25 documents in a batch\. For more information, see [Real\-time batch APIs](#get-started-batch)
-+ [StartSentimentDetectionJob](API_StartSentimentDetectionJob.md) – Starts an asynchronous sentiment detection job for a collection of documents\.
-+ [ListSentimentDetectionJobs](API_ListSentimentDetectionJobs.md) – Returns the list of sentiment detection jobs that you have submitted\.
-+ [DescribeSentimentDetectionJob](API_DescribeSentimentDetectionJob.md) – Gets the properties \(including status\) associated with the specified sentiment detection job\.
-+ [StopSentimentDetectionJob](API_StopSentimentDetectionJob.md) – Stops the specified in\-progress sentiment job\.
++ [DetectSentiment](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectSentiment.html) – Determines the overall emotional sentiment of a document\.
++  [BatchDetectSentiment](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectSentiment.html) – Determine the overall sentiment in up to 25 documents in a batch\. For more information, see [Real\-time batch APIs](#get-started-batch)
++  [StartSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartSentimentDetectionJob.html) – Starts an asynchronous sentiment detection job for a collection of documents\.
++  [ListSentimentDetectionJobs](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ListSentimentDetectionJobs.html) – Returns the list of sentiment detection jobs that you have submitted\.
++  [DescribeSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeSentimentDetectionJob.html) – Gets the properties \(including status\) associated with the specified sentiment detection job\.
++  [StopSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopSentimentDetectionJob.html) – Stops the specified in\-progress sentiment job\.
 
 **Note**  
 Amazon Comprehend performs real\-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input\.
@@ -553,9 +554,104 @@ namespace Comprehend
 }
 ```
 
+## Real\-time analysis for targeted sentiment<a name="get-started-api-targeted-sentiment"></a>
+
+Amazon Comprehend provides the following API operations for targeted sentiment real\-time analysis:
++ [DetectTargetedSentiment](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectTargetedSentiment.html) – Analyzes sentiment of the entities mentioned in a document\.
++  [BatchDetectTargetedSentiment](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectTargetedSentiment.html) – Analyzes targeted sentiment for up to 25 documents in a batch\. For more information, see [Real\-time batch APIs](#get-started-batch)
+
+If the text you are analyzing doesn't include any targeted sentiment [Entity types](how-targeted-sentiment.md#how-targeted-sentiment-entities), the API returns an empty Entities array\.
+
+### Analyzing targeted sentiment using the AWS Command Line Interface<a name="get-started-api-targeted-sentiment-cli"></a>
+
+The following example demonstrates using the `DetectTargetedSentiment` operation with the AWS CLI\. This example specifies the language of the input text\.
+
+The example is formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
+
+```
+aws comprehend detect-targeted-sentiment \
+    --region region \
+    --language-code "en" \
+    --text "The burger was cooked perfectly but it was cold. The service was OK."
+```
+
+ Amazon Comprehend responds with the following:
+
+```
+{
+"Entities": [
+    {
+      "DescriptiveMentionIndex": [
+        0
+      ],
+      "Mentions": [
+        {
+          "BeginOffset": 4,
+          "EndOffset": 10,
+          "Score": 1,
+          "GroupScore": 1,
+          "Text": "burger",
+          "Type": "OTHER",
+          "MentionSentiment": {
+            "Sentiment": "POSITIVE",
+            "SentimentScore": {
+              "Mixed": 0.001515,
+              "Negative": 0.000822,
+              "Neutral": 0.000243,
+              "Positive": 0.99742
+            }
+          }
+        },
+        {
+          "BeginOffset": 36,
+          "EndOffset": 38,
+          "Score": 0.999843,
+          "GroupScore": 0.999661,
+          "Text": "it",
+          "Type": "OTHER",
+          "MentionSentiment": {
+            "Sentiment": "NEGATIVE",
+            "SentimentScore": {
+              "Mixed": 0,
+              "Negative": 0.999996,
+              "Neutral": 0.000004,
+              "Positive": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "DescriptiveMentionIndex": [
+        0
+      ],
+      "Mentions": [
+        {
+          "BeginOffset": 53,
+          "EndOffset": 60,
+          "Score": 1,
+          "GroupScore": 1,
+          "Text": "service",
+          "Type": "ATTRIBUTE",
+          "MentionSentiment": {
+            "Sentiment": "NEUTRAL",
+            "SentimentScore": {
+              "Mixed": 0.000033,
+              "Negative": 0.000089,
+              "Neutral": 0.993325,
+              "Positive": 0.006553
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
 ## Detecting syntax<a name="get-started-api-syntax"></a>
 
-To parse text to extract the individual words and determine the parts of speech for each word, use the [DetectSyntax](API_DetectSyntax.md) operation\. To parse the syntax of up to 25 documents in a batch, use the [BatchDetectSyntax](API_BatchDetectSyntax.md) operation\. For more information, see [Real\-time batch APIs](#get-started-batch)\.
+To parse text to extract the individual words and determine the parts of speech for each word, use the [DetectSyntax](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectSyntax.html) operation\. To parse the syntax of up to 25 documents in a batch, use the [BatchDetectSyntax](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectSyntax.html) operation\. For more information, see [Real\-time batch APIs](#get-started-batch)\.
 
 **Topics**
 + [Detecting syntax using the AWS Command Line Interface\.](#get-started-api-syntax-cli)
@@ -761,7 +857,7 @@ To send batches of up to 25 documents, you can use the Amazon Comprehend real\-t
 
 ### Batch processing with the SDK for Java<a name="batch-java"></a>
 
-The following sample program shows how to use the [BatchDetectEntities](API_BatchDetectEntities.md) operation with the SDK for Java\. The response from the server contains a [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document, there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
+The following sample program shows how to use the [BatchDetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntities.html) operation with the SDK for Java\. The response from the server contains a [BatchDetectEntitiesItemResult](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntitiesItemResult.html) object for each document that was successfully processed\. If there is an error processing a document, there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
 
 ```
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -825,7 +921,7 @@ public class App
 
 ### Batch processing with the AWS SDK for \.NET<a name="batch-csharp"></a>
 
-The following sample program shows how to use the [BatchDetectEntities](API_BatchDetectEntities.md) operation with the AWS SDK for \.NET\. The response from the server contains a [BatchDetectEntitiesItemResult](API_BatchDetectEntitiesItemResult.md) object for each document that was successfully processed\. If there is an error processing a document, there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
+The following sample program shows how to use the [BatchDetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntities.html) operation with the AWS SDK for \.NET\. The response from the server contains a [BatchDetectEntitiesItemResult](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntitiesItemResult.html) object for each document that was successfully processed\. If there is an error processing a document, there will be a record in the error list in the response\. The example gets each of the documents with an error and resends them\.
 
 The \.NET example in this section uses the [AWS SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. You can use the [AWS Toolkit for Visual Studio](https://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/welcome.html) to develop AWS applications using \.NET\. It includes helpful templates and the AWS Explorer for deploying applications and managing services\. For a \.NET developer perspective of AWS, see the [AWS guide for \.NET developers](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/welcome.html)\. 
 
@@ -907,7 +1003,7 @@ namespace Comprehend
 
 These examples show how to use the batch API operations using the AWS Command Line Interface\. All of the operations except `BatchDetectDominantLanguage` use the following JSON file called `process.json` as input\. For that operation the `LanguageCode` entity is not included\.
 
-The third document in the JSON file \(`"$$$$$$$$"`\) will cause an error during batch processing\. It is included so that the operations will include an [BatchItemError](API_BatchItemError.md) in the response\.
+The third document in the JSON file \(`"$$$$$$$$"`\) will cause an error during batch processing\. It is included so that the operations will include an [BatchItemError](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchItemError.html) in the response\.
 
 ```
 {
@@ -930,7 +1026,7 @@ The examples are formatted for Unix, Linux, and macOS\. For Windows, replace the
 
 #### Detect the dominant language using a batch \(AWS CLI\)<a name="batch-dominant-language"></a>
 
-The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md) operation determines the dominant language of each document in a batch\. For a list of the languages that Amazon Comprehend can detect, see [Dominant language](how-languages.md)\. The following AWS CLI command calls the `BatchDetectDominantLanguage` operation\.
+The [BatchDetectDominantLanguage](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectDominantLanguage.html) operation determines the dominant language of each document in a batch\. For a list of the languages that Amazon Comprehend can detect, see [Dominant language](how-languages.md)\. The following AWS CLI command calls the `BatchDetectDominantLanguage` operation\.
 
 ```
 aws comprehend batch-detect-dominant-language \
@@ -975,7 +1071,7 @@ The following is the response from the `BatchDetectDominantLanguage` operation:
 
 #### Detect entities using a batch \(AWS CLI\)<a name="batch-entities"></a>
 
-Use the [BatchDetectEntities](API_BatchDetectEntities.md) operation to find the entities present in a batch of documents\. For more information about entities, see [Entities](how-entities.md)\. The following AWS CLI command calls the `BatchDetectEntities` operation\.
+Use the [BatchDetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntities.html) operation to find the entities present in a batch of documents\. For more information about entities, see [Entities](how-entities.md)\. The following AWS CLI command calls the `BatchDetectEntities` operation\.
 
 ```
 aws comprehend batch-detect-entities \
@@ -986,7 +1082,7 @@ aws comprehend batch-detect-entities \
 
 #### Detect key phrases using a batch \(AWS CLI\)<a name="batch-key-phrase"></a>
 
-The [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md) operation returns the key noun phrases in a batch of documents\. The following AWS CLI command calls the `BatchDetectKeyNounPhrases` operation\.
+The [BatchDetectKeyPhrases](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectKeyPhrases.html) operation returns the key noun phrases in a batch of documents\. The following AWS CLI command calls the `BatchDetectKeyNounPhrases` operation\.
 
 ```
 aws comprehend batch-detect-key-phrases
@@ -997,7 +1093,7 @@ aws comprehend batch-detect-key-phrases
 
 #### Detect sentiment using a batch \(AWS CLI\)<a name="batch-sentiment"></a>
 
-Detect the overall sentiment of a batch of documents using the [BatchDetectSentiment](API_BatchDetectSentiment.md) operation\. The following AWS CLI command calls the `BatchDetectSentiment` operation\.
+Detect the overall sentiment of a batch of documents using the [BatchDetectSentiment](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectSentiment.html) operation\. The following AWS CLI command calls the `BatchDetectSentiment` operation\.
 
 ```
 aws comprehend batch-detect-sentiment \

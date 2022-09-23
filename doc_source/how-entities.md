@@ -24,11 +24,11 @@ The following table lists the entity types\.
 Detect entities operations can be performed using any of the primary languages supported by Amazon Comprehend\. This includes only predefined \(non\-custom\) entity detection\. All documents must be in the same language\.
 
 You can use any of the following API operations to detect entities in a document or set of documents\.
-+ [DetectEntities](API_DetectEntities.md)
-+ [BatchDetectEntities](API_BatchDetectEntities.md)
-+ [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md)
++ [DetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html)
++  [BatchDetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntities.html)
++  [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html)
 
-The operations return a list of [Entity](API_Entity.md) objects, one for each entity in the document\. The `BatchDetectEntities` operation returns a list of `Entity` objects, one list for each document in the batch\. The `StartEntitiesDetectionJob` operation starts an asynchronous job that produces a file containing a list of `Entity` objects for each document in the job\.
+The operations return a list of [API Entity](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_Entity.html) objects, one for each entity in the document\. The `BatchDetectEntities` operation returns a list of `Entity` objects, one list for each document in the batch\. The `StartEntitiesDetectionJob` operation starts an asynchronous job that produces a file containing a list of `Entity` objects for each document in the job\.
 
 The following example is the response from the `DetectEntities` operation\.
 

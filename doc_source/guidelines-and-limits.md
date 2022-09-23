@@ -24,7 +24,7 @@ For a list of AWS Regions where Amazon Comprehend is available, see [AWS Regions
 
 ## Overall Quotas<a name="limits-all"></a>
 
-All single\-document synchronous operations except sentiment analysis and syntax detection have the following quotas\.
+All single\-document synchronous operations except sentiment analysis, targeted sentiment analysis, and syntax analysis have the following quotas\.
 
 
 | Description | Quota/Guideline | 
@@ -32,7 +32,7 @@ All single\-document synchronous operations except sentiment analysis and syntax
 | Character encoding | UTF\-8 | 
 | Maximum document size  | 100 KB | 
 
-The maximum document size for sentiment analysis, syntax detection, and the batch synchronous operations is 5 KB\.
+The maximum document size for sentiment analysis, targeted sentiment analysis, syntax analysis, and the batch synchronous operations is 5 KB\.
 
 **Note**  
 Amazon Comprehend performs real\-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input\.
@@ -45,14 +45,14 @@ You may be able to avoid throttling by using the batch operations instead of the
 
 ## Multiple document operations<a name="limits-batch"></a>
 
-The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [BatchDetectEntities](API_BatchDetectEntities.md), [BatchDetectKeyPhrases](API_BatchDetectKeyPhrases.md), and [BatchDetectSentiment](API_BatchDetectSentiment.md) operations have the following quotas\.
+The [BatchDetectDominantLanguage](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectDominantLanguage.html), [BatchDetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectEntities.html), [BatchDetectKeyPhrases](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectKeyPhrases.html), and [BatchDetectSentiment](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectSentiment.html) operations have the following quotas\.
 
 
 | Description | Quota/Guideline | 
 | --- | --- | 
 | Documents per request | 25 | 
 
-If you plan to send more than 20 requests per second, you should consider using the batch operations\. With batch operations, you send more documents in each request, which may result in higher throughput\. For example, when you use the `DetectDominantLanguage` operation, you can send up to 20 documents per second\. However, if you use the `BatchRequestDominantLanguage` operation, you can send up to 250 documents per second, but processing speed may be lower\. For more information about throttling quotas, see [ Amazon Comprehend Quotas ](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_amazon_comprehend) in the *Amazon Web Services General Reference*\. For more information about using the multiple document API operations, see [Multiple document synchronous processing](concepts-processing-modes.md#how-batch)\.
+If you plan to send more than 20 requests per second, you should consider using the batch operations\. With batch operations, you send more documents in each request, which may result in higher throughput\. For example, when you use the `DetectDominantLanguage` operation, you can send up to 20 documents per second\. However, if you use the `BatchRequestDominantLanguage` operation, you can send up to 250 documents per second, but processing speed may be lower\. For more information about throttling quotas, see [ Amazon Comprehend Quotas ](https://docs.aws.amazon.com/general/latest/gr/comprehend.html) in the *Amazon Web Services General Reference*\. For more information about using the multiple document API operations, see [Multiple document synchronous processing](concepts-processing-modes.md#how-batch)\.
 
 ## Concurrent active asynchronous jobs<a name="limits-active-jobs"></a>
 
@@ -83,7 +83,7 @@ For more information, see [Asynchronous batch processing](concepts-processing-mo
 
 ## Targeted sentiment<a name="limits-targeted-sentiment"></a>
 
-Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with the [StartTargetedSentimentDetectionJob](API_StartTargetedSentimentDetectionJob.md) operation have the following quotas\.
+Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with the [StartTargetedSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTargetedSentimentDetectionJob.html) operation have the following quotas\.
 
 
 **Targeted sentiment detection \- inference \(StartTargetedSentimentDetectionJob\)**  
@@ -98,7 +98,7 @@ Targeted sentiment supports only asynchronous analysis jobs\. Jobs created with 
 
 ## Document classification<a name="limits-document-classification"></a>
 
-Document classifier training jobs started with the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation, asynchronous document classification jobs started with the [StartDocumentClassificationJob](API_StartDocumentClassificationJob.md), and synchronous document classification requests started with the [ClassifyDocument](API_ClassifyDocument.md) operation have the following quotas\. 
+Document classifier training jobs started with the [CreateDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html) operation, asynchronous document classification jobs started with the [StartDocumentClassificationJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html), and synchronous document classification requests started with the [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) operation have the following quotas\. 
 
 
 **General**  
@@ -133,14 +133,14 @@ Document classifier training jobs started with the [CreateDocumentClassifier](AP
 
 ## Language detection<a name="limits-language-detection"></a>
 
-The [BatchDetectDominantLanguage](API_BatchDetectDominantLanguage.md), [DetectDominantLanguage](API_DetectDominantLanguage.md) operations and asynchronous jobs started with the [StartDominantLanguageDetectionJob](API_StartDominantLanguageDetectionJob.md) operation have the following limitations:
+The [BatchDetectDominantLanguage](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_BatchDetectDominantLanguage.html), [DetectDominantLanguage](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectDominantLanguage.html) operations and asynchronous jobs started with the [StartDominantLanguageDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDominantLanguageDetectionJob.html) operation have the following limitations:
 + They don't support phonetic language detection\. For example, they will not detect "arigato" as Japanese nor "nihao" as Chinese\.
 + They may have trouble distinguishing close language pairs, such as Indonesian and Malay; or Bosnian, Croatian, and Serbian\.
 + For best results the input text should be at least 20 characters long\.
 
 ## Events<a name="limits-events"></a>
 
-Events detection jobs created with the [StartEventsDetectionJob](API_StartEventsDetectionJob.md) operation have the following quotas\.
+Events detection jobs created with the [StartEventsDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEventsDetectionJob.html) operation have the following quotas\.
 
 
 | Description | Quotas | 
@@ -153,7 +153,7 @@ Events detection jobs created with the [StartEventsDetectionJob](API_StartEvents
 
 ## Topic modeling<a name="limits-topic-modeling"></a>
 
-Topic detection jobs created with the [StartTopicsDetectionJob](API_StartTopicsDetectionJob.md) operation have the following quotas\.
+Topic detection jobs created with the [StartTopicsDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartTopicsDetectionJob.html) operation have the following quotas\.
 
 
 | Description | Quota/Guideline | 
@@ -170,7 +170,7 @@ For best results, you should include at least 1,000 input documents\.
 
 ## Entity recognition<a name="limits-custom-entity-recognition"></a>
 
-Entity recognizer training jobs started with the [CreateEntityRecognizer](API_CreateEntityRecognizer.md) operation, asynchronous entity recognition jobs started with the [StartEntitiesDetectionJob](API_StartEntitiesDetectionJob.md) operation, and synchronous entity recognition requests started with the [DetectEntities](API_DetectEntities.md) operation have the following quotas\.
+Entity recognizer training jobs started with the [CreateEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html) operation, asynchronous entity recognition jobs started with the [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html) operation, and synchronous entity recognition requests started with the [DetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html) operation have the following quotas\.
 
 
 **Plain text entity recognition \- training \(CreateEntityRecognizer\)**  

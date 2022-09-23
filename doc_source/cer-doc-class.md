@@ -7,7 +7,7 @@ Metrics are included any time metadata from a trained custom classifier is retur
 **Note**  
 Please refer to [Metrics: Precision, recall, and FScore](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_fscore_support.html) for an understanding of the underlying Precision, Recall, and F1 score metrics\. These metrics are defined at a class level\. We have used **macro** averaging for combining these metrics together to come up with the test set P,R,F1, as discussed below\.
 
-Amazon Comprehend creates a [Confusion matrix](#conf-matrix) as part of the custom classifier model training\. This is placed in the output file specified in the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation and can be used to assess how well the model works\.
+Amazon Comprehend creates a [Confusion matrix](#conf-matrix) as part of the custom classifier model training\. This is placed in the output file specified in the [CreateDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html) operation and can be used to assess how well the model works\.
 
 **Topics**
 + [Metrics](#cer-doc-class-metrics)
@@ -244,4 +244,4 @@ The confusion matrix is presented in JSON format and for the above example is sh
 
 **The CreateDocumentClassifier API**
 
-The confusion matrix is available when running the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) API\. When the operation is run, the confusion matrix is shown in the `confusion_matrix.json` file, located at `s3://user-defined-path/unique-value/output/output.tar.gz` where the user\-defined\-path is the `S3Uri` value of the `OutputDataConfig` parameter in the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) operation\. 
+The confusion matrix is available when running the [CreateDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html) API operation\. When the operation is run, the confusion matrix is shown in the `confusion_matrix.json` file, located at `s3://user-defined-path/unique-value/output/output.tar.gz` where the user\-defined\-path is the `S3Uri` value of the `OutputDataConfig` parameter in the [CreateDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html) operation\. 

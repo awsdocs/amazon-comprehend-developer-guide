@@ -23,12 +23,12 @@ The CSV file with the list of annotations is as follows:
 ```
 File, Line, Begin Offset, End Offset, Type
 documents.txt, 0, 0, 13, ENGINEER
-documents.txt, 1, 0, 15, ENGINEER
+documents.txt, 1, 0, 14, ENGINEER
 documents.txt, 3, 25, 38, MANAGER
 ```
 
 **Note**  
-In the annotations file, the line number containing the entity starts with line 0\. In this example, line 2 is not present in the CSV file because there is no entity in line 2 of `documents.txt`\.
+In the annotations file, the line number containing the entity starts with line 0\. In this example, the CSV file contains no entry for line 2 because there is no entity in line 2 of `documents.txt`\.
 
 **Creating your data files**
 

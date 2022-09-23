@@ -20,7 +20,7 @@ For information about how to deploy serverless applications from the AWS Serverl
 
 You can use an Amazon S3 Object Lambda Access Point to control access to documents with personally identifiable information \(PII\)\.
 
-To ensure that only authorized users have access to documents that contain PII stored in your Amazon S3 bucket, you use the `ComprehendPiiAccessControlS3ObjectLambda` function\. This Lambda function uses the [ContainsPiiEntities](API_ContainsPiiEntities.md) operation when processing a standard Amazon S3 GET request on document objects\.
+To ensure that only authorized users have access to documents that contain PII stored in your Amazon S3 bucket, you use the `ComprehendPiiAccessControlS3ObjectLambda` function\. This Lambda function uses the [ContainsPiiEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ContainsPiiEntities.html) operation when processing a standard Amazon S3 GET request on document objects\.
 
 For example, if you have documents in your S3 bucket that include PII such as credit card numbers or bank account information, you can configure the `ComprehendPiiAccessControlS3ObjectLambda` function to detect these PII entity types and restrict access to unauthorized users\. For more information about supported PII entity types, see [PII universal entity types](how-pii.md#how-pii-types)\.
 
@@ -86,7 +86,7 @@ aws s3api get-object \
 
 You can use an Amazon S3 Object Lambda Access Point to redact personally identifiable information \(PII\) from documents\. 
 
-To redact PII entity types from documents stored in an S3 bucket, you use the `ComprehendPiiRedactionS3ObjectLambda` function\. This Lambda function uses the [ContainsPiiEntities](API_ContainsPiiEntities.md) and [DetectPiiEntities](API_DetectPiiEntities.md) operations when processing a standard Amazon S3 GET request on document objects\.
+To redact PII entity types from documents stored in an S3 bucket, you use the `ComprehendPiiRedactionS3ObjectLambda` function\. This Lambda function uses the [ContainsPiiEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ContainsPiiEntities.html) and [DetectPiiEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectPiiEntities.html) operations when processing a standard Amazon S3 GET request on document objects\.
 
 For example, if documents in your S3 bucket include PII such as credit card numbers or bank account information, you can configure the `ComprehendPiiRedactionS3ObjectLambda` function to detect PII and then return a copy of these documents in which PII entity types are redacted\. For more information about supported PII entity types, see [PII universal entity types](how-pii.md#how-pii-types)\.
 

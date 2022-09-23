@@ -10,7 +10,7 @@ To train a custom classifier, you must provide labeled training data\. The label
 
 To train a custom classifier, you can provide training data as a two\-column CSV file\. In it, labels are provided in the first column, and documents are provided in the second\.
 
-Classes can be any valid UTF\-8 string\. We suggest classes that are clear and don't overlap in meaning\. They can have white space, and the can consist of multiple words connected by underscores or hyphens\.
+Classes can be any valid UTF\-8 string\. We suggest classes that are clear and don't overlap in meaning\. They can have white space, and they can consist of multiple words connected by underscores or hyphens\.
 
 Training documents must end with \\n or \\r\\n and be valid UTF\-8 in a CSV file\.
 
@@ -30,7 +30,7 @@ SPAM, "Paulo, your $1000 award is waiting for you! Claim it while you still can 
 
 ## Augmented manifest file<a name="prep-classifier-data-multi-class-manifest"></a>
 
-An augmented manifest file is a labeled dataset that is produced by SageMaker Ground Truth\. Ground Truth is a data labeling service that helps you—or a workforce that you employ—build training datasets for machine learning models\. Amazon Comprehend accepts augmented manifest files as training data for custom models\. You can provide these files when you create a custom classifier by using the Amazon Comprehend console or the [CreateDocumentClassifier](API_CreateDocumentClassifier.md) API action\. 
+An augmented manifest file is a labeled dataset that is produced by SageMaker Ground Truth\. Ground Truth is a data labeling service that helps you—or a workforce that you employ—build training datasets for machine learning models\. Amazon Comprehend accepts augmented manifest files as training data for custom models\. You can provide these files when you create a custom classifier by using the Amazon Comprehend console or the [CreateDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html) API action\. 
 
 For more information about Ground Truth and the output that it produces, see [Use Amazon SageMaker Ground Truth to Label Data](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html) in the *Amazon SageMaker Developer Guide*\.
 
