@@ -1,24 +1,14 @@
 # Real\-time analysis for custom entity recognition \(console\)<a name="detecting-cer-real-time"></a>
 
-With Amazon Comprehend, you can quickly detect custom entities in individual text documents by running real\-time analysis\. Unlike asynchronous batch jobs that analyze large documents or large sets of documents, real\-time analysis is useful for applications that process small bodies of text as they arrive\. For example, you can immediately detect custom entities in social media posts, support tickets, or customer reviews\.
+You can use the Amazon Comprehend console to run real\-time analysis with a custom model\. First, you create an endpoint to run the real\-time analysis\. After you create the endpoint, you run the real\-time analysis\.
 
-Before you can detect custom entities, you must train a custom entity recognition model\. For more information about these models, see [Training recognizer models](training-recognizers.md)\. 
+For information about provisioning endpoint throughput, and the associated costs, see [Using Amazon Comprehend endpoints](using-endpoints.md)\.
 
-
-
-You create an endpoint to run real\-time analysis using a custom model\. After you create the endpoint, your custom model is available for real\-time analysis, and you can detect entities by using the Amazon Comprehend console, the Amazon Comprehend API, the AWS CLI, or the AWS SDKs\.
+**Topics**
++ [Creating an endpoint for custom entity detection](#detecting-cer-real-time-create-endpoint)
++ [Running real\-time custom entity detection](#detecting-cer-real-time-run)
 
 ## Creating an endpoint for custom entity detection<a name="detecting-cer-real-time-create-endpoint"></a>
-
- You create an endpoint to make your custom model available for real\-time analysis\.
-
-To meet your text processing needs, you assign *inference units* to the endpoint, and each unit allows a throughput of 100 characters per second for up to 2 documents per second\. You can then adjust the throughput up or down\. 
-
-The cost of real\-time analysis is based on the throughput of an endpoint and the duration of time it is active\. For more information on endpoint cost, see [Amazon Comprehend Pricing](https://aws.amazon.com/comprehend/pricing/)\.
-
-After you create an endpoint, you can monitor it with Amazon CloudWatch, update it to change its inference units, or delete it when you no longer need it\. For more information, see [Managing Amazon Comprehend endpoints](manage-endpoints.md)\.
-
-### Creating an Endpoint with the Console<a name="detecting-cer-real-time-create-endpoint-console"></a>
 
 **To create an endpoint \(console\)**
 
@@ -26,53 +16,29 @@ After you create an endpoint, you can monitor it with Amazon CloudWatch, update 
 
 1. From the left menu, choose **Endpoints** and choose the **Create endpoint** button\. A **Create endpoint** screen opens\.
 
-1. Give the endpoint a name\. The name must be unique within the AWS Region and account\.
+1. Give the endpoint a name\. The name must be unique within the current Region and account\.
 
-1. Choose a custom model you want to attach the new endpoint to\. From the dropdown, you can search by model name\.
+1. Choose a custom model that you want to attach the new endpoint to\. From the dropdown, you can search by model name\.
 **Note**  
-You need to create a model before you can attach an endpoint to it\. If you don't have a model yet, go to **Custom entity recognition** to create one\. 
+You must create a model before you can attach an endpoint to it\. If you don't have a model yet, see [Training custom recognizers](training-recognizers.md)\. 
 
-1. \(Optional\) To add a tag to the endpoint, enter a key\-value pair under **Tags** and choose **Add tag**\. To remove this pair before creating the endpoint, choose **Remove tag**
+1. \(Optional\) To add a tag to the endpoint, enter a key\-value pair under **Tags** and choose **Add tag**\. To remove this pair before creating the endpoint, choose **Remove tag**\.
 
-1. Enter the number of inference units \(IUs\) to assign to the endpoint\. Each unit represents a throughput of 100 characters per second for up to 2 documents per second\. 
+1. Enter the number of inference units \(IUs\) to assign to the endpoint\. Each unit represents a throughput of 100 characters per second for up to two documents per second\. 
 
-1. \(Optional\) If you are creating a new endpoint, you have the option to use the IU estimator\. It can be difficult to understand how many inference units you require depending on the throughput or the number of characters you want to analyze per second— especially at scale\. This optional step can help you determine how many IUs to request\. 
+1. \(Optional\) If you are creating a new endpoint, you have the option to use the IU estimator\. The estimator can help you determine the number of IUs to request\. The number of inference units depends on the throughput or the number of characters that you want to analyze per second\.
 **Note**  
-The range for IUs is 1 to 10\. The maximum characters you can analyze per second is 1000\. 
+The range for IUs is 1–10\. The maximum characters that you can analyze per second is 1000\. 
 
 1. From the **Purchase summary**, review your estimated hourly, daily, and monthly endpoint cost\. 
 
-1. Select the checkbox if you understand that you will be charged for the endpoint from the time it starts until it is deleted\.
+1. Select the check box if you understand that your account accrues charges for the endpoint from the time it starts until you delete it\.
 
-1. Choose **Create endpoint**
-
-### Creating an Endpoint with the AWS CLI<a name="detecting-cer-real-time-create-endpoint-examples"></a>
-
-To create an endpoint by using the AWS CLI, use the `create-endpoint` command:
-
-```
-$ aws comprehend create-endpoint \
-> --desired-inference-units number of inference units \
-> --endpoint-name endpoint name \
-> --model-arn arn:aws:comprehend:region:account-id:model/example \
-> --tags Key=Key,Value=Value
-```
-
-If your command succeeds, Amazon Comprehend responds with the endpoint ARN:
-
-```
-{
-   "EndpointArn": "Arn"
-}
-```
-
-For more information about this command, its parameter arguments, and its output, see [https://docs.aws.amazon.com/cli/latest/reference/comprehend/create-endpoint.html](https://docs.aws.amazon.com/cli/latest/reference/comprehend/create-endpoint.html) in the AWS CLI Command Reference
+1. Choose **Create endpoint**\.
 
 ## Running real\-time custom entity detection<a name="detecting-cer-real-time-run"></a>
 
-After you create an endpoint for your custom entity recognizer model, you can run real\-time analysis to quickly detect entities in individual bodies of text\.
-
-### Detecting entities with the console<a name="detecting-cer-real-time-run-console"></a>
+After you create an endpoint for your custom entity recognizer model, you can run real\-time analysis to detect entities in individual documents\.
 
 Complete the following steps to detect custom entities in your text by using the Amazon Comprehend console\.
 
@@ -84,21 +50,16 @@ Complete the following steps to detect custom entities in your text by using the
 
 1. For **Select endpoint**, choose the endpoint that is associated with the entity\-detection model that you want to use\.
 
-1. Under **Input text**, provide the text you want to analyze\.
+1. To specify the input data for analysis, you can input text or upload a file\.
+   + To enter text:
 
-1. Choose **Analyze**\. The text analysis based on your custom model is displayed, along with a confidence assessment of the analysis\. 
+     1. Choose **Input text**\.
 
-### Detecting entities with the AWS CLI<a name="detecting-cer-real-time-run-examples"></a>
+     1. Enter the text that you want to analyze\. 
+   + To upload a file:
 
-To detect custom entities by using the AWS CLI, use the `detect-entities` command:
+     1. Choose **Upload file** and enter the filename to upload\.
 
-```
-$ aws comprehend detect-entities \
-> --endpoint-arn arn \
-> --language-code en \
-> --text  "Andy Jassy is the CEO of Amazon."
-```
+     1. \(Optional\) Under **Advanced read actions**, you can override the default actions for text extraction\. For details, see [Setting text extraction options](idp-set-textract-options.md)\.
 
-If your command succeeds, Amazon Comprehend responds with the analysis\. For each entity that Amazon Comprehend detects, it provides the entity type, text, location, and confidence score\.
-
-For more information about this command, its parameter arguments, and its output, see [https://docs.aws.amazon.com/cli/latest/reference/comprehend/detect-entities.html](https://docs.aws.amazon.com/cli/latest/reference/comprehend/detect-entities.html) in the AWS CLI Command Reference
+1. Choose **Analyze**\. The console displays the output of the analysis, along with a confidence assessment\. 

@@ -1,19 +1,19 @@
-# Train and run custom recognizers \(API\)<a name="get-started-cer"></a>
+# Train custom entity recognizers \(API\)<a name="get-started-cer"></a>
 
-To create the custom entities in a document, use the Amazon Comprehend [CreateEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html) to create an entity recognizer\. To identify those custom entities, use the [StartEntitiesDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartEntitiesDetectionJob.html) operation\. 
+To create and train a custom entity recognition model, use the Amazon Comprehend [CreateEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html) API operation
 
 **Topics**
-+ [Creating and detecting custom entities using the AWS Command Line Interface](#get-started-api-cer-cli)
-+ [Detecting custom entities using the AWS SDK for Java](#get-started-api-cer-java)
-+ [Detecting custom entities using the AWS SDK for Python \(Boto3\)](#cer-python)
++ [Training custom entity recognizers using the AWS Command Line Interface](#get-started-api-cer-cli)
++ [Training custom entity recognizers using the AWS SDK for Java](#get-started-api-cer-java)
++ [Training custom entity recognizers using Python \(Boto3\)](#cer-python)
 
-## Creating and detecting custom entities using the AWS Command Line Interface<a name="get-started-api-cer-cli"></a>
+## Training custom entity recognizers using the AWS Command Line Interface<a name="get-started-api-cer-cli"></a>
 
-The following examples demonstrate using the `CreateEntityRecognizer` operation, `StartEntitiesDetectionJob` operation, and other associated APIs with the AWS CLI\. 
+The following examples demonstrate using the `CreateEntityRecognizer` operation and other associated APIs with the AWS CLI\. 
 
 The examples are formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
-Creating a custom entity recognizer using the `CreateEntityRecognizer` operation\.
+Create a custom entity recognizer using the `create-entity-recognizer` CLI command\.
 
 ```
 aws comprehend create-entity-recognizer \
@@ -25,14 +25,14 @@ aws comprehend create-entity-recognizer \
      --region region
 ```
 
-Listing all entity recognizers in a region using the `ListEntityRecognizers` operation\.
+List all entity recognizers in a region using the `list-entity-recognizers` CLI command\.\.
 
 ```
 aws comprehend list-entity-recognizers \
      --region region
 ```
 
-Checking Job Status of custom entity recognizers using the `DescribeEntityRecognizer` operation\.
+Check Job Status of custom entity recognizers using the `describe-entity-recognizer` CLI command\.\.
 
 ```
 aws comprehend describe-entity-recognizer \
@@ -40,22 +40,9 @@ aws comprehend describe-entity-recognizer \
      --region region
 ```
 
-Starting a custom entities recognition job using the `StartEntitiesDetectionJob` operation\.
+## Training custom entity recognizers using the AWS SDK for Java<a name="get-started-api-cer-java"></a>
 
-```
-aws comprehend start-entities-detection-job \
-     --entity-recognizer-arn "arn:aws:comprehend:region:account number:entity-recognizer/test-6" \
-     --job-name infer-1 \
-     --data-access-role-arn "arn:aws:iam::account number:role/service-role/AmazonComprehendServiceRole-role" \
-     --language-code en \
-     --input-data-config "S3Uri=s3://Bucket Name/Bucket Path" \
-     --output-data-config "S3Uri=s3://Bucket Name/Bucket Path/" \
-     --region region
-```
-
-## Detecting custom entities using the AWS SDK for Java<a name="get-started-api-cer-java"></a>
-
-This example creates a custom entity recognizer, trains the model, and then runs it in an entity recognizer job using Java
+This example creates a custom entity recognizer and trains the model, using Java
 
 ```
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -111,27 +98,12 @@ public class CustomEntityRecognizerDemo {
         final DescribeEntityRecognizerResult describeEntityRecognizerResult = comprehendClient.describeEntityRecognizer(describeEntityRecognizerRequest);
         System.out.println("describeEntityRecognizerResult: " + describeEntityRecognizerResult);
 
-        if ("TRAINED".equals(describeEntityRecognizerResult.getEntityRecognizerProperties().getStatus())) {
-            // After model gets trained, launch an job to extract entities.
-            final StartEntitiesDetectionJobRequest startEntitiesDetectionJobRequest = new StartEntitiesDetectionJobRequest()
-                    .withJobName("Inference Job Name")
-                    .withEntityRecognizerArn(entityRecognizerArn)
-                    .withDataAccessRoleArn(dataAccessRoleArn)
-                    .withLanguageCode(LanguageCode.En)
-                    .withInputDataConfig(new InputDataConfig()
-                            .withS3Uri("s3://Bucket Name/Bucket Path"))
-                    .withOutputDataConfig(new OutputDataConfig()
-                            .withS3Uri("s3://Bucket Name/Bucket Path/"));
-
-            final StartEntitiesDetectionJobResult startEntitiesDetectionJobResult = comprehendClient.startEntitiesDetectionJob(startEntitiesDetectionJobRequest);
-            System.out.println("startEntitiesDetectionJobResult: " + startEntitiesDetectionJobResult);
-        }
     }
 
 }
 ```
 
-## Detecting custom entities using the AWS SDK for Python \(Boto3\)<a name="cer-python"></a>
+## Training custom entity recognizers using Python \(Boto3\)<a name="cer-python"></a>
 
 Instantiate Boto3 SDK: 
 
@@ -186,22 +158,4 @@ while True:
         break
 
     time.sleep(10)
-```
-
-Start entities detection job: 
-
-```
-response = comprehend.start_entities_detection_job(
-    EntityRecognizerArn=recognizer_arn,
-    JobName="Detection-Job-Name-{}".format(str(uuid.uuid4())),
-    LanguageCode="en",
-    DataAccessRoleArn="Role ARN",
-    InputDataConfig={
-        "InputFormat": "ONE_DOC_PER_LINE",
-        "S3Uri": "s3://Bucket Name/Bucket Path/documents"
-    },
-    OutputDataConfig={
-        "S3Uri": "s3://Bucket Name/Bucket Path/output"
-    }
-)
 ```

@@ -2,13 +2,13 @@
 
 You can create and train a custom classifier using the console, and then use the custom classifier to analyze your documents\.
 
-To train a custom classifier, you need a set of training documents\. You label these documents with the categories that you want the document classifier to recognize\. For more information about these training documents, see [Custom classification](how-document-classification.md)\.
+To train a custom classifier, you need a set of training documents\. You label these documents with the categories that you want the document classifier to recognize\. For information about preparing your training documents, see [Preparing training data](prep-classifier-data.md)\.
 
 
 
 **To create and train a document classifier**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/home?region=us-east-1#api-explorer:)
+1. Sign in to the [console](https://console.aws.amazon.com/comprehend/)\.
 
 1. From the left menu, choose **Customization** and then choose **Custom Classification**\.
 

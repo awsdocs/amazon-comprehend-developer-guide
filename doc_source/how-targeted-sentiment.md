@@ -6,7 +6,7 @@ The difference between targeted sentiment and [sentiment](how-sentiment.md) is t
 
 For example, in a set of restaurant reviews, a customer provides the following review: "The tacos were delicious and the staff was friendly\.” Analysis of this review produces the following results: 
 + **Sentiment analysis** determines whether the overall sentiment of each restaurant review is positive, negative, neutral, or mixed\. In this example, the overall sentiment is positive\. 
-+ **Targeted sentiment analysis** determines sentiment for entities and attributes of the restaurant that customers mention in the reviews\. In this example, the customer made positive comments about “tacos” and “staff”\)\. 
++ **Targeted sentiment analysis** determines sentiment for entities and attributes of the restaurant that customers mention in the reviews\. In this example, the customer made positive comments about “tacos” and “staff”\. 
 
 Targeted sentiment provides the following outputs for each analysis job:
 + Identity of the entities mentioned in the documents\.

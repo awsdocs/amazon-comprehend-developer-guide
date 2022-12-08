@@ -1,15 +1,17 @@
-# Train and run custom classifiers \(API\)<a name="train-custom-classifier-api"></a>
+# Train custom classifiers \(API\)<a name="train-custom-classifier-api"></a>
 
-To create and train a custom classifier, use the [CreateDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html) operation\. To identify custom classifiers in a corpus of documents, use the [StartDocumentClassificationJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html) operation\. 
+To create and train a custom classifier, use the [CreateDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateDocumentClassifier.html) operation\.
+
+You can monitor the progress of the request using the [DescribeDocumentClassifier](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeDocumentClassifier.html) operation\. Once the `Status` field is `TRAINED` you can then use the classifier to classify documents\.
 
 **Topics**
-+ [Using custom classification with the AWS Command Line Interface](#get-started-api-customclass-cli)
-+ [Using custom classification using the AWS SDK for Java](#get-started-api-customclass-java)
-+ [Using custom classification using the AWS SDK for Python \(Boto\)](#get-started-api-customclass-python)
++ [Training custom classification using the AWS Command Line Interface](#get-started-api-customclass-cli)
++ [Training custom classifiers using the AWS SDK for Java](#get-started-api-customclass-java)
++ [Training custom classificiers using the AWS SDK for Python \(Boto\)](#get-started-api-customclass-python)
 
-## Using custom classification with the AWS Command Line Interface<a name="get-started-api-customclass-cli"></a>
+## Training custom classification using the AWS Command Line Interface<a name="get-started-api-customclass-cli"></a>
 
-The following examples demonstrate using the `CreateDocumentClassifier` operation, `StartDocumentClassificationJob` operation, and other custom classifier APIs with the AWS CLI\. 
+The following examples demonstrate using the `CreateDocumentClassifier` operation, the `DescribeDocumentClassificationJob` operation, and other custom classifier APIs with the AWS CLI\. 
 
 The examples are formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
@@ -47,81 +49,7 @@ aws comprehend list-document-classifiers
      --region region
 ```
 
-Run a custom classification job using the `StartDocumentClassificationJob` operation\.
-
-```
-aws comprehend start-document-classification-job \
-     --region region \
-     --document-classifier-arn arn:aws:comprehend:region:account number:document-classifier/testDelete \
-     --input-data-config S3Uri=s3://S3Bucket/docclass/file name,InputFormat=ONE_DOC_PER_LINE \
-     --output-data-config S3Uri=s3://S3Bucket/output \
-     --data-access-role-arn arn:aws:iam::account number:role/resource name
-```
-
-Get information on a custom classifier with the job id using the `DescribeDocumentClassificationJob` operation\.
-
-```
-aws comprehend describe-document-classification-job \
-     --region region \
-     --job-id job id
-```
-
-List all custom classification jobs in your account using the `ListDocumentClassificationJobs` operation\.
-
-```
-aws comprehend list-document-classification-jobs
-     --region region
-```
-
-Create an endpoint associated with a specific custom model using the `CreateEndpoint` operation\.
-
-```
-aws comprehend create-endpoint \
-    --desired-inference-units number of inference units \
-    --endpoint-name endpoint name \
-    --model-arn arn:aws:comprehend:region:account-id:model/example \
-    --tags Key=My1stTag,Value=Value1
-```
-
-Run a custom classification request using an endpoint by using the `ClassifyDocument` operation\. 
-
-```
-aws comprehend classify-document \
-    --endpoint-arn arn:aws:comprehend:region:account-id:endpoint/endpoint name \
-    --text 'text.'
-```
-
-Update an endpoint using the `UpdateEndpoint` operation\.
-
-```
-aws comprehend update-endpoint \
-    --desired-inference-units updated number of inference units \
-    --endpoint-arn arn:aws:comprehend:region:account-id:endpoint/endpoint name
-```
-
-Delete an endpoint using the `DeleteEndpoint` operation\.
-
-```
-aws comprehend delete-endpoint \
-    --endpoint-arn arn:aws:comprehend:region:account-idendpoint/endpoint name
-```
-
-Get information on an endpoint with the endpoint Arn using the `DescribeEndpoint` operation\. 
-
-```
-aws comprehend describe-endpoint \
-    --endpoint-arn arn:aws:comprehend:region:account-id:endpoint/endpoint name
-```
-
-List all endpoints in your account using the `ListEndpoints` operation\.
-
-```
-aws comprehend list-endpoint \
-    --filter status=Ready
-    --max-results 50
-```
-
-## Using custom classification using the AWS SDK for Java<a name="get-started-api-customclass-java"></a>
+## Training custom classifiers using the AWS SDK for Java<a name="get-started-api-customclass-java"></a>
 
 This example creates a custom classifier and trains it using Java
 
@@ -175,7 +103,7 @@ public class DocumentClassifierDemo {
 }
 ```
 
-## Using custom classification using the AWS SDK for Python \(Boto\)<a name="get-started-api-customclass-python"></a>
+## Training custom classificiers using the AWS SDK for Python \(Boto\)<a name="get-started-api-customclass-python"></a>
 
 This example creates a custom classifier and trains it using Python
 
@@ -204,38 +132,5 @@ print("Describe response: %s\n", describe_response)
 
 # List all classifiers in account
 list_response = client.list_document_classifiers()
-print("List response: %s\n", list_response)
-```
-
-This example runs a custom classifier job using Python
-
-```
-import boto3
-
-
-# Instantiate Boto3 SDK:
-client = boto3.client('comprehend', region_name='region')
-
-start_response = client.start_document_classification_job(
-    InputDataConfig={
-        'S3Uri': 's3://srikad-us-west-2-input/docclass/file name',
-        'InputFormat': 'ONE_DOC_PER_LINE'
-    },
-    OutputDataConfig={
-        'S3Uri': 's3://S3Bucket/output'
-    },
-    DataAccessRoleArn='arn:aws:iam::account number:role/resource name',
-    DocumentClassifierArn=
-    'arn:aws:comprehend:region:account number:document-classifier/SampleCodeClassifier1'
-)
-
-print("Start response: %s\n", start_response)
-
-# Check the status of the job
-describe_response = client.describe_document_classification_job(JobId=start_response['JobId'])
-print("Describe response: %s\n", describe_response)
-
-# List all classification jobs in account
-list_response = client.list_document_classification_jobs()
 print("List response: %s\n", list_response)
 ```

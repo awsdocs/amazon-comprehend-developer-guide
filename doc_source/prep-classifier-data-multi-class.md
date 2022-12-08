@@ -2,8 +2,6 @@
 
 In multi\-class classification, each document can have one and only one class assigned to it\. The individual classes are mutually exclusive\. For example, a movie can be classed as a documentary or as science fiction, but not both at the same time\. 
 
-After you train the custom classifier, you can analyze documents in either asynchronous or synchronous operations\. You can analyze a large number of documents at once using the asynchronous operation\. The resulting analysis is returned in a separate file\. Using the synchronous operation, you can only analyze a single document, but you can get results in real time\. These options are not available when you use multi\-label mode\. 
-
 To train a custom classifier, you must provide labeled training data\. The labels in your training data should resemble the type of output that the trained model produces later when you provide unlabeled input\. You can provide training data as a CSV file or as an augmented manifest file from SageMaker Ground Truth\.
 
 ## CSV file<a name="prep-classifier-data-multi-class-csv"></a>

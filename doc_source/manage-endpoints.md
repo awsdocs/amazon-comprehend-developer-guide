@@ -8,6 +8,7 @@ Before you can manage an endpoint, you must create one\. For more information, s
 
 **Topics**
 + [Overview of Amazon Comprehend endpoints](manage-endpoints-overview.md)
++ [Using Amazon Comprehend endpoints](using-endpoints.md)
 + [Monitoring Amazon Comprehend endpoints](manage-endpoints-monitor.md)
 + [Updating Amazon Comprehend endpoints](manage-endpoints-update.md)
 + [Using Trusted Advisor with Amazon Comprehend](manage-endpoints-trusted-advisor.md)

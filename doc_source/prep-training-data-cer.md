@@ -3,7 +3,7 @@
 To train a successful custom entity recognition model, it's important to supply the model trainer with high quality data as input\. Without good data, the model won't learn how to correctly identify entities\. 
 
 You can choose one of two ways to provide data to Amazon Comprehend in order to train a custom entity recognition model:
-+ **Entity list** – Lists the specific entities so Amazon Comprehend can train to identify your custom entities\. Note: Entity lists can only be used for plain text documents\. 
++ **Entity list** – Lists the specific entities so Amazon Comprehend can train to identify your custom entities\. Note: Entity lists can only be used for plaintext documents\. 
 + **Annotations** – Provides the location of your entities in a number of documents so Amazon Comprehend can train on both the entity and its context\. To create a model for analyzing image files, PDFs, or Word documents, you must train your recognizer using PDF annotations\. 
 
 In both cases, Amazon Comprehend learns about the kind of documents and the context where the entities occur and builds a recognizer that can generalize to detect the new entities when you analyze documents\.
@@ -12,7 +12,7 @@ When you create a custom model \(or train a new version\), you can provide a tes
 
 **Topics**
 + [When to use annotations vs entity lists](#prep-training-data-comp)
-+ [Entity lists \(plain text only\)](cer-entity-list.md)
++ [Entity lists \(plaintext only\)](cer-entity-list.md)
 + [Annotations](cer-annotation.md)
 
 ## When to use annotations vs entity lists<a name="prep-training-data-comp"></a>

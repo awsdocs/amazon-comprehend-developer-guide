@@ -18,7 +18,9 @@ The following is the permissions policy required to use the Amazon Comprehend do
                 "comprehend:DetectKeyPhrases",
                 "comprehend:DetectDominantLanguage",
                 "comprehend:DetectSentiment",
-                "comprehend:DetectSyntax"
+                "comprehend:DetectSyntax",
+                "textract:DetectDocumentText",
+                "textract:AnalyzeDocument"
              ],
       "Resource": "*"
       }
@@ -26,7 +28,9 @@ The following is the permissions policy required to use the Amazon Comprehend do
 }
 ```
 
-The policy has one statement that grants permission to use the `DetectEntities`, `DetectKeyPhrases`, `DetectDominantLanguage` and `DetectSentiment`, and `DetectSyntax` actions\. A user with this policy would not be able to perform batch actions or asynchronous actions in your account\.
+The policy has one statement that grants permission to use the `DetectEntities`, `DetectKeyPhrases`, `DetectDominantLanguage` and `DetectSentiment`, and `DetectSyntax` actions\. The policy statement also grants permissions to use two Amazon Textract API methods\. Amazon Comprehend calls these methods to extract text from image files and scanned PDF documents\. You can remove these permissions for users that never run custom inference for these types of input files\.
+
+A user with this policy would not be able to perform batch actions or asynchronous actions in your account\.
 
 The policy doesn't specify the `Principal` element because you don't specify the principal who gets the permission in an identity\-based policy\. When you attach a policy to a user, the user is the implicit principal\. When you attach a permissions policy to an IAM role, the principal identified in the role's trust policy gets the permissions\. 
 

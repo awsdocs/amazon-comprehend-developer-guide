@@ -4,6 +4,9 @@ For PDF annotations, you use SageMaker Ground Truth to create a labeled dataset 
 
 You can use the Ground Truth built\-in task type, Named Entity Recognition, to create a labeling job to have workers identify entities in text\. To learn more, see [Named Entity Recognition](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-console) in the *Amazon SageMaker Developer Guide*\. To learn more about Amazon SageMaker Ground Truth, see [Use Amazon SageMaker Ground Truth to Label Data](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html)\.
 
+**Note**  
+Using Ground Truth, you can define overlapping labels \(text that you associate with more than one label\)\. However, Amazon Comprehend entity recognition does not support overlapping labels\.
+
 Augmented manifest files are in JSON lines format\. In these files, each line is a complete JSON object that contains a training document and its associated labels\. The following example is an augmented manifest file that trains an entity recognizer to detect the professions of individuals who are mentioned in the text:
 
 ```

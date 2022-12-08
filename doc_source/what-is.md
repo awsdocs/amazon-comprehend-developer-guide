@@ -4,7 +4,7 @@ Amazon Comprehend uses natural language processing \(NLP\) to extract insights a
 
 You can access Amazon Comprehend document analysis capabilities using the Amazon Comprehend console or using the Amazon Comprehend APIs\. You can run real\-time analysis for small workloads or you can start asynchronous analysis jobs for large document sets\. You can use the pre\-trained models that Amazon Comprehend provides, or you can train your own custom models for classification and entity recognition\.
 
-All of the Amazon Comprehend features can analyze UTF\-8 text documents as the input files\. In addition, custom entity recognition can analyze image files, PDF files, and Word files\. 
+All of the Amazon Comprehend features accept UTF\-8 text documents as the input\. In addition, custom classification and custom entity recognition accept image files, PDF files, and Word files as input\. 
 
 Amazon Comprehend can examine and analyze documents in a variety of languages, depending on the specific feature\. For more information, see [Languages supported in Amazon Comprehend](supported-languages.md)\. Amazon Comprehend's [Dominant language](how-languages.md) capability can examine documents and determine the dominant language for a far wider selection of languages\.
 
@@ -21,7 +21,7 @@ Amazon Comprehend can examine and analyze documents in a variety of languages, d
 
 Amazon Comprehend uses a pre\-trained model to examine and analyze a document or set of documents to gather insights about it\. This model is continuously trained on a large body of text so that there is no need for you to provide training data\. 
 
-Amazon Comprehend gathers the following types of insights:
+Amazon Comprehend analyzes the following types of insights:
 + **Entities** – References to the names of people, places, items, and locations contained in a document\. 
 + **Key phrases** – Phrases that appear in a document\. For example, a document about a basketball game might return the names of the teams, the name of the venue, and the final score\. 
 + **Personally Identifiable Information \(PII\)** – Personal data that can identify an individual, such as an address, bank account number, or phone number\. 
@@ -67,7 +67,7 @@ Some of the benefits of using Amazon Comprehend include:
 + **Integrate powerful natural language processing into your apps** – Amazon Comprehend removes the complexity of building text analysis capabilities into your applications by making powerful and accurate natural language processing available with a simple API\. You don't need textual analysis expertise to take advantage of the insights that Amazon Comprehend produces\.
 + **Deep learning based natural language processing** – Amazon Comprehend uses deep learning technology to accurately analyze text\. Our models are constantly trained with new data across multiple domains to improve accuracy\.
 + **Scalable natural language processing** – Amazon Comprehend enables you to analyze millions of documents so that you can discover the insights that they contain\.
-+ **Integrate with other AWS services** – Amazon Comprehend is designed to work seamlessly with other AWS services like Amazon S3, AWS KMS, and AWS Lambda\. Store your documents in Amazon S3, or analyze real\-time data with Kinesis Data Firehose\. Support for AWS Identity and Access Management \(IAM\) makes it easy to securely control access to Amazon Comprehend operations\. Using IAM, you can create and manage AWS users and groups to grant the appropriate access to your developers and end users\.
++ **Integrated with other AWS services** – Amazon Comprehend is designed to work seamlessly with other AWS services like Amazon S3, AWS KMS, and AWS Lambda\. Store your documents in Amazon S3, or analyze real\-time data with Kinesis Data Firehose\. Support for AWS Identity and Access Management \(IAM\) makes it easy to securely control access to Amazon Comprehend operations\. Using IAM, you can create and manage AWS users and groups to grant the appropriate access to your developers and end users\.
 + **Encryption of output results and volume data ** – Amazon S3 already enables you to encrypt your input documents, and Amazon Comprehend extends this even farther\. By using your own KMS key, you can not only encrypt the output results of your job, but also the data on the storage volume attached to the compute instance that processes the analysis job\. The result is significantly enhanced security\.
 + **Low cost** – With Amazon Comprehend, there are no minimum fees or upfront commitments\. You pay for the documents that you analyze and custom models that you train\. 
 
@@ -89,7 +89,7 @@ If you are a first\-time user of Amazon Comprehend, we recommend that you read t
 
 1. **[Tutorial: Analyzing insights from customer reviews with Amazon Comprehend](tutorial-reviews.md)** – In this section, you perform sentiment and entities analysis and visualize the results\.
 
-1. ** [Amazon Comprehend API Reference](https://docs.aws.amazon.com/api-ref)\. **– Reference documentation for Amazon Comprehend operations\.
+1. **[Amazon Comprehend API Reference](https://docs.aws.amazon.com/comprehend/latest/APIReference/welcome.html) **– Reference documentation for Amazon Comprehend operations\.
 
 AWS provides the following resources for learning about the Amazon Comprehend service:
 + The [AWS Machine Learning Blog](http://aws.amazon.com/blogs/machine-learning/ ) includes useful articles about Amazon Comprehend\.

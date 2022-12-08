@@ -7,6 +7,7 @@ You can create, update, monitor, and delete endpoints from this page\. From the 
 Also, if you are a [AWS Business Support](https://aws.amazon.com/premiumsupport/plans/business/) or an [AWS Enterprise Support](https://aws.amazon.com/premiumsupport/plans/enterprise/) customer, you have access to Trusted Advisor checks specific to your endpoints\. To learn more, see [Using Trusted Advisor with Amazon Comprehend](manage-endpoints-trusted-advisor.md)\. For a complete list of checks and descriptions, see the [Trusted Advisor Best Practices](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/best-practice-checklist/)\.
 
 For more information on managing your endpoints, see the following topics\. 
++ [Using Amazon Comprehend endpoints](using-endpoints.md)
 + [Monitoring Amazon Comprehend endpoints](manage-endpoints-monitor.md)
 + [Updating Amazon Comprehend endpoints](manage-endpoints-update.md)
 + [Using Trusted Advisor with Amazon Comprehend](manage-endpoints-trusted-advisor.md)

@@ -2,7 +2,7 @@
 
 To prepare the results of the sentiment and entities analysis jobs for creating data visualizations, you use AWS Glue and Amazon Athena\. In this step, you extract the Amazon Comprehend results files\. Then, you create an AWS Glue *crawler* that explores your data and automatically catalogs it in tables in the AWS Glue Data Catalog\. After that, you access and transform these tables using Amazon Athena, a serverless and interactive query service\. When you have finished this step, your Amazon Comprehend results are clean and ready for visualization\.
 
-For a PII entity detection job, the output file is plain text, not a compressed archive\. The output file name is the same as the input file, with `.out` appended at the end\. You don't need the step of extracting the output file\. Skip to  Load the Data into an AWS Glue Data Catalog\.
+For a PII entity detection job, the output file is plaintext, not a compressed archive\. The output file name is the same as the input file, with `.out` appended at the end\. You don't need the step of extracting the output file\. Skip to  Load the Data into an AWS Glue Data Catalog\.
 
 
 

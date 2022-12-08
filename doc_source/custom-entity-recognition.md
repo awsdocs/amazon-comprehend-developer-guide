@@ -10,9 +10,9 @@ You have two options for creating a custom model:
 
 1. Annotations – provide a data set containing annotated entities for model training\. 
 
-1. Entity lists \(plain text only\) – provide a list of entities and their type label \(such as `PRODUCT_CODES` and a set of unannotated documents containing those entities for model training\.
+1. Entity lists \(plaintext only\) – provide a list of entities and their type label \(such as `PRODUCT_CODES` and a set of unannotated documents containing those entities for model training\.
 
-When you create a custom entity recognizer using annotated PDF files, you can use that recognizer with a variety of input file formats: plain text, image files \(JPG, PNG, TIFF\), PDF files, and Word documents, with no pre\-processing or doc flattening required\. Amazon Comprehend doesn't support annotation of image files or Word documents\.
+When you create a custom entity recognizer using annotated PDF files, you can use that recognizer with a variety of input file formats: plaintext, image files \(JPG, PNG, TIFF\), PDF files, and Word documents, with no pre\-processing or doc flattening required\. Amazon Comprehend doesn't support annotation of image files or Word documents\.
 
 **Note**  
 A custom entity recognizer using annotated PDF files supports English documents only\.
@@ -23,5 +23,6 @@ After your model is trained, you can use the model for real\-time entity detecti
 
 **Topics**
 + [Preparing the training data](prep-training-data-cer.md)
-+ [Training recognizer models](training-recognizers.md)
-+ [Running custom recognizer models](detecting-recognizers.md)
++ [Training custom recognizers](training-recognizers.md)
++ [Running real\-time custom recognizer analysis](running-cer-sync.md)
++ [Running analysis jobs for custom entity recognition](detecting-cer.md)
