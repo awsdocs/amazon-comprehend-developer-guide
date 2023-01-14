@@ -24,7 +24,7 @@ For example, the following line belongs to a CSV file that trains a custom class
 COMEDY|MYSTERY|SCIENCE_FICTION|TEEN,"A band of misfit teens become unlikely detectives when they discover troubling clues about their high school English teacher. Could the strange Mrs. Doe be an alien from outer space?"
 ```
 
-The default delimiter between class names is a pipe \(\|\)\. However, you can use a different character as a delimiter\. The delimiter cannot be part of your class name\. For example, if your classes are CLASS\_1, CLASS\_2, and CLASS\_3, the underscore \(**\_**\) is part of the class name\. You cannot use then use an underscore as the delimiter for separating class names\.
+The default delimiter between class names is a pipe \(\|\)\. However, you can use a different character as a delimiter\. The delimiter cannot be part of your class name\. For example, if your classes are CLASS\_1, CLASS\_2, and CLASS\_3, the underscore \(**\_**\) is part of the class name\. You cannot then use an underscore as the delimiter for separating class names\.
 
 ## Augmented manifest file<a name="prep-classifier-data-multi-label-manifest"></a>
 
