@@ -423,9 +423,6 @@ Amazon Comprehend provides the following API operations for analyzing sentiment:
 +  [DescribeSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DescribeSentimentDetectionJob.html) – Gets the properties \(including status\) associated with the specified sentiment detection job\.
 +  [StopSentimentDetectionJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StopSentimentDetectionJob.html) – Stops the specified in\-progress sentiment job\.
 
-**Note**  
-Amazon Comprehend performs real\-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input\.
-
 **Topics**
 + [Determining sentiment using the AWS Command Line Interface](#get-started-api-sentiment-cli)
 + [Determining sentiment using the AWS SDK for Java](#get-started-api-sentiment-java)

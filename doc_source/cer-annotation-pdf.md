@@ -15,7 +15,7 @@ Before you can annotate your training PDFs in SageMaker Ground Truth, complete t
 + [Setting up your environment](#cer-annotation-pdf-set-up)
 + [Uploading a PDF to an S3 bucket](#cer-annotation-pdf-upload)
 + [Creating an annotation job](#cer-annotation-pdf-job)
-+ [Annotating with SageMaker Ground Truth](#w155aac31c23c19c19c15)
++ [Annotating with SageMaker Ground Truth](#w179aac31c23c21c19c15)
 
 ## Setting up your environment<a name="cer-annotation-pdf-set-up"></a>
 
@@ -102,7 +102,7 @@ To view additional arguments the script supports, use the `-h` option to display
   (amazon-comprehend-semi-structured-documents-annotation-tools-main) user@3c063014d632 amazon-comprehend-semi-structured-documents-annotation-tools-main %
   ```
 
-## Annotating with SageMaker Ground Truth<a name="w155aac31c23c19c19c15"></a>
+## Annotating with SageMaker Ground Truth<a name="w179aac31c23c21c19c15"></a>
 
 Now that you have configured the required resources and created a labeling job, you can log in to the labeling portal and annotate your PDFs\.
 
@@ -110,7 +110,7 @@ Now that you have configured the required resources and created a labeling job, 
 
 1. Select **Labeling workforces** and choose **Private**\.
 
-1. Under **Private workforce summary**, select the labeling portal sign\-in URL that you created with your private workforce\. Sign in with the appropriate username and password\.
+1. Under **Private workforce summary**, select the labeling portal sign\-in URL that you created with your private workforce\. Sign in with the appropriate credentials\.
 
    If you don't see any jobs listed, don't worry—it can take a while to update, depending on the number of files you uploaded for annotation\.
 

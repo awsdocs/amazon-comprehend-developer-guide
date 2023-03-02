@@ -23,7 +23,7 @@ aws comprehend create-document-classifier \
      --document-classifier-name testDelete \
      --language-code en \
      --input-data-config S3Uri=s3://S3Bucket/docclass/file name \
-     --data-access-role-arn arn:aws:iam::account number:role/testDeepInsightDataAccess
+     --data-access-role-arn arn:aws:iam::account number:role/testFlywheelDataAccess
 ```
 
 Get information on a custom classifier with the document classifier ARN using the `DescribeDocumentClassifier` operation\.

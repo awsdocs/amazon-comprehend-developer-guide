@@ -18,13 +18,14 @@ For instance, if you're searching for the name John Johnson, with the entity typ
 The minimum number of input documents and annotations required to train a model depends on the type of annotations\. 
 
 **PDF annotations**  
-To create a model for analyzing image files, PDFs, or Word documents, train your recognizer using PDF annotations\. For PDF annotations, provide at least 250 input documents and at least 100 annotations per entity\.
+To create a model for analyzing image files, PDFs, or Word documents, train your recognizer using PDF annotations\. For PDF annotations, provide at least 250 input documents and at least 100 annotations per entity\.  
+If you provide a test dataset, the test data must include at least one annotation for each of the entity types specified in the creation request\. 
 
 **Plain\-text annotations**  
 To create a model for analyzing text documents, you can train your recognizer using plain\-text annotations\.   
-For plain\-text annotations, provide at least three input documents and at least 25 annotations per entity\. If you provide less than 50 annotations total, Amazon Comprehend reserves more than 10% of the input documents to test the model \(unless you provided a test dataset in the training request\)\.   
+For plain\-text annotations, provide at least three input documents and at least 25 annotations per entity\. If you provide less than 50 annotations total, Amazon Comprehend reserves more than 10% of the input documents to test the model \(unless you provided a test dataset in the training request\)\. Don't forget that the minimum document corpus size is 5 KB\.  
 If your input contains only a few training documents, you may encounter an error that the training input data contains too few documents that mention one of the entities\. Submit the job again with additional documents that mention the entity\.  
-Also, don't forget that the minimum document corpus size is 5 KB\.   
+If you provide a test dataset, the test data must include at least one annotation for each of the entity types specified in the creation request\.  
 For an example of how to benchmark a model with a small dataset, see [Amazon Comprehend announces lower annotation limits for custom entity recognition](http://aws.amazon.com/blogs/machine-learning/amazon-comprehend-announces-lower-annotation-limits-for-custom-entity-recognition/) on the AWS blog site\.
 
 ## Annotation best practices<a name="cer-annotation-best-practices"></a>

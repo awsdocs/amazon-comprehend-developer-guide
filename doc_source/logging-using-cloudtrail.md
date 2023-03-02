@@ -77,7 +77,7 @@ Amazon Comprehend supports logging the following actions as events in CloudTrail
 +  [UpdateEndpoint](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_UpdateEndpoint.html)
 
 Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
-+ Whether the request was made with root or AWS Identity and Access Management \(IAM\) user credentials\.
++ Whether the request was made with the root user credentials\.
 + Whether the request was made with temporary security credentials for a role or federated user\.
 + Whether the request was made by another AWS service\.
 

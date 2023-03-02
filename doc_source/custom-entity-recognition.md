@@ -22,7 +22,7 @@ You can train a model on up to 25 custom entities at once\. For more details, se
 After your model is trained, you can use the model for real\-time entity detection and in entity detection jobs\. 
 
 **Topics**
-+ [Preparing the training data](prep-training-data-cer.md)
-+ [Training custom recognizers](training-recognizers.md)
++ [Preparing entity recognizer training data](prep-training-data-cer.md)
++ [Training custom entity recognizer models](training-recognizers.md)
 + [Running real\-time custom recognizer analysis](running-cer-sync.md)
 + [Running analysis jobs for custom entity recognition](detecting-cer.md)

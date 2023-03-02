@@ -27,7 +27,7 @@ Before you can import a custom model, you or your administrator must authorize t
 
 ### IAM policy statement<a name="custom-copy-importing-prerequisites-permissions-iam"></a>
 
-Your IAM user or group must have a policy attached that allows the `ImportModel` action, as shown in the following example\.
+Your user, group or role must have a policy attached that allows the `ImportModel` action, as shown in the following example\.
 
 **Example IAM policy to import a custom model**  
 
@@ -130,7 +130,7 @@ You can use Amazon Comprehend in the AWS Management Console\.
 
 **To import a custom model**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. In the navigation menu on the left, under **Customization**, choose the page for the type of model that you are importing:
 

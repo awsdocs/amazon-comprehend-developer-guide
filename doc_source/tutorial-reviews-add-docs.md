@@ -114,17 +114,9 @@ In the Amazon S3 console, upload the sample dataset file to the input folder\.
 
 1. Choose **Add files** and then choose the `amazon-reviews.csv` file on your computer\.
 
-1. Choose **Next**\.
+1. Leave the other settings at their default values\.
 
-1. Leave the default settings for **Manage users**, **Access for other AWS accounts**, and **Manage public permissions**\. Choose **Next**\.
-
-1. For **Storage class**, choose **Standard**\.
-
-1. For **Encryption**, choose **None**\.
-
-1. Leave **Metadata** and **Tag** blank\.
-
-1. Choose **Next** and review the configurations, and then choose **Upload**\.
+1. Choose **Upload**\.
 
 ### Upload sample documents to a bucket \(AWS CLI\)<a name="tutorial-reviews-add-docs-upload-cli"></a>
 

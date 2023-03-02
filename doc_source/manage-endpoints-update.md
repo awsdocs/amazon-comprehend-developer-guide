@@ -6,7 +6,7 @@ It can also be helpful to add tags to your endpoint to help keep them organized\
 
 **To update an endpoint \(console\)**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Endpoints**\.
 

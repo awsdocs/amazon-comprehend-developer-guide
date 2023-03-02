@@ -26,7 +26,7 @@ For a semi\-structured input document, or a text file, the output can include th
 + DocumentType – The document type for each page in the input document\. This field is present in the response if the request included the `Byte` parameter\.
 + Errors – Page\-level errors that the system detected while processing the input document\. The field is empty if the system encountered no errors\.
 
-For more details about these output fields, see [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) in the Amazon Comprehend API Reference\.
+For more details about these output fields, see [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) in the *Amazon Comprehend API Reference*\.
 
 The following example shows the output for a one\-page native PDF input document\.
 

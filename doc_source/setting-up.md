@@ -3,19 +3,16 @@
 Before you use Amazon Comprehend for the first time, complete the following tasks\.
 
 **Topics**
-+ [Sign up for AWS](#setting-up-signup)
-+ [Create an IAM user](#setting-up-iam)
++ [Sign up for an AWS account](#sign-up-for-aws)
++ [Create an administrative user](#create-an-admin)
 + [Set up the AWS Command Line Interface \(AWS CLI\)](#setup-awscli)
++ [Grant programmatic access](#grant-program-access)
 
-## Sign up for AWS<a name="setting-up-signup"></a>
+## Sign up for an AWS account<a name="sign-up-for-aws"></a>
 
-When you sign up for Amazon Web Services \(AWS\), your AWS account is automatically signed up for all AWS services, including Amazon Comprehend\. You are charged only for the services that you use\.
+If you do not have an AWS account, complete the following steps to create one\.
 
-With Amazon Comprehend, you pay only for the resources that you use\. If you are a new AWS customer, you can get started with Amazon Comprehend for free\. For more information, see [AWS free usage tier](https://aws.amazon.com/free/)\.
-
-If you already have an AWS account, skip to the next section\. 
-
-**To create an AWS account**
+**To sign up for an AWS account**
 
 1. Open [https://portal\.aws\.amazon\.com/billing/signup](https://portal.aws.amazon.com/billing/signup)\.
 
@@ -25,28 +22,31 @@ If you already have an AWS account, skip to the next section\.
 
    When you sign up for an AWS account, an *AWS account root user* is created\. The root user has access to all AWS services and resources in the account\. As a security best practice, [assign administrative access to an administrative user](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html), and use only the root user to perform [tasks that require root user access](https://docs.aws.amazon.com/accounts/latest/reference/root-user-tasks.html)\.
 
-Record your AWS account ID because you'll need it for the next task\.
+AWS sends you a confirmation email after the sign\-up process is complete\. At any time, you can view your current account activity and manage your account by going to [https://aws\.amazon\.com/](https://aws.amazon.com/) and choosing **My Account**\.
 
-## Create an IAM user<a name="setting-up-iam"></a>
+## Create an administrative user<a name="create-an-admin"></a>
 
-Services in AWS, such as Amazon Comprehend, require that you provide credentials when you access them\. This allows the service to determine whether you have permissions to access the service's resources\. 
+After you sign up for an AWS account, create an administrative user so that you don't use the root user for everyday tasks\.
 
-We strongly recommend that you access AWS using AWS Identity and Access Management \(IAM\), not the credentials for your AWS account\. To use IAM to access AWS, create an IAM user, add the user to an IAM group with administrative permissions, and then grant administrative permissions to the IAM user\. You can then access AWS using a special URL and the IAM user's credentials\.
+**Secure your AWS account root user**
 
+1.  Sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the account owner by choosing **Root user** and entering your AWS account email address\. On the next page, enter your password\.
 
+   For help signing in by using root user, see [Signing in as the root user](https://docs.aws.amazon.com/signin/latest/userguide/console-sign-in-tutorials.html#introduction-to-root-user-sign-in-tutorial) in the *AWS Sign\-In User Guide*\.
 
-The Getting Started exercises in this guide assume that you have a user with administrator privileges, `adminuser`\. 
+1. Turn on multi\-factor authentication \(MFA\) for your root user\.
 
-**To create an administrator user and sign in to the console**
+   For instructions, see [Enable a virtual MFA device for your AWS account root user \(console\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root) in the *IAM User Guide*\.
 
-1. Create an administrator user called `adminuser` in your AWS account\. For instructions, see [Creating your first IAM user and administrators group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
+**Create an administrative user**
++ For your daily administrative tasks, grant administrative access to an administrative user in AWS IAM Identity Center \(successor to AWS Single Sign\-On\)\.
 
-1. Sign in to the AWS Management Console using a special URL\. For more information, see [How users sign in to Your Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_how-users-sign-in.html) in the *IAM User Guide*\.
+  For instructions, see [Getting started](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\.
 
-For more information about IAM, see the following:
-+ [AWS Identity and Access Management \(IAM\)](https://aws.amazon.com/iam/)
-+ [Getting started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html)
-+ [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)
+**Sign in as the administrative user**
++ To sign in with your IAM Identity Center user, use the sign\-in URL that was sent to your email address when you created the IAM Identity Center user\.
+
+  For help signing in using an IAM Identity Center user, see [Signing in to the AWS access portal](https://docs.aws.amazon.com/signin/latest/userguide/iam-id-center-sign-in-tutorial.html) in the *AWS Sign\-In User Guide*\.
 
 ## Set up the AWS Command Line Interface \(AWS CLI\)<a name="setup-awscli"></a>
 
@@ -54,25 +54,29 @@ You don't need the AWS CLI to perform the steps in the Getting Started exercises
 
 
 
-**To set up the AWS CLI**
+**To install and configure the AWS CLI**
 
-1. Download and configure the AWS CLI\. For instructions, see the following topics in the *AWS Command Line Interface User Guide*: 
-   + [Getting set up with the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html)
-   + [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
+1. Install the AWS CLI\. For instructions, see the following topic in the *AWS Command Line Interface User Guide*: 
 
-1. In the AWS CLI config file, add a named profile for the administrator user:\. 
+   [ Installing or updating the latest version of the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-getting-started-install.html)
 
-   ```
-   [profile adminuser]
-   aws_access_key_id = adminuser access key ID
-   aws_secret_access_key = adminuser secret access key
-   region = aws-region
-   ```
+1. Configure the AWS CLI\. For instructions, see the following topic in the *AWS Command Line Interface User Guide*: 
 
-   You use this profile when executing the AWS CLI commands\. For more information about named profiles, see [Named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles) in the *AWS Command Line Interface User Guide*\. For a list of AWS Regions, see [Regions and endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *Amazon Web Services General Reference*\.
+   [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 
-1. Verify the setup by typing the following help command at the command prompt: 
+## Grant programmatic access<a name="grant-program-access"></a>
 
-   ```
-   aws help
-   ```
+Users need programmatic access if they want to interact with AWS outside of the AWS Management Console\. The way to grant programmatic access depends on the type of user that's accessing AWS:
++ If you manage identities in IAM Identity Center, the AWS APIs require a profile, and the AWS Command Line Interface requires a profile or an environment variable\.
++ If you have IAM users, the AWS APIs and the AWS Command Line Interface require access keys\. Whenever possible, create temporary credentials that consist of an access key ID, a secret access key, and a security token that indicates when the credentials expire\.
+
+To grant users programmatic access, choose one of the following options\.
+
+
+****  
+
+| Which user needs programmatic access? | To | By | 
+| --- | --- | --- | 
+|  Workforce identity \(Users managed in IAM Identity Center\)  | Use short\-term credentials to sign programmatic requests to the AWS CLI or AWS APIs \(directly or by using the AWS SDKs\)\. |  Following the instructions for the interface that you want to use: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/comprehend/latest/dg/setting-up.html)  | 
+| IAM | Use short\-term credentials to sign programmatic requests to the AWS CLI or AWS APIs \(directly or by using the AWS SDKs\)\. | Following the instructions in [Using temporary credentials with AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html) in the IAM User Guide\. | 
+| IAM | Use long\-term credentials to sign programmatic requests to the AWS CLI or AWS APIs \(directly or by using the AWS SDKs\)\.\(Not recommended\) | Following the instructions in [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in the IAM User Guide\. | 

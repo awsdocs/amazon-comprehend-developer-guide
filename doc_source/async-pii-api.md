@@ -12,15 +12,15 @@ Run an asynchronous batch job to locate PII in a collection of documents\. To ru
 ## Before you start<a name="detect-pii-before"></a>
 
 Before you start, make sure that you have:
-+ **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input files and output files\. The buckets must be in the same region as the API that you are calling\.
-+ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input files and output files\. The buckets must be in the same Region as the API that you are calling\.
++ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-based permissions required for asynchronous operations](security_iam_id-based-policy-examples.md#auth-role-permissions)\.
 
 ## Input parameters<a name="async-pii-api-inputs"></a>
 
  In your request, include the following required parameters:
 + `InputDataConfig` – Provide an [InputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_InputDataConfig.html) definition for your request, which includes the input properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location of your input documents\.
 + `OutputDataConfig` – Provide an [OutputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_OutputDataConfig.html) definition for your request, which includes the output properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location where Amazon Comprehend writes the results of its analysis\.
-+ `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-based permissions required for asynchronous operations](security_iam_id-based-policy-examples.md#auth-role-permissions)\.
 + `Mode` – Set this parameter to `ONLY_OFFSETS`\. With this setting, the output provides the character offsets that locate each PII entity in the input text\. The output also includes confidence scores and PII entity types\.
 + `LanguageCode` – Set this parameter to `en`\. Amazon Comprehend supports PII detection in only English text\.
 

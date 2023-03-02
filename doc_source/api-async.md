@@ -1,6 +1,6 @@
 # Async analysis jobs using the API<a name="api-async"></a>
 
-The following examples demonstrate how to use Amazon Comprehend API for real\-time analysis, using the AWS CLI, Java, and Python\. Use the examples to learn about the Amazon Comprehend synchronous operations and as building blocks for your own applications\.
+The following examples use the Amazon Comprehend asynchronous APIs to create and manage analysis jobs, using the AWS CLI\.
 
 **Topics**
 + [Async analysis for Amazon Comprehend insights](api-async-insights.md)

@@ -1,14 +1,12 @@
 # Async analysis for Amazon Comprehend insights<a name="api-async-insights"></a>
 
-The following examples demonstrate how to use Amazon Comprehend API for real\-time analysis, using the AWS CLI, Java, and Python\. Use the examples to learn about the Amazon Comprehend synchronous operations and as building blocks for your own applications\.
+The following sections use the Amazon Comprehend API to run asynchronous operations to analyze Amazon Comprehend insights\.
 
 **Topics**
 + [Prerequisites](#detect-topics-role-auth)
 + [Starting an analysis job](#how-start-job)
 + [Monitoring analysis jobs](#how-monitor-progress)
 + [Getting analysis results](#how-get-results)
-
-The following sections describe using the Amazon Comprehend API to run asynchronous operations for Amazon Comprehend insights\.
 
 ## Prerequisites<a name="detect-topics-role-auth"></a>
 
@@ -22,7 +20,7 @@ Documents must be in UTF\-8\-formatted text files\. You can submit your document
 
 When you start an analysis job, you specify the S3 location for your input data\. The URI must be in the same AWS Region as the API endpoint that you are calling\. The URI can point to a single file or it can be the prefix for a collection of data files\. For more information, see the [InputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_InputDataConfig.html) data type\.
 
-You must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection and output files\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
+You must grant Amazon Comprehend access to the Amazon S3 bucket that contains your document collection and output files\. For more information, see [Role\-based permissions required for asynchronous operations](security_iam_id-based-policy-examples.md#auth-role-permissions)\.
 
 ## Starting an analysis job<a name="how-start-job"></a>
 

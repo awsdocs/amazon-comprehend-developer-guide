@@ -35,9 +35,9 @@ The following diagram shows the workflow\.
 ## Prerequisites<a name="tutorial-reviews-prereqs"></a>
 
 To complete this tutorial, you need the following:
-+ An AWS account\. If you don't have an AWS account, see the topic [Step 1: Set up an AWS account and create an administrator user](https://docs.aws.amazon.com/comprehend/latest/dg/setting-up.html) in the *Amazon Comprehend User Guide* to set up a new account\.
-+ An [AWS Identity and Access Management](https://aws.amazon.com/iam/) \(IAM\) user\. We highly recommend that you use an IAM user to protect your root account\. The root account has unrestricted access to AWS resources and billing information\. Using an IAM user with restricted permissions limits how much access you have within your account\. To learn how to set up an IAM user and group for your account, see the [Getting started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html) tutorial in the *IAM User Guide*\.
-+ The following permissions policy attached to your IAM group or user\. The policy grants your IAM user some of the permissions required to complete this tutorial\. The next prerequisite describes the additional permissions you need\. 
++ An AWS account\. For information about setting up an AWS account, see [Setting up](setting-up.md)\.
++ An IAM entity \(user, group or role\)\. To learn how to set up users and groups for your account, see the [ Getting started](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started.html) tutorial in the *IAM User Guide*\.
++ The following permissions policy attached to your user, group or role\. The policy grants some of the permissions required to complete this tutorial\. The next prerequisite describes the additional permissions you need\. 
 
   ```
   {

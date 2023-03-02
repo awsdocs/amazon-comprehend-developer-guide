@@ -8,7 +8,7 @@ When you train a new version of an existing custom classifier model or entity re
 
 **Create a new **Custom classifier** version \(console\)**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Customization** and then choose **Custom classification**\.
 
@@ -34,7 +34,7 @@ When you train a new version of an existing custom classifier model or entity re
 
 **Create a new **Custom entity recognizer** version \(console\)**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Customization** and then choose **Custom entity recognition**\.
 

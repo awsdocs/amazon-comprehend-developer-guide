@@ -27,7 +27,8 @@ Amazon Comprehend \(except the **detect dominant language** feature\) supports t
 | zh\-TW | Chinese \(traditional\) | 
 
 **Note**  
-Amazon Comprehend identifies the language using identifiers from RFC 5646 — if there is a 2\-letter ISO 639\-1 identifier, with a regional subtag if necessary, it uses that\. Otherwise, it uses the ISO 639\-2 3\-letter code\. For more information about RFC 5646, see the *IETF Tools* web site\.
+Amazon Comprehend identifies the language using identifiers from RFC 5646 — if there is a 2\-letter ISO 639\-1 identifier, with a regional subtag if necessary, it uses that\. Otherwise, it uses the ISO 639\-2 3\-letter code\.  
+For more information about RFC 5646, see [Tags for identifying languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.
 
 
 

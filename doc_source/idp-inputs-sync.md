@@ -7,7 +7,7 @@ Real\-time analysis using custom models takes a single document as input\. The f
 + [Semi\-structured documents](#idp-inputs-sync-semi)
 + [Image files and scanned PDF files](#idp-inputs-sync-ocr)
 + [Amazon Textract output](#idp-inputs-sync-textract)
-+ [Maximum document sizes](#idp-inputs-sync-sizes)
++ [Maximum document sizes for real\-time analysis](#idp-inputs-sync-sizes)
 + [Errors in semi\-structured documents](#idp-inputs-sync-err)
 
 ## Plain text documents<a name="idp-inputs-sync-text"></a>
@@ -22,7 +22,7 @@ By default, real\-time custom analysis uses the Amazon Comprehend parser to extr
 
 ## Image files and scanned PDF files<a name="idp-inputs-sync-ocr"></a>
 
-Supported image types include JPEG, PNG, and TIFF\. The input file maximum is one page, with no more than 10,000 characters\.
+Supported image types include JPEG, PNG, and TIFF\.
 
 By default, custom entity recognition uses the Amazon Textract `DetectDocumentText` API operation to extract the text from image files and scanned PDF files\. You can override this default to use the `AnalyzeDocument` API operation instead\. See [Setting text extraction options](idp-set-textract-options.md)\.
 
@@ -30,7 +30,7 @@ By default, custom entity recognition uses the Amazon Textract `DetectDocumentTe
 
 You can provide the JSON output from the Amazon Textract `DetectDocumentText` API or `AnalyzeDocument` API as input to the real\-time API operations for custom classification and custom entity recognition\. Amazon Comprehend supports this input type for the real\-time API operations, but not for the console\.
 
-## Maximum document sizes<a name="idp-inputs-sync-sizes"></a>
+## Maximum document sizes for real\-time analysis<a name="idp-inputs-sync-sizes"></a>
 
 For all input document types, the input file maximum is one page, with no more than 10,000 characters\.
 

@@ -9,7 +9,7 @@ You can have multiple custom classifiers in your account, each trained using dif
 You can run custom classification on a single document synchronously \(in real\-time\) or start an asynchronous job to classify a set of documents\. Custom classification accepts a variety of input document types: plain text documents, semi\-structured documents, image files, and Amazon Textract ouput files\. 
 
 **Topics**
-+ [Preparing training data](prep-classifier-data.md)
++ [Preparing classifier training data](prep-classifier-data.md)
 + [Training classification models](training-classifier-model.md)
 + [Running real\-time analysis](running-class-sync.md)
 + [Running asynchronous jobs](running-classifiers.md)

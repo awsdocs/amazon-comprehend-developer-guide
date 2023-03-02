@@ -1,4 +1,4 @@
-# Preparing training data<a name="prep-classifier-data"></a>
+# Preparing classifier training data<a name="prep-classifier-data"></a>
 
 You can classify your documents using two modes: multi\-class or multi\-label\. Some of the input file formats are different for each mode, so you choose which mode to use when creating your data for training the model\. 
 

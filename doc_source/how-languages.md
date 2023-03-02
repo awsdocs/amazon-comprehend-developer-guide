@@ -1,12 +1,19 @@
 # Dominant language<a name="how-languages"></a>
 
-You can use Amazon Comprehend to examine text to determine the dominant language\. Amazon Comprehend identifies the language using identifiers from RFC 5646 — if there is a 2\-letter ISO 639\-1 identifier, with a regional subtag if necessary, it uses that\. Otherwise, it uses the ISO 639\-2 3\-letter code\. For more information about RFC 5646, see [Tags for identifying languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.
+You can use Amazon Comprehend to examine text to determine the dominant language\. Amazon Comprehend identifies the language using identifiers from RFC 5646 — if there is a 2\-letter ISO 639\-1 identifier, with a regional subtag if necessary, it uses that\. Otherwise, it uses the ISO 639\-2 3\-letter code\. 
 
-The response includes a score that indicates the confidence level that Amazon Comprehend has that a particular language is the dominant language in the document\. Each score is independent of the other scores — it does not indicate that a language makes up a particular percentage of a document\.
+For more information about RFC 5646, see [Tags for identifying languages](https://tools.ietf.org/html/rfc5646) on the *IETF Tools* web site\.
 
-If a long document, like a book, is written in multiple languages, you can break the long document into smaller pieces and run the `DetectDominantLanguage` operation on the individual pieces\. You can then aggregate the results to determine the percentage of each language in the longer document\.
+The response includes a score that indicates the confidence level that Amazon Comprehend has that a particular language is the dominant language in the document\. Each score is independent of the other scores\. The score doesn't indicate that a language makes up a particular percentage of a document\.
 
-Amazon Comprehend can detect the following languages\.
+If a long document \(such as a book\) contains multiple languages, you can break the long document into smaller pieces and run the `DetectDominantLanguage` operation on the individual pieces\. You can then aggregate the results to determine the percentage of each language in the longer document\.
+
+Amazon Comprehend language detection has the following limitations:
++ It doesn't support phonetic language detection\. For example, it doesn't detect "arigato" as Japanese or "nihao" as Chinese\.
++ It may have diffuculty distinguishing close language pairs, such as Indonesian and Malay; or Bosnian, Croatian, and Serbian\.
++ For best results, provide at least 20 characters of input text\.
+
+Amazon Comprehend detects the following languages\.
 
 
 | Code | Language | 
@@ -78,7 +85,7 @@ Amazon Comprehend can detect the following languages\.
 | nl | Dutch | 
 | no | Norwegian | 
 | or | Oriya | 
-| om  | Oromo | 
+| om | Oromo | 
 | pa | Punjabi | 
 | pl | Polish | 
 | pt | Portuguese | 

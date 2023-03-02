@@ -15,8 +15,8 @@ Amazon Comprehend provides the following API operations to start and manage asyn
 ## Before you start<a name="api-targeted-sentiment-before"></a>
 
 Before you start, make sure that you have:
-+ **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input and output\. The buckets must be in the same region as the API that you are calling\.
-+ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input and output\. The buckets must be in the same Region as the API that you are calling\.
++ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-based permissions required for asynchronous operations](security_iam_id-based-policy-examples.md#auth-role-permissions)\.
 
 ## Analyzing targeted sentiment using the AWS CLI<a name="api-targeted-sentiment-cli"></a>
 

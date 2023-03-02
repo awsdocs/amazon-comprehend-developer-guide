@@ -1,6 +1,6 @@
 # Analysis jobs for custom classification \(API\)<a name="analysis-jobs-custom-class-api"></a>
 
-After you create and train a [custom document classifier](), you can use the classifier to run analysis jobs\.
+After you [create and train](train-custom-classifier-api.md) a custom document classifier, you can use the classifier to run analysis jobs\.
 
 Use the [StartDocumentClassificationJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html) operation to start classifying unlabeled documents\. You specify the S3 bucket that contains the input documents, the S3 bucket for the output documents, and the classifier to use\.
 

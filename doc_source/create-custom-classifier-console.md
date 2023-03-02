@@ -2,13 +2,13 @@
 
 You can create and train a custom classifier using the console, and then use the custom classifier to analyze your documents\.
 
-To train a custom classifier, you need a set of training documents\. You label these documents with the categories that you want the document classifier to recognize\. For information about preparing your training documents, see [Preparing training data](prep-classifier-data.md)\.
+To train a custom classifier, you need a set of training documents\. You label these documents with the categories that you want the document classifier to recognize\. For information about preparing your training documents, see [Preparing classifier training data](prep-classifier-data.md)\.
 
 
 
 **To create and train a document classifier**
 
-1. Sign in to the [console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Customization** and then choose **Custom Classification**\.
 
@@ -34,7 +34,7 @@ For more information on creating and using KMS keys and the associated encryptio
    + **CSV file** — A two\-column CSV file, where labels are provided in the first column, and documents are provided in the second\.
    + **Augmented manifest** — A labeled dataset that is produced by Amazon SageMaker Ground Truth\. This file is in JSON lines format\. Each line is a complete JSON object that contains a training document and its associated labels\.
 
-   For more information about these formats, and for examples, see [Preparing training data](prep-classifier-data.md)\.
+   For more information about these formats, and for examples, see [Preparing classifier training data](prep-classifier-data.md)\.
 
 1. Under **Training dataset**, enter the location of the Amazon S3 bucket that contains your training documents or navigate to it by choosing **Select folder**\. The IAM role you're using for access permissions for the training job must have reading permissions for the S3 bucket\. 
 
@@ -52,7 +52,7 @@ For more information on creating and using KMS keys and the associated encryptio
 
    If you don't already have an IAM role with these permissions, choose **Create an IAM role** to make one\. Choose the access permissions to grant this role, and then choose a name suffix to distinguish the role from IAM roles in your account\.
 **Note**  
-If the input documents are encrypted, the IAM role used must also have `kms:Decrypt` permission\. For more information, see [Permissions required to use KMS encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
+If the input documents are encrypted, the IAM role used must also have `kms:Decrypt` permission\. For more information, see [Permissions required to use KMS encryption](security_iam_id-based-policy-examples.md#auth-kms-permissions)\.
 
 1. \(Optional\) To launch your resources into Amazon Comprehend from a VPC, enter the VPC ID under **VPC** or choose the ID from the drop\-down list\. 
 

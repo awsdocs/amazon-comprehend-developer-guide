@@ -4,7 +4,7 @@ You can use the console to run PII real\-time detection of a text document\. The
 
 **Run PII detection real\-time analysis using the built\-in model**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Real\-time analysis**\.
 

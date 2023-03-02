@@ -12,7 +12,7 @@ For information about provisioning endpoint throughput, and the associated costs
 
 **To create an endpoint \(console\)**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Endpoints** and choose the **Create endpoint** button\. A **Create endpoint** screen opens\.
 
@@ -20,15 +20,13 @@ For information about provisioning endpoint throughput, and the associated costs
 
 1. Choose a custom model that you want to attach the new endpoint to\. From the dropdown, you can search by model name\.
 **Note**  
-You must create a model before you can attach an endpoint to it\. If you don't have a model yet, see [Training custom recognizers](training-recognizers.md)\. 
+You must create a model before you can attach an endpoint to it\. If you don't have a model yet, see [Training custom entity recognizer models](training-recognizers.md)\. 
 
 1. \(Optional\) To add a tag to the endpoint, enter a key\-value pair under **Tags** and choose **Add tag**\. To remove this pair before creating the endpoint, choose **Remove tag**\.
 
-1. Enter the number of inference units \(IUs\) to assign to the endpoint\. Each unit represents a throughput of 100 characters per second for up to two documents per second\. 
+1. Enter the number of inference units \(IUs\) to assign to the endpoint\. Each unit represents a throughput of 100 characters per second for up to two documents per second\. For more information about endpoint throughput, see [Using Amazon Comprehend endpoints](using-endpoints.md)\.
 
 1. \(Optional\) If you are creating a new endpoint, you have the option to use the IU estimator\. The estimator can help you determine the number of IUs to request\. The number of inference units depends on the throughput or the number of characters that you want to analyze per second\.
-**Note**  
-The range for IUs is 1–10\. The maximum characters that you can analyze per second is 1000\. 
 
 1. From the **Purchase summary**, review your estimated hourly, daily, and monthly endpoint cost\. 
 
@@ -42,7 +40,7 @@ After you create an endpoint for your custom entity recognizer model, you can ru
 
 Complete the following steps to detect custom entities in your text by using the Amazon Comprehend console\.
 
-1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Real\-time analysis**\.
 

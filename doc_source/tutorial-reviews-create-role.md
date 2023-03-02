@@ -4,7 +4,7 @@ This step is necessary only if you are using the AWS Command Line Interface \(AW
 
 To run analysis jobs, Amazon Comprehend requires access to the Amazon S3 bucket that contains the sample dataset and will contain the jobs' output\. IAM roles allow you to control the permissions of AWS services or users\. In this step, you create an IAM role for Amazon Comprehend\. Then, you create and attach to this role a resource\-based policy that grants Amazon Comprehend access to your S3 bucket\. By the end of this step, Amazon Comprehend will have the necessary permissions to access your input data, store your output, and run sentiment and entities analysis jobs\.
 
-For more information about using IAM with Amazon Comprehend, see [Overview of managing access permissions to Amazon Comprehend resources](access-control-overview.md) and [Using identity\-based policies \(IAM policies\) for Amazon Comprehend](access-control-managing-permissions.md) in the *Amazon Comprehend User Guide*\.
+For more information about using IAM with Amazon Comprehend, see [How Amazon Comprehend works with IAM](security_iam_service-with-iam.md)\.
 
 **Topics**
 + [Prerequisites](#tutorial-reviews-create-role-prereqs)

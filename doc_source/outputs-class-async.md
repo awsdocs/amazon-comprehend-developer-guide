@@ -10,7 +10,7 @@ For either format of text input documents \(multi\-class or multi\-label\), the 
 
 When you use a classifier trained in multi\-class mode, your results show `classes`\. Each of these `classes` is the class used to create the set of categories when training your classifier\.
 
-For more details about these output fields, see [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) in the Amazon Comprehend API Reference\.
+For more details about these output fields, see [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) in the *Amazon Comprehend API Reference*\.
 
 The following examples use the following mutually exclusive classes\.
 
@@ -87,7 +87,7 @@ For semi\-structured input documents, the output can include the following addit
 + DocumentType – The document type for each page in the input document\. This field is present in the response if the request included the `Byte` parameter\.
 + Errors – Page\-level errors that the system detected while processing the input document\. The field is empty if the system encountered no errors\.
 
-For more details about these output fields, see [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) in the Amazon Comprehend API Reference\.
+For more details about these output fields, see [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) in the *Amazon Comprehend API Reference*\.
 
 The following example shows output for a two\-page scanned PDF file\.
 

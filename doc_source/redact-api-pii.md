@@ -11,15 +11,15 @@ To redact the PII entities in your text, you start an asynchronous batch job\. T
 ## Before you start<a name="redact-pii-before"></a>
 
 Before you start, make sure that you have:
-+ **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input files and output files\. The buckets must be in the same region as the API that you are calling\.
-+ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ **Input and output buckets**—Identify the Amazon S3 buckets that you want to use for input files and output files\. The buckets must be in the same Region as the API that you are calling\.
++ **IAM service role**—You must have an IAM service role with permission to access your input and output buckets\. For more information, see [Role\-based permissions required for asynchronous operations](security_iam_id-based-policy-examples.md#auth-role-permissions)\.
 
 ## Input parameters<a name="redact-pii-api-inputs"></a>
 
 In your request, include the following required parameters:
 + `InputDataConfig` – Provide an [InputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_InputDataConfig.html) definition for your request, which includes the input properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location of your input documents\.
 + `OutputDataConfig` – Provide an [OutputDataConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_OutputDataConfig.html) definition for your request, which includes the output properties for the job\. For the `S3Uri` parameter, specify the Amazon S3 location where Amazon Comprehend writes the results of its analysis\.
-+ `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
++ `DataAccessRoleArn` – Provide the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management role\. This role must grant Amazon Comprehend read access to your input data and write access to your output location in Amazon S3\. For more information, see [Role\-based permissions required for asynchronous operations](security_iam_id-based-policy-examples.md#auth-role-permissions)\.
 + `Mode` – Set this parameter to `ONLY_REDACTION`\. With this setting, Amazon Comprehend writes a copy of your input documents to the output location in Amazon S3\. In this copy, each PII entity is redacted\.
 + `RedactionConfig` – Provide an [RedactionConfig](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_RedactionConfig.html) definition for your request, which includes the configuration parameters for the redaction\. Specify the types of PII to redact, and specify whether each PII entity is replaced with the name of its type or a character of your choice:
   + Specify the PII entity types to redact in the `PiiEntityTypes` array\. To redact all entity types, set the array value to `["ALL"]`\.

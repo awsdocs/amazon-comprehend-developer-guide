@@ -10,9 +10,8 @@ This documentation helps you understand how to apply the shared responsibility m
 
 **Topics**
 + [Data protection in Amazon Comprehend](comp-data-protection.md)
-+ [Authentication and access control for Amazon Comprehend](auth-and-access-control.md)
++ [Identity and Access Management for Amazon Comprehend](security-iam.md)
 + [Logging Amazon Comprehend API calls with AWS CloudTrail](logging-using-cloudtrail.md)
 + [Compliance validation for Amazon Comprehend](comp-compliance.md)
 + [Resilience in Amazon Comprehend](comp-disaster-recovery-resiliency.md)
 + [Infrastructure security in Amazon Comprehend](comp-infrastructure-security.md)
-+ [Permissions required for a custom asynchronous analysis job](tagging-resources.md)

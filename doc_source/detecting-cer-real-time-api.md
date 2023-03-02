@@ -78,4 +78,4 @@ The config\.json file contains the following content\.
  }
 ```
 
-For more information about the command syntax, see [DetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html) in the Amazon Comprehend API Reference\.
+For more information about the command syntax, see [DetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html) in the *Amazon Comprehend API Reference*\.

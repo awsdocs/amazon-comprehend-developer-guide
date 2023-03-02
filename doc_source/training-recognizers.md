@@ -1,4 +1,4 @@
-# Training custom recognizers<a name="training-recognizers"></a>
+# Training custom entity recognizer models<a name="training-recognizers"></a>
 
 A custom entity recognizer identifies only the entity types that you include when you train the model\. It does not automatically include the preset entity types\. If you want to also identify the preset entity types,such as LOCATION, DATE, or PERSON, you need to provide additional training data for those entities\.
 
@@ -11,5 +11,5 @@ After you create a custom entity recognizer, you can monitor the progress of the
 
 **Topics**
 + [Train custom recognizers \(console\)](realtime-analysis-cer.md)
-+ [Train custom entity recognizers \(API\)](get-started-cer.md)
++ [Train custom entity recognizers \(API\)](train-cer-model.md)
 + [Custom entity recognizer metrics](cer-metrics.md)

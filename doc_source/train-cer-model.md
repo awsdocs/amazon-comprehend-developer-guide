@@ -1,4 +1,4 @@
-# Train custom entity recognizers \(API\)<a name="get-started-cer"></a>
+# Train custom entity recognizers \(API\)<a name="train-cer-model"></a>
 
 To create and train a custom entity recognition model, use the Amazon Comprehend [CreateEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html) API operation
 
@@ -13,7 +13,7 @@ The following examples demonstrate using the `CreateEntityRecognizer` operation 
 
 The examples are formatted for Unix, Linux, and macOS\. For Windows, replace the backslash \(\\\) Unix continuation character at the end of each line with a caret \(^\)\.
 
-Create a custom entity recognizer using the `create-entity-recognizer` CLI command\.
+Create a custom entity recognizer using the `create-entity-recognizer` CLI command\. For information about the input\-data\-config parameter, see [CreateEntityRecognizer](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_CreateEntityRecognizer.html) in the *Amazon Comprehend API Reference*\.
 
 ```
 aws comprehend create-entity-recognizer \
@@ -25,7 +25,7 @@ aws comprehend create-entity-recognizer \
      --region region
 ```
 
-List all entity recognizers in a region using the `list-entity-recognizers` CLI command\.\.
+List all entity recognizers in a Region using the `list-entity-recognizers` CLI command\.\.
 
 ```
 aws comprehend list-entity-recognizers \

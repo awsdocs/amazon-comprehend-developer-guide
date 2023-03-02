@@ -4,7 +4,7 @@ You can use the console to start and monitor an async analysis job for custom en
 
 **To start an async analysis job**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/home?region=us-east-1#api-explorer:)
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Analysis jobs** and then choose **Create job**\.
 

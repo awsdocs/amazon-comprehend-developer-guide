@@ -4,6 +4,8 @@ Amazon Comprehend uses natural language processing \(NLP\) to extract insights a
 
 You can access Amazon Comprehend document analysis capabilities using the Amazon Comprehend console or using the Amazon Comprehend APIs\. You can run real\-time analysis for small workloads or you can start asynchronous analysis jobs for large document sets\. You can use the pre\-trained models that Amazon Comprehend provides, or you can train your own custom models for classification and entity recognition\.
 
+Amazon Comprehend may store your content to continuously improve the quality of its pre\-trained models\. See the [Amazon Comprehend FAQ](https://aws.amazon.com/comprehend/faqs/) to learn more\. 
+
 All of the Amazon Comprehend features accept UTF\-8 text documents as the input\. In addition, custom classification and custom entity recognition accept image files, PDF files, and Word files as input\. 
 
 Amazon Comprehend can examine and analyze documents in a variety of languages, depending on the specific feature\. For more information, see [Languages supported in Amazon Comprehend](supported-languages.md)\. Amazon Comprehend's [Dominant language](how-languages.md) capability can examine documents and determine the dominant language for a far wider selection of languages\.
@@ -11,6 +13,7 @@ Amazon Comprehend can examine and analyze documents in a variety of languages, d
 **Topics**
 + [Amazon Comprehend insights](#what-is-insights)
 + [Amazon Comprehend Custom](#how-doc-class)
++ [Flywheels](#how-flywheels)
 + [Document clustering \(topic modeling\)](#how-topics)
 + [Examples](#how-examples)
 + [Benefits](#how-benefits)
@@ -42,6 +45,10 @@ You can customize Amazon Comprehend for your specific requirements without the s
 
 For more information, see [Amazon Comprehend Custom](concepts-custom.md)\. 
 
+## Flywheels<a name="how-flywheels"></a>
+
+Use flywheels to simplify the process of training and managing custom model versions over time\. A flywheel helps to orchestrate the tasks associated with training and evaluating new versions of a model\. Flywheels support plain\-text custom models for custom classification and custom entity recognition\. For more information, see [Flywheels](flywheels.md)\.
+
 ## Document clustering \(topic modeling\)<a name="how-topics"></a>
 
 You can also use Amazon Comprehend to examine a corpus of documents to organize them based on similar keywords within them\. Document clustering \(topic modeling\) is useful to organize a large corpus of documents into topics or clusters that are similar based on word frequency\. For more information, see [Topic modeling](topic-modeling.md)\.
@@ -59,23 +66,25 @@ If your company publishes a catalog, let Amazon Comprehend tell you what custome
  
 
 **Example 3: Discover what matters to your customers**  
-Use Amazon Comprehend topic modeling to discover the topics that your customers are talking about on your forums and message boards, then use entity detection to determine the people, places, and things that they associate with the topic\. Finally, use sentiment analysis to determine how your customers feel about a topic\.
+Use Amazon Comprehend topic modeling to discover the topics that your customers are talking about on your forums and message boards, then use entity detection to determine the people, places, and things that they associate with the topic\. Use sentiment analysis to determine how your customers feel about a topic\.
 
 ## Benefits<a name="how-benefits"></a>
 
-Some of the benefits of using Amazon Comprehend include:
+Benefits of using Amazon Comprehend include:
 + **Integrate powerful natural language processing into your apps** – Amazon Comprehend removes the complexity of building text analysis capabilities into your applications by making powerful and accurate natural language processing available with a simple API\. You don't need textual analysis expertise to take advantage of the insights that Amazon Comprehend produces\.
 + **Deep learning based natural language processing** – Amazon Comprehend uses deep learning technology to accurately analyze text\. Our models are constantly trained with new data across multiple domains to improve accuracy\.
 + **Scalable natural language processing** – Amazon Comprehend enables you to analyze millions of documents so that you can discover the insights that they contain\.
-+ **Integrated with other AWS services** – Amazon Comprehend is designed to work seamlessly with other AWS services like Amazon S3, AWS KMS, and AWS Lambda\. Store your documents in Amazon S3, or analyze real\-time data with Kinesis Data Firehose\. Support for AWS Identity and Access Management \(IAM\) makes it easy to securely control access to Amazon Comprehend operations\. Using IAM, you can create and manage AWS users and groups to grant the appropriate access to your developers and end users\.
-+ **Encryption of output results and volume data ** – Amazon S3 already enables you to encrypt your input documents, and Amazon Comprehend extends this even farther\. By using your own KMS key, you can not only encrypt the output results of your job, but also the data on the storage volume attached to the compute instance that processes the analysis job\. The result is significantly enhanced security\.
++ **Integrated with other AWS services** – Amazon Comprehend is designed to work seamlessly with other AWS services like Amazon S3, AWS KMS, and AWS Lambda\. Store your documents in Amazon S3, or analyze real\-time data with Kinesis Data Firehose\. Support for AWS Identity and Access Management \(IAM\) makes it easy to securely control access to Amazon Comprehend operations\. Using IAM, you can create and manage users and groups to grant the appropriate access to your developers and end users\.
++ **Encryption of output results and volume data ** – Amazon S3 already enables you to encrypt your input documents, and Amazon Comprehend extends this even farther\. By using your own KMS key, you can encrypt the output results of your job and the data on the storage volume attached to the compute instance that processes the analysis job\. The result is significantly enhanced security\.
 + **Low cost** – With Amazon Comprehend, there are no minimum fees or upfront commitments\. You pay for the documents that you analyze and custom models that you train\. 
 
 ## Amazon Comprehend pricing<a name="what-pricing"></a>
 
-There is a usage charge for running real\-time or asynchronous analysis jobs\. You pay to train custom models, and you pay for custom model management\. For real\-time requests using custom models, you pay for the endpoint from the time that you start your endpoint until you delete the endpoint\.
+With Amazon Comprehend, you pay only for the resources that you use\. If you are a new AWS customer, you can get started with Amazon Comprehend for free\. For more information, see [AWS free usage tier](https://aws.amazon.com/free/)\.
 
-For the rates and additional detailed information, see [http://aws.amazon.com/comprehend/pricing](http://aws.amazon.com/comprehend/pricing)\.
+There is a usage charge for running real\-time or asynchronous analysis jobs\. You pay to train custom models, and you pay for custom model management\. For real\-time requests using custom models, you pay for the endpoint from the time that you start your endpoint until you delete the endpoint\. There is no additional charge for using flywheels\. However, when you run a flywheel iteration, you incur the standard charges for training a new model version and storing the model data\.
+
+For the rates and additional detailed information, see [Amazon Comprehend Pricing](http://aws.amazon.com/comprehend/pricing)\.
 
 ## Are you a first\-time user of Amazon Comprehend?<a name="first-time-user"></a>
 
@@ -83,7 +92,7 @@ If you are a first\-time user of Amazon Comprehend, we recommend that you read t
 
 1. **[How it works](how-it-works.md)** – This section introduces Amazon Comprehend concepts\. 
 
-1. **[Setting up](setting-up.md)** – In this section, you create an IAM user and set up the AWS CLI\. 
+1. **[Setting up](setting-up.md)** – In this section, you create an account and set up the AWS CLI\. 
 
 1. **[Getting started with Amazon Comprehend](getting-started.md)** – In this section, you run a Amazon Comprehend analysis job\. 
 

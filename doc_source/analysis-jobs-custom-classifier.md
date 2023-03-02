@@ -4,7 +4,7 @@ After you create and train a [custom document classifier](), you can use the con
 
 **To create a custom classification job \(console\)**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/home?region=us-east-1#api-explorer:)
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Analysis jobs** and then choose **Create job**\.
 

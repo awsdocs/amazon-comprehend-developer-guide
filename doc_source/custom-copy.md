@@ -2,7 +2,7 @@
 
 Amazon Comprehend users can copy trained custom models between AWS accounts in a two\-step process\. First, a user in one AWS account \(account A\), *shares* a custom model that's in their account\. Then, a user in another AWS account \(account B\) *imports* the model into their account\. The account B user does not need to train the model, and does not need to copy \(or access\) the original training data or test data\.
 
-To share a custom model in account A, the user attaches an AWS Identity and Access Management \(IAM\) policy to a model version\. This policy authorizes an entity in account B, such as an IAM user or role, to import the model version into Amazon Comprehend in their AWS account\. The account B user must import the model into the same AWS Region as the original model\.
+To share a custom model in account A, the user attaches an AWS Identity and Access Management \(IAM\) policy to a model version\. This policy authorizes an entity in account B, such as a user or role, to import the model version into Amazon Comprehend in their AWS account\. The account B user must import the model into the same AWS Region as the original model\.
 
 To import the model in account B, the user of this account provides Amazon Comprehend with the necessary details, such as the Amazon Resource Name \(ARN\) of the model\. By importing the model, this user creates a new custom model in their AWS account that replicates the model that they imported\. This model is fully trained and ready for inference jobs, such as document classification or named entity recognition\.
 

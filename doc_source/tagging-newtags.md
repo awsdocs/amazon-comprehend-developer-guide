@@ -2,7 +2,9 @@
 
 You can add tags to an **Analysis job**, a **Custom classification** model, a **Custom entity recognition** model, or **endpoints**\.
 
-1. Sign in to the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/) and select the resource \(Analysis job, Custom classification, or Custom entity recognition\) you want to create from the left navigation pane\.  
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
+
+1. Select the resource \(Analysis job, Custom classification, or Custom entity recognition\) you want to create from the left navigation pane\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/add-tags-1.png)
 
 1. Click **Create job** \(or **Create new model**\)\. This takes you to the main 'create' page for your resource\. At the bottom of this page, you'll see a '**Tags \-** *optional*' box\.  

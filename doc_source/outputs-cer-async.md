@@ -48,7 +48,7 @@ For semi\-structured input documents, the output can include the following addit
 + BlockReferences – A reference to each block for this entity\. This field is present in the response for a request that included the `Byte` parameter\. The field isn't present for text files\.
 + Errors – Page\-level errors that the system detected while processing the input document\. The field is empty if the system encountered no errors\.
 
-For more details about these output fields, see [DetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html) in the Amazon Comprehend API Reference
+For more details about these output fields, see [DetectEntities](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_DetectEntities.html) in the *Amazon Comprehend API Reference*
 
 The following example shows the output for a one\-page native PDF input document\.
 

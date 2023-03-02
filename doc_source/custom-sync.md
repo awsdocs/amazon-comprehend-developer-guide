@@ -14,7 +14,7 @@ For information about provisioning endpoint throughput, and the associated costs
 
 **To create an endpoint \(console\)**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Endpoints** and choose the **Create endpoint** button\. A **Create endpoint** screen opens\.
 
@@ -26,11 +26,9 @@ You must create a model before you can attach an endpoint to it\. If you don't h
 
 1. \(Optional\) to add a tag to the endpoint, enter a key\-value pair under **Tags** and choose **Add tag**\. To remove this pair before creating the endpoint, choose **Remove tag**
 
-1. Enter the number of inference units \(IUs\) to assign to the endpoint\. Each unit represents a throughput of 100 characters per second for up to two documents per second\. For information about how to provision IUs, see [Using Amazon Comprehend endpoints](using-endpoints.md)\. 
+1. Enter the number of inference units \(IUs\) to assign to the endpoint\. Each unit represents a throughput of 100 characters per second for up to two documents per second\. For information about endpoint throughput, see [Using Amazon Comprehend endpoints](using-endpoints.md)\. 
 
 1. \(Optional\) If you are creating a new endpoint, you have the option to use the IU estimator\. Depending on the throughput, or the number of characters you want to analyze per second, it can be hard to know how many inference units you need\. This optional step can help you determine how the number of IUs to request\. 
-**Note**  
-The range for available IUs is 1–10\. The maximum characters that you can analyze per second is 1000\. 
 
 1. From the **Purchase summary**, review your estimated hourly, daily, and monthly endpoint cost\. 
 
@@ -44,7 +42,7 @@ Once you've created an endpoint, you can run real\-time analysis using your cust
 
 **To run real\-time analysis using a custom model \(console\)**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Real\-time analysis**\.
 

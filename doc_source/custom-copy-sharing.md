@@ -5,7 +5,7 @@ With Amazon Comprehend, you can share your custom models with others, so they ca
 To share a custom model, you attach a policy to it that authorizes others to import it\. Then, you provide those users with the details that they need\.
 
 **Note**  
-When other users import a custom model that you've shared, they must use the same AWS Region—for example, US East \(N\. Virginia\)— that contains your model\.
+When other users import a custom model that you've shared, they must use the same AWS Region —for example, US East \(N\. Virginia\)— that contains your model\.
 
 **Topics**
 + [Before you begin](#custom-copy-sharing-prerequisites)
@@ -21,7 +21,7 @@ Before you can share a model, you must have a trained custom classifier or custo
 
 #### IAM policy statement<a name="custom-copy-sharing-prerequisites-permissions-iam"></a>
 
-Before you can add a resource\-based policy to a custom model, you require permissions in AWS Identity and Access Management \(IAM\)\. Your IAM user or group must have a policy attached so you can create, get, and delete model policies, as shown in the following example\.
+Before you can add a resource\-based policy to a custom model, you require permissions in AWS Identity and Access Management \(IAM\)\. Your user, group, or role must have a policy attached so you can create, get, and delete model policies, as shown in the following example\.
 
 **Example IAM policy to manage resource\-based policies for custom models**  
 
@@ -47,7 +47,7 @@ An **AWS owned key** is owned and managed by an AWS service\. If you use an AWS 
 
 A **Customer managed key** is a key that you create, own, and manage in your AWS account\. If you use a customer managed key, you must add a statement to your KMS key policy\. 
 
-The policy statement authorizes one or more entities \(such as IAM users or AWS accounts\) to perform the AWS KMS operations required to decrypt the model\. 
+The policy statement authorizes one or more entities \(such as users or accounts\) to perform the AWS KMS operations required to decrypt the model\. 
 
 You use condition keys to help prevent the confused deputy problem\. For more information, see [Cross\-service confused deputy prevention](cross-service-confused-deputy-prevention.md)\.
 
@@ -182,7 +182,7 @@ For more information, see [Key policies in AWS KMS](https://docs.aws.amazon.com/
 
 Before an Amazon Comprehend user in another AWS account can import a custom model from your AWS account, you must authorize them to do so\. To authorize them, you add a *resource\-based policy* to the model version that you want to share\. A resource\-based policy is an IAM policy that you attach to a resource in AWS\. 
 
-When you attach a resource policy to a custom model version, the policy authorizes one or more entities, such as IAM users or AWS accounts, to perform the `comprehend:ImportModel` action on the model version\.
+When you attach a resource policy to a custom model version, the policy authorizes users, groups, or roles to perform the `comprehend:ImportModel` action on the model version\.
 
 **Example Resource\-based policy for a custom model version**  
 This example specifies the authorized entities in the `Principal` attribute\. Resource "\*" refers to the specific model version that you attach the policy to\.  
@@ -219,7 +219,7 @@ You can use Amazon Comprehend in the AWS Management Console\.
 
 **To add a resource\-based policy**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. In the navigation menu on the left, under **Customization**, choose the page that contains your custom model: 
 
@@ -297,7 +297,7 @@ You can also add a policy to a custom model in the API request that creates the 
 
 Now that you have added the resource\-based policy to your custom model, you have authorized other Amazon Comprehend users to import your model into their AWS accounts\. However, before they can import, you must provide them with the following details:
 + The Amazon Resource Name \(ARN\) of the model version\.
-+ The AWS Region that contains the model\. Anyone who imports your model must use the same AWS Region\.
++ The AWS Region that contains the model\. Anyone who imports your model must use the same AWS Region \.
 + Whether the model is encrypted, and if it is, the type of AWS KMS key that you use: AWS owned key or customer managed key\.
 + If your model is encrypted with a customer managed key, then you must provide the ARN of the KMS key\. Anyone who imports your model must include the ARN in an IAM service role in their AWS account\. This role authorizes Amazon Comprehend to use the KMS key to decrypt the model during the import\.
 

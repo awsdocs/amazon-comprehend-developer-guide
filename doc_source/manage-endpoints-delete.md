@@ -4,7 +4,7 @@ Once you no longer need your endpoint, you should delete it so that you stop inc
 
 **To delete an endpoint \(console\)**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Endpoints**\.
 

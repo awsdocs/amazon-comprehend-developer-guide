@@ -33,4 +33,4 @@ When you start a classification job, you specify this Amazon S3 location for you
 
 For example, if you use the URI `S3://bucketName/prefix`, if the prefix is a single file, Amazon Comprehend uses that file as input\. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input\. 
 
-Grant Amazon Comprehend access to the S3 bucket that contains your document collection and output files\. For more information, see [Role\-based permissions required for asynchronous operations](access-control-managing-permissions.md#auth-role-permissions)\.
+Grant Amazon Comprehend access to the S3 bucket that contains your document collection and output files\. For more information, see [Role\-based permissions required for asynchronous operations](security_iam_id-based-policy-examples.md#auth-role-permissions)\.

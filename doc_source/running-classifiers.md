@@ -4,7 +4,7 @@ After you train a custom classifier, you can use asynchronous jobs to analyze la
 
 Custom classification accepts a variety of input document types\. For details, see [Inputs for asynchronous custom analysis](idp-inputs-async.md)\.
 
-If you plan to analyze image files or scanned PDF documents, your IAM policy must grant permissions to use two Amazon Textract API methods \(DetectDocumentText and AnalyzeDocument\)\. Amazon Comprehend invokes these methods during text extraction\. For an example policy, see [Using identity\-based policies \(IAM policies\) for Amazon Comprehend](access-control-managing-permissions.md)\.
+If you plan to analyze image files or scanned PDF documents, your IAM policy must grant permissions to use two Amazon Textract API methods \(DetectDocumentText and AnalyzeDocument\)\. Amazon Comprehend invokes these methods during text extraction\. For an example policy, see [ Permissions required to perform document analysis actions](security_iam_id-based-policy-examples.md#security-iam-based-policy-perform-cmp-actions)\.
 
 For classification of semi\-structured documents \(image, PDF, or Docx files\) using a plain\-text classifier, use the `one document per file` input format\. Also, include the `DocumentReaderConfig` parameter in your [StartDocumentClassificationJob](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_StartDocumentClassificationJob.html) request\.
 

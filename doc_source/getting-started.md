@@ -4,11 +4,11 @@ The following exercise uses the Amazon Comprehend console to create and run an a
 
 **To create a entity detection job**
 
-1. Sign in to the [console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Analysis Jobs** and then choose **Create job**\.
 
-1. Under **Job settings**, give the job a name\. The name must be unique within the region and account\.
+1. Under **Job settings**, give the job a name\. The name must be unique within the Region and account\.
 
 1. For **Analysis Type**, choose **Entities**\. 
 

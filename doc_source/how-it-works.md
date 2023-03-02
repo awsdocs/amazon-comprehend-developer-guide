@@ -2,7 +2,7 @@
 
 Amazon Comprehend uses a pre\-trained model to gather **insights** about a document or a set of documents\. This model is continuously trained on a large body of text so that there is no need for you to provide training data\. 
 
-You can use Amazon Comprehend to build your own **custom models** for custom classification and custom entity recognition\. 
+You can use Amazon Comprehend to build your own **custom models** for custom classification and custom entity recognition\. You can use [Flywheels](flywheels.md) to help manage the custom models\. 
 
 Amazon Comprehend provides **topic modeling** using a built\-in model\. Topic modeling examines a corpus of documents and organizes the documents based on similar keywords within them\.
 

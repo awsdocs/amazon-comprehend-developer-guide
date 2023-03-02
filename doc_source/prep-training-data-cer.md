@@ -1,4 +1,4 @@
-# Preparing the training data<a name="prep-training-data-cer"></a>
+# Preparing entity recognizer training data<a name="prep-training-data-cer"></a>
 
 To train a successful custom entity recognition model, it's important to supply the model trainer with high quality data as input\. Without good data, the model won't learn how to correctly identify entities\. 
 
@@ -9,6 +9,8 @@ You can choose one of two ways to provide data to Amazon Comprehend in order to 
 In both cases, Amazon Comprehend learns about the kind of documents and the context where the entities occur and builds a recognizer that can generalize to detect the new entities when you analyze documents\.
 
 When you create a custom model \(or train a new version\), you can provide a test dataset\. If you do not provide test data, Amazon Comprehend reserves 10% of the input documents to test the model\. Amazon Comprehend trains the model with the remaining documents\.
+
+If you provide a test dataset for your annotations training set, the test data must include at least one annotation for each of the entity types specified in the creation request\. 
 
 **Topics**
 + [When to use annotations vs entity lists](#prep-training-data-comp)

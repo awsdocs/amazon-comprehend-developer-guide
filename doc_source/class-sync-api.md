@@ -106,7 +106,7 @@ Amazon Comprehend responds with the following:
  }
 ```
 
-For more information, see [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) in the Amazon Comprehend API Reference\.
+For more information, see [ClassifyDocument](https://docs.aws.amazon.com/comprehend/latest/APIReference/API_ClassifyDocument.html) in the *Amazon Comprehend API Reference*\.
 
 ### Running custom classification analysis using the AWS SDK for Java<a name="api-customclass-java"></a>
 

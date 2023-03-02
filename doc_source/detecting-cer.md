@@ -3,11 +3,11 @@
 You can run an asynchronous analysis job to detect custom entities in a set of one or more documents\.
 
 **Before you begin**  
-You need a custom entity recognition model \(also known as a recognizer\) before you can detect custom entities\. For more information about these models, see [Training custom recognizers](training-recognizers.md)\. 
+You need a custom entity recognition model \(also known as a recognizer\) before you can detect custom entities\. For more information about these models, see [Training custom entity recognizer models](training-recognizers.md)\. 
 
 A recognizer that is trained with plain\-text annotations supports entity detection for plain\-text documents only\. A recognizer that is trained with PDF document annotations supports entity detection for plain\-text documents, images, PDF files, and Word documents\. For files other than text files, Amazon Comprehend performs text extraction before running the analysis\. For information about the input files, see [Inputs for asynchronous custom analysis](idp-inputs-async.md)\.
 
-If you plan to analyze image files or scanned PDF documents, your IAM policy must grant permissions to use two Amazon Textract API methods \(DetectDocumentText and AnalyzeDocument\)\. Amazon Comprehend invokes these methods during text extraction\. For an example policy, see [Using identity\-based policies \(IAM policies\) for Amazon Comprehend](access-control-managing-permissions.md)\.
+If you plan to analyze image files or scanned PDF documents, your IAM policy must grant permissions to use two Amazon Textract API methods \(DetectDocumentText and AnalyzeDocument\)\. Amazon Comprehend invokes these methods during text extraction\. For an example policy, see [ Permissions required to perform document analysis actions](security_iam_id-based-policy-examples.md#security-iam-based-policy-perform-cmp-actions)\.
 
 To run an async analysis job, you perform the following overall steps:
 

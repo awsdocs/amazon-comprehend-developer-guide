@@ -48,9 +48,9 @@ import csv
 with open("./entitylist/entitylist.csv", "w", encoding="utf-8") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(["Text", "Type"])
-    csv_writer.writerow(["Jo Brown", "ENGINEER"])
-    csv_writer.writerow(["John Doe", "ENGINEER"])
-    csv_writer.writerow(["Jane Smith", "MANAGER"])
+    csv_writer.writerow(["Jo Brown", " ENGINEER"])
+    csv_writer.writerow(["John Doe", " ENGINEER"])
+    csv_writer.writerow(["Jane Smith", " MANAGER"])
 ```
 
 ## Best practices<a name="entitylist-bestresults"></a>

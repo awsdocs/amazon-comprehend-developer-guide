@@ -24,7 +24,7 @@ Two encryption options are available when using the console:
 
 1. Choose whether the customer\-managed key \(CMK\) is from the account you're currently using or from a different account\. If you want to use a key from the current account, choose the key ID from **KMS key ID**\. If you're using a key from a different account, you must enter the key's ARN\.
 
-If you have previously setup encryption using SSE\-KMS on the your S3 input documents, this can provide you with additional security\. However, if you do this, the IAM role used must have `kms:Decrypt` permission for the KMS key with which the input documents are encrypted\. For more information, see [Permissions required to use KMS encryption](access-control-managing-permissions.md#auth-kms-permissions)\.
+If you have previously setup encryption using SSE\-KMS on the your S3 input documents, this can provide you with additional security\. However, if you do this, the IAM role used must have `kms:Decrypt` permission for the KMS key with which the input documents are encrypted\. For more information, see [Permissions required to use KMS encryption](security_iam_id-based-policy-examples.md#auth-kms-permissions)\.
 
 **KMS encryption with API operations** 
 

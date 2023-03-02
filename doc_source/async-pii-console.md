@@ -4,7 +4,7 @@ You can use the console to create async analysis jobs to detect PII entities\. F
 
 **To create an analysis job**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console\.](https://console.aws.amazon.com/comprehend/)
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Analysis jobs** and then choose **Create job**\. 
 

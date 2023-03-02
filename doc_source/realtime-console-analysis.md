@@ -8,7 +8,7 @@ You can replace the sample text with your own text and then choose **Analyze** t
 
 **Run real\-time analysis using the built\-in model**
 
-1. Sign in to the AWS Management Console and open the [Amazon Comprehend console](https://console.aws.amazon.com/comprehend/)\.
+1. Sign in to the AWS Management Console and open the Amazon Comprehend console at [https://console\.aws\.amazon\.com/comprehend/](https://console.aws.amazon.com/comprehend/)
 
 1. From the left menu, choose **Real\-time analysis**\.
 
@@ -68,9 +68,6 @@ The **Labels** analysis mode checks for the presence of PII in your text documen
 ## Sentiment<a name="realtime-analysis-console-sentiment"></a>
 
 The **Sentiment** tab shows the dominant sentiment of the text\. Sentiment can be rated neutral, positive, negative, or mixed\. In this case, each sentiment has a confidence rating, providing an estimate by Amazon Comprehend for that sentiment being dominant\. For more information, see [Sentiment](how-sentiment.md)\.
-
-**Note**  
-Amazon Comprehend performs real\-time sentiment analysis on the first 500 characters of the input text and ignores any additional text in the input\.
 
 ![\[The Sentiment tab.\]](http://docs.aws.amazon.com/comprehend/latest/dg/images/gs-console-sentiment.png)
 
