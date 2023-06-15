@@ -1,5 +1,0 @@
-# Resilience in Amazon Comprehend<a name="comp-disaster-recovery-resiliency"></a>
-
-The AWS global infrastructure is built around AWS Region s and Availability Zones\. AWS Region s provide multiple physically separated and isolated Availability Zones, which are connected with low\-latency, high\-throughput, and highly redundant networking\. With Availability Zones, you can design and operate applications and databases that automatically fail over between Availability Zones without interruption\. Availability Zones are more highly available, fault tolerant, and scalable than traditional single or multiple data center infrastructures\. 
-
-For more information about AWS Region s and Availability Zones, see [AWS Global Infrastructure](http://aws.amazon.com/about-aws/global-infrastructure/)\.
